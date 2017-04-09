@@ -7,8 +7,127 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Sun, 09 Apr 2017 15:36:30 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 09 Apr 2017 16:31:49 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Blogging with Hugo</title>
+      <link>https://cse031sust02.github.io/post/blogging-with-hugo/</link>
+      <pubDate>Sun, 09 Apr 2017 16:31:49 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/blogging-with-hugo/</guid>
+      <description>
+
+&lt;h4 id=&#34;install-hugo&#34;&gt;Install Hugo:&lt;/h4&gt;
+
+&lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as
+   &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;getting-started&#34;&gt;Getting Started :&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;create new site&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Choose a theme&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Download a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; and put in &amp;lsquo;theme&amp;rsquo; folder&lt;/p&gt;
+
+&lt;p&gt;example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;blog$ mkdir themes
+$ cd themes
+$ git clone https://github.com/vjeantet/hugo-theme-casper casper
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;update info in config.toml&lt;/p&gt;
+
+&lt;p&gt;example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;My New Hugo Site&amp;quot;
+baseURL = &amp;quot;http://example.org/&amp;quot;
+
+[params]
+description = &amp;quot;YOUR DESCRIPTION GOES HERE&amp;quot;
+author = &amp;quot;YOUR NAME&amp;quot;
+authorlocation = &amp;quot;YOUR LOCATION&amp;quot;
+authorwebsite = &amp;quot;YOUR SITE&amp;quot;
+bio= &amp;quot;YOUR BIO&amp;quot;
+
+[[menu.main]]
+name = &amp;quot;Blog&amp;quot;
+weight = -120
+identifier = &amp;quot;blog&amp;quot;
+url = &amp;quot;/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note : This configuration is for casper theme.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;create new post&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new post/hello-world.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Write your post&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+date = &amp;quot;2016-04-17T16:12:50+06:30&amp;quot;
+title = &amp;quot;Hello world&amp;quot;
+
++++
+
+Hello World. This is my first post.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Serve content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server -t YOURTHEME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As i am using casper theme,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server -t casper
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;for more details, &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;http://gohugo.io/overview/quickstart/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;github-pages&#34;&gt;Github pages :&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md&#34;&gt;https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;☐ project-hugo
+    &amp;gt; create repo&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -r public/?
+&amp;gt; git init
+&amp;gt; git remote add origin https://github.com/cse031sust02/hugo-blog.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;☐ &lt;username&gt;.github.io
+    &amp;gt; create repo
+    &amp;gt; git submodule add &lt;a href=&#34;https://github.com/cse031sust02/cse031sust02.github.io.git&#34;&gt;https://github.com/cse031sust02/cse031sust02.github.io.git&lt;/a&gt; public&lt;/p&gt;
+
+&lt;p&gt;☐ Push everything
+    &amp;gt; git add .
+    &amp;gt; git commit -am &amp;lsquo;push everything&amp;rsquo;
+    &amp;gt; git push -u origin master&lt;/p&gt;
+
+&lt;p&gt;☐ Deploy
+    &amp;gt; hugo -t casper
+    &amp;gt; cd public
+    &amp;gt; git add .
+    &amp;gt; git commit -m &amp;ldquo;deploy&amp;rdquo;
+    &amp;gt; git push origin master&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>hello world</title>

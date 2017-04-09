@@ -14,15 +14,15 @@
 
 
 
-<meta name="twitter:title" content="hello world"/>
+<meta name="twitter:title" content="Blogging with Hugo"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@cse031sust02"/>
 
 
 
-  	<meta property="og:title" content="hello world &middot; CSE031SUST02 Blog" />
+  	<meta property="og:title" content="Blogging with Hugo &middot; CSE031SUST02 Blog" />
   	<meta property="og:site_name" content="CSE031SUST02 Blog" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/hello-world/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/blogging-with-hugo/" />
 
     
         
@@ -32,12 +32,12 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-04-09T15:36:30&#43;06:00" />
+    <meta property="article:published_time" content="2017-04-09T16:31:49&#43;06:00" />
 
     
     
 
-    <title>hello world &middot; CSE031SUST02 Blog</title>
+    <title>Blogging with Hugo &middot; CSE031SUST02 Blog</title>
 
     
     <meta name="description" content="" />
@@ -62,7 +62,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/hello-world/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/blogging-with-hugo/" />
 
     
       
@@ -93,23 +93,23 @@
         "description": still trying to find a bio
         
     },
-    "headline": hello world,
-    "name": hello world,
-    "wordCount": 7,
-    "timeRequired": "PT1M",
+    "headline": Blogging with Hugo,
+    "name": Blogging with Hugo,
+    "wordCount": 249,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/hello-world/,
-    "datePublished": 2017-04-09T15:36Z,
-    "dateModified": 2017-04-09T15:36Z,
+    "url": https://cse031sust02.github.io/post/blogging-with-hugo/,
+    "datePublished": 2017-04-09T16:31Z,
+    "dateModified": 2017-04-09T16:31Z,
     
     
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/hello-world/
+        "@id": https://cse031sust02.github.io/post/blogging-with-hugo/
     }
 }
     </script>
@@ -184,12 +184,12 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">hello world</h1>
+        <h1 class="post-title">Blogging with Hugo</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-04-09T15:36:30&#43;06:00">
+          <time class="post-date" datetime="2017-04-09T16:31:49&#43;06:00">
             Apr 9, 2017
           </time>
         
@@ -198,7 +198,116 @@
     </header>
 
     <section class="post-content">
-      <p>Hello World. This is my first post.</p>
+      
+
+<h4 id="install-hugo">Install Hugo:</h4>
+
+<p>To install Hugo in your operating system, please visit the <a href="http://gohugo.io/overview/installing/">official guide</a>. As I am using ubuntu, installing Hugo is as simple as
+   <code>sudo apt install hugo</code></p>
+
+<h4 id="getting-started">Getting Started :</h4>
+
+<p><strong>create new site</strong></p>
+
+<pre><code>$ hugo new site blog
+</code></pre>
+
+<p><strong>Choose a theme</strong></p>
+
+<p>Download a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> and put in &lsquo;theme&rsquo; folder</p>
+
+<p>example,</p>
+
+<pre><code>blog$ mkdir themes
+$ cd themes
+$ git clone https://github.com/vjeantet/hugo-theme-casper casper
+</code></pre>
+
+<p><strong>configuration</strong></p>
+
+<p>update info in config.toml</p>
+
+<p>example,</p>
+
+<pre><code>languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+baseURL = &quot;http://example.org/&quot;
+
+[params]
+description = &quot;YOUR DESCRIPTION GOES HERE&quot;
+author = &quot;YOUR NAME&quot;
+authorlocation = &quot;YOUR LOCATION&quot;
+authorwebsite = &quot;YOUR SITE&quot;
+bio= &quot;YOUR BIO&quot;
+
+[[menu.main]]
+name = &quot;Blog&quot;
+weight = -120
+identifier = &quot;blog&quot;
+url = &quot;/&quot;
+</code></pre>
+
+<p>Note : This configuration is for casper theme.</p>
+
+<p><strong>create new post</strong></p>
+
+<p>example,</p>
+
+<pre><code>$ hugo new post/hello-world.md
+</code></pre>
+
+<p>Write your post</p>
+
+<pre><code>+++
+date = &quot;2016-04-17T16:12:50+06:30&quot;
+title = &quot;Hello world&quot;
+
++++
+
+Hello World. This is my first post.
+</code></pre>
+
+<p><strong>Serve content</strong></p>
+
+<pre><code>$ hugo server -t YOURTHEME
+</code></pre>
+
+<p>As i am using casper theme,</p>
+
+<pre><code>$ hugo server -t casper
+</code></pre>
+
+<blockquote>
+<p>for more details, <a href="http://gohugo.io/overview/quickstart/">http://gohugo.io/overview/quickstart/</a></p>
+</blockquote>
+
+<h4 id="github-pages">Github pages :</h4>
+
+<p><a href="https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md">https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md</a></p>
+
+<p>☐ project-hugo
+    &gt; create repo</p>
+
+<pre><code>rm -r public/?
+&gt; git init
+&gt; git remote add origin https://github.com/cse031sust02/hugo-blog.git
+</code></pre>
+
+<p>☐ <username>.github.io
+    &gt; create repo
+    &gt; git submodule add <a href="https://github.com/cse031sust02/cse031sust02.github.io.git">https://github.com/cse031sust02/cse031sust02.github.io.git</a> public</p>
+
+<p>☐ Push everything
+    &gt; git add .
+    &gt; git commit -am &lsquo;push everything&rsquo;
+    &gt; git push -u origin master</p>
+
+<p>☐ Deploy
+    &gt; hugo -t casper
+    &gt; cd public
+    &gt; git add .
+    &gt; git commit -m &ldquo;deploy&rdquo;
+    &gt; git push origin master</p>
 
     </section>
 
@@ -230,19 +339,19 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=hello%20world&nbsp;-&nbsp;CSE031SUST02%20Blog&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Blogging%20with%20Hugo&nbsp;-&nbsp;CSE031SUST02%20Blog&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f&amp;description=hello%20world"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f&amp;description=Blogging%20with%20Hugo"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -255,7 +364,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/hello-world\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/blogging-with-hugo\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -275,13 +384,12 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/blogging-with-hugo/">
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/hello-world/">
           <section class="post">
-              <h2>Blogging with Hugo</h2>
-              
+              <h2>hello world</h2>
           </section>
       </a>
-  
   
 </aside>
 
