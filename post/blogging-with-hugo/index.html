@@ -95,7 +95,7 @@
     },
     "headline": Blogging with Hugo,
     "name": Blogging with Hugo,
-    "wordCount": 249,
+    "wordCount": 351,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
@@ -200,12 +200,12 @@
     <section class="post-content">
       
 
-<h4 id="install-hugo">Install Hugo:</h4>
+<h4 id="install-hugo">Install Hugo</h4>
 
 <p>To install Hugo in your operating system, please visit the <a href="http://gohugo.io/overview/installing/">official guide</a>. As I am using ubuntu, installing Hugo is as simple as
    <code>sudo apt install hugo</code></p>
 
-<h4 id="getting-started">Getting Started :</h4>
+<h4 id="getting-started">Getting Started</h4>
 
 <p><strong>create new site</strong></p>
 
@@ -216,18 +216,18 @@
 
 <p>Download a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> and put in &lsquo;theme&rsquo; folder</p>
 
-<p>example,</p>
+<p>for example, in order to install the <a href="http://themes.gohugo.io/theme/casper/">casper</a> theme,</p>
 
 <pre><code>blog$ mkdir themes
-$ cd themes
-$ git clone https://github.com/vjeantet/hugo-theme-casper casper
+blog$ cd themes
+blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
 </code></pre>
 
 <p><strong>configuration</strong></p>
 
-<p>update info in config.toml</p>
+<p>update your configuration in config.toml</p>
 
-<p>example,</p>
+<p>for example,</p>
 
 <pre><code>languageCode = &quot;en-us&quot;
 title = &quot;My New Hugo Site&quot;
@@ -247,16 +247,14 @@ identifier = &quot;blog&quot;
 url = &quot;/&quot;
 </code></pre>
 
-<p>Note : This configuration is for casper theme.</p>
-
 <p><strong>create new post</strong></p>
-
-<p>example,</p>
 
 <pre><code>$ hugo new post/hello-world.md
 </code></pre>
 
-<p>Write your post</p>
+<p>Now put content inside the newly created hello-world.md file,</p>
+
+<p>for example,</p>
 
 <pre><code>+++
 date = &quot;2016-04-17T16:12:50+06:30&quot;
@@ -277,37 +275,52 @@ Hello World. This is my first post.
 <pre><code>$ hugo server -t casper
 </code></pre>
 
+<p>You can view your blog at <a href="http://localhost:1313/">http://localhost:1313/</a></p>
+
 <blockquote>
-<p>for more details, <a href="http://gohugo.io/overview/quickstart/">http://gohugo.io/overview/quickstart/</a></p>
+<p>for more details, pleaes visit the <a href="http://gohugo.io/overview/quickstart/">official doc</a></p>
 </blockquote>
 
-<h4 id="github-pages">Github pages :</h4>
+<h4 id="deploy-to-github-page">Deploy to Github page</h4>
 
-<p><a href="https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md">https://github.com/whipperstacker/blog/blob/master/content/post/deploying-a-hugo-site-to-github-pages.md</a></p>
+<p>Full details on how to host your Hugo based website on github page can be found here <a href="https://gohugo.io/tutorials/github-pages-blog">https://gohugo.io/tutorials/github-pages-blog</a>. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&hellip;</p>
 
-<p>☐ project-hugo
-    &gt; create repo</p>
+<p><strong>Create <code>(your-project)-hugo</code> repository</strong></p>
 
-<pre><code>rm -r public/?
-&gt; git init
-&gt; git remote add origin https://github.com/cse031sust02/hugo-blog.git
+<p>for example, create a new repository in Github named <code>hugo-blog</code>.</p>
+
+<p>Now, in your terminal, initialize a new git repo.</p>
+
+<pre><code>blog$ git init
+blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
 </code></pre>
 
-<p>☐ <username>.github.io
-    &gt; create repo
-    &gt; git submodule add <a href="https://github.com/cse031sust02/cse031sust02.github.io.git">https://github.com/cse031sust02/cse031sust02.github.io.git</a> public</p>
+<p><strong>Create <code>(your-username).github.io</code> repository</strong></p>
 
-<p>☐ Push everything
-    &gt; git add .
-    &gt; git commit -am &lsquo;push everything&rsquo;
-    &gt; git push -u origin master</p>
+<p>for example, in my case it is <code>cse031sust02.github.io</code></p>
 
-<p>☐ Deploy
-    &gt; hugo -t casper
-    &gt; cd public
-    &gt; git add .
-    &gt; git commit -m &ldquo;deploy&rdquo;
-    &gt; git push origin master</p>
+<p>now, add a submodule with the public folder</p>
+
+<pre><code>blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
+</code></pre>
+
+<p><strong>Push Everything to Github</strong></p>
+
+<pre><code>blog$ git add .
+blog$ git commit -am 'push everything'
+blog$ git push -u origin master
+</code></pre>
+
+<p><strong>Deploy</strong></p>
+
+<pre><code>blog$ hugo -t casper
+blog$ cd public
+blog$ git add .
+blog/public$ commit -m &quot;deploy&quot;
+blog/public$ push -u origin master
+</code></pre>
+
+<p>Then you should visit the blog at https://(YOUR-USERNAME).github.com. For example, my site is at <a href="https://cse031sust02.github.com">https://cse031sust02.github.com</a></p>
 
     </section>
 
