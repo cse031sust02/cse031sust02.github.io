@@ -17,6 +17,8 @@
       <guid>https://cse031sust02.github.io/post/json/</guid>
       <description>
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h4&gt;
 
 &lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
@@ -26,6 +28,8 @@
 &lt;p&gt;JSON filenames use the extension .json.&lt;/p&gt;
 
 &lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h4&gt;
 
@@ -37,13 +41,19 @@
 &lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;usage&#34;&gt;USAGE?&lt;/h4&gt;
 
 &lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h4&gt;
 
 &lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h4&gt;
 

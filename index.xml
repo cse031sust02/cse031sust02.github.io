@@ -18,6 +18,8 @@
       <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
       <description>
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h4&gt;
 
 &lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
@@ -30,6 +32,8 @@
 
 &lt;p&gt;WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
 HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h4&gt;
 
@@ -95,10 +99,14 @@ Content-Length: 1202
 &amp;lt;/html&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
 
 &lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
 common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
 
@@ -111,6 +119,8 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;p&gt;Client Error : 4XX &amp;ndash; Client কোন error করছে ।&lt;/p&gt;
 
 &lt;p&gt;Server Error : 5XX &amp;ndash; Server এ কোন সমস্যা আছে।&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
 
@@ -142,6 +152,8 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
       <guid>https://cse031sust02.github.io/post/json/</guid>
       <description>
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h4&gt;
 
 &lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
@@ -151,6 +163,8 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;p&gt;JSON filenames use the extension .json.&lt;/p&gt;
 
 &lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h4&gt;
 
@@ -162,13 +176,19 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;usage&#34;&gt;USAGE?&lt;/h4&gt;
 
 &lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h4&gt;
 
 &lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h4&gt;
 
@@ -290,19 +310,26 @@ e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;
       <guid>https://cse031sust02.github.io/post/blogging-with-hugo/</guid>
       <description>
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h4&gt;
 
 &lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as
    &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;create new site&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hugo allows us to scaffold a website quickly and easily.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new site&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new site blog
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;Choose a theme&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Choose a theme&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Download a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; and put in &amp;lsquo;theme&amp;rsquo; folder&lt;/p&gt;
 
@@ -311,9 +338,9 @@ e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;
 &lt;pre&gt;&lt;code&gt;blog$ mkdir themes
 blog$ cd themes
 blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;update your configuration in config.toml&lt;/p&gt;
 
@@ -335,9 +362,9 @@ name = &amp;quot;Blog&amp;quot;
 weight = -120
 identifier = &amp;quot;blog&amp;quot;
 url = &amp;quot;/&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;create new post&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new post&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new post/hello-world.md
 &lt;/code&gt;&lt;/pre&gt;
@@ -353,9 +380,9 @@ title = &amp;quot;Hello world&amp;quot;
 +++
 
 Hello World. This is my first post.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;Serve content&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Serve content&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo server -t YOURTHEME
 &lt;/code&gt;&lt;/pre&gt;
@@ -367,15 +394,17 @@ Hello World. This is my first post.
 
 &lt;p&gt;You can view your blog at &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;deploy-to-github-page&#34;&gt;Deploy to Github page&lt;/h4&gt;
 
 &lt;p&gt;Full details on how to host your Hugo based website on github page can be found here &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog&#34;&gt;https://gohugo.io/tutorials/github-pages-blog&lt;/a&gt;. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;for example, create a new repository in Github named &lt;code&gt;hugo-blog&lt;/code&gt;.&lt;/p&gt;
 
@@ -383,32 +412,33 @@ Hello World. This is my first post.
 
 &lt;pre&gt;&lt;code&gt;blog$ git init
 blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;for example, in my case it is &lt;code&gt;cse031sust02.github.io&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;now, add a submodule with the public folder&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;Push Everything to Github&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Push Everything to Github&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ git add .
 blog$ git commit -am &#39;push everything&#39;
 blog$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ hugo -t casper
 blog$ cd public
 blog$ git add .
 blog/public$ commit -m &amp;quot;deploy&amp;quot;
 blog/public$ push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Then you should visit the blog at https://(YOUR-USERNAME).github.com. For example, my site is at &lt;a href=&#34;https://cse031sust02.github.com&#34;&gt;https://cse031sust02.github.com&lt;/a&gt;&lt;/p&gt;
 </description>

@@ -17,6 +17,8 @@
       <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
       <description>
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h4&gt;
 
 &lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
@@ -29,6 +31,8 @@
 
 &lt;p&gt;WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
 HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h4&gt;
 
@@ -94,10 +98,14 @@ Content-Length: 1202
 &amp;lt;/html&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
 
 &lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
 common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
 
@@ -110,6 +118,8 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;p&gt;Client Error : 4XX &amp;ndash; Client কোন error করছে ।&lt;/p&gt;
 
 &lt;p&gt;Server Error : 5XX &amp;ndash; Server এ কোন সমস্যা আছে।&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
 
