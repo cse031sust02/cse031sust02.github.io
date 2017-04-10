@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="HTTP প্রোটোকল  এর বেসিক কাহিনী!"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@cse031sust02"/>
+
+
+
+  	<meta property="og:title" content="HTTP প্রোটোকল  এর বেসিক কাহিনী! &middot; CSE031SUST02 Blog" />
+  	<meta property="og:site_name" content="CSE031SUST02 Blog" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/protocol-basics/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="og:image" content="https://cse031sust02.github.io/" />
+    <meta property="article:published_time" content="2017-04-10T11:31:28&#43;06:00" />
+
+    
+    <meta property="article:tag" content="bangla" />
+    
+    <meta property="article:tag" content="http" />
+    
+    <meta property="article:tag" content="protocol" />
+    
+    <meta property="article:tag" content="tcp/ip" />
+    
+    
+
+    <title>HTTP প্রোটোকল  এর বেসিক কাহিনী! &middot; CSE031SUST02 Blog</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://cse031sust02.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://cse031sust02.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/nav.css" />
+
+    
+
+    
+      
+          <link href="https://cse031sust02.github.io/index.xml" rel="alternate" type="application/rss+xml" title="CSE031SUST02 Blog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.19" />
+
+    <link rel="canonical" href="https://cse031sust02.github.io/post/protocol-basics/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": https://cse031sust02.github.io,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": still trying to find a bio
+        
+    },
+    "headline": HTTP প্রোটোকল  এর বেসিক কাহিনী!,
+    "name": HTTP প্রোটোকল  এর বেসিক কাহিনী!,
+    "wordCount": 436,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://cse031sust02.github.io/post/protocol-basics/,
+    "datePublished": 2017-04-10T11:31Z,
+    "dateModified": 2017-04-10T11:31Z,
+    
+    "keywords": bangla, http, protocol, tcp/ip,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://cse031sust02.github.io/post/protocol-basics/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-67303858-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://cse031sust02.github.io/">Blog</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://cse031sust02.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">HTTP প্রোটোকল  এর বেসিক কাহিনী!</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-04-10T11:31:28&#43;06:00">
+            Apr 10, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/bangla/">#bangla</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/http/">#http</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/protocol/">#protocol</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/tcp/ip/">#tcp/ip</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h4 id="tcp-ip">TCP/IP</h4>
+
+<p>TCP = Transmission Control Protocol</p>
+
+<p>IP = Internet Protocol</p>
+
+<p>TCP/IP হলো একটা Protocol Suite.</p>
+
+<p>TCP/IP = TCP + IP + more protocols ..</p>
+
+<p>WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
+HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।</p>
+
+<h4 id="http-hypertext-transfer-protocol">HTTP (HyperText Transfer Protocol)</h4>
+
+<p>HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।</p>
+
+<p>Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।</p>
+
+<h6 id="request-message-এর-format">Request Message এর Format</h6>
+
+<pre><code>Request Line 
+Request Header fields
+Empty Line 
+An Optional Message Body
+</code></pre>
+
+<p>Example</p>
+
+<pre><code>GET /index.html HTTP/1.1
+Host : www.example.com 
+</code></pre>
+
+<ul>
+<li>GET হলো Method, index.html হলো Requested File, Http/1.1 হলো HTTP Version</li>
+</ul>
+
+<h6 id="response-message-এর-format">Response Message এর Format</h6>
+
+<pre><code>Status  Line 
+Response Header Fields 
+Empty Line 
+An Optional Message Body
+</code></pre>
+
+<p>Example</p>
+
+<pre><code>HTTP/1.1 200 OK 
+</code></pre>
+
+<ul>
+<li><p>HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message</p>
+
+<p><em>Header fields এর সম্পর্কে জানতে <a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Wikipedia</a> তে দেখুন</em></p></li>
+</ul>
+
+<p>সুতরাং , আমরা যখন ব্রাউজার এ <code>www.example.com/blog.php</code> লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,</p>
+
+<pre><code>GET  /blog.php HTTP/1.1 
+Host : www.example.com 
+</code></pre>
+
+<p>আর Server এর response টা এরকম,</p>
+
+<pre><code>HTTP/1.0 200 OK
+Date: Tue, 26 May 2015 23:59:59 GMT
+Content-Type: text/html
+Content-Length: 1202 
+
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Blog&lt;/h1&gt;
+  content goes here 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4 id="http-methods-verbs">HTTP Methods/Verbs</h4>
+
+<p>Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
+common method গুলা হলো  GET, POST, PUT, DELETE .</p>
+
+<h4 id="status-codes">Status Codes</h4>
+
+<p>Informational : 1XX &ndash; request recieve হইসে, process চলসে ।</p>
+
+<p>Successfull : 2XX &ndash; client এর request succssfully receive করা হইসে।</p>
+
+<p>Redirectional : 3XX &ndash; Client এর extra কিছু করতে হবে, mostly redirected ।</p>
+
+<p>Client Error : 4XX &ndash; Client কোন error করছে ।</p>
+
+<p>Server Error : 5XX &ndash; Server এ কোন সমস্যা আছে।</p>
+
+<h4 id="https-hypertext-transfer-protocol-secure">HTTPS ( HyperText Transfer Protocol Secure )</h4>
+
+<p>HTTPS = HTTP + SSL (Secure Socket Layer)</p>
+
+<p>এটা HTTP এর উপরে একটা Layer (SSL/TLS Protocol) দিয়ে বানানো যেটা HTTP Communication এ কিছু secuirity যোগ করে।
+এটার মেইন উদ্দেশ্য হলো Wiretapping আর Man-in-the-middle-attack থেকে protect করা।</p>
+
+<p>HTTPS এ Server ও Client গুলা  HTTP এর মতই communicate করে কিন্তু communication টা একটা Secure SSL connection এর উপরে হয় যেটা request এবং response টাকে encrypt/decrypt করে।</p>
+
+<p>SSL টার mainly ২ টা কাজ</p>
+
+<ul>
+<li>এইটা verify করা যে Client টা Directly Server এর সাথেই communicate করতেছে </li></li>
+<li>এইটা ensure করা যে client ও  server এর মধ্যকার কথাবার্তা শুধু client ও server ই পরতে পারতেছে</li>
+</ul>
+
+<p>HTTPS এ header, message সবই encrypted থাকে।</p>
+
+<p>কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://cse031sust02.github.io/">Talha Ibne Imam</a></h4>
+  
+  <p>still trying to find a bio</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://cse031sust02.github.io">https://cse031sust02.github.io</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=HTTP%20%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%9f%e0%a7%8b%e0%a6%95%e0%a6%b2%20%20%e0%a6%8f%e0%a6%b0%20%e0%a6%ac%e0%a7%87%e0%a6%b8%e0%a6%bf%e0%a6%95%20%e0%a6%95%e0%a6%be%e0%a6%b9%e0%a6%bf%e0%a6%a8%e0%a7%80%21&nbsp;-&nbsp;CSE031SUST02%20Blog&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fprotocol-basics%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fprotocol-basics%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fprotocol-basics%2f&amp;description=HTTP%20%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%9f%e0%a7%8b%e0%a6%95%e0%a6%b2%20%20%e0%a6%8f%e0%a6%b0%20%e0%a6%ac%e0%a7%87%e0%a6%b8%e0%a6%bf%e0%a6%95%20%e0%a6%95%e0%a6%be%e0%a6%b9%e0%a6%bf%e0%a6%a8%e0%a7%80%21"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fprotocol-basics%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'cse031sust02';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/protocol-basics\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/json/">
+          <section class="post">
+              <h2>JSON</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">CSE031SUST02 Blog</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/index.js"></script>
+    
+</body>
+</html>
+
