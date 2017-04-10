@@ -7,8 +7,280 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Sun, 09 Apr 2017 16:31:49 +0600</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2017 11:31:28 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HTTP প্রোটোকল  এর বেসিক কাহিনী!</title>
+      <link>https://cse031sust02.github.io/post/protocol-basics/</link>
+      <pubDate>Mon, 10 Apr 2017 11:31:28 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
+      <description>
+
+&lt;h4 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h4&gt;
+
+&lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
+
+&lt;p&gt;IP = Internet Protocol&lt;/p&gt;
+
+&lt;p&gt;TCP/IP হলো একটা Protocol Suite.&lt;/p&gt;
+
+&lt;p&gt;TCP/IP = TCP + IP + more protocols ..&lt;/p&gt;
+
+&lt;p&gt;WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
+HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।&lt;/p&gt;
+
+&lt;h4 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h4&gt;
+
+&lt;p&gt;HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।&lt;/p&gt;
+
+&lt;p&gt;Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।&lt;/p&gt;
+
+&lt;h6 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;Request Line 
+Request Header fields
+Empty Line 
+An Optional Message Body
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GET /index.html HTTP/1.1
+Host : www.example.com 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GET হলো Method, index.html হলো Requested File, Http/1.1 হলো HTTP Version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;Status  Line 
+Response Header Fields 
+Empty Line 
+An Optional Message Body
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GET  /blog.php HTTP/1.1 
+Host : www.example.com 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;আর Server এর response টা এরকম,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
+Date: Tue, 26 May 2015 23:59:59 GMT
+Content-Type: text/html
+Content-Length: 1202 
+
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;Blog&amp;lt;/h1&amp;gt;
+  content goes here 
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
+
+&lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
+common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
+
+&lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
+
+&lt;p&gt;Informational : 1XX &amp;ndash; request recieve হইসে, process চলসে ।&lt;/p&gt;
+
+&lt;p&gt;Successfull : 2XX &amp;ndash; client এর request succssfully receive করা হইসে।&lt;/p&gt;
+
+&lt;p&gt;Redirectional : 3XX &amp;ndash; Client এর extra কিছু করতে হবে, mostly redirected ।&lt;/p&gt;
+
+&lt;p&gt;Client Error : 4XX &amp;ndash; Client কোন error করছে ।&lt;/p&gt;
+
+&lt;p&gt;Server Error : 5XX &amp;ndash; Server এ কোন সমস্যা আছে।&lt;/p&gt;
+
+&lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
+
+&lt;p&gt;HTTPS = HTTP + SSL (Secure Socket Layer)&lt;/p&gt;
+
+&lt;p&gt;এটা HTTP এর উপরে একটা Layer (SSL/TLS Protocol) দিয়ে বানানো যেটা HTTP Communication এ কিছু secuirity যোগ করে।
+এটার মেইন উদ্দেশ্য হলো Wiretapping আর Man-in-the-middle-attack থেকে protect করা।&lt;/p&gt;
+
+&lt;p&gt;HTTPS এ Server ও Client গুলা  HTTP এর মতই communicate করে কিন্তু communication টা একটা Secure SSL connection এর উপরে হয় যেটা request এবং response টাকে encrypt/decrypt করে।&lt;/p&gt;
+
+&lt;p&gt;SSL টার mainly ২ টা কাজ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;এইটা verify করা যে Client টা Directly Server এর সাথেই communicate করতেছে &lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;এইটা ensure করা যে client ও  server এর মধ্যকার কথাবার্তা শুধু client ও server ই পরতে পারতেছে&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HTTPS এ header, message সবই encrypted থাকে।&lt;/p&gt;
+
+&lt;p&gt;কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://cse031sust02.github.io/post/json/</link>
+      <pubDate>Sun, 09 Apr 2017 18:15:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/json/</guid>
+      <description>
+
+&lt;h4 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h4&gt;
+
+&lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
+
+&lt;p&gt;Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.&lt;/p&gt;
+
+&lt;p&gt;JSON filenames use the extension .json.&lt;/p&gt;
+
+&lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
+
+&lt;h4 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h4&gt;
+
+&lt;p&gt;Because It is&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;lightweight data-interchange format.&lt;/li&gt;
+&lt;li&gt;language independent&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;usage&#34;&gt;USAGE?&lt;/h4&gt;
+
+&lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
+
+&lt;h4 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h4&gt;
+
+&lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
+
+&lt;h4 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h4&gt;
+
+&lt;p&gt;The JSON syntax is a subset of the JavaScript syntax.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Structures&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON is defined by two basic structures.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;A collection of name/value pairs.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Different programming languages support this data structure in different names. Like object, record, struct, dictionary, hash table, keyed list, or associative array.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g., &lt;code&gt;{ &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:  30, &amp;quot;member&amp;quot;: false, &amp;quot;spouse&amp;quot;: { &amp;quot;firstName&amp;quot;: &amp;quot;Mary&amp;quot;, &amp;quot;lastName&amp;quot;: &amp;quot;Smith&amp;quot;} }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ordered list of values.&lt;/p&gt;
+
+&lt;p&gt;In various programming languages, it is called as array, vector, list, or sequence.
+e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;Peter&amp;quot;,&amp;quot;Sally&amp;quot;]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Syntax Rules&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Data is written as name/value pairs. &lt;code&gt;e.g., &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;note : &lt;em&gt;JSON names require double quotes. JavaScript object names don&amp;rsquo;t.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Data is seperated by commas. e.g., &lt;code&gt;&amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Curly braces hold objects.&lt;/p&gt;
+
+&lt;p&gt;e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
+  &amp;quot;age&amp;quot;: 30,
+  &amp;quot;member&amp;quot;: false,
+  &amp;quot;spouse&amp;quot;: { //object
+    &amp;quot;first_name&amp;quot;: &amp;quot;Mary&amp;quot;,
+    &amp;quot;last_name&amp;quot;: &amp;quot;Smith&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Square brackets hold arrays.&lt;/p&gt;
+
+&lt;p&gt;e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
+    &amp;quot;age&amp;quot;:  30,
+    &amp;quot;member&amp;quot;: false,
+    &amp;quot;phoneNumbers&amp;quot;: [ //array
+        {
+            &amp;quot;description&amp;quot;: &amp;quot;home&amp;quot;,
+            &amp;quot;number&amp;quot;: &amp;quot;123-456-7890&amp;quot;
+        },
+        {
+            &amp;quot;description&amp;quot;: &amp;quot;mobile&amp;quot;,
+            &amp;quot;number&amp;quot;: &amp;quot;000-111-2222&amp;quot;
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Types&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Values must be one of the following data types.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;a string
+sequence of zero or more Unicode characters.
+e.g., &lt;code&gt;{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;a number
+Integer, Fraction and Exponent.
+e.g., &lt;code&gt;{ &amp;quot;age&amp;quot;:30 }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;an object (JSON object)
+starts and ends with &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo;. a number of string value pairs can reside between.
+Keys must be strings, and values must be a valid JSON data type.
+e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+&amp;quot;employee&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30, &amp;quot;city&amp;quot;:&amp;quot;New York&amp;quot; }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;an array
+starts and ends with &amp;lsquo;[&amp;rsquo; and &amp;lsquo;]&amp;rsquo;. a number of values can reside between.
+e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+&amp;quot;employees&amp;quot;:[ &amp;quot;John&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;Peter&amp;quot; ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;a boolean
+true or false. (TRUE or FALSE is not acceptable!).
+e.g., &lt;code&gt;{ &amp;quot;accept&amp;quot;:true }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;null
+null (NULL is not acceptable).
+e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JSON values cannot be a function, a date or undefined. (In JavaScript you can have these values)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Blogging with Hugo</title>
