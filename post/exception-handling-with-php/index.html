@@ -14,15 +14,15 @@
 
 
 
-<meta name="twitter:title" content="hello world"/>
+<meta name="twitter:title" content="Exception Handling with PHP"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@cse031sust02"/>
 
 
 
-  	<meta property="og:title" content="hello world &middot; cse031sust02" />
+  	<meta property="og:title" content="Exception Handling with PHP &middot; cse031sust02" />
   	<meta property="og:site_name" content="cse031sust02" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/hello-world/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/exception-handling-with-php/" />
 
     
         
@@ -34,14 +34,16 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-04-09T15:36:30&#43;06:00" />
+    <meta property="article:published_time" content="2017-04-10T15:56:44&#43;06:00" />
 
     
-    <meta property="article:tag" content="hello world" />
+    <meta property="article:tag" content="exception handling" />
+    
+    <meta property="article:tag" content="PHP" />
     
     
 
-    <title>hello world &middot; cse031sust02</title>
+    <title>Exception Handling with PHP &middot; cse031sust02</title>
 
     
     <meta name="description" content="" />
@@ -66,7 +68,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/hello-world/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/exception-handling-with-php/" />
 
     
       
@@ -97,23 +99,23 @@
         "description": still trying to find a bio
         
     },
-    "headline": hello world,
-    "name": hello world,
-    "wordCount": 7,
-    "timeRequired": "PT1M",
+    "headline": Exception Handling with PHP,
+    "name": Exception Handling with PHP,
+    "wordCount": 366,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/hello-world/,
-    "datePublished": 2017-04-09T15:36Z,
-    "dateModified": 2017-04-09T15:36Z,
+    "url": https://cse031sust02.github.io/post/exception-handling-with-php/,
+    "datePublished": 2017-04-10T15:56Z,
+    "dateModified": 2017-04-10T15:56Z,
     
-    "keywords": hello world,
+    "keywords": exception handling, PHP,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/hello-world/
+        "@id": https://cse031sust02.github.io/post/exception-handling-with-php/
     }
 }
     </script>
@@ -188,23 +190,98 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">hello world</h1>
+        <h1 class="post-title">Exception Handling with PHP</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-04-09T15:36:30&#43;06:00">
-            Apr 9, 2017
+          <time class="post-date" datetime="2017-04-10T15:56:44&#43;06:00">
+            Apr 10, 2017
           </time>
         
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/hello-world/">#hello world</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/exception-handling/">#exception handling</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/php/">#PHP</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      <p>Hello World. This is my first post.</p>
+      
+
+<hr />
+
+<h3 id="what-is-exception">What is Exception</h3>
+
+<p>Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.</p>
+
+<p><strong>&lsquo;errors&rsquo; vs &lsquo;exceptions&rsquo; :</strong>
+Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)</p>
+
+<h3 id="exceptions-in-php">Exceptions in PHP</h3>
+
+<p>Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.</p>
+
+<p>Exceptions can be thrown and caught.</p>
+
+<p><strong>one basic example,</strong></p>
+
+<pre><code class="language-php">  try {
+    throw new Exception('An Exception');
+  } catch (Exception $e) {
+    echo $e-&gt;getMessage();
+  }
+  //output : An Exception
+</code></pre>
+
+<ul>
+<li><p><strong>throw</strong></p>
+
+<p>The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.</p></li>
+
+<li><p><strong>try</strong></p>
+
+<p>If there is a &lsquo;try&rsquo; block, then there must be atleast one &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block. (Otherwise PHP Fatal Error)</p></li>
+
+<li><p><strong>catch</strong></p>
+
+<p>When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block), there will be a PHP Fatal Error with an &ldquo;Uncaught Exception &hellip;&rdquo; message (unless a handler has been defined with set_exception_handler method).</p>
+
+<p>Exceptions can also be thrown (or re-thrown) within a catch block.</p></li>
+
+<li><p><strong>finally</strong></p>
+
+<p>Introduces in PHP 5.5. &lsquo;finally&rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)</p></li>
+</ul>
+
+<p><strong>another example with more details,</strong></p>
+
+<pre><code class="language-php">function inverse($number) {
+    if ($number==0) {
+        throw new Exception('Division by zero.');
+    }
+
+    return 1/$number;
+}
+
+try {
+    $random_number = rand(0,5);
+    $result = inverse($random_number);
+    // ONLY echo when no exception is thrown
+    echo $result;
+} catch (Exception $e) {
+    //ONLY echo if there is an exception
+    echo &quot;Exception Message :&quot;.$e-&gt;getMessage();
+} finally {
+    // always echo
+    echo &quot;I am always there&quot;;
+}
+</code></pre>
+
+<blockquote>
+<p>Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - <a href="http://php.net/manual/en/language.exceptions.php">php.net</a></p>
+</blockquote>
 
     </section>
 
@@ -236,19 +313,19 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=hello%20world&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Exception%20Handling%20with%20PHP&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f&amp;description=hello%20world"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f&amp;description=Exception%20Handling%20with%20PHP"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fhello-world%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -261,7 +338,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/hello-world\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/exception-handling-with-php\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -281,13 +358,12 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/blogging-with-hugo/">
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/payment-using-stripe/">
           <section class="post">
-              <h2>Blogging with Hugo</h2>
-              
+              <h2>Accepting payments on your site using Stripe</h2>
           </section>
       </a>
-  
   
 </aside>
 

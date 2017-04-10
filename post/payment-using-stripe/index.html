@@ -14,15 +14,15 @@
 
 
 
-<meta name="twitter:title" content="Blogging with Hugo"/>
+<meta name="twitter:title" content="Accepting payments on your site using Stripe"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@cse031sust02"/>
 
 
 
-  	<meta property="og:title" content="Blogging with Hugo &middot; cse031sust02" />
+  	<meta property="og:title" content="Accepting payments on your site using Stripe &middot; cse031sust02" />
   	<meta property="og:site_name" content="cse031sust02" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/blogging-with-hugo/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/payment-using-stripe/" />
 
     
         
@@ -34,18 +34,16 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-04-09T16:31:49&#43;06:00" />
+    <meta property="article:published_time" content="2017-04-10T15:27:28&#43;06:00" />
 
     
-    <meta property="article:tag" content="blog" />
+    <meta property="article:tag" content="stripe" />
     
-    <meta property="article:tag" content="github page" />
-    
-    <meta property="article:tag" content="hugo" />
+    <meta property="article:tag" content="payment" />
     
     
 
-    <title>Blogging with Hugo &middot; cse031sust02</title>
+    <title>Accepting payments on your site using Stripe &middot; cse031sust02</title>
 
     
     <meta name="description" content="" />
@@ -70,7 +68,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/blogging-with-hugo/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/payment-using-stripe/" />
 
     
       
@@ -101,23 +99,23 @@
         "description": still trying to find a bio
         
     },
-    "headline": Blogging with Hugo,
-    "name": Blogging with Hugo,
-    "wordCount": 361,
+    "headline": Accepting payments on your site using Stripe,
+    "name": Accepting payments on your site using Stripe,
+    "wordCount": 348,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/blogging-with-hugo/,
-    "datePublished": 2017-04-09T16:31Z,
-    "dateModified": 2017-04-09T16:31Z,
+    "url": https://cse031sust02.github.io/post/payment-using-stripe/,
+    "datePublished": 2017-04-10T15:27Z,
+    "dateModified": 2017-04-10T15:27Z,
     
-    "keywords": blog, github page, hugo,
+    "keywords": stripe, payment,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/blogging-with-hugo/
+        "@id": https://cse031sust02.github.io/post/payment-using-stripe/
     }
 }
     </script>
@@ -192,21 +190,19 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Blogging with Hugo</h1>
+        <h1 class="post-title">Accepting payments on your site using Stripe</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-04-09T16:31:49&#43;06:00">
-            Apr 9, 2017
+          <time class="post-date" datetime="2017-04-10T15:27:28&#43;06:00">
+            Apr 10, 2017
           </time>
         
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/blog/">#blog</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/stripe/">#stripe</a></span>
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/github-page/">#github page</a></span>
-         
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/hugo/">#hugo</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/payment/">#payment</a></span>
          
         </section>
     </header>
@@ -216,135 +212,65 @@
 
 <hr />
 
-<h4 id="install-hugo">Install Hugo</h4>
+<h4 id="what-is-stripe-https-stripe-com">What is <a href="https://stripe.com/">Stripe</a></h4>
 
-<p>To install Hugo in your operating system, please visit the <a href="http://gohugo.io/overview/installing/">official guide</a>. As I am using ubuntu, installing Hugo is as simple as
-   <code>sudo apt install hugo</code></p>
-
-<hr />
-
-<h4 id="getting-started">Getting Started</h4>
-
-<p>Hugo allows us to scaffold a website quickly and easily.</p>
-
-<ul>
-<li><p><strong>create new site</strong></p>
-
-<pre><code>$ hugo new site blog
-</code></pre></li>
-
-<li><p><strong>Choose a theme</strong></p>
-
-<p>Download a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> and put in &lsquo;theme&rsquo; folder</p>
-
-<p>for example, in order to install the <a href="http://themes.gohugo.io/theme/casper/">casper</a> theme,</p>
-
-<pre><code>blog$ mkdir themes
-blog$ cd themes
-blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
-</code></pre></li>
-
-<li><p><strong>configuration</strong></p>
-
-<p>update your configuration in config.toml</p>
-
-<p>for example,</p>
-
-<pre><code>languageCode = &quot;en-us&quot;
-title = &quot;My New Hugo Site&quot;
-baseURL = &quot;http://example.org/&quot;
-
-[params]
-description = &quot;YOUR DESCRIPTION GOES HERE&quot;
-author = &quot;YOUR NAME&quot;
-authorlocation = &quot;YOUR LOCATION&quot;
-authorwebsite = &quot;YOUR SITE&quot;
-bio= &quot;YOUR BIO&quot;
-
-[[menu.main]]
-name = &quot;Blog&quot;
-weight = -120
-identifier = &quot;blog&quot;
-url = &quot;/&quot;
-</code></pre></li>
-
-<li><p><strong>create new post</strong></p>
-
-<pre><code>$ hugo new post/hello-world.md
-</code></pre>
-
-<p>Now put content inside the newly created hello-world.md file,</p>
-
-<p>for example,</p>
-
-<pre><code>+++
-date = &quot;2016-04-17T16:12:50+06:30&quot;
-title = &quot;Hello world&quot;
-
-+++
-
-Hello World. This is my first post.
-</code></pre></li>
-
-<li><p><strong>Serve content</strong></p>
-
-<pre><code>$ hugo server -t YOURTHEME
-</code></pre>
-
-<p>As i am using casper theme,</p>
-
-<pre><code>$ hugo server -t casper
-</code></pre>
-
-<p>You can view your blog at <a href="http://localhost:1313/">http://localhost:1313/</a></p>
-
-<p><em>for more details, pleaes visit the <a href="http://gohugo.io/overview/quickstart/">official doc</a></em></p></li>
-</ul>
+<p>A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.</p>
 
 <hr />
 
-<h4 id="deploy-to-github-page">Deploy to Github page</h4>
+<h4 id="payment-types">Payment types</h4>
 
-<p>Full details on how to host your Hugo based website on github page can be found here <a href="https://gohugo.io/tutorials/github-pages-blog">https://gohugo.io/tutorials/github-pages-blog</a>. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&hellip;</p>
+<p>Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.</p>
+
+<hr />
+
+<h4 id="accepting-payments-with-cards">Accepting Payments with Cards</h4>
+
+<p>Using card information with Stripe is a two-step process</p>
+
+<ol>
+<li>Securely collect payment information using tokenization</li>
+<li>Use the payment information in a charge request or save it for later</li>
+</ol>
+
+<p><strong>Step 1. Securely collect payment information using tokenization</strong></p>
+
+<p>Stripe provides three methods for tokenizing customer’s payment information over HTTPS
+Checkout, Stripe.js &amp; Mobile SDKs</p>
+
+<ol>
+<li><p><a href="https://stripe.com/checkout">Checkout</a></p>
+
+<p>The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.</p>
+
+<p>In addition to credit and debit cards, Checkout supports Alipay and Bitcoin too. more types of payment coming soon.</p>
+
+<p>Checkout has 12 languages to pay with a localized experience.</p>
+
+<p>Embedding checkout in your site
+<a href="https://stripe.com/docs/checkout/tutorial">https://stripe.com/docs/checkout/tutorial</a></p></li>
+
+<li><p><a href="https://stripe.com/docs/quickstart#elements">Elements</a></p>
+
+<p>If we want to customize the payment form for our need, then we can make use of Stripe Elements.</p></li>
+
+<li><p><a href="https://stripe.com/docs/mobile">Mobile SDKs</a></p></li>
+</ol>
+
+<p><strong>Step 2. Use the tokenized payment information</strong></p>
+
+<p>While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,</p>
 
 <ul>
-<li><p><strong>Create <code>(your-project)-hugo</code> repository</strong></p>
+<li><p><strong>Charging the customer immediately</strong></p>
 
-<p>for example, create a new repository in Github named <code>hugo-blog</code>.</p>
+<p>We can create a one-time charge request to charge a customer’s card.
+The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. <a href="https://stripe.com/docs/quickstart#charge-immediately">more details..</a></p></li>
 
-<p>Now, in your terminal, initialize a new git repo.</p>
+<li><p><strong>Saving the customer’s card information</strong></p>
 
-<pre><code>blog$ git init
-blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
-</code></pre></li>
-
-<li><p><strong>Create <code>(your-username).github.io</code> repository</strong></p>
-
-<p>for example, in my case it is <code>cse031sust02.github.io</code></p>
-
-<p>now, add a submodule with the public folder</p>
-
-<pre><code>blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
-</code></pre></li>
-
-<li><p><strong>Push Everything to Github</strong></p>
-
-<pre><code>blog$ git add .
-blog$ git commit -am 'push everything'
-blog$ git push -u origin master
-</code></pre></li>
-
-<li><p><strong>Deploy</strong></p>
-
-<pre><code>blog$ hugo -t casper
-blog$ cd public
-blog$ git add .
-blog/public$ commit -m &quot;deploy&quot;
-blog/public$ push -u origin master
-</code></pre></li>
+<p>If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. <a href="https://stripe.com/docs/quickstart#saving-card-information">more details..</a></p></li>
 </ul>
-
-<p>Then you should visit the blog at https://(YOUR-USERNAME).github.com. For example, my site is at <a href="https://cse031sust02.github.com">https://cse031sust02.github.com</a></p>
 
     </section>
 
@@ -376,19 +302,19 @@ blog/public$ push -u origin master
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Blogging%20with%20Hugo&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Accepting%20payments%20on%20your%20site%20using%20Stripe&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f&amp;description=Blogging%20with%20Hugo"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f&amp;description=Accepting%20payments%20on%20your%20site%20using%20Stripe"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fblogging-with-hugo%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -401,7 +327,7 @@ blog/public$ push -u origin master
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/blogging-with-hugo\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/payment-using-stripe\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -421,17 +347,17 @@ blog/public$ push -u origin master
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/json/">
+      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/exception-handling-with-php/">
           <section class="post">
-              <h2>JSON</h2>
+              <h2>Exception Handling with PHP</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/hello-world/">
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/protocol-basics/">
           <section class="post">
-              <h2>hello world</h2>
+              <h2>HTTP প্রোটোকল  এর বেসিক কাহিনী!</h2>
           </section>
       </a>
   

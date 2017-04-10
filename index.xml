@@ -7,8 +7,163 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Mon, 10 Apr 2017 11:31:28 +0600</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2017 15:56:44 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Exception Handling with PHP</title>
+      <link>https://cse031sust02.github.io/post/exception-handling-with-php/</link>
+      <pubDate>Mon, 10 Apr 2017 15:56:44 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/exception-handling-with-php/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-exception&#34;&gt;What is Exception&lt;/h3&gt;
+
+&lt;p&gt;Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lsquo;errors&amp;rsquo; vs &amp;lsquo;exceptions&amp;rsquo; :&lt;/strong&gt;
+Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)&lt;/p&gt;
+
+&lt;h3 id=&#34;exceptions-in-php&#34;&gt;Exceptions in PHP&lt;/h3&gt;
+
+&lt;p&gt;Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.&lt;/p&gt;
+
+&lt;p&gt;Exceptions can be thrown and caught.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;one basic example,&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;  try {
+    throw new Exception(&#39;An Exception&#39;);
+  } catch (Exception $e) {
+    echo $e-&amp;gt;getMessage();
+  }
+  //output : An Exception
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;throw&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;try&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If there is a &amp;lsquo;try&amp;rsquo; block, then there must be atleast one &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block. (Otherwise PHP Fatal Error)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;catch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block), there will be a PHP Fatal Error with an &amp;ldquo;Uncaught Exception &amp;hellip;&amp;rdquo; message (unless a handler has been defined with set_exception_handler method).&lt;/p&gt;
+
+&lt;p&gt;Exceptions can also be thrown (or re-thrown) within a catch block.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;finally&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;another example with more details,&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
+    if ($number==0) {
+        throw new Exception(&#39;Division by zero.&#39;);
+    }
+
+    return 1/$number;
+}
+
+try {
+    $random_number = rand(0,5);
+    $result = inverse($random_number);
+    // ONLY echo when no exception is thrown
+    echo $result;
+} catch (Exception $e) {
+    //ONLY echo if there is an exception
+    echo &amp;quot;Exception Message :&amp;quot;.$e-&amp;gt;getMessage();
+} finally {
+    // always echo
+    echo &amp;quot;I am always there&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - &lt;a href=&#34;http://php.net/manual/en/language.exceptions.php&#34;&gt;php.net&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accepting payments on your site using Stripe</title>
+      <link>https://cse031sust02.github.io/post/payment-using-stripe/</link>
+      <pubDate>Mon, 10 Apr 2017 15:27:28 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/payment-using-stripe/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;what-is-stripe-https-stripe-com&#34;&gt;What is &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;payment-types&#34;&gt;Payment types&lt;/h4&gt;
+
+&lt;p&gt;Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;accepting-payments-with-cards&#34;&gt;Accepting Payments with Cards&lt;/h4&gt;
+
+&lt;p&gt;Using card information with Stripe is a two-step process&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Securely collect payment information using tokenization&lt;/li&gt;
+&lt;li&gt;Use the payment information in a charge request or save it for later&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1. Securely collect payment information using tokenization&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Stripe provides three methods for tokenizing customer’s payment information over HTTPS
+Checkout, Stripe.js &amp;amp; Mobile SDKs&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/checkout&#34;&gt;Checkout&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&amp;rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.&lt;/p&gt;
+
+&lt;p&gt;In addition to credit and debit cards, Checkout supports Alipay and Bitcoin too. more types of payment coming soon.&lt;/p&gt;
+
+&lt;p&gt;Checkout has 12 languages to pay with a localized experience.&lt;/p&gt;
+
+&lt;p&gt;Embedding checkout in your site
+&lt;a href=&#34;https://stripe.com/docs/checkout/tutorial&#34;&gt;https://stripe.com/docs/checkout/tutorial&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/docs/quickstart#elements&#34;&gt;Elements&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If we want to customize the payment form for our need, then we can make use of Stripe Elements.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/docs/mobile&#34;&gt;Mobile SDKs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2. Use the tokenized payment information&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Charging the customer immediately&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can create a one-time charge request to charge a customer’s card.
+The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. &lt;a href=&#34;https://stripe.com/docs/quickstart#charge-immediately&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Saving the customer’s card information&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. &lt;a href=&#34;https://stripe.com/docs/quickstart#saving-card-information&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>HTTP প্রোটোকল  এর বেসিক কাহিনী!</title>
