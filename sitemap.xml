@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/database-acid/</loc>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/post/intro-to-cookie/</loc>
+    <lastmod>2017-04-11T11:11:22+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/exception-handling-with-php/</loc>
     <lastmod>2017-04-10T15:56:44+06:00</lastmod>
   </url>
@@ -32,6 +42,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/acid/</loc>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/bangla/</loc>
     <lastmod>2017-04-10T11:31:28+06:00</lastmod>
     <priority>0</priority>
@@ -44,7 +60,19 @@
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/tags/exception-handling/</loc>
+    <loc>https://cse031sust02.github.io/tags/cookie/</loc>
+    <lastmod>2017-04-11T11:11:22+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/database/</loc>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/exception/</loc>
     <lastmod>2017-04-10T15:56:44+06:00</lastmod>
     <priority>0</priority>
   </url>
@@ -93,13 +121,19 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-04-10T15:56:44+06:00</lastmod>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cse031sust02.github.io/tags/protocol/</loc>
     <lastmod>2017-04-10T11:31:28+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/rdbms/</loc>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,7 +156,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-04-10T15:56:44+06:00</lastmod>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
     <priority>0</priority>
   </url>
   

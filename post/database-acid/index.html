@@ -14,15 +14,15 @@
 
 
 
-<meta name="twitter:title" content="Exception Handling with PHP"/>
+<meta name="twitter:title" content="Database &amp; ACID properties"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@cse031sust02"/>
 
 
 
-  	<meta property="og:title" content="Exception Handling with PHP &middot; cse031sust02" />
+  	<meta property="og:title" content="Database &amp; ACID properties &middot; cse031sust02" />
   	<meta property="og:site_name" content="cse031sust02" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/exception-handling-with-php/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/database-acid/" />
 
     
         
@@ -34,16 +34,18 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-04-10T15:56:44&#43;06:00" />
+    <meta property="article:published_time" content="2017-04-11T11:13:09&#43;06:00" />
 
     
-    <meta property="article:tag" content="exception" />
+    <meta property="article:tag" content="database" />
     
-    <meta property="article:tag" content="php" />
+    <meta property="article:tag" content="acid" />
+    
+    <meta property="article:tag" content="rdbms" />
     
     
 
-    <title>Exception Handling with PHP &middot; cse031sust02</title>
+    <title>Database &amp; ACID properties &middot; cse031sust02</title>
 
     
     <meta name="description" content="" />
@@ -68,7 +70,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/exception-handling-with-php/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/database-acid/" />
 
     
       
@@ -99,23 +101,23 @@
         "description": still trying to find a bio
         
     },
-    "headline": Exception Handling with PHP,
-    "name": Exception Handling with PHP,
-    "wordCount": 366,
+    "headline": Database &amp; ACID properties,
+    "name": Database &amp; ACID properties,
+    "wordCount": 422,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/exception-handling-with-php/,
-    "datePublished": 2017-04-10T15:56Z,
-    "dateModified": 2017-04-10T15:56Z,
+    "url": https://cse031sust02.github.io/post/database-acid/,
+    "datePublished": 2017-04-11T11:13Z,
+    "dateModified": 2017-04-11T11:13Z,
     
-    "keywords": exception, php,
+    "keywords": database, acid, rdbms,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/exception-handling-with-php/
+        "@id": https://cse031sust02.github.io/post/database-acid/
     }
 }
     </script>
@@ -190,19 +192,21 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Exception Handling with PHP</h1>
+        <h1 class="post-title">Database &amp; ACID properties</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-04-10T15:56:44&#43;06:00">
-            Apr 10, 2017
+          <time class="post-date" datetime="2017-04-11T11:13:09&#43;06:00">
+            Apr 11, 2017
           </time>
         
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/exception/">#exception</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/database/">#database</a></span>
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/php/">#php</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/acid/">#acid</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/rdbms/">#rdbms</a></span>
          
         </section>
     </header>
@@ -212,76 +216,65 @@
 
 <hr />
 
-<h3 id="what-is-exception">What is Exception</h3>
+<h3 id="database">Database :</h3>
 
-<p>Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.</p>
-
-<p><strong>&lsquo;errors&rsquo; vs &lsquo;exceptions&rsquo; :</strong>
-Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)</p>
-
-<h3 id="exceptions-in-php">Exceptions in PHP</h3>
-
-<p>Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.</p>
-
-<p>Exceptions can be thrown and caught.</p>
-
-<p><strong>one basic example,</strong></p>
-
-<pre><code class="language-php">  try {
-    throw new Exception('An Exception');
-  } catch (Exception $e) {
-    echo $e-&gt;getMessage();
-  }
-  //output : An Exception
-</code></pre>
-
-<ul>
-<li><p><strong>throw</strong></p>
-
-<p>The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.</p></li>
-
-<li><p><strong>try</strong></p>
-
-<p>If there is a &lsquo;try&rsquo; block, then there must be atleast one &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block. (Otherwise PHP Fatal Error)</p></li>
-
-<li><p><strong>catch</strong></p>
-
-<p>When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block), there will be a PHP Fatal Error with an &ldquo;Uncaught Exception &hellip;&rdquo; message (unless a handler has been defined with set_exception_handler method).</p>
-
-<p>Exceptions can also be thrown (or re-thrown) within a catch block.</p></li>
-
-<li><p><strong>finally</strong></p>
-
-<p>Introduces in PHP 5.5. &lsquo;finally&rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)</p></li>
-</ul>
-
-<p><strong>another example with more details,</strong></p>
-
-<pre><code class="language-php">function inverse($number) {
-    if ($number==0) {
-        throw new Exception('Division by zero.');
-    }
-
-    return 1/$number;
-}
-
-try {
-    $random_number = rand(0,5);
-    $result = inverse($random_number);
-    // ONLY echo when no exception is thrown
-    echo $result;
-} catch (Exception $e) {
-    //ONLY echo if there is an exception
-    echo &quot;Exception Message :&quot;.$e-&gt;getMessage();
-} finally {
-    // always echo
-    echo &quot;I am always there&quot;;
-}
-</code></pre>
+<p>A database is a collection of data that is stored in an organized manner.</p>
 
 <blockquote>
-<p>Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - <a href="http://php.net/manual/en/language.exceptions.php">php.net</a></p>
+<p>the term &ldquo;database&rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.</p>
 </blockquote>
+
+<h3 id="database-models">Database Models :</h3>
+
+<p>A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.</p>
+
+<p>There are many kinds of data models. Such as Relational model, Network model, Entity-attribute-value model, Object-oriented database model and many more..</p>
+
+<p>DBMS popularity broken down by database model : <a href="http://db-engines.com/en/ranking">http://db-engines.com/en/ranking</a></p>
+
+<h3 id="dbms-rdbms">DBMS &amp; RDBMS :</h3>
+
+<p>DBMS stands for Database Management System. It is the software application to store and manage the data.</p>
+
+<p>RDBMS stands for Relational Database Management System. It is based on the relational model. The relational model has relationship between tables using primary keys, foreign keys and indexes.</p>
+
+<p>Example : MySQL, PostgreSQL, MongoDB, Microsoft SQL Server, Oracle etc.</p>
+
+<blockquote>
+<p>You can say that a RDBMS is an in an extension of a DBMS. The key difference is that RDBMS applications store data in a tabular form, while DBMS applications store data as files. Does that mean there are no tables in a DBMS? There can be, but there will be no “relation” between the tables, like in a RDBMS.</p>
+
+<p>src - <a href="https://blog.udemy.com/differences-between-dbms-and-rdbms/">https://blog.udemy.com/differences-between-dbms-and-rdbms/</a></p>
+</blockquote>
+
+<p>Most software products in the market today are both DBMS and RDBMS compliant.</p>
+
+<hr />
+
+<h3 id="what-is-acid">What is ACID? :</h3>
+
+<p>ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).</p>
+
+<p><strong>Atomicity</strong> :  If one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.</p>
+
+<p><strong>Consistency</strong> : Any data written to the database must be valid according to all defined rules.</p>
+
+<p><strong>Isolation</strong> : One transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait until the other is finished.</p>
+
+<p><strong>Durability</strong> : Once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk).</p>
+
+<blockquote>
+<p><img src="https://s3-us-west-1.amazonaws.com/morpheus-staging/system/spud_media/332/original/acidoverwiew.png?1422558433" alt="Foo" /></p>
+
+<p><strong>Source :</strong> <a href="https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-">morpheusdata</a></p>
+</blockquote>
+
+<h3 id="acid-compliants">ACID compliants :</h3>
+
+<p>Oracle is ACID compliant.</p>
+
+<p>PostgreSQL is <a href="https://www.postgresql.org/about">ACID compliant</a></p>
+
+<p>MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database. Source : <a href="http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database">Stackoverflow</a></p>
 
     </section>
 
@@ -313,19 +306,19 @@ try {
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Exception%20Handling%20with%20PHP&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Database%20%26%20ACID%20properties&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdatabase-acid%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdatabase-acid%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f&amp;description=Exception%20Handling%20with%20PHP"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdatabase-acid%2f&amp;description=Database%20%26%20ACID%20properties"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fexception-handling-with-php%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdatabase-acid%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -338,7 +331,7 @@ try {
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/exception-handling-with-php\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/database-acid\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -358,17 +351,10 @@ try {
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/intro-to-cookie/">
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/intro-to-cookie/">
           <section class="post">
               <h2>Introduction to Cookie</h2>
-              
-          </section>
-      </a>
-  
-  
-      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/payment-using-stripe/">
-          <section class="post">
-              <h2>Accepting payments on your site using Stripe</h2>
           </section>
       </a>
   

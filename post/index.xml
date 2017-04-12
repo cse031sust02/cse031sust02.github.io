@@ -7,8 +7,154 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Mon, 10 Apr 2017 15:56:44 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 11 Apr 2017 11:13:09 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Database &amp; ACID properties</title>
+      <link>https://cse031sust02.github.io/post/database-acid/</link>
+      <pubDate>Tue, 11 Apr 2017 11:13:09 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/database-acid/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;database&#34;&gt;Database :&lt;/h3&gt;
+
+&lt;p&gt;A database is a collection of data that is stored in an organized manner.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;database-models&#34;&gt;Database Models :&lt;/h3&gt;
+
+&lt;p&gt;A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.&lt;/p&gt;
+
+&lt;p&gt;There are many kinds of data models. Such as Relational model, Network model, Entity-attribute-value model, Object-oriented database model and many more..&lt;/p&gt;
+
+&lt;p&gt;DBMS popularity broken down by database model : &lt;a href=&#34;http://db-engines.com/en/ranking&#34;&gt;http://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h3&gt;
+
+&lt;p&gt;DBMS stands for Database Management System. It is the software application to store and manage the data.&lt;/p&gt;
+
+&lt;p&gt;RDBMS stands for Relational Database Management System. It is based on the relational model. The relational model has relationship between tables using primary keys, foreign keys and indexes.&lt;/p&gt;
+
+&lt;p&gt;Example : MySQL, PostgreSQL, MongoDB, Microsoft SQL Server, Oracle etc.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You can say that a RDBMS is an in an extension of a DBMS. The key difference is that RDBMS applications store data in a tabular form, while DBMS applications store data as files. Does that mean there are no tables in a DBMS? There can be, but there will be no “relation” between the tables, like in a RDBMS.&lt;/p&gt;
+
+&lt;p&gt;src - &lt;a href=&#34;https://blog.udemy.com/differences-between-dbms-and-rdbms/&#34;&gt;https://blog.udemy.com/differences-between-dbms-and-rdbms/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Most software products in the market today are both DBMS and RDBMS compliant.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h3&gt;
+
+&lt;p&gt;ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; :  If one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Consistency&lt;/strong&gt; : Any data written to the database must be valid according to all defined rules.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Isolation&lt;/strong&gt; : One transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait until the other is finished.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Durability&lt;/strong&gt; : Once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3-us-west-1.amazonaws.com/morpheus-staging/system/spud_media/332/original/acidoverwiew.png?1422558433&#34; alt=&#34;Foo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h3&gt;
+
+&lt;p&gt;Oracle is ACID compliant.&lt;/p&gt;
+
+&lt;p&gt;PostgreSQL is &lt;a href=&#34;https://www.postgresql.org/about&#34;&gt;ACID compliant&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database. Source : &lt;a href=&#34;http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database&#34;&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Cookie</title>
+      <link>https://cse031sust02.github.io/post/intro-to-cookie/</link>
+      <pubDate>Tue, 11 Apr 2017 11:11:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/intro-to-cookie/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-a-http-cookie&#34;&gt;What is a HTTP Cookie?&lt;/h3&gt;
+
+&lt;p&gt;Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.&lt;/p&gt;
+
+&lt;p&gt;It is also called web cookie, Internet cookie, browser cookie or simply cookie.&lt;/p&gt;
+
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
+
+&lt;p&gt;Cookies are mainly used for these purposes&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Session management (user logins, shopping carts)&lt;/li&gt;
+&lt;li&gt;Personalization (user preferences)&lt;/li&gt;
+&lt;li&gt;Tracking (analyzing user behavior)
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;source : &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;how-server-client-sends-cookie&#34;&gt;How server/client sends cookie?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Server to Browser&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.&lt;/p&gt;
+
+&lt;p&gt;for example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;expires date time is in GMT.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &amp;lsquo;session cookies&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To set cookie using &lt;a href=&#34;http://php.net/manual/en/function.setcookie.php&#34;&gt;php&lt;/a&gt;,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;setcookie(&amp;quot;mycookie&amp;quot;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Browser to the server&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The browser will send back all previously stored cookies to the server using the Cookie header.&lt;/p&gt;
+
+&lt;p&gt;for example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GET /my_page.html HTTP/1.1
+Host: www.example.com
+Cookie: MyCookieName=MyValue 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details, please check &lt;a href=&#34;http://www.cookiecentral.com/faq/#3.2&#34;&gt;http://www.cookiecentral.com/faq/#3.2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;secuirity&#34;&gt;Secuirity&lt;/h3&gt;
+
+&lt;p&gt;Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Exception Handling with PHP</title>
