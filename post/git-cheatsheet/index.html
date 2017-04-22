@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="My Personal Git Cheat Sheet"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@cse031sust02"/>
+
+
+
+  	<meta property="og:title" content="My Personal Git Cheat Sheet &middot; cse031sust02" />
+  	<meta property="og:site_name" content="cse031sust02" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/git-cheatsheet/" />
+
+    
+        
+            <meta property="og:image" content="https://cse031sust02.github.io/images/1.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="og:image" content="https://cse031sust02.github.io/" />
+    <meta property="article:published_time" content="2017-04-11T11:11:48&#43;06:00" />
+
+    
+    <meta property="article:tag" content="git" />
+    
+    <meta property="article:tag" content="cheatsheet" />
+    
+    
+
+    <title>My Personal Git Cheat Sheet &middot; cse031sust02</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://cse031sust02.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://cse031sust02.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/nav.css" />
+
+    
+
+    
+      
+          <link href="https://cse031sust02.github.io/index.xml" rel="alternate" type="application/rss+xml" title="cse031sust02" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.19" />
+
+    <link rel="canonical" href="https://cse031sust02.github.io/post/git-cheatsheet/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": https://cse031sust02.github.io,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": still trying to find a bio
+        
+    },
+    "headline": My Personal Git Cheat Sheet,
+    "name": My Personal Git Cheat Sheet,
+    "wordCount": 870,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://cse031sust02.github.io/post/git-cheatsheet/,
+    "datePublished": 2017-04-11T11:11Z,
+    "dateModified": 2017-04-11T11:11Z,
+    
+    "keywords": git, cheatsheet,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://cse031sust02.github.io/post/git-cheatsheet/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-67303858-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://cse031sust02.github.io/">Blog</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://cse031sust02.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">My Personal Git Cheat Sheet</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-04-11T11:11:48&#43;06:00">
+            Apr 11, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/git/">#git</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/cheatsheet/">#cheatsheet</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<h3 id="what-is-git">What is GIT?</h3>
+
+<hr />
+
+<p>Git is a free and open source distributed version control system.</p>
+
+<p>Why we use VCS (version control system)?</p>
+
+<ul>
+<li><p>Code Revision</p></li>
+
+<li><p>Like a Time Machine</p></li>
+
+<li><p>Multiple Developer</p></li>
+</ul>
+
+<p>Why GIT (among other VCS)?</p>
+
+<ul>
+<li>Can work locally without any central server</li>
+</ul>
+
+<h3 id="setup">Setup</h3>
+
+<hr />
+
+<h4 id="install">Install</h4>
+
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+
+<h4 id="configuration">Configuration</h4>
+
+<p>Use <strong><code>git config</code></strong> command to get and set configuration variables</p>
+
+<ul>
+<li><p><strong>Config file locations</strong></p>
+
+<ul>
+<li><p>&ndash;system : configuaration for every user on the system(OS) and all their repositories.</p></li>
+
+<li><p>&ndash;global : configuarations specific to your user. (OS user)</p></li>
+
+<li><p>&ndash;local : configuarations for current repository.</p></li>
+</ul></li>
+
+<li><p><strong>Set Config</strong></p></li>
+</ul>
+
+<pre><code>$ git config --global user.name &quot;John Doe&quot;
+$ git config --global user.email &quot;johndoe@example.com&quot;
+</code></pre>
+
+<ul>
+<li><strong>Get Config</strong></li>
+</ul>
+
+<pre><code>$ git config --list
+$ git config --global --list
+$ git config --system --list
+</code></pre>
+
+<blockquote>
+<p><strong>Extra</strong></p>
+
+<ul>
+<li><p><a href="http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html">What&rsquo;s Inside .git Directory?</a></p></li>
+
+<li><p><strong>Editor</strong> : By default, Git uses whatever you’ve set as your default text editor ($VISUAL or $EDITOR) or else falls back to the vi editor to create and edit your commit and tag messages.for example, to use Sublime as the editor, <code>git config --global core.editor &quot;subl -n -w&quot;</code></p></li>
+
+<li><p><strong>aliases</strong> : we can also easily set up an alias for each command using git config.</p></li>
+</ul>
+</blockquote>
+
+<h4 id="initialization-create-a-new-repository">Initialization (create a new repository)</h4>
+
+<p>To initialize git on a project, simply use <code>git init</code> command.
+( <em>a hidden folder named <code>.git</code> will be created in the project&rsquo;s root directory</em> )</p>
+
+<p><em>To get a copy of an existing Git repository, use the <code>git clone</code> command.</em></p>
+
+<h3 id="lifecycle">Lifecycle</h3>
+
+<hr />
+
+<p><img src="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="Lifecycle" /></p>
+
+<blockquote>
+<p><strong>source</strong> : <a href="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png">https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png</a></p>
+</blockquote>
+
+<p>Files has mainly 4 statuses :</p>
+
+<ol>
+<li><p><strong>untracked</strong> : at first any new file is untracked.</p>
+
+<p>use <code>git add</code> command to stage the files</p></li>
+
+<li><p><strong>staged</strong> : after we use &lsquo;git add&rsquo; command, the file is statged.</p>
+
+<p>use <code>git commit</code> command to commit the staged files</p></li>
+
+<li><p><strong>unchanged</strong> : If the file is not changed since its last commit, the file is unchanged.</p></li>
+
+<li><p><strong>unstaged</strong> : If there is any modification to that staged or unchanged file, that becomes <code>unstaged</code> again.</p>
+
+<p>again use <code>git add</code> command to stage those files, and &lsquo;commit&rsquo; command to commit the file.</p></li>
+</ol>
+
+<p><em>we can use <code>git commit -am &quot;commit message&quot;</code> command to &lsquo;add unstaged files and commit&rsquo; in a single command. more details on the commit section.</em></p>
+
+<h3 id="commands">Commands</h3>
+
+<hr />
+
+<h4 id="git-add">git add</h4>
+
+<p>Use <code>git add</code> command to track the untracked files (put it on the stage).</p>
+
+<ul>
+<li><p>add single file : <code>git add file.ext</code></p></li>
+
+<li><p>add all files : <code>git add .</code> or <code>git add -A</code> . <a href="http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add">Difference?</a></p></li>
+</ul>
+
+<h4 id="git-commit">git commit</h4>
+
+<p>Commits the staged snapshot to the project history.</p>
+
+<p>Different ways to commit,</p>
+
+<ul>
+<li><p>commit all staged files : <code>$ git commit</code></p>
+
+<p><em>This will open an editor, write your commit message and exit. To write the commit message directly in command line, use the <code>-m</code> flag. e.g, <code>$ git commit -m &quot;My Commit Message&quot;</code></em></p></li>
+
+<li><p>commit all staged and unstaged files : <code>$ git commit -am &quot;commit message&quot;</code></p>
+
+<p><em>when we use &lsquo;-a&rsquo; flag, it includes all changed files. Git will automatically stage every unstaged files before doing the commit. note that, untracked files will not be commited using this command.</em></p></li>
+
+<li><p>commit single file :  <code>$ git commit -m &quot;commit message&quot; FILE_NAME</code></p></li>
+
+<li><p>commit multiple files : <code>git commit -m &quot;commit message&quot; FILE1, FILE2..</code></p></li>
+</ul>
+
+<h4 id="git-log">git log</h4>
+
+<p>Show commit logs</p>
+
+<p>use <code>git log</code> command to show all the commits from the very beginning (for currently active branch).</p>
+
+<p>e.g,</p>
+
+<pre><code>commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
+Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
+Date:   Sat Apr 22 12:26:11 2017 +0600
+
+    Registration Complete
+
+commit eea5997a17f02e78d78ccf69a233123192a73822
+Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
+Date:   Thu Apr 20 14:13:18 2017 +0600
+
+    Desing Complete
+
+commit 178d3c00a5e55cd0f6ba0170a9dd58dda24561cf
+Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
+Date:   Thu Apr 20 11:35:36 2017 +0600
+
+    First Commit
+
+</code></pre>
+
+<p>There are many different options avalaible for showing logs in different ways.</p>
+
+<p>for example,</p>
+
+<ul>
+<li><p>Most recent commits : <code>git log -3</code> (last 3 commits)</p></li>
+
+<li><p>Show commits in one line : <code>git log --pretty=oneline</code></p></li>
+
+<li><p>Show commits for a specific file : <code>git log test.txt</code></p></li>
+
+<li><p>Show commits by any specific author : <code>git log --author=talha</code></p></li>
+
+<li><p>Show in a pretty format : <code>git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative</code> [<em>src : <a href="https://coderwall.com/lordmonkey/comments">Coderwall</a></em>]</p></li>
+</ul>
+
+<p>for more details, please use the command <code>git log --help</code>.</p>
+
+<h4 id="git-show">git show :</h4>
+
+<p>shows the changes of a particular commit*</p>
+
+<pre><code>$ git show COMMIT_HASH
+</code></pre>
+
+<p>*<em>only first 4-5 character of COMMIT_HASH is enough!</em></p>
+
+<p>If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)</p>
+
+<blockquote>
+<p>*<code>git show</code> can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit <a href="https://git-scm.com/docs/git-show">official link</a></p>
+</blockquote>
+
+<h4 id="git-diff">git diff:</h4>
+
+<p>Show changes between commits, commit and working tree, etc</p>
+
+<p>we usually use the <code>git status</code> command to see which files were currently changed. To understand how they were changed in detail, we can use <code>git diff</code>.</p>
+
+<ul>
+<li><p><strong><code>git diff</code></strong> : show changes only that are unstaged.</p>
+
+<ul>
+<li><p>all unstaged files : <code>$ git diff</code></p></li>
+
+<li><p>single unstaged file : <code>$ git diff FILENAME</code></p></li>
+
+<li><p>multiple unstaged file : <code>$ git diff FILE1 FILE2</code></p></li>
+</ul></li>
+
+<li><p><strong><code>git diff --staged</code></strong> : show changes only that are staged.</p>
+
+<ul>
+<li><p>all staged files : <code>$ git diff --staged</code></p></li>
+
+<li><p>single staged file : <code>$ git diff --staged FILENAME</code></p></li>
+
+<li><p>multiple staged file : <code>$ git diff --staged FILE1 FILE2</code></p></li>
+</ul>
+
+<p><em>we can use <code>--cached</code> instead of <code>--staged</code> (<code>--staged</code> is a synonym of <code>--cached</code>).</em></p></li>
+
+<li><p><strong><code>git diff HEAD</code></strong> : show changes that are tracked (staged + unstaged).</p></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://cse031sust02.github.io/">Talha Ibne Imam</a></h4>
+  
+  <p>still trying to find a bio</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://cse031sust02.github.io">https://cse031sust02.github.io</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=My%20Personal%20Git%20Cheat%20Sheet&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fgit-cheatsheet%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fgit-cheatsheet%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fgit-cheatsheet%2f&amp;description=My%20Personal%20Git%20Cheat%20Sheet"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fgit-cheatsheet%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'cse031sust02';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/git-cheatsheet\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/database-acid/">
+          <section class="post">
+              <h2>Database &amp; ACID properties</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/intro-to-cookie/">
+          <section class="post">
+              <h2>Introduction to Cookie</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">cse031sust02</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/index.js"></script>
+    
+</body>
+</html>
+
