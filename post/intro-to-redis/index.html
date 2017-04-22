@@ -14,15 +14,15 @@
 
 
 
-<meta name="twitter:title" content="Accepting payments on your site using Stripe"/>
+<meta name="twitter:title" content="intro to redis"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@cse031sust02"/>
 
 
 
-  	<meta property="og:title" content="Accepting payments on your site using Stripe &middot; cse031sust02" />
+  	<meta property="og:title" content="intro to redis &middot; cse031sust02" />
   	<meta property="og:site_name" content="cse031sust02" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/payment-using-stripe/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/intro-to-redis/" />
 
     
         
@@ -34,16 +34,16 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-04-10T15:27:28&#43;06:00" />
+    <meta property="article:published_time" content="2017-04-22T16:13:16&#43;06:00" />
 
     
-    <meta property="article:tag" content="stripe" />
+    <meta property="article:tag" content="redis" />
     
-    <meta property="article:tag" content="payment" />
+    <meta property="article:tag" content="noSQL" />
     
     
 
-    <title>Accepting payments on your site using Stripe &middot; cse031sust02</title>
+    <title>intro to redis &middot; cse031sust02</title>
 
     
     <meta name="description" content="" />
@@ -68,7 +68,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/payment-using-stripe/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/intro-to-redis/" />
 
     
       
@@ -99,23 +99,23 @@
         "description": still trying to find a bio
         
     },
-    "headline": Accepting payments on your site using Stripe,
-    "name": Accepting payments on your site using Stripe,
-    "wordCount": 348,
-    "timeRequired": "PT2M",
+    "headline": intro to redis,
+    "name": intro to redis,
+    "wordCount": 4,
+    "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/payment-using-stripe/,
-    "datePublished": 2017-04-10T15:27Z,
-    "dateModified": 2017-04-10T15:27Z,
+    "url": https://cse031sust02.github.io/post/intro-to-redis/,
+    "datePublished": 2017-04-22T16:13Z,
+    "dateModified": 2017-04-22T16:13Z,
     
-    "keywords": stripe, payment,
+    "keywords": redis, noSQL,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/payment-using-stripe/
+        "@id": https://cse031sust02.github.io/post/intro-to-redis/
     }
 }
     </script>
@@ -190,87 +190,25 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Accepting payments on your site using Stripe</h1>
+        <h1 class="post-title">intro to redis</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-04-10T15:27:28&#43;06:00">
-            Apr 10, 2017
+          <time class="post-date" datetime="2017-04-22T16:13:16&#43;06:00">
+            Apr 22, 2017
           </time>
         
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/stripe/">#stripe</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/redis/">#redis</a></span>
          
-          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/payment/">#payment</a></span>
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/nosql/">#noSQL</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      
-
-<hr />
-
-<h4 id="what-is-stripe-https-stripe-com">What is <a href="https://stripe.com/">Stripe</a></h4>
-
-<p>A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.</p>
-
-<hr />
-
-<h4 id="payment-types">Payment types</h4>
-
-<p>Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.</p>
-
-<hr />
-
-<h4 id="accepting-payments-with-cards">Accepting Payments with Cards</h4>
-
-<p>Using card information with Stripe is a two-step process</p>
-
-<ol>
-<li>Securely collect payment information using tokenization</li>
-<li>Use the payment information in a charge request or save it for later</li>
-</ol>
-
-<p><strong>Step 1. Securely collect payment information using tokenization</strong></p>
-
-<p>Stripe provides three methods for tokenizing customer’s payment information over HTTPS
-Checkout, Stripe.js &amp; Mobile SDKs</p>
-
-<ol>
-<li><p><a href="https://stripe.com/checkout">Checkout</a></p>
-
-<p>The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.</p>
-
-<p>In addition to credit and debit cards, Checkout supports Alipay and Bitcoin too. more types of payment coming soon.</p>
-
-<p>Checkout has 12 languages to pay with a localized experience.</p>
-
-<p>Embedding checkout in your site
-<a href="https://stripe.com/docs/checkout/tutorial">https://stripe.com/docs/checkout/tutorial</a></p></li>
-
-<li><p><a href="https://stripe.com/docs/quickstart#elements">Elements</a></p>
-
-<p>If we want to customize the payment form for our need, then we can make use of Stripe Elements.</p></li>
-
-<li><p><a href="https://stripe.com/docs/mobile">Mobile SDKs</a></p></li>
-</ol>
-
-<p><strong>Step 2. Use the tokenized payment information</strong></p>
-
-<p>While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,</p>
-
-<ul>
-<li><p><strong>Charging the customer immediately</strong></p>
-
-<p>We can create a one-time charge request to charge a customer’s card.
-The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. <a href="https://stripe.com/docs/quickstart#charge-immediately">more details..</a></p></li>
-
-<li><p><strong>Saving the customer’s card information</strong></p>
-
-<p>If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. <a href="https://stripe.com/docs/quickstart#saving-card-information">more details..</a></p></li>
-</ul>
+      <p>redis into goes here</p>
 
     </section>
 
@@ -302,19 +240,19 @@ The API request will contain the token, currency, amount to charge, and any addi
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Accepting%20payments%20on%20your%20site%20using%20Stripe&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=intro%20to%20redis&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f&amp;description=Accepting%20payments%20on%20your%20site%20using%20Stripe"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f&amp;description=intro%20to%20redis"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fpayment-using-stripe%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -327,7 +265,7 @@ The API request will contain the token, currency, amount to charge, and any addi
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/payment-using-stripe\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/intro-to-redis\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -347,17 +285,10 @@ The API request will contain the token, currency, amount to charge, and any addi
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://cse031sust02.github.io/post/exception-handling-with-php/">
-          <section class="post">
-              <h2>Exception Handling with PHP</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/protocol-basics/">
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/database-acid/">
           <section class="post">
-              <h2>HTTP প্রোটোকল  এর বেসিক কাহিনী!</h2>
+              <h2>Database &amp; ACID properties</h2>
           </section>
       </a>
   
