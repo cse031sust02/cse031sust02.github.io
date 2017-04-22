@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/post/git-cheatsheet/</loc>
+    <lastmod>2017-04-11T11:11:48+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/intro-to-cookie/</loc>
     <lastmod>2017-04-11T11:11:22+06:00</lastmod>
   </url>
@@ -60,6 +65,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/cheatsheet/</loc>
+    <lastmod>2017-04-11T11:11:48+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/cookie/</loc>
     <lastmod>2017-04-11T11:11:22+06:00</lastmod>
     <priority>0</priority>
@@ -74,6 +85,12 @@
   <url>
     <loc>https://cse031sust02.github.io/tags/exception/</loc>
     <lastmod>2017-04-10T15:56:44+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/git/</loc>
+    <lastmod>2017-04-11T11:11:48+06:00</lastmod>
     <priority>0</priority>
   </url>
   
