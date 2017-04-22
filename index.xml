@@ -11,12 +11,101 @@
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>intro to redis</title>
+      <title>A very short introduction to redis</title>
       <link>https://cse031sust02.github.io/post/intro-to-redis/</link>
       <pubDate>Sat, 22 Apr 2017 16:13:16 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/intro-to-redis/</guid>
-      <description>&lt;p&gt;redis into goes here&lt;/p&gt;
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-redis&#34;&gt;What is Redis? :&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Redis is an in-memory data structure server. Which can be used as database, cache and message broker.&lt;/p&gt;
+
+&lt;p&gt;Redis = REmote DIctionary Server.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;a key-value store is commonly known today as a dictionary.
+ &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&#34;data-structure-server&#34;&gt;- Data Structure Server&lt;/h6&gt;
+
+&lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
+
+&lt;p&gt;supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
+
+&lt;p&gt;more details &amp;gt;
+&lt;a href=&#34;https://redis.io/topics/data-types&#34;&gt;https://redis.io/topics/data-types&lt;/a&gt;
+&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=&#34;popular-nosql-database&#34;&gt;- Popular noSQL Database&lt;/h6&gt;
+
+&lt;p&gt;It is a very popular noSQL database. Redis is often ranked the most popular key-value database.
+- more details :&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Redis&#34;&gt;https://en.wikipedia.org/wiki/Redis&lt;/a&gt;
+&lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;http://db-engines.com/en/ranking/key-value+store&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=&#34;message-broker&#34;&gt;- Message Broker&lt;/h6&gt;
+
+&lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received.&lt;/p&gt;
+
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
+
+&lt;p&gt;Redis is a fantastic choice if you want a highly scalable data store shared by multiple processes, multiple applications, or multiple servers.&lt;/p&gt;
+
+&lt;h3 id=&#34;performances-benchmarks&#34;&gt;Performances &amp;amp; Benchmarks&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/benchmarks&#34;&gt;https://redis.io/topics/benchmarks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis#performance--benchmarks&#34;&gt;https://github.com/dwyl/learn-redis#performance--benchmarks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;let-s-play&#34;&gt;Let&amp;rsquo;s Play&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&#34;install&#34;&gt;Install&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=&#34;try&#34;&gt;Try&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://try.redis.io/&#34;&gt;http://try.redis.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis&#34;&gt;https://github.com/dwyl/learn-redis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;all-commands&#34;&gt;All Commands&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=&#34;cli&#34;&gt;CLI&lt;/h6&gt;
+
+&lt;p&gt;After we install Redis on our local pc, open the Redis CLI using the &lt;code&gt;redis-cli&lt;/code&gt;,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ redis-cli
+127.0.0.1:6379&amp;gt; keys *
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;gui&#34;&gt;GUI&lt;/h6&gt;
+
+&lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Redis Commander
+&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;https://github.com/joeferner/redis-commander&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Redismin
+&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;https://www.redsmin.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Redis Desktop Manager
+&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;http://docs.redisdesktop.com/en/latest/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
