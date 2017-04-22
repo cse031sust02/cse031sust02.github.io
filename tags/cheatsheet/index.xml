@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cheatsheet on cse031sust02</title>
+    <link>https://cse031sust02.github.io/tags/cheatsheet/index.xml</link>
+    <description>Recent content in Cheatsheet on cse031sust02</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - 2017</copyright>
+    <atom:link href="https://cse031sust02.github.io/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My Personal Git Cheat Sheet</title>
+      <link>https://cse031sust02.github.io/post/git-cheatsheet/</link>
+      <pubDate>Tue, 11 Apr 2017 11:11:48 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/git-cheatsheet/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-git&#34;&gt;What is GIT?&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Git is a free and open source distributed version control system.&lt;/p&gt;
+
+&lt;p&gt;Why we use VCS (version control system)?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Code Revision&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Like a Time Machine&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Multiple Developer&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Why GIT (among other VCS)?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Can work locally without any central server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;install&#34;&gt;Install&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;Use &lt;strong&gt;&lt;code&gt;git config&lt;/code&gt;&lt;/strong&gt; command to get and set configuration variables&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Config file locations&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;ndash;system : configuaration for every user on the system(OS) and all their repositories.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;ndash;global : configuarations specific to your user. (OS user)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;ndash;local : configuarations for current repository.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Set Config&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
+$ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Get Config&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --list
+$ git config --global --list
+$ git config --system --list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html&#34;&gt;What&amp;rsquo;s Inside .git Directory?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Editor&lt;/strong&gt; : By default, Git uses whatever you’ve set as your default text editor ($VISUAL or $EDITOR) or else falls back to the vi editor to create and edit your commit and tag messages.for example, to use Sublime as the editor, &lt;code&gt;git config --global core.editor &amp;quot;subl -n -w&amp;quot;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;aliases&lt;/strong&gt; : we can also easily set up an alias for each command using git config.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;initialization-create-a-new-repository&#34;&gt;Initialization (create a new repository)&lt;/h4&gt;
+
+&lt;p&gt;To initialize git on a project, simply use &lt;code&gt;git init&lt;/code&gt; command.
+( &lt;em&gt;a hidden folder named &lt;code&gt;.git&lt;/code&gt; will be created in the project&amp;rsquo;s root directory&lt;/em&gt; )&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;To get a copy of an existing Git repository, use the &lt;code&gt;git clone&lt;/code&gt; command.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;lifecycle&#34;&gt;Lifecycle&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34; alt=&#34;Lifecycle&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34;&gt;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;untracked&lt;/strong&gt; : at first any new file is untracked.&lt;/p&gt;
+
+&lt;p&gt;use &lt;code&gt;git add&lt;/code&gt; command to stage the files&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;staged&lt;/strong&gt; : after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
+
+&lt;p&gt;use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged files&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;unchanged&lt;/strong&gt; : If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;unstaged&lt;/strong&gt; : If there is any modification to that staged or unchanged file, that becomes &lt;code&gt;unstaged&lt;/code&gt; again.&lt;/p&gt;
+
+&lt;p&gt;again use &lt;code&gt;git add&lt;/code&gt; command to stage those files, and &amp;lsquo;commit&amp;rsquo; command to commit the file.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;we can use &lt;code&gt;git commit -am &amp;quot;commit message&amp;quot;&lt;/code&gt; command to &amp;lsquo;add unstaged files and commit&amp;rsquo; in a single command. more details on the commit section.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;commands&#34;&gt;Commands&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;git-add&#34;&gt;git add&lt;/h4&gt;
+
+&lt;p&gt;Use &lt;code&gt;git add&lt;/code&gt; command to track the untracked files (put it on the stage).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;add single file : &lt;code&gt;git add file.ext&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;add all files : &lt;code&gt;git add .&lt;/code&gt; or &lt;code&gt;git add -A&lt;/code&gt; . &lt;a href=&#34;http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add&#34;&gt;Difference?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;git-commit&#34;&gt;git commit&lt;/h4&gt;
+
+&lt;p&gt;Commits the staged snapshot to the project history.&lt;/p&gt;
+
+&lt;p&gt;Different ways to commit,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;commit all staged files : &lt;code&gt;$ git commit&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This will open an editor, write your commit message and exit. To write the commit message directly in command line, use the &lt;code&gt;-m&lt;/code&gt; flag. e.g, &lt;code&gt;$ git commit -m &amp;quot;My Commit Message&amp;quot;&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;commit all staged and unstaged files : &lt;code&gt;$ git commit -am &amp;quot;commit message&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;when we use &amp;lsquo;-a&amp;rsquo; flag, it includes all changed files. Git will automatically stage every unstaged files before doing the commit. note that, untracked files will not be commited using this command.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;commit single file :  &lt;code&gt;$ git commit -m &amp;quot;commit message&amp;quot; FILE_NAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;commit multiple files : &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot; FILE1, FILE2..&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;git-log&#34;&gt;git log&lt;/h4&gt;
+
+&lt;p&gt;Show commit logs&lt;/p&gt;
+
+&lt;p&gt;use &lt;code&gt;git log&lt;/code&gt; command to show all the commits from the very beginning (for currently active branch).&lt;/p&gt;
+
+&lt;p&gt;e.g,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
+Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
+Date:   Sat Apr 22 12:26:11 2017 +0600
+
+    Registration Complete
+
+commit eea5997a17f02e78d78ccf69a233123192a73822
+Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
+Date:   Thu Apr 20 14:13:18 2017 +0600
+
+    Desing Complete
+
+commit 178d3c00a5e55cd0f6ba0170a9dd58dda24561cf
+Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
+Date:   Thu Apr 20 11:35:36 2017 +0600
+
+    First Commit
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are many different options avalaible for showing logs in different ways.&lt;/p&gt;
+
+&lt;p&gt;for example,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Most recent commits : &lt;code&gt;git log -3&lt;/code&gt; (last 3 commits)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Show commits in one line : &lt;code&gt;git log --pretty=oneline&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Show commits for a specific file : &lt;code&gt;git log test.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Show commits by any specific author : &lt;code&gt;git log --author=talha&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Show in a pretty format : &lt;code&gt;git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&#39; --abbrev-commit --date=relative&lt;/code&gt; [&lt;em&gt;src : &lt;a href=&#34;https://coderwall.com/lordmonkey/comments&#34;&gt;Coderwall&lt;/a&gt;&lt;/em&gt;]&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;for more details, please use the command &lt;code&gt;git log --help&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;git-show&#34;&gt;git show :&lt;/h4&gt;
+
+&lt;p&gt;shows the changes of a particular commit*&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git show COMMIT_HASH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;*&lt;code&gt;git show&lt;/code&gt; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;git-diff&#34;&gt;git diff:&lt;/h4&gt;
+
+&lt;p&gt;Show changes between commits, commit and working tree, etc&lt;/p&gt;
+
+&lt;p&gt;we usually use the &lt;code&gt;git status&lt;/code&gt; command to see which files were currently changed. To understand how they were changed in detail, we can use &lt;code&gt;git diff&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/strong&gt; : show changes only that are unstaged.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;all unstaged files : &lt;code&gt;$ git diff&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;single unstaged file : &lt;code&gt;$ git diff FILENAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;multiple unstaged file : &lt;code&gt;$ git diff FILE1 FILE2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff --staged&lt;/code&gt;&lt;/strong&gt; : show changes only that are staged.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;all staged files : &lt;code&gt;$ git diff --staged&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;single staged file : &lt;code&gt;$ git diff --staged FILENAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;multiple staged file : &lt;code&gt;$ git diff --staged FILE1 FILE2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;we can use &lt;code&gt;--cached&lt;/code&gt; instead of &lt;code&gt;--staged&lt;/code&gt; (&lt;code&gt;--staged&lt;/code&gt; is a synonym of &lt;code&gt;--cached&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt; : show changes that are tracked (staged + unstaged).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
