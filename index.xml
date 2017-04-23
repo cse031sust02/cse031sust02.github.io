@@ -88,10 +88,10 @@
 
 &lt;h6 id=&#34;cli&#34;&gt;CLI&lt;/h6&gt;
 
-&lt;p&gt;After we install Redis on our local pc, open the Redis CLI using the &lt;code&gt;redis-cli&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;After we install Redis on our local pc, we can start using the Redis CLI with the &lt;code&gt;redis-cli&lt;/code&gt; command,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ redis-cli
-127.0.0.1:6379&amp;gt; keys *
+127.0.0.1:6379&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h6 id=&#34;gui&#34;&gt;GUI&lt;/h6&gt;
@@ -288,22 +288,26 @@ $ git config --system --list
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;untracked&lt;/strong&gt; : at first any new file is untracked.&lt;/p&gt;
 
-&lt;p&gt;use &lt;code&gt;git add&lt;/code&gt; command to stage the files&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;staged&lt;/strong&gt; : after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
 
-&lt;p&gt;use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged files&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;unchanged&lt;/strong&gt; : If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;unstaged&lt;/strong&gt; : If there is any modification to that staged or unchanged file, that becomes &lt;code&gt;unstaged&lt;/code&gt; again.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;unstaged&lt;/strong&gt; : If there is any modification to that staged or unchanged file, that file becomes &lt;code&gt;unstaged&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;again use &lt;code&gt;git add&lt;/code&gt; command to stage those files, and &amp;lsquo;commit&amp;rsquo; command to commit the file.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/em&gt; *&lt;/p&gt;
+
+&lt;p&gt;*&lt;em&gt;&lt;code&gt;git checkout&lt;/code&gt; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;em&gt;we can use &lt;code&gt;git commit -am &amp;quot;commit message&amp;quot;&lt;/code&gt; command to &amp;lsquo;add unstaged files and commit&amp;rsquo; in a single command. more details on the commit section.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;commands&#34;&gt;Commands&lt;/h3&gt;
+&lt;h3 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -335,6 +339,17 @@ $ git config --system --list
 &lt;li&gt;&lt;p&gt;commit single file :  &lt;code&gt;$ git commit -m &amp;quot;commit message&amp;quot; FILE_NAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;commit multiple files : &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot; FILE1, FILE2..&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ammend the previous commit : &lt;code&gt;git commit --amend&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;e.g,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git commit -m &#39;initial commit&#39;
+$ git add forgotten_file
+$ git commit --amend
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;*&lt;em&gt;do not use `&amp;ndash;amend&amp;rsquo; if you already pushed your commit.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;git-log&#34;&gt;git log&lt;/h4&gt;
@@ -355,7 +370,7 @@ commit eea5997a17f02e78d78ccf69a233123192a73822
 Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
 Date:   Thu Apr 20 14:13:18 2017 +0600
 
-    Desing Complete
+    Design Complete
 
 commit 178d3c00a5e55cd0f6ba0170a9dd58dda24561cf
 Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
@@ -385,7 +400,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;h4 id=&#34;git-show&#34;&gt;git show :&lt;/h4&gt;
 
-&lt;p&gt;shows the changes of a particular commit*&lt;/p&gt;
+&lt;p&gt;Shows the changes of a particular commit*&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git show COMMIT_HASH
 &lt;/code&gt;&lt;/pre&gt;
@@ -429,6 +444,46 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt; : show changes that are tracked (staged + unstaged).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;git-remote&#34;&gt;git remote:&lt;/h4&gt;
+
+&lt;p&gt;Manage repositories&lt;/p&gt;
+
+&lt;p&gt;To collaborating with other developers, we need to manage remote repositories and pushing and pulling data to and from.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;show list with names : &lt;code&gt;git remote -v&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;add new remote : &lt;code&gt;git remote add [remote-name] &amp;lt;url&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;update a remote&amp;rsquo;s url: &lt;code&gt;git remote set-url [remote-name] [new-url]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;remove a remote : &lt;code&gt;git remote rm [remote-name]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;git-push&#34;&gt;git push:&lt;/h4&gt;
+
+&lt;p&gt;Push commits to remote repository&lt;/p&gt;
+
+&lt;p&gt;After we made some commits, we might want to push them to a remote repository. this can be done with a &lt;code&gt;git push [remote-name] [branch-name]&lt;/code&gt; command. ie, &lt;code&gt;git push origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;git-pull&#34;&gt;git pull:&lt;/h4&gt;
+
+&lt;p&gt;Fetch and merge remote changes.&lt;/p&gt;
+
+&lt;p&gt;perform a pull can be done simply with a &lt;code&gt;git pull&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h5 id=&#34;git-fetch-vs-git-pull&#34;&gt;&amp;lsquo;git fetch&amp;rsquo;  vs  &amp;lsquo;git pull&amp;rsquo; :&lt;/h5&gt;
+
+&lt;p&gt;In its default mode, &lt;code&gt;git pull&lt;/code&gt; is shorthand for &lt;code&gt;git fetch&lt;/code&gt; followed by &lt;code&gt;git merge FETCH_HEAD&lt;/code&gt;. src : &lt;a href=&#34;https://git-scm.com/docs/git-pull&#34;&gt;https://git-scm.com/docs/git-pull&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;more details : &lt;a href=&#34;http://stackoverflow.com/a/7104747/7804179&#34;&gt;http://stackoverflow.com/a/7104747/7804179&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

@@ -101,7 +101,7 @@
     },
     "headline": My Personal Git Cheat Sheet,
     "name": My Personal Git Cheat Sheet,
-    "wordCount": 870,
+    "wordCount": 1048,
     "timeRequired": "PT5M",
     "inLanguage": {
       "@type": "Language",
@@ -307,22 +307,26 @@ $ git config --system --list
 <ol>
 <li><p><strong>untracked</strong> : at first any new file is untracked.</p>
 
-<p>use <code>git add</code> command to stage the files</p></li>
+<p><em>&ndash;&gt; use <code>git add</code> command to stage the file</em></p></li>
 
 <li><p><strong>staged</strong> : after we use &lsquo;git add&rsquo; command, the file is statged.</p>
 
-<p>use <code>git commit</code> command to commit the staged files</p></li>
+<p><em>&ndash;&gt; use <code>git commit</code> command to commit the staged file</em></p>
+
+<p><em>&lt;&ndash; use <code>git reset HEAD</code> command to unstage that file</em></p></li>
 
 <li><p><strong>unchanged</strong> : If the file is not changed since its last commit, the file is unchanged.</p></li>
 
-<li><p><strong>unstaged</strong> : If there is any modification to that staged or unchanged file, that becomes <code>unstaged</code> again.</p>
+<li><p><strong>unstaged</strong> : If there is any modification to that staged or unchanged file, that file becomes <code>unstaged</code>.</p>
 
-<p>again use <code>git add</code> command to stage those files, and &lsquo;commit&rsquo; command to commit the file.</p></li>
+<p><em>&ndash;&gt; again use <code>git add</code> command to stage that file</em></p>
+
+<p><em>&lt;&ndash; use <code>git checkout</code> command to discard changes</em> *</p>
+
+<p>*<em><code>git checkout</code> is a dangerous command! Use stash instead.</em></p></li>
 </ol>
 
-<p><em>we can use <code>git commit -am &quot;commit message&quot;</code> command to &lsquo;add unstaged files and commit&rsquo; in a single command. more details on the commit section.</em></p>
-
-<h3 id="commands">Commands</h3>
+<h3 id="basic-commands">Basic Commands</h3>
 
 <hr />
 
@@ -354,6 +358,17 @@ $ git config --system --list
 <li><p>commit single file :  <code>$ git commit -m &quot;commit message&quot; FILE_NAME</code></p></li>
 
 <li><p>commit multiple files : <code>git commit -m &quot;commit message&quot; FILE1, FILE2..</code></p></li>
+
+<li><p>ammend the previous commit : <code>git commit --amend</code></p>
+
+<p>e.g,</p>
+
+<pre><code>$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+</code></pre>
+
+<p>*<em>do not use `&ndash;amend&rsquo; if you already pushed your commit.</em></p></li>
 </ul>
 
 <h4 id="git-log">git log</h4>
@@ -374,7 +389,7 @@ commit eea5997a17f02e78d78ccf69a233123192a73822
 Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
 Date:   Thu Apr 20 14:13:18 2017 +0600
 
-    Desing Complete
+    Design Complete
 
 commit 178d3c00a5e55cd0f6ba0170a9dd58dda24561cf
 Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
@@ -404,7 +419,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 <h4 id="git-show">git show :</h4>
 
-<p>shows the changes of a particular commit*</p>
+<p>Shows the changes of a particular commit*</p>
 
 <pre><code>$ git show COMMIT_HASH
 </code></pre>
@@ -448,6 +463,46 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 <li><p><strong><code>git diff HEAD</code></strong> : show changes that are tracked (staged + unstaged).</p></li>
 </ul>
+
+<h3 id="working-remotely">Working Remotely</h3>
+
+<hr />
+
+<h4 id="git-remote">git remote:</h4>
+
+<p>Manage repositories</p>
+
+<p>To collaborating with other developers, we need to manage remote repositories and pushing and pulling data to and from.</p>
+
+<ul>
+<li><p>show list with names : <code>git remote -v</code></p></li>
+
+<li><p>add new remote : <code>git remote add [remote-name] &lt;url&gt;</code></p></li>
+
+<li><p>update a remote&rsquo;s url: <code>git remote set-url [remote-name] [new-url]</code></p></li>
+
+<li><p>remove a remote : <code>git remote rm [remote-name]</code></p></li>
+</ul>
+
+<h4 id="git-push">git push:</h4>
+
+<p>Push commits to remote repository</p>
+
+<p>After we made some commits, we might want to push them to a remote repository. this can be done with a <code>git push [remote-name] [branch-name]</code> command. ie, <code>git push origin master</code></p>
+
+<h4 id="git-pull">git pull:</h4>
+
+<p>Fetch and merge remote changes.</p>
+
+<p>perform a pull can be done simply with a <code>git pull</code> command.</p>
+
+<blockquote>
+<h5 id="git-fetch-vs-git-pull">&lsquo;git fetch&rsquo;  vs  &lsquo;git pull&rsquo; :</h5>
+
+<p>In its default mode, <code>git pull</code> is shorthand for <code>git fetch</code> followed by <code>git merge FETCH_HEAD</code>. src : <a href="https://git-scm.com/docs/git-pull">https://git-scm.com/docs/git-pull</a></p>
+
+<p>more details : <a href="http://stackoverflow.com/a/7104747/7804179">http://stackoverflow.com/a/7104747/7804179</a></p>
+</blockquote>
 
     </section>
 
