@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/php/index.xml</link>
-    <description>Recent content in Php on cse031sust02</description>
+    <title>Composer on cse031sust02</title>
+    <link>https://cse031sust02.github.io/tags/composer/index.xml</link>
+    <description>Recent content in Composer on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cse031sust02.github.io/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting Started with Composer</title>
@@ -140,89 +140,6 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;it adds new packages to the composer.json (If composer.json file does&amp;rsquo;nt exists, it will create one)&lt;/li&gt;
 &lt;li&gt;the modified requirements will be installed or updated.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Exception Handling with PHP</title>
-      <link>https://cse031sust02.github.io/post/exception-handling-with-php/</link>
-      <pubDate>Mon, 10 Apr 2017 15:56:44 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/exception-handling-with-php/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;what-is-exception&#34;&gt;What is Exception&lt;/h3&gt;
-
-&lt;p&gt;Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lsquo;errors&amp;rsquo; vs &amp;lsquo;exceptions&amp;rsquo; :&lt;/strong&gt;
-Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)&lt;/p&gt;
-
-&lt;h3 id=&#34;exceptions-in-php&#34;&gt;Exceptions in PHP&lt;/h3&gt;
-
-&lt;p&gt;Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.&lt;/p&gt;
-
-&lt;p&gt;Exceptions can be thrown and caught.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;one basic example,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;  try {
-    throw new Exception(&#39;An Exception&#39;);
-  } catch (Exception $e) {
-    echo $e-&amp;gt;getMessage();
-  }
-  //output : An Exception
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;throw&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;try&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If there is a &amp;lsquo;try&amp;rsquo; block, then there must be atleast one &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block. (Otherwise PHP Fatal Error)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;catch&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block), there will be a PHP Fatal Error with an &amp;ldquo;Uncaught Exception &amp;hellip;&amp;rdquo; message (unless a handler has been defined with set_exception_handler method).&lt;/p&gt;
-
-&lt;p&gt;Exceptions can also be thrown (or re-thrown) within a catch block.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;finally&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;another example with more details,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
-    if ($number==0) {
-        throw new Exception(&#39;Division by zero.&#39;);
-    }
-
-    return 1/$number;
-}
-
-try {
-    $random_number = rand(0,5);
-    $result = inverse($random_number);
-    // ONLY echo when no exception is thrown
-    echo $result;
-} catch (Exception $e) {
-    //ONLY echo if there is an exception
-    echo &amp;quot;Exception Message :&amp;quot;.$e-&amp;gt;getMessage();
-} finally {
-    // always echo
-    echo &amp;quot;I am always there&amp;quot;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - &lt;a href=&#34;http://php.net/manual/en/language.exceptions.php&#34;&gt;php.net&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     
