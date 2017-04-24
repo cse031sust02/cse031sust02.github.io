@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/getting_started_with_composer/</loc>
+    <lastmod>2017-04-23T17:37:13+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/intro-to-redis/</loc>
     <lastmod>2017-04-22T16:13:16+06:00</lastmod>
   </url>
@@ -149,7 +154,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-04-22T16:13:16+06:00</lastmod>
+    <lastmod>2017-04-23T17:37:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,7 +195,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-04-22T16:13:16+06:00</lastmod>
+    <lastmod>2017-04-23T17:37:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
