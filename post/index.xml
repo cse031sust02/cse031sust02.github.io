@@ -24,7 +24,12 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;find out a great intro.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+- &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Official Website&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Creepy, huh?&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h5 id=&#34;npm&#34;&gt;npm?&lt;/h5&gt;
 
