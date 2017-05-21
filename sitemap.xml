@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/linux-cheatsheet/</loc>
+    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/say_hello_to_nodejs/</loc>
     <lastmod>2017-05-07T16:21:40+06:00</lastmod>
   </url>
@@ -70,6 +75,12 @@
   <url>
     <loc>https://cse031sust02.github.io/tags/bangla/</loc>
     <lastmod>2017-04-10T11:31:28+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/bash/</loc>
+    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,6 +157,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/linux/</loc>
+    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/nodejs/</loc>
     <lastmod>2017-05-07T16:21:40+06:00</lastmod>
     <priority>0</priority>
@@ -171,7 +188,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-05-07T16:21:40+06:00</lastmod>
+    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -212,7 +229,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-05-07T16:21:40+06:00</lastmod>
+    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
     <priority>0</priority>
   </url>
   
