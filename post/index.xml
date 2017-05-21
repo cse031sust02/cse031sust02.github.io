@@ -7,8 +7,158 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Sun, 07 May 2017 16:21:40 +0600</lastBuildDate>
+    <lastBuildDate>Wed, 17 May 2017 15:50:31 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hands On Linux Command Line</title>
+      <link>https://cse031sust02.github.io/post/linux-cheatsheet/</link>
+      <pubDate>Wed, 17 May 2017 15:50:31 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/linux-cheatsheet/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-linux&#34;&gt;What is Linux?&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Just like Windows and Mac OS X, Linux is an operating system. It is an open source &lt;a href=&#34;https://en.wikipedia.org/wiki/Unix-like&#34;&gt;Unix-like&lt;/a&gt; operating system.&lt;/p&gt;
+
+&lt;p&gt;Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;developed&lt;/a&gt; by &lt;a href=&#34;https://github.com/torvalds&#34;&gt;Linus Torvalds&lt;/a&gt;. I think &lt;a href=&#34;https://unix.stackexchange.com/a/94407&#34;&gt;this answer&lt;/a&gt; explains it all.&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-commands&#34;&gt;Linux Commands&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;terminology&#34;&gt;Terminology&lt;/h4&gt;
+
+&lt;p&gt;We should have some basic ideas of &lt;strong&gt;Shell&lt;/strong&gt;, &lt;strong&gt;Bash&lt;/strong&gt; and &lt;strong&gt;Terminal&lt;/strong&gt; if we want to work with Linux Command Line.&lt;/p&gt;
+
+&lt;h6 id=&#34;shell&#34;&gt;Shell&lt;/h6&gt;
+
+&lt;p&gt;The shell is a program that takes commands from the keyboard and gives them to the operating system to perform. Linux operating system offers several shells such as : &lt;strong&gt;bash&lt;/strong&gt;, &lt;strong&gt;sh&lt;/strong&gt;, &lt;strong&gt;csh&lt;/strong&gt; etc. Although they have many commands in common, each type has unique features.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;bash&lt;/strong&gt; (Bourne Again SHell)&lt;/p&gt;
+
+&lt;p&gt;bash is the default shell for most &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_Linux_distributions&#34;&gt;Linux distributions&lt;/a&gt;. It is an enhanced version of the original Unix shell program.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;terminal&#34;&gt;Terminal&lt;/h6&gt;
+
+&lt;p&gt;Terminal (or Terminal Emulator) is a GUI which lets us interact with the shell. So, we can type and execute commands from the Terminal Window.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;There are many different Terminals bundled with different &lt;a href=&#34;https://en.wikipedia.org/wiki/Desktop_environment&#34;&gt;Desktop Environments&lt;/a&gt;, such as: gnome-terminal (GNOME), konsole(KDE) etc.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h4&gt;
+
+&lt;p&gt;We should easily find terminal from the menu.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34; alt=&#34;terminal&#34; title=&#34;Terminal&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;image src&lt;/strong&gt; : &lt;a href=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, when we open the Terminal, we see something like this :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;username@hostname:~$ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;username&lt;/strong&gt; = the username of the current user.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;hostname&lt;/strong&gt; = ther hostname of the server&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;~&lt;/strong&gt; = name of the directory you’re in. &lt;em&gt;`~&amp;rsquo; refers to user&amp;rsquo;s home directory&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;$&lt;/strong&gt; =  It indicates the end of the shell prompt. if user is logged in as &lt;strong&gt;&lt;em&gt;root&lt;/em&gt;&lt;/strong&gt;, then it will show &amp;lsquo;#&amp;rsquo; sign instead of the &amp;lsquo;$&amp;rsquo; sign.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;h5 id=&#34;root&#34;&gt;root?&lt;/h5&gt;
+
+&lt;p&gt;In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Still you need to know how do i login as root, right? you should able logged in as root by using the &lt;code&gt;su -&lt;/code&gt; command on your terminal. If you getting any error message, your root account is likely locked. please check &lt;a href=&#34;http://www.wikihow.com/Become-Root-in-Linux&#34;&gt;this tutorial&lt;/a&gt; for more information.&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h5 id=&#34;sudo&#34;&gt;sudo?&lt;/h5&gt;
+
+&lt;p&gt;As you have understood, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is &lt;code&gt;sudo&lt;/code&gt;. the &lt;code&gt;sudo&lt;/code&gt; command allows a permitted user to execute a command as the superuser or another user.&lt;/p&gt;
+
+&lt;p&gt;i.e, if we enter &lt;code&gt;apt-get update&lt;/code&gt; command in our terminal, we will get the following error,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;username@hostname:~$ apt-get update
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but, when we use &lt;code&gt;sudo&lt;/code&gt; in that same command, it works perfectly,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;username@hostname:~$ sudo apt-get update
+[sudo] password for username: 
+Ign http://dl.google.com stable InRelease
+Hit http://packages.microsoft.com stable InRelease                             
+Hit http://dl.google.com stable Release.gpg  
+........
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h4&gt;
+
+&lt;p&gt;I think the best site to learn Linux Commands is &lt;a href=&#34;http://linuxcommand.org/lc3_lts0060.php&#34;&gt;linuxcommand.org&lt;/a&gt;. I am just trying to list very basic commands.&lt;/p&gt;
+
+&lt;p&gt;There are four different kinds of Commands :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Executable program&lt;/strong&gt; : Any executable program. example : vlc, gedit&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Shell Builtin&lt;/strong&gt; : Builtin commands provided by Bash. example: cd, type&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Shell function&lt;/strong&gt; : Functions of some commands.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Alias&lt;/strong&gt; : alias of any command.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to know the type of any command, we can use the &lt;code&gt;type&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;ie,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;username@hostname:~$ type cd
+cd is a shell builtin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;navigation&#34;&gt;Navigation&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pwd (print working directory)&lt;/li&gt;
+&lt;li&gt;cd (change directory)&lt;/li&gt;
+&lt;li&gt;ls (list files and directories).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;manipulating-files&#34;&gt;Manipulating Files&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cp (copy files and directories)&lt;/li&gt;
+&lt;li&gt;mv (move or rename files and directories)&lt;/li&gt;
+&lt;li&gt;rm (remove files and directories)&lt;/li&gt;
+&lt;li&gt;mkdir (create directories)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://linuxcommand.org&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sh.howtocode.com.bd&#34;&gt;howtocode.com.bd&lt;/a&gt; (Bengali)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Say &#39;Hello&#39; to Node.js</title>
