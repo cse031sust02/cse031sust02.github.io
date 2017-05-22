@@ -101,7 +101,7 @@
     },
     "headline": Getting Started with Composer,
     "name": Getting Started with Composer,
-    "wordCount": 777,
+    "wordCount": 793,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
@@ -212,14 +212,14 @@
 
 <hr />
 
-<h3 id="what-is-composer-https-getcomposer-org">What is <a href="https://getcomposer.org/">Composer</a>?</h3>
+<h2 id="what-is-composer-https-getcomposer-org">What is <a href="https://getcomposer.org/">Composer</a>?</h2>
 
 <blockquote>
 <p>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 <strong>source</strong> : <a href="https://getcomposer.org/doc/00-intro.md">getcomposer.org</a></p>
 </blockquote>
 
-<h5 id="why-use-composer">Why Use Composer?</h5>
+<h4 id="why-use-composer">Why Use Composer?</h4>
 
 <p>Suppose, we want to use a mail library for our PHP project, let&rsquo;s say <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>. We would normally download the PHPMailer library and put it on our project&rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.</p>
 
@@ -230,6 +230,10 @@
 <p>Composer is used in all modern PHP frameworks (Symfony, Laravel etc).</p>
 
 <hr />
+
+<h2 id="using-composer">Using Composer</h2>
+
+<p>Now, let&rsquo;s start using composer.</p>
 
 <h3 id="installation">Installation</h3>
 
@@ -249,11 +253,7 @@
 <li><p><code>composer diagnose</code> : check for common problems.</p></li>
 </ul>
 
-<hr />
-
-<h3 id="using-composer">Using Composer</h3>
-
-<h5 id="project-setup">Project Setup</h5>
+<h3 id="project-setup">Project Setup</h3>
 
 <p>To start using Composer in our project, all we need is a <code>composer.json</code> file. This file describes the dependencies of our project (and may contain other metadata as well).</p>
 
@@ -269,13 +269,13 @@
 
 <p>For more information about <code>composer.json</code> file, please see the <a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">composer documentation</a>. We also need to have a clear idea about <a href="https://getcomposer.org/doc/articles/versions.md">versions</a>.</p>
 
-<h5 id="install-dependencies">Install Dependencies</h5>
+<h3 id="install-dependencies">Install Dependencies</h3>
 
 <p>Then we can install the dependencies for our project simply with a <code>composer install</code> command.</p>
 
 <p>This will automatically download the dependencies into our project under the directory &lsquo;vendor&rsquo;.</p>
 
-<h5 id="start-using-those-dependencies">Start using those Dependencies</h5>
+<h4 id="start-using-those-dependencies">Start using those Dependencies</h4>
 
 <p>As stated before, Composer generates a &lsquo;vendor/autoload.php&rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :</p>
 
@@ -286,7 +286,7 @@ $log-&gt;pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger
 $log-&gt;addWarning('Foo');
 </code></pre>
 
-<h5 id="update-dependencies">Update Dependencies</h5>
+<h4 id="update-dependencies">Update Dependencies</h4>
 
 <p>Whenever we want to update our dependencies to latest versions, we can use this command <code>composer update</code>.</p>
 
@@ -294,9 +294,11 @@ $log-&gt;addWarning('Foo');
 
 <hr />
 
-<h3 id="you-need-to-know">You need to know</h3>
+<h2 id="did-you-know">Did you know?</h2>
 
-<h5 id="composer-install-vs-composer-update">&lsquo;composer install&rsquo; vs &lsquo;composer update&rsquo;</h5>
+<p>We have to understand few key facts while working with composer</p>
+
+<h3 id="composer-install-vs-composer-update">&lsquo;composer install&rsquo; vs &lsquo;composer update&rsquo;</h3>
 
 <p>To get a clear idea what actually happens when we use the <code>composer install</code> &amp; <code>composer update</code> commands, please visit the <a href="https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies">official doc</a>. I am trying to write the thing in my own way.</p>
 
@@ -318,7 +320,7 @@ $log-&gt;addWarning('Foo');
 
 <p>So, we should only ever run <code>composer update</code> to get the newest versions of our dependencies, not to install them.</p>
 
-<h5 id="using-composer-require-command">Using <code>composer require</code> Command</h5>
+<h3 id="install-with-composer-require-command">install with <code>composer require</code> Command</h3>
 
 <p>In our example, We could define and install dependencies with a single <a href="https://getcomposer.org/doc/03-cli.md#require"><code>composer require</code></a> command.</p>
 

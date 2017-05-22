@@ -19,9 +19,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-git&#34;&gt;What is GIT?&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;what-is-git&#34;&gt;What is GIT?&lt;/h2&gt;
 
 &lt;p&gt;Git is a free and open source distributed version control system.&lt;/p&gt;
 
@@ -41,13 +39,13 @@
 &lt;li&gt;Can work locally without any central server&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;Now let&amp;rsquo;s install Git on our machine and start using it.&lt;/p&gt;
 
-&lt;h4 id=&#34;install&#34;&gt;Install&lt;/h4&gt;
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please follow the &lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;offical doc&lt;/a&gt; to install git.&lt;/p&gt;
 
 &lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
 
@@ -99,9 +97,9 @@ $ git config --system --list
 
 &lt;p&gt;&lt;em&gt;To get a copy of an existing Git repository, use the &lt;code&gt;git clone&lt;/code&gt; command.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;lifecycle&#34;&gt;Lifecycle&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;lifecycle&#34;&gt;Lifecycle&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34; alt=&#34;Lifecycle&#34; /&gt;&lt;/p&gt;
 
@@ -111,31 +109,45 @@ $ git config --system --list
 
 &lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;untracked&lt;/strong&gt; : at first any new file is untracked.&lt;/p&gt;
+&lt;h4 id=&#34;1-untracked&#34;&gt;1. &lt;strong&gt;untracked&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;at first any new file is untracked.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;staged&lt;/strong&gt; : after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-staged&#34;&gt;2. &lt;strong&gt;staged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;unchanged&lt;/strong&gt; : If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;unstaged&lt;/strong&gt; : If there is any modification to that staged or unchanged file, that file becomes &lt;code&gt;unstaged&lt;/code&gt;.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-unchanged&#34;&gt;3. &lt;strong&gt;unchanged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/em&gt; *&lt;/p&gt;
+&lt;p&gt;If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;
 
-&lt;p&gt;*&lt;em&gt;&lt;code&gt;git checkout&lt;/code&gt; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&#34;4-unstaged&#34;&gt;4. &lt;strong&gt;unstaged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;h3 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h3&gt;
+&lt;p&gt;If there is any modification to that staged or unchanged file, that file becomes unstaged.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;lsquo;git checkout&amp;rsquo; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
+
+&lt;p&gt;Some basic commands with examples&lt;/p&gt;
 
 &lt;h4 id=&#34;git-add&#34;&gt;git add&lt;/h4&gt;
 
@@ -235,9 +247,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;*&lt;code&gt;git show&lt;/code&gt; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;lsquo;git show&amp;rsquo; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;git-diff&#34;&gt;git diff:&lt;/h4&gt;
 
@@ -271,9 +281,9 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt; : show changes that are tracked (staged + unstaged).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h2&gt;
 
 &lt;h4 id=&#34;git-remote&#34;&gt;git remote:&lt;/h4&gt;
 

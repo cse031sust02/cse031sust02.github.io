@@ -99,7 +99,7 @@
     },
     "headline": Say &#39;Hello&#39; to Node.js,
     "name": Say &#39;Hello&#39; to Node.js,
-    "wordCount": 938,
+    "wordCount": 936,
     "timeRequired": "PT5M",
     "inLanguage": {
       "@type": "Language",
@@ -208,9 +208,7 @@
 
 <hr />
 
-<h3 id="what-is-node-js">What is Node.js? :</h3>
-
-<hr />
+<h2 id="what-is-node-js">What is Node.js? :</h2>
 
 <blockquote>
 <p>Node.js® is a JavaScript runtime built on Chrome&rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -219,17 +217,17 @@
 <p><strong>Creepy, huh?</strong></p>
 </blockquote>
 
-<h5 id="npm">npm?</h5>
+<h4 id="npm">npm?</h4>
 
 <p><a href="https://www.npmjs.com/">npm</a> is the Node.js package manager. It allows us to easily install modules and packages to use with Node.js.</p>
 
-<h5 id="nvm">nvm?</h5>
+<h4 id="nvm">nvm?</h4>
 
 <p><a href="https://github.com/creationix/nvm/blob/master/README.md">nvm</a> is Node Version Manager. We can install multiple, self-contained versions of Node.js usng nvm. It allows us to control the environment easier (quickly switch to other versions of Node.js).</p>
 
-<h3 id="installing-node-js">Installing Node.js</h3>
-
 <hr />
+
+<h2 id="installing-node-js">Installing Node.js</h2>
 
 <p>Please visit the <a href="https://nodejs.org/en/download/package-manager/">official page</a> to install Node.Js in your platform.</p>
 
@@ -254,16 +252,15 @@ $ sudo apt-get install -y nodejs
 <p>To verify that the installation was successful, let’s give Node’s <strong>REPL</strong> a try.</p>
 
 <pre><code>$ node
-&gt; console.log('hello nodejs');
+&gt;console.log('hello nodejs');
 hello world
 undefined
 &gt; 
-
 </code></pre>
 
 <p>*<strong>REPL</strong> :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.</p>
 
-<h6 id="install-npm">install npm?</h6>
+<h4 id="install-npm">install npm?</h4>
 
 <p>The nodejs package contains the nodejs binary as well as npm, so we don&rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the <code>build-essentials</code> package.</p>
@@ -271,13 +268,13 @@ But, to run nodejs/npm properly, We may need to install the <code>build-essentia
 <pre><code>$ sudo apt-get install build-essential
 </code></pre>
 
-<h3 id="about-npm-things">About npm things</h3>
-
 <hr />
+
+<h2 id="about-npm-things">About npm things</h2>
 
 <p><a href="https://www.npmjs.com/">npm</a> is a package manager for javascript. npm makes it easy for JavaScript developers to share and reuse code. Although npm started as the node package manager, but it is now used by almost every popular javascript libraries/frameworks. Please read the <a href="https://docs.npmjs.com/getting-started">official doc</a> if you want to know more.</p>
 
-<h6 id="what-is-a-package">what is a package?</h6>
+<h4 id="what-is-a-package">what is a package?</h4>
 
 <p>A package (or sometimes module) contains reusable codes to serve a particular purpose. A package is just a directory with one or more files in it.</p>
 
@@ -288,7 +285,7 @@ But, to run nodejs/npm properly, We may need to install the <code>build-essentia
 A module is anything that can be loaded with require() in a Node.js program. Most npm packages are modules. <a href="https://docs.npmjs.com/how-npm-works/packages#most-npm-packages-are-modules">more details..</a></li>
 </ul>
 
-<h6 id="npm-registry">npm Registry?</h6>
+<h4 id="npm-registry">npm Registry?</h4>
 
 <p>Every time we download a package using npm install, we&rsquo;re downloading it from npm Registry and put in our project&rsquo;s <code>node_modules</code> folder. npm Registry is basically a huge database containing each package&rsquo;s files and associated metadata.</p>
 
@@ -312,12 +309,13 @@ save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
 name: (demo-project) 
-
 </code></pre>
 
 <p>*the next time we use <code>npm init</code> command, it will update the existing <strong>package.json</strong> file.</p>
 
-<h3 id="dealing-with-packages">Dealing with packages</h3>
+<hr />
+
+<h2 id="dealing-with-packages">Dealing with packages</h2>
 
 <p>One of the most important things that npm does is install packages.</p>
 
@@ -412,9 +410,9 @@ name: (demo-project)
 </code></pre></li>
 </ul>
 
-<h3 id="some-useful-links">Some useful links</h3>
-
 <hr />
+
+<h3 id="useful-links">Useful Links</h3>
 
 <ul>
 <li><strong><a href="https://www.npmjs.com/#getting-started">Official Getting Started Page</a></strong><br /></li>
