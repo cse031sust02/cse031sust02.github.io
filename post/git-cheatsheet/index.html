@@ -101,8 +101,8 @@
     },
     "headline": My Personal Git Cheat Sheet,
     "name": My Personal Git Cheat Sheet,
-    "wordCount": 1048,
-    "timeRequired": "PT5M",
+    "wordCount": 1074,
+    "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -212,9 +212,7 @@
 
 <hr />
 
-<h3 id="what-is-git">What is GIT?</h3>
-
-<hr />
+<h2 id="what-is-git">What is GIT?</h2>
 
 <p>Git is a free and open source distributed version control system.</p>
 
@@ -234,13 +232,13 @@
 <li>Can work locally without any central server</li>
 </ul>
 
-<h3 id="setup">Setup</h3>
+<h2 id="setup">Setup</h2>
 
-<hr />
+<p>Now let&rsquo;s install Git on our machine and start using it.</p>
 
-<h4 id="install">Install</h4>
+<h4 id="installation">Installation</h4>
 
-<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+<p>Please follow the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">offical doc</a> to install git.</p>
 
 <h4 id="configuration">Configuration</h4>
 
@@ -292,9 +290,9 @@ $ git config --system --list
 
 <p><em>To get a copy of an existing Git repository, use the <code>git clone</code> command.</em></p>
 
-<h3 id="lifecycle">Lifecycle</h3>
-
 <hr />
+
+<h2 id="lifecycle">Lifecycle</h2>
 
 <p><img src="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="Lifecycle" /></p>
 
@@ -304,31 +302,45 @@ $ git config --system --list
 
 <p>Files has mainly 4 statuses :</p>
 
-<ol>
-<li><p><strong>untracked</strong> : at first any new file is untracked.</p>
+<h4 id="1-untracked">1. <strong>untracked</strong> :</h4>
 
-<p><em>&ndash;&gt; use <code>git add</code> command to stage the file</em></p></li>
+<p>at first any new file is untracked.</p>
 
-<li><p><strong>staged</strong> : after we use &lsquo;git add&rsquo; command, the file is statged.</p>
+<ul>
+<li><strong>&ndash;&gt;</strong> use <code>git add</code> command to stage the file</li>
+</ul>
 
-<p><em>&ndash;&gt; use <code>git commit</code> command to commit the staged file</em></p>
+<h4 id="2-staged">2. <strong>staged</strong> :</h4>
 
-<p><em>&lt;&ndash; use <code>git reset HEAD</code> command to unstage that file</em></p></li>
+<p>after we use &lsquo;git add&rsquo; command, the file is statged.</p>
 
-<li><p><strong>unchanged</strong> : If the file is not changed since its last commit, the file is unchanged.</p></li>
+<ul>
+<li><p><strong>&ndash;&gt;</strong> use <code>git commit</code> command to commit the staged file</p></li>
 
-<li><p><strong>unstaged</strong> : If there is any modification to that staged or unchanged file, that file becomes <code>unstaged</code>.</p>
+<li><p><strong>&lt;&ndash;</strong> use <code>git reset HEAD</code> command to unstage that file</p></li>
+</ul>
 
-<p><em>&ndash;&gt; again use <code>git add</code> command to stage that file</em></p>
+<h4 id="3-unchanged">3. <strong>unchanged</strong> :</h4>
 
-<p><em>&lt;&ndash; use <code>git checkout</code> command to discard changes</em> *</p>
+<p>If the file is not changed since its last commit, the file is unchanged.</p>
 
-<p>*<em><code>git checkout</code> is a dangerous command! Use stash instead.</em></p></li>
-</ol>
+<h4 id="4-unstaged">4. <strong>unstaged</strong> :</h4>
 
-<h3 id="basic-commands">Basic Commands</h3>
+<p>If there is any modification to that staged or unchanged file, that file becomes unstaged.</p>
+
+<ul>
+<li><p><strong>&ndash;&gt;</strong> again use <code>git add</code> command to stage that file</p></li>
+
+<li><p><strong>&lt;&ndash;</strong> use <code>git checkout</code> command to discard changes</p></li>
+</ul>
+
+<p><em>&lsquo;git checkout&rsquo; is a dangerous command! Use stash instead.</em></p>
 
 <hr />
+
+<h2 id="basic-commands">Basic Commands</h2>
+
+<p>Some basic commands with examples</p>
 
 <h4 id="git-add">git add</h4>
 
@@ -428,9 +440,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 <p>If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)</p>
 
-<blockquote>
-<p>*<code>git show</code> can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit <a href="https://git-scm.com/docs/git-show">official link</a></p>
-</blockquote>
+<p><em>&lsquo;git show&rsquo; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit <a href="https://git-scm.com/docs/git-show">official link</a></em></p>
 
 <h4 id="git-diff">git diff:</h4>
 
@@ -464,9 +474,9 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 <li><p><strong><code>git diff HEAD</code></strong> : show changes that are tracked (staged + unstaged).</p></li>
 </ul>
 
-<h3 id="working-remotely">Working Remotely</h3>
-
 <hr />
+
+<h2 id="working-remotely">Working Remotely</h2>
 
 <h4 id="git-remote">git remote:</h4>
 

@@ -101,7 +101,7 @@
     },
     "headline": Accepting payments on your site using Stripe,
     "name": Accepting payments on your site using Stripe,
-    "wordCount": 348,
+    "wordCount": 360,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
@@ -212,19 +212,17 @@
 
 <hr />
 
-<h4 id="what-is-stripe-https-stripe-com">What is <a href="https://stripe.com/">Stripe</a></h4>
+<h2 id="what-is-stripe-https-stripe-com">What is <a href="https://stripe.com/">Stripe</a></h2>
 
 <p>A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.</p>
 
-<hr />
-
-<h4 id="payment-types">Payment types</h4>
+<h3 id="payment-types">Payment types</h3>
 
 <p>Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.</p>
 
 <hr />
 
-<h4 id="accepting-payments-with-cards">Accepting Payments with Cards</h4>
+<h2 id="accepting-payments-with-cards">Accepting Payments with Cards</h2>
 
 <p>Using card information with Stripe is a two-step process</p>
 
@@ -233,13 +231,12 @@
 <li>Use the payment information in a charge request or save it for later</li>
 </ol>
 
-<p><strong>Step 1. Securely collect payment information using tokenization</strong></p>
+<h3 id="step-1-securely-collect-payment-information-using-tokenization">Step 1. Securely collect payment information using tokenization</h3>
 
 <p>Stripe provides three methods for tokenizing customer’s payment information over HTTPS
 Checkout, Stripe.js &amp; Mobile SDKs</p>
 
-<ol>
-<li><p><a href="https://stripe.com/checkout">Checkout</a></p>
+<h4 id="1-checkout-https-stripe-com-checkout">1. <a href="https://stripe.com/checkout">Checkout</a></h4>
 
 <p>The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.</p>
 
@@ -248,29 +245,29 @@ Checkout, Stripe.js &amp; Mobile SDKs</p>
 <p>Checkout has 12 languages to pay with a localized experience.</p>
 
 <p>Embedding checkout in your site
-<a href="https://stripe.com/docs/checkout/tutorial">https://stripe.com/docs/checkout/tutorial</a></p></li>
+<a href="https://stripe.com/docs/checkout/tutorial">https://stripe.com/docs/checkout/tutorial</a></p>
 
-<li><p><a href="https://stripe.com/docs/quickstart#elements">Elements</a></p>
+<h4 id="2-elements-https-stripe-com-docs-quickstart-elements">2. <a href="https://stripe.com/docs/quickstart#elements">Elements</a></h4>
 
-<p>If we want to customize the payment form for our need, then we can make use of Stripe Elements.</p></li>
+<p>If we want to customize the payment form for our need, then we can make use of Stripe Elements.</p>
 
-<li><p><a href="https://stripe.com/docs/mobile">Mobile SDKs</a></p></li>
-</ol>
+<h4 id="3-mobile-sdks-https-stripe-com-docs-mobile">3. <a href="https://stripe.com/docs/mobile">Mobile SDKs</a></h4>
 
-<p><strong>Step 2. Use the tokenized payment information</strong></p>
+<p>Stripe has native libraries for iOS and Android applications.</p>
+
+<h3 id="step-2-use-the-tokenized-payment-information">Step 2. Use the tokenized payment information</h3>
 
 <p>While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,</p>
 
-<ul>
-<li><p><strong>Charging the customer immediately</strong></p>
+<h4 id="charging-the-customer-immediately">Charging the customer immediately</h4>
 
-<p>We can create a one-time charge request to charge a customer’s card.
-The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. <a href="https://stripe.com/docs/quickstart#charge-immediately">more details..</a></p></li>
+<p>We can create a one-time charge request to charge a customer’s card.</p>
 
-<li><p><strong>Saving the customer’s card information</strong></p>
+<p>The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. <a href="https://stripe.com/docs/quickstart#charge-immediately">more details..</a></p>
 
-<p>If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. <a href="https://stripe.com/docs/quickstart#saving-card-information">more details..</a></p></li>
-</ul>
+<h4 id="saving-the-customer-s-card-information">Saving the customer’s card information</h4>
+
+<p>If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. <a href="https://stripe.com/docs/quickstart#saving-card-information">more details..</a></p>
 
     </section>
 

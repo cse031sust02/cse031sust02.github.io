@@ -220,7 +220,7 @@
 
 <hr />
 
-<h4 id="tcp-ip">TCP/IP</h4>
+<h2 id="tcp-ip">TCP/IP</h2>
 
 <p>TCP = Transmission Control Protocol</p>
 
@@ -235,13 +235,13 @@ HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদে�
 
 <hr />
 
-<h4 id="http-hypertext-transfer-protocol">HTTP (HyperText Transfer Protocol)</h4>
+<h2 id="http-hypertext-transfer-protocol">HTTP (HyperText Transfer Protocol)</h2>
 
 <p>HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।</p>
 
 <p>Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।</p>
 
-<h6 id="request-message-এর-format">Request Message এর Format</h6>
+<h4 id="request-message-এর-format">Request Message এর Format</h4>
 
 <pre><code>Request Line 
 Request Header fields
@@ -249,17 +249,19 @@ Empty Line
 An Optional Message Body
 </code></pre>
 
-<p>Example</p>
+<p>e.g,</p>
 
 <pre><code>GET /index.html HTTP/1.1
 Host : www.example.com 
 </code></pre>
 
 <ul>
-<li>GET হলো Method, index.html হলো Requested File, Http/1.1 হলো HTTP Version</li>
+<li>GET হলো Method</li>
+<li>index.html হলো Requested File</li>
+<li>Http/1.1 হলো HTTP Version</li>
 </ul>
 
-<h6 id="response-message-এর-format">Response Message এর Format</h6>
+<h4 id="response-message-এর-format">Response Message এর Format</h4>
 
 <pre><code>Status  Line 
 Response Header Fields 
@@ -267,16 +269,16 @@ Empty Line
 An Optional Message Body
 </code></pre>
 
-<p>Example</p>
+<p>e.g,</p>
 
-<pre><code>HTTP/1.1 200 OK 
+<pre><code>HTTP/1.1 200 OK
 </code></pre>
 
 <ul>
-<li><p>HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message</p>
-
-<p><em>Header fields এর সম্পর্কে জানতে <a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Wikipedia</a> তে দেখুন</em></p></li>
+<li>HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message</li>
 </ul>
+
+<p><em>Header fields এর সম্পর্কে জানতে <a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Wikipedia</a> তে দেখুন</em></p>
 
 <p>সুতরাং , আমরা যখন ব্রাউজার এ <code>www.example.com/blog.php</code> লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,</p>
 

@@ -19,9 +19,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-node-js&#34;&gt;What is Node.js? :&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;what-is-node-js&#34;&gt;What is Node.js? :&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -30,17 +28,17 @@
 &lt;p&gt;&lt;strong&gt;Creepy, huh?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;npm&#34;&gt;npm?&lt;/h5&gt;
+&lt;h4 id=&#34;npm&#34;&gt;npm?&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is the Node.js package manager. It allows us to easily install modules and packages to use with Node.js.&lt;/p&gt;
 
-&lt;h5 id=&#34;nvm&#34;&gt;nvm?&lt;/h5&gt;
+&lt;h4 id=&#34;nvm&#34;&gt;nvm?&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/creationix/nvm/blob/master/README.md&#34;&gt;nvm&lt;/a&gt; is Node Version Manager. We can install multiple, self-contained versions of Node.js usng nvm. It allows us to control the environment easier (quickly switch to other versions of Node.js).&lt;/p&gt;
 
-&lt;h3 id=&#34;installing-node-js&#34;&gt;Installing Node.js&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;installing-node-js&#34;&gt;Installing Node.js&lt;/h2&gt;
 
 &lt;p&gt;Please visit the &lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;official page&lt;/a&gt; to install Node.Js in your platform.&lt;/p&gt;
 
@@ -65,16 +63,15 @@ $ sudo apt-get install -y nodejs
 &lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ node
-&amp;gt; console.log(&#39;hello nodejs&#39;);
+&amp;gt;console.log(&#39;hello nodejs&#39;);
 hello world
 undefined
 &amp;gt; 
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*&lt;strong&gt;REPL&lt;/strong&gt; :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.&lt;/p&gt;
 
-&lt;h6 id=&#34;install-npm&#34;&gt;install npm?&lt;/h6&gt;
+&lt;h4 id=&#34;install-npm&#34;&gt;install npm?&lt;/h4&gt;
 
 &lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
@@ -82,13 +79,13 @@ But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-es
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install build-essential
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;about-npm-things&#34;&gt;About npm things&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;about-npm-things&#34;&gt;About npm things&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is a package manager for javascript. npm makes it easy for JavaScript developers to share and reuse code. Although npm started as the node package manager, but it is now used by almost every popular javascript libraries/frameworks. Please read the &lt;a href=&#34;https://docs.npmjs.com/getting-started&#34;&gt;official doc&lt;/a&gt; if you want to know more.&lt;/p&gt;
 
-&lt;h6 id=&#34;what-is-a-package&#34;&gt;what is a package?&lt;/h6&gt;
+&lt;h4 id=&#34;what-is-a-package&#34;&gt;what is a package?&lt;/h4&gt;
 
 &lt;p&gt;A package (or sometimes module) contains reusable codes to serve a particular purpose. A package is just a directory with one or more files in it.&lt;/p&gt;
 
@@ -99,7 +96,7 @@ But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-es
 A module is anything that can be loaded with require() in a Node.js program. Most npm packages are modules. &lt;a href=&#34;https://docs.npmjs.com/how-npm-works/packages#most-npm-packages-are-modules&#34;&gt;more details..&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;npm-registry&#34;&gt;npm Registry?&lt;/h6&gt;
+&lt;h4 id=&#34;npm-registry&#34;&gt;npm Registry?&lt;/h4&gt;
 
 &lt;p&gt;Every time we download a package using npm install, we&amp;rsquo;re downloading it from npm Registry and put in our project&amp;rsquo;s &lt;code&gt;node_modules&lt;/code&gt; folder. npm Registry is basically a huge database containing each package&amp;rsquo;s files and associated metadata.&lt;/p&gt;
 
@@ -123,12 +120,13 @@ save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
 name: (demo-project) 
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
 
-&lt;h3 id=&#34;dealing-with-packages&#34;&gt;Dealing with packages&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;dealing-with-packages&#34;&gt;Dealing with packages&lt;/h2&gt;
 
 &lt;p&gt;One of the most important things that npm does is install packages.&lt;/p&gt;
 
@@ -223,9 +221,9 @@ name: (demo-project)
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;some-useful-links&#34;&gt;Some useful links&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.npmjs.com/#getting-started&#34;&gt;Official Getting Started Page&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;

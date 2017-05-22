@@ -183,7 +183,7 @@ Hit http://dl.google.com stable Release.gpg
 
 &lt;p&gt;To know more details, we can visit this &lt;a href=&#34;http://www.pathname.com/fhs/pub/fhs-2.3.html&#34;&gt;Filesystem Hierarchy Standard&lt;/a&gt; page.&lt;/p&gt;
 
-&lt;h1 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h1&gt;
+&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://linuxcommand.org&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/li&gt;
@@ -203,9 +203,7 @@ Hit http://dl.google.com stable Release.gpg
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-node-js&#34;&gt;What is Node.js? :&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;what-is-node-js&#34;&gt;What is Node.js? :&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -214,17 +212,17 @@ Hit http://dl.google.com stable Release.gpg
 &lt;p&gt;&lt;strong&gt;Creepy, huh?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;npm&#34;&gt;npm?&lt;/h5&gt;
+&lt;h4 id=&#34;npm&#34;&gt;npm?&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is the Node.js package manager. It allows us to easily install modules and packages to use with Node.js.&lt;/p&gt;
 
-&lt;h5 id=&#34;nvm&#34;&gt;nvm?&lt;/h5&gt;
+&lt;h4 id=&#34;nvm&#34;&gt;nvm?&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/creationix/nvm/blob/master/README.md&#34;&gt;nvm&lt;/a&gt; is Node Version Manager. We can install multiple, self-contained versions of Node.js usng nvm. It allows us to control the environment easier (quickly switch to other versions of Node.js).&lt;/p&gt;
 
-&lt;h3 id=&#34;installing-node-js&#34;&gt;Installing Node.js&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;installing-node-js&#34;&gt;Installing Node.js&lt;/h2&gt;
 
 &lt;p&gt;Please visit the &lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;official page&lt;/a&gt; to install Node.Js in your platform.&lt;/p&gt;
 
@@ -249,16 +247,15 @@ $ sudo apt-get install -y nodejs
 &lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ node
-&amp;gt; console.log(&#39;hello nodejs&#39;);
+&amp;gt;console.log(&#39;hello nodejs&#39;);
 hello world
 undefined
 &amp;gt; 
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*&lt;strong&gt;REPL&lt;/strong&gt; :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.&lt;/p&gt;
 
-&lt;h6 id=&#34;install-npm&#34;&gt;install npm?&lt;/h6&gt;
+&lt;h4 id=&#34;install-npm&#34;&gt;install npm?&lt;/h4&gt;
 
 &lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
@@ -266,13 +263,13 @@ But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-es
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install build-essential
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;about-npm-things&#34;&gt;About npm things&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;about-npm-things&#34;&gt;About npm things&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is a package manager for javascript. npm makes it easy for JavaScript developers to share and reuse code. Although npm started as the node package manager, but it is now used by almost every popular javascript libraries/frameworks. Please read the &lt;a href=&#34;https://docs.npmjs.com/getting-started&#34;&gt;official doc&lt;/a&gt; if you want to know more.&lt;/p&gt;
 
-&lt;h6 id=&#34;what-is-a-package&#34;&gt;what is a package?&lt;/h6&gt;
+&lt;h4 id=&#34;what-is-a-package&#34;&gt;what is a package?&lt;/h4&gt;
 
 &lt;p&gt;A package (or sometimes module) contains reusable codes to serve a particular purpose. A package is just a directory with one or more files in it.&lt;/p&gt;
 
@@ -283,7 +280,7 @@ But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-es
 A module is anything that can be loaded with require() in a Node.js program. Most npm packages are modules. &lt;a href=&#34;https://docs.npmjs.com/how-npm-works/packages#most-npm-packages-are-modules&#34;&gt;more details..&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;npm-registry&#34;&gt;npm Registry?&lt;/h6&gt;
+&lt;h4 id=&#34;npm-registry&#34;&gt;npm Registry?&lt;/h4&gt;
 
 &lt;p&gt;Every time we download a package using npm install, we&amp;rsquo;re downloading it from npm Registry and put in our project&amp;rsquo;s &lt;code&gt;node_modules&lt;/code&gt; folder. npm Registry is basically a huge database containing each package&amp;rsquo;s files and associated metadata.&lt;/p&gt;
 
@@ -307,12 +304,13 @@ save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
 name: (demo-project) 
-
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
 
-&lt;h3 id=&#34;dealing-with-packages&#34;&gt;Dealing with packages&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;dealing-with-packages&#34;&gt;Dealing with packages&lt;/h2&gt;
 
 &lt;p&gt;One of the most important things that npm does is install packages.&lt;/p&gt;
 
@@ -407,9 +405,9 @@ name: (demo-project)
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;some-useful-links&#34;&gt;Some useful links&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.npmjs.com/#getting-started&#34;&gt;Official Getting Started Page&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
@@ -429,14 +427,14 @@ name: (demo-project)
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-composer-https-getcomposer-org&#34;&gt;What is &lt;a href=&#34;https://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;?&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-composer-https-getcomposer-org&#34;&gt;What is &lt;a href=&#34;https://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;?&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 &lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md&#34;&gt;getcomposer.org&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h5&gt;
+&lt;h4 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h4&gt;
 
 &lt;p&gt;Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say &lt;a href=&#34;https://github.com/PHPMailer/PHPMailer&#34;&gt;PHPMailer&lt;/a&gt;. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.&lt;/p&gt;
 
@@ -447,6 +445,10 @@ name: (demo-project)
 &lt;p&gt;Composer is used in all modern PHP frameworks (Symfony, Laravel etc).&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;using-composer&#34;&gt;Using Composer&lt;/h2&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s start using composer.&lt;/p&gt;
 
 &lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
 
@@ -466,11 +468,7 @@ name: (demo-project)
 &lt;li&gt;&lt;p&gt;&lt;code&gt;composer diagnose&lt;/code&gt; : check for common problems.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;using-composer&#34;&gt;Using Composer&lt;/h3&gt;
-
-&lt;h5 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h5&gt;
+&lt;h3 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h3&gt;
 
 &lt;p&gt;To start using Composer in our project, all we need is a &lt;code&gt;composer.json&lt;/code&gt; file. This file describes the dependencies of our project (and may contain other metadata as well).&lt;/p&gt;
 
@@ -486,13 +484,13 @@ name: (demo-project)
 
 &lt;p&gt;For more information about &lt;code&gt;composer.json&lt;/code&gt; file, please see the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup&#34;&gt;composer documentation&lt;/a&gt;. We also need to have a clear idea about &lt;a href=&#34;https://getcomposer.org/doc/articles/versions.md&#34;&gt;versions&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h5 id=&#34;install-dependencies&#34;&gt;Install Dependencies&lt;/h5&gt;
+&lt;h3 id=&#34;install-dependencies&#34;&gt;Install Dependencies&lt;/h3&gt;
 
 &lt;p&gt;Then we can install the dependencies for our project simply with a &lt;code&gt;composer install&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;This will automatically download the dependencies into our project under the directory &amp;lsquo;vendor&amp;rsquo;.&lt;/p&gt;
 
-&lt;h5 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h5&gt;
+&lt;h4 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h4&gt;
 
 &lt;p&gt;As stated before, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :&lt;/p&gt;
 
@@ -503,7 +501,7 @@ $log-&amp;gt;pushHandler(new Monolog\Handler\StreamHandler(&#39;app.log&#39;, Mo
 $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h5&gt;
+&lt;h4 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h4&gt;
 
 &lt;p&gt;Whenever we want to update our dependencies to latest versions, we can use this command &lt;code&gt;composer update&lt;/code&gt;.&lt;/p&gt;
 
@@ -511,9 +509,11 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;you-need-to-know&#34;&gt;You need to know&lt;/h3&gt;
+&lt;h2 id=&#34;did-you-know&#34;&gt;Did you know?&lt;/h2&gt;
 
-&lt;h5 id=&#34;composer-install-vs-composer-update&#34;&gt;&amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h5&gt;
+&lt;p&gt;We have to understand few key facts while working with composer&lt;/p&gt;
+
+&lt;h3 id=&#34;composer-install-vs-composer-update&#34;&gt;&amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h3&gt;
 
 &lt;p&gt;To get a clear idea what actually happens when we use the &lt;code&gt;composer install&lt;/code&gt; &amp;amp; &lt;code&gt;composer update&lt;/code&gt; commands, please visit the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies&#34;&gt;official doc&lt;/a&gt;. I am trying to write the thing in my own way.&lt;/p&gt;
 
@@ -535,7 +535,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;So, we should only ever run &lt;code&gt;composer update&lt;/code&gt; to get the newest versions of our dependencies, not to install them.&lt;/p&gt;
 
-&lt;h5 id=&#34;using-composer-require-command&#34;&gt;Using &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h5&gt;
+&lt;h3 id=&#34;install-with-composer-require-command&#34;&gt;install with &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h3&gt;
 
 &lt;p&gt;In our example, We could define and install dependencies with a single &lt;a href=&#34;https://getcomposer.org/doc/03-cli.md#require&#34;&gt;&lt;code&gt;composer require&lt;/code&gt;&lt;/a&gt; command.&lt;/p&gt;
 
@@ -563,9 +563,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-redis&#34;&gt;What is Redis? :&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;what-is-redis&#34;&gt;What is Redis?&lt;/h2&gt;
 
 &lt;p&gt;Redis is an in-memory data structure server. Which can be used as database, cache and message broker.&lt;/p&gt;
 
@@ -576,7 +574,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
  &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h6 id=&#34;data-structure-server&#34;&gt;- Data Structure Server&lt;/h6&gt;
+&lt;h4 id=&#34;data-structure-server&#34;&gt;* Data Structure Server&lt;/h4&gt;
 
 &lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
 
@@ -589,11 +587,11 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;popular-nosql-database&#34;&gt;- Popular noSQL Database&lt;/h6&gt;
+&lt;h4 id=&#34;popular-nosql-database&#34;&gt;* Popular noSQL Database&lt;/h4&gt;
 
 &lt;p&gt;It is a very popular noSQL database. Redis is often ranked the &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;most popular key-value database&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h6 id=&#34;message-broker&#34;&gt;- Message Broker&lt;/h6&gt;
+&lt;h4 id=&#34;message-broker&#34;&gt;* Message Broker&lt;/h4&gt;
 
 &lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.&lt;/p&gt;
 
@@ -610,26 +608,32 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis#performance--benchmarks&#34;&gt;https://github.com/dwyl/learn-redis#performance--benchmarks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;let-s-start&#34;&gt;Let&amp;rsquo;s Start&lt;/h3&gt;
-
 &lt;hr /&gt;
 
-&lt;h6 id=&#34;install&#34;&gt;Install&lt;/h6&gt;
+&lt;h2 id=&#34;let-s-start&#34;&gt;Let&amp;rsquo;s Start&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, How do i start using Redis?&lt;/p&gt;
 
-&lt;h6 id=&#34;try&#34;&gt;Try&lt;/h6&gt;
+&lt;h3 id=&#34;install&#34;&gt;Install&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;try&#34;&gt;Try&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://try.redis.io/&#34;&gt;http://try.redis.io/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis&#34;&gt;https://github.com/dwyl/learn-redis&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;all-commands&#34;&gt;All Commands&lt;/h6&gt;
+&lt;h3 id=&#34;all-commands&#34;&gt;All Commands&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h6 id=&#34;cli&#34;&gt;CLI&lt;/h6&gt;
+&lt;h3 id=&#34;cli&#34;&gt;CLI&lt;/h3&gt;
 
 &lt;p&gt;After we install Redis on our local pc, we can start using the Redis CLI with the &lt;code&gt;redis-cli&lt;/code&gt; command,&lt;/p&gt;
 
@@ -637,7 +641,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 127.0.0.1:6379&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;gui&#34;&gt;GUI&lt;/h6&gt;
+&lt;h3 id=&#34;gui&#34;&gt;GUI&lt;/h3&gt;
 
 &lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
 
@@ -664,7 +668,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;database&#34;&gt;Database :&lt;/h3&gt;
+&lt;h2 id=&#34;database&#34;&gt;Database :&lt;/h2&gt;
 
 &lt;p&gt;A database is a collection of data that is stored in an organized manner.&lt;/p&gt;
 
@@ -672,7 +676,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;p&gt;the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;database-models&#34;&gt;Database Models :&lt;/h3&gt;
+&lt;h4 id=&#34;database-models&#34;&gt;Database Models :&lt;/h4&gt;
 
 &lt;p&gt;A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.&lt;/p&gt;
 
@@ -680,7 +684,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;DBMS popularity broken down by database model : &lt;a href=&#34;http://db-engines.com/en/ranking&#34;&gt;http://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h3&gt;
+&lt;h4 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h4&gt;
 
 &lt;p&gt;DBMS stands for Database Management System. It is the software application to store and manage the data.&lt;/p&gt;
 
@@ -698,7 +702,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h2&gt;
 
 &lt;p&gt;ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).&lt;/p&gt;
 
@@ -716,7 +720,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;p&gt;&lt;strong&gt;Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h3&gt;
+&lt;h4 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h4&gt;
 
 &lt;p&gt;Oracle is ACID compliant.&lt;/p&gt;
 
@@ -736,9 +740,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-git&#34;&gt;What is GIT?&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;what-is-git&#34;&gt;What is GIT?&lt;/h2&gt;
 
 &lt;p&gt;Git is a free and open source distributed version control system.&lt;/p&gt;
 
@@ -758,13 +760,13 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;Can work locally without any central server&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;Now let&amp;rsquo;s install Git on our machine and start using it.&lt;/p&gt;
 
-&lt;h4 id=&#34;install&#34;&gt;Install&lt;/h4&gt;
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please follow the &lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;offical doc&lt;/a&gt; to install git.&lt;/p&gt;
 
 &lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
 
@@ -816,9 +818,9 @@ $ git config --system --list
 
 &lt;p&gt;&lt;em&gt;To get a copy of an existing Git repository, use the &lt;code&gt;git clone&lt;/code&gt; command.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;lifecycle&#34;&gt;Lifecycle&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;lifecycle&#34;&gt;Lifecycle&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34; alt=&#34;Lifecycle&#34; /&gt;&lt;/p&gt;
 
@@ -828,31 +830,45 @@ $ git config --system --list
 
 &lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;untracked&lt;/strong&gt; : at first any new file is untracked.&lt;/p&gt;
+&lt;h4 id=&#34;1-untracked&#34;&gt;1. &lt;strong&gt;untracked&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;at first any new file is untracked.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;staged&lt;/strong&gt; : after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-staged&#34;&gt;2. &lt;strong&gt;staged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;unchanged&lt;/strong&gt; : If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;unstaged&lt;/strong&gt; : If there is any modification to that staged or unchanged file, that file becomes &lt;code&gt;unstaged&lt;/code&gt;.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ndash;&amp;gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-unchanged&#34;&gt;3. &lt;strong&gt;unchanged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lt;&amp;ndash; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/em&gt; *&lt;/p&gt;
+&lt;p&gt;If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;
 
-&lt;p&gt;*&lt;em&gt;&lt;code&gt;git checkout&lt;/code&gt; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&#34;4-unstaged&#34;&gt;4. &lt;strong&gt;unstaged&lt;/strong&gt; :&lt;/h4&gt;
 
-&lt;h3 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h3&gt;
+&lt;p&gt;If there is any modification to that staged or unchanged file, that file becomes unstaged.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;lsquo;git checkout&amp;rsquo; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
+
+&lt;p&gt;Some basic commands with examples&lt;/p&gt;
 
 &lt;h4 id=&#34;git-add&#34;&gt;git add&lt;/h4&gt;
 
@@ -952,9 +968,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;*&lt;code&gt;git show&lt;/code&gt; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;lsquo;git show&amp;rsquo; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;git-diff&#34;&gt;git diff:&lt;/h4&gt;
 
@@ -988,9 +1002,9 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt; : show changes that are tracked (staged + unstaged).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h3&gt;
-
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h2&gt;
 
 &lt;h4 id=&#34;git-remote&#34;&gt;git remote:&lt;/h4&gt;
 
@@ -1040,7 +1054,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-a-http-cookie&#34;&gt;What is a HTTP Cookie?&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-a-http-cookie&#34;&gt;What is a HTTP Cookie?&lt;/h2&gt;
 
 &lt;p&gt;Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.&lt;/p&gt;
 
@@ -1197,19 +1211,17 @@ try {
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;what-is-stripe-https-stripe-com&#34;&gt;What is &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;what-is-stripe-https-stripe-com&#34;&gt;What is &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;payment-types&#34;&gt;Payment types&lt;/h4&gt;
+&lt;h3 id=&#34;payment-types&#34;&gt;Payment types&lt;/h3&gt;
 
 &lt;p&gt;Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;accepting-payments-with-cards&#34;&gt;Accepting Payments with Cards&lt;/h4&gt;
+&lt;h2 id=&#34;accepting-payments-with-cards&#34;&gt;Accepting Payments with Cards&lt;/h2&gt;
 
 &lt;p&gt;Using card information with Stripe is a two-step process&lt;/p&gt;
 
@@ -1218,13 +1230,12 @@ try {
 &lt;li&gt;Use the payment information in a charge request or save it for later&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 1. Securely collect payment information using tokenization&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;step-1-securely-collect-payment-information-using-tokenization&#34;&gt;Step 1. Securely collect payment information using tokenization&lt;/h3&gt;
 
 &lt;p&gt;Stripe provides three methods for tokenizing customer’s payment information over HTTPS
 Checkout, Stripe.js &amp;amp; Mobile SDKs&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/checkout&#34;&gt;Checkout&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1-checkout-https-stripe-com-checkout&#34;&gt;1. &lt;a href=&#34;https://stripe.com/checkout&#34;&gt;Checkout&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&amp;rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.&lt;/p&gt;
 
@@ -1233,29 +1244,29 @@ Checkout, Stripe.js &amp;amp; Mobile SDKs&lt;/p&gt;
 &lt;p&gt;Checkout has 12 languages to pay with a localized experience.&lt;/p&gt;
 
 &lt;p&gt;Embedding checkout in your site
-&lt;a href=&#34;https://stripe.com/docs/checkout/tutorial&#34;&gt;https://stripe.com/docs/checkout/tutorial&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;a href=&#34;https://stripe.com/docs/checkout/tutorial&#34;&gt;https://stripe.com/docs/checkout/tutorial&lt;/a&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/docs/quickstart#elements&#34;&gt;Elements&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-elements-https-stripe-com-docs-quickstart-elements&#34;&gt;2. &lt;a href=&#34;https://stripe.com/docs/quickstart#elements&#34;&gt;Elements&lt;/a&gt;&lt;/h4&gt;
 
-&lt;p&gt;If we want to customize the payment form for our need, then we can make use of Stripe Elements.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;If we want to customize the payment form for our need, then we can make use of Stripe Elements.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stripe.com/docs/mobile&#34;&gt;Mobile SDKs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&#34;3-mobile-sdks-https-stripe-com-docs-mobile&#34;&gt;3. &lt;a href=&#34;https://stripe.com/docs/mobile&#34;&gt;Mobile SDKs&lt;/a&gt;&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 2. Use the tokenized payment information&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Stripe has native libraries for iOS and Android applications.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-2-use-the-tokenized-payment-information&#34;&gt;Step 2. Use the tokenized payment information&lt;/h3&gt;
 
 &lt;p&gt;While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Charging the customer immediately&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;charging-the-customer-immediately&#34;&gt;Charging the customer immediately&lt;/h4&gt;
 
-&lt;p&gt;We can create a one-time charge request to charge a customer’s card.
-The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. &lt;a href=&#34;https://stripe.com/docs/quickstart#charge-immediately&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;We can create a one-time charge request to charge a customer’s card.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Saving the customer’s card information&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. &lt;a href=&#34;https://stripe.com/docs/quickstart#charge-immediately&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. &lt;a href=&#34;https://stripe.com/docs/quickstart#saving-card-information&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&#34;saving-the-customer-s-card-information&#34;&gt;Saving the customer’s card information&lt;/h4&gt;
+
+&lt;p&gt;If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. &lt;a href=&#34;https://stripe.com/docs/quickstart#saving-card-information&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1269,7 +1280,7 @@ The API request will contain the token, currency, amount to charge, and any addi
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h4&gt;
+&lt;h2 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h2&gt;
 
 &lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
 
@@ -1284,13 +1295,13 @@ HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদে�
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h4&gt;
+&lt;h2 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h2&gt;
 
 &lt;p&gt;HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।&lt;/p&gt;
 
 &lt;p&gt;Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।&lt;/p&gt;
 
-&lt;h6 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h6&gt;
+&lt;h4 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;Request Line 
 Request Header fields
@@ -1298,17 +1309,19 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Example&lt;/p&gt;
+&lt;p&gt;e.g,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;GET /index.html HTTP/1.1
 Host : www.example.com 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;GET হলো Method, index.html হলো Requested File, Http/1.1 হলো HTTP Version&lt;/li&gt;
+&lt;li&gt;GET হলো Method&lt;/li&gt;
+&lt;li&gt;index.html হলো Requested File&lt;/li&gt;
+&lt;li&gt;Http/1.1 হলো HTTP Version&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h6&gt;
+&lt;h4 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;Status  Line 
 Response Header Fields 
@@ -1316,16 +1329,16 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Example&lt;/p&gt;
+&lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK 
+&lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
 
@@ -1403,7 +1416,7 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h4&gt;
+&lt;h2 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h2&gt;
 
 &lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
 
@@ -1413,9 +1426,7 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h4&gt;
+&lt;h3 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h3&gt;
 
 &lt;p&gt;Because It is&lt;/p&gt;
 
@@ -1425,25 +1436,21 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;usage&#34;&gt;USAGE?&lt;/h4&gt;
+&lt;h3 id=&#34;usage&#34;&gt;USAGE?&lt;/h3&gt;
 
 &lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h4&gt;
+&lt;h3 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h3&gt;
 
 &lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h4&gt;
+&lt;h2 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h2&gt;
 
 &lt;p&gt;The JSON syntax is a subset of the JavaScript syntax.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Data Structures&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;data-structures&#34;&gt;Data Structures&lt;/h3&gt;
 
 &lt;p&gt;JSON is defined by two basic structures.&lt;/p&gt;
 
@@ -1460,7 +1467,7 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;Peter&amp;quot;,&amp;quot;Sally&amp;quot;]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Syntax Rules&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;syntax-rules&#34;&gt;Syntax Rules&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Data is written as name/value pairs. &lt;code&gt;e.g., &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;&lt;/code&gt;&lt;/p&gt;
@@ -1506,7 +1513,7 @@ e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;P
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Data Types&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;data-types&#34;&gt;Data Types&lt;/h3&gt;
 
 &lt;p&gt;Values must be one of the following data types.&lt;/p&gt;
 
@@ -1561,14 +1568,11 @@ e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h4&gt;
+&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
 
-&lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as
-   &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h4&gt;
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
 
 &lt;p&gt;Hugo allows us to scaffold a website quickly and easily.&lt;/p&gt;
 
@@ -1648,7 +1652,7 @@ Hello World. This is my first post.
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;deploy-to-github-page&#34;&gt;Deploy to Github page&lt;/h4&gt;
+&lt;h2 id=&#34;deploy-to-github-page&#34;&gt;Deploy to Github page&lt;/h2&gt;
 
 &lt;p&gt;Full details on how to host your Hugo based website on github page can be found here &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog&#34;&gt;https://gohugo.io/tutorials/github-pages-blog&lt;/a&gt;. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&amp;hellip;&lt;/p&gt;
 

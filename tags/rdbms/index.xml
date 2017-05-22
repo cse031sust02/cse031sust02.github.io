@@ -19,7 +19,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;database&#34;&gt;Database :&lt;/h3&gt;
+&lt;h2 id=&#34;database&#34;&gt;Database :&lt;/h2&gt;
 
 &lt;p&gt;A database is a collection of data that is stored in an organized manner.&lt;/p&gt;
 
@@ -27,7 +27,7 @@
 &lt;p&gt;the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;database-models&#34;&gt;Database Models :&lt;/h3&gt;
+&lt;h4 id=&#34;database-models&#34;&gt;Database Models :&lt;/h4&gt;
 
 &lt;p&gt;A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.&lt;/p&gt;
 
@@ -35,7 +35,7 @@
 
 &lt;p&gt;DBMS popularity broken down by database model : &lt;a href=&#34;http://db-engines.com/en/ranking&#34;&gt;http://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h3&gt;
+&lt;h4 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h4&gt;
 
 &lt;p&gt;DBMS stands for Database Management System. It is the software application to store and manage the data.&lt;/p&gt;
 
@@ -53,7 +53,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h2&gt;
 
 &lt;p&gt;ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).&lt;/p&gt;
 
@@ -71,7 +71,7 @@
 &lt;p&gt;&lt;strong&gt;Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h3&gt;
+&lt;h4 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h4&gt;
 
 &lt;p&gt;Oracle is ACID compliant.&lt;/p&gt;
 
