@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Installing LEMP stack on ubuntu 14.04"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@cse031sust02"/>
+
+
+
+  	<meta property="og:title" content="Installing LEMP stack on ubuntu 14.04 &middot; cse031sust02" />
+  	<meta property="og:site_name" content="cse031sust02" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/" />
+
+    
+        
+            <meta property="og:image" content="https://cse031sust02.github.io/images/1.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="og:image" content="https://cse031sust02.github.io/" />
+    <meta property="article:published_time" content="2017-06-20T16:21:21&#43;06:00" />
+
+    
+    <meta property="article:tag" content="php" />
+    
+    <meta property="article:tag" content="linux" />
+    
+    
+
+    <title>Installing LEMP stack on ubuntu 14.04 &middot; cse031sust02</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://cse031sust02.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://cse031sust02.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/nav.css" />
+
+    
+
+    
+      
+          <link href="https://cse031sust02.github.io/index.xml" rel="alternate" type="application/rss+xml" title="cse031sust02" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.19" />
+
+    <link rel="canonical" href="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": https://cse031sust02.github.io,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": still trying to find a bio
+        
+    },
+    "headline": Installing LEMP stack on ubuntu 14.04,
+    "name": Installing LEMP stack on ubuntu 14.04,
+    "wordCount": 496,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/,
+    "datePublished": 2017-06-20T16:21Z,
+    "dateModified": 2017-06-20T16:21Z,
+    
+    "keywords": php, linux,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-67303858-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://cse031sust02.github.io/">Blog</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://cse031sust02.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Installing LEMP stack on ubuntu 14.04</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-06-20T16:21:21&#43;06:00">
+            Jun 20, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/php/">#php</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/linux/">#linux</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h2 id="what-is-lemp-stack">What is LEMP stack?</h2>
+
+<p>LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>So, We are going to setup LEMP stack on our ubuntu 14.04 machine.</p>
+
+<h4 id="step-1-update-apt-get">Step 1 - Update Apt-Get</h4>
+
+<p>Update the package database. To know more about <strong>apt-get</strong>, please visit this <a href="https://itsfoss.com/apt-get-linux-guide">page</a>.</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
+<h4 id="step-2-install-nginx">Step 2 - Install nginx</h4>
+
+<p>Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.</p>
+
+<pre><code>sudo apt-get install nginx
+</code></pre>
+
+<p>We should now be able to access the default Nginx landing page from our browser by entering our server&rsquo;s domain name or public IP address.</p>
+
+<h4 id="step-3-install-php">Step 3 - Install PHP</h4>
+
+<p>Now it&rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.</p>
+
+<p>First we need to add <a href="https://launchpad.net/%7Eondrej/+archive/ubuntu/php">PPA for PHP 7</a> to system&rsquo;s Apt sources using <a href="http://manpages.ubuntu.com/manpages/trusty/man1/add-apt-repository.1.html">add-apt-repository</a> command and then install php and php-fpm packages (since nginx communicates with php-fpm).</p>
+
+<pre><code>sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php7.0 php7.0-fpm
+</code></pre>
+
+<blockquote>
+<p>We may also need to install modules like php7.0-mysql, php7.0-cli etc based on our application requirements.</p>
+
+<pre><code>sudo apt-get install php7.0-mysql php7.0-cli php7.0-mbstring
+</code></pre>
+
+<p>To find out all available PHP7 modules, we can use the <code>sudo apt-cache search php7-*</code> command.</p>
+</blockquote>
+
+<h5 id="configure-nginx-to-use-the-php-processor">Configure Nginx to Use the PHP Processor</h5>
+
+<p>Now, we still need to tell nginx to use our PHP processor for serving php files.</p>
+
+<p>First we have to open the default Nginx server block configuration file</p>
+
+<pre><code>sudo nano /etc/nginx/sites-available/default
+</code></pre>
+
+<p>There is already a server block there, we will change that with the following code,</p>
+
+<pre><code>server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.php index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre>
+
+<p>Now, We will restart the nginx server with the following command,</p>
+
+<pre><code>sudo service nginx restart
+</code></pre>
+
+<p>We can test if everything is working properly by creating a php file in <code>/var/www/html</code> directory and then try to access that file from our browser.</p>
+
+<h4 id="step-4-install-mysql">Step 4 - Install MySQL</h4>
+
+<p>Now we will install MySQL. we can do it very easily with the following command,</p>
+
+<pre><code>sudo apt-get install mysql-server
+</code></pre>
+
+<p>To verify if MySQL is installed properly, we can try to login</p>
+
+<pre><code>mysql -u root -p
+</code></pre>
+
+<p>We should then see a Welcome Screen and we can start writing SQLs there</p>
+
+<pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql&gt; 
+
+</code></pre>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://cse031sust02.github.io/">Talha Ibne Imam</a></h4>
+  
+  <p>still trying to find a bio</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://cse031sust02.github.io">https://cse031sust02.github.io</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Installing%20LEMP%20stack%20on%20ubuntu%2014.04&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2finstalling-lemp-ubuntu-14%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2finstalling-lemp-ubuntu-14%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2finstalling-lemp-ubuntu-14%2f&amp;description=Installing%20LEMP%20stack%20on%20ubuntu%2014.04"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2finstalling-lemp-ubuntu-14%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'cse031sust02';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/installing-lemp-ubuntu-14\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/linux-cheatsheet/">
+          <section class="post">
+              <h2>Getting Started with Linux Command Line</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">cse031sust02</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/index.js"></script>
+    
+</body>
+</html>
+
