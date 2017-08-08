@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Data Structure Basics"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@cse031sust02"/>
+
+
+
+  	<meta property="og:title" content="Data Structure Basics &middot; cse031sust02" />
+  	<meta property="og:site_name" content="cse031sust02" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/data-structure-basics/" />
+
+    
+        
+            <meta property="og:image" content="https://cse031sust02.github.io/images/1.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="og:image" content="https://cse031sust02.github.io/" />
+    <meta property="article:published_time" content="2017-08-08T17:46:18&#43;06:00" />
+
+    
+    <meta property="article:tag" content="data-structure" />
+    
+    
+
+    <title>Data Structure Basics &middot; cse031sust02</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://cse031sust02.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://cse031sust02.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://cse031sust02.github.io/css/nav.css" />
+
+    
+
+    
+      
+          <link href="https://cse031sust02.github.io/index.xml" rel="alternate" type="application/rss+xml" title="cse031sust02" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.19" />
+
+    <link rel="canonical" href="https://cse031sust02.github.io/post/data-structure-basics/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": https://cse031sust02.github.io,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": still trying to find a bio
+        
+    },
+    "headline": Data Structure Basics,
+    "name": Data Structure Basics,
+    "wordCount": 425,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://cse031sust02.github.io/post/data-structure-basics/,
+    "datePublished": 2017-08-08T17:46Z,
+    "dateModified": 2017-08-08T17:46Z,
+    
+    "keywords": data-structure,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://cse031sust02.github.io/post/data-structure-basics/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-67303858-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://cse031sust02.github.io/">Blog</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://cse031sust02.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Data Structure Basics</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-08-08T17:46:18&#43;06:00">
+            Aug 8, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/data-structure/">#data-structure</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<h2 id="what-is-data-structure">What is Data Structure?</h2>
+
+<p>Data structures are ways to store data in an organized fashion so that it can be used efficiently. Just like there are many ways (i.e alphabetically or by genre) you can organize your books in a bookshelf.</p>
+
+<h4 id="types">Types</h4>
+
+<ul>
+<li><strong>Linear</strong> : Array, Linked List, Stack, Queue etc</li>
+<li><strong>Non Linear</strong> : Tree, Graph etc</li>
+</ul>
+
+<h4 id="operations">Operations</h4>
+
+<p>We can do different types of operations on different data structures. Such as : Traversing, Searching, Insertion, Deletion etc.</p>
+
+<h4 id="complexity">Complexity?</h4>
+
+<p>We can calculate complexity of different operations on different Data Structures. i.e, Complexity of Stack&rsquo;s push() operations is 0(1).</p>
+
+<hr />
+
+<h2 id="some-basic-data-structures">Some Basic Data Structures</h2>
+
+<h3 id="array">Array</h3>
+
+<p>An array is a collection of homogeneous type of data elements.</p>
+
+<pre><code>Operations: Traversing, Searching, Insertion, Deletion, Sorting, Merging
+
+    Searching : Binary Search, Linear Search etc
+    Sorting : Quick sort, Buuble Sort, Heap Sort etc
+</code></pre>
+
+<p><img src="https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif" alt="Array" /></p>
+
+<p><strong>image source</strong> : <a href="https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif">oracle</a></p>
+
+<h3 id="linked-list">Linked List</h3>
+
+<p>A Linked list is a linear collection of data elements called <strong>nodes</strong>. Each node has two part one is <em>info</em> and other is <em>link</em> part. info part gives information of current node and link part is the address of the next node.</p>
+
+<pre><code>Operations: Traversing, Searching, Insertion, Deletion etc
+Types : Singly Linked List, Doubly Linked List, Circular Linked List etc 
+</code></pre>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png" alt="Linkded List" /></p>
+
+<p><strong>image source</strong> : <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png">wikimedia</a></p>
+
+<h3 id="stack">Stack</h3>
+
+<p>Stack is a LIFO (Last In First Out) structure. A Stack is a list of elements where both insertion and deletion are allowed at only one end called Top.</p>
+
+<pre><code>Operations : 
+    push - insert new elements into the Stack
+    pop - delete the top element from the Stack
+    peek - returns the top element of stack.
+</code></pre>
+
+<p><img src="http://www.studytonight.com/data-structures/images/stack-data-structure.png" alt="Stack" /></p>
+
+<p><strong>image source</strong> : <a href="http://www.studytonight.com/data-structures/images/stack-data-structure.png">studytonight</a></p>
+
+<p>A Stack is called <strong>Overflow</strong> when it is completely full, and is called <strong>Underflow</strong> when it is completely empty.</p>
+
+<h3 id="queue">Queue</h3>
+
+<p>Queue is a linear data structure, in which the first element is inserted from one end called REAR, and the deletion of exisiting element takes place from the other end called as FRONT. It is a FIFO (First In First Out) structure.</p>
+
+<pre><code>Operations : 
+    enqueue - insert new elements into the Queue
+    dequeue - delete an existing element from the Queue
+</code></pre>
+
+<p><img src="http://www.studytonight.com/data-structures/images/introduction-to-queue.png" alt="Queue" /></p>
+
+<p><strong>image source</strong> : <a href="http://www.studytonight.com/data-structures/images/introduction-to-queue.png">studytonight</a></p>
+
+<h3 id="tree">Tree</h3>
+
+<p>A Tree is a non-linear data structure which organizes data in hierarchical (arranged in order of rank) structure.</p>
+
+<p>In tree data structure, every individual element is called as <strong>Node</strong>.</p>
+
+<ul>
+<li><p>The first node is the Root Node.</p></li>
+
+<li><p>The remainging nodes forms subtree recursively. Every child node will form a subtree on its parent node.</p></li>
+</ul>
+
+<p><img src="http://btechsmartclass.com/DS/images/Tree.png" alt="Tree" /></p>
+
+<p><strong>image source</strong> : <a href="http://btechsmartclass.com/DS/images/Tree.png">btechsmartclass</a></p>
+
+<h5 id="terminology">Terminology</h5>
+
+<p>please check this <a href="http://btechsmartclass.com/DS/U3_T1.html">article</a> to get a very good understanding about terminologies used in trees.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://cse031sust02.github.io/">Talha Ibne Imam</a></h4>
+  
+  <p>still trying to find a bio</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://cse031sust02.github.io">https://cse031sust02.github.io</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Data%20Structure%20Basics&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdata-structure-basics%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdata-structure-basics%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdata-structure-basics%2f&amp;description=Data%20Structure%20Basics"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fdata-structure-basics%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'cse031sust02';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/data-structure-basics\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/">
+          <section class="post">
+              <h2>Installing LEMP stack on ubuntu 14.04</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">cse031sust02</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://cse031sust02.github.io/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -7,8 +7,118 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Tue, 20 Jun 2017 16:21:21 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 08 Aug 2017 17:46:18 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Data Structure Basics</title>
+      <link>https://cse031sust02.github.io/post/data-structure-basics/</link>
+      <pubDate>Tue, 08 Aug 2017 17:46:18 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/data-structure-basics/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-is-data-structure&#34;&gt;What is Data Structure?&lt;/h2&gt;
+
+&lt;p&gt;Data structures are ways to store data in an organized fashion so that it can be used efficiently. Just like there are many ways (i.e alphabetically or by genre) you can organize your books in a bookshelf.&lt;/p&gt;
+
+&lt;h4 id=&#34;types&#34;&gt;Types&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linear&lt;/strong&gt; : Array, Linked List, Stack, Queue etc&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Non Linear&lt;/strong&gt; : Tree, Graph etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;operations&#34;&gt;Operations&lt;/h4&gt;
+
+&lt;p&gt;We can do different types of operations on different data structures. Such as : Traversing, Searching, Insertion, Deletion etc.&lt;/p&gt;
+
+&lt;h4 id=&#34;complexity&#34;&gt;Complexity?&lt;/h4&gt;
+
+&lt;p&gt;We can calculate complexity of different operations on different Data Structures. i.e, Complexity of Stack&amp;rsquo;s push() operations is 0(1).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;some-basic-data-structures&#34;&gt;Some Basic Data Structures&lt;/h2&gt;
+
+&lt;h3 id=&#34;array&#34;&gt;Array&lt;/h3&gt;
+
+&lt;p&gt;An array is a collection of homogeneous type of data elements.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion, Sorting, Merging
+
+    Searching : Binary Search, Linear Search etc
+    Sorting : Quick sort, Buuble Sort, Heap Sort etc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif&#34; alt=&#34;Array&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif&#34;&gt;oracle&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;linked-list&#34;&gt;Linked List&lt;/h3&gt;
+
+&lt;p&gt;A Linked list is a linear collection of data elements called &lt;strong&gt;nodes&lt;/strong&gt;. Each node has two part one is &lt;em&gt;info&lt;/em&gt; and other is &lt;em&gt;link&lt;/em&gt; part. info part gives information of current node and link part is the address of the next node.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion etc
+Types : Singly Linked List, Doubly Linked List, Circular Linked List etc 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png&#34; alt=&#34;Linkded List&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png&#34;&gt;wikimedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;stack&#34;&gt;Stack&lt;/h3&gt;
+
+&lt;p&gt;Stack is a LIFO (Last In First Out) structure. A Stack is a list of elements where both insertion and deletion are allowed at only one end called Top.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Operations : 
+    push - insert new elements into the Stack
+    pop - delete the top element from the Stack
+    peek - returns the top element of stack.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.studytonight.com/data-structures/images/stack-data-structure.png&#34; alt=&#34;Stack&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://www.studytonight.com/data-structures/images/stack-data-structure.png&#34;&gt;studytonight&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A Stack is called &lt;strong&gt;Overflow&lt;/strong&gt; when it is completely full, and is called &lt;strong&gt;Underflow&lt;/strong&gt; when it is completely empty.&lt;/p&gt;
+
+&lt;h3 id=&#34;queue&#34;&gt;Queue&lt;/h3&gt;
+
+&lt;p&gt;Queue is a linear data structure, in which the first element is inserted from one end called REAR, and the deletion of exisiting element takes place from the other end called as FRONT. It is a FIFO (First In First Out) structure.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Operations : 
+    enqueue - insert new elements into the Queue
+    dequeue - delete an existing element from the Queue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.studytonight.com/data-structures/images/introduction-to-queue.png&#34; alt=&#34;Queue&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://www.studytonight.com/data-structures/images/introduction-to-queue.png&#34;&gt;studytonight&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;tree&#34;&gt;Tree&lt;/h3&gt;
+
+&lt;p&gt;A Tree is a non-linear data structure which organizes data in hierarchical (arranged in order of rank) structure.&lt;/p&gt;
+
+&lt;p&gt;In tree data structure, every individual element is called as &lt;strong&gt;Node&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The first node is the Root Node.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The remainging nodes forms subtree recursively. Every child node will form a subtree on its parent node.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://btechsmartclass.com/DS/images/Tree.png&#34; alt=&#34;Tree&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://btechsmartclass.com/DS/images/Tree.png&#34;&gt;btechsmartclass&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;terminology&#34;&gt;Terminology&lt;/h5&gt;
+
+&lt;p&gt;please check this &lt;a href=&#34;http://btechsmartclass.com/DS/U3_T1.html&#34;&gt;article&lt;/a&gt; to get a very good understanding about terminologies used in trees.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Installing LEMP stack on ubuntu 14.04</title>

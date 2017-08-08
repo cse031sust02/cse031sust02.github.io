@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/data-structure-basics/</loc>
+    <lastmod>2017-08-08T17:46:18+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</loc>
     <lastmod>2017-06-20T16:21:21+06:00</lastmod>
   </url>
@@ -114,6 +119,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/data-structure/</loc>
+    <lastmod>2017-08-08T17:46:18+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/database/</loc>
     <lastmod>2017-04-11T11:13:09+06:00</lastmod>
     <priority>0</priority>
@@ -193,7 +204,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-06-20T16:21:21+06:00</lastmod>
+    <lastmod>2017-08-08T17:46:18+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -234,7 +245,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-06-20T16:21:21+06:00</lastmod>
+    <lastmod>2017-08-08T17:46:18+06:00</lastmod>
     <priority>0</priority>
   </url>
   
