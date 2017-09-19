@@ -220,7 +220,7 @@ stream {
 
 &lt;p&gt;We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use &lt;strong&gt;sites-available&lt;/strong&gt; folder for storing all of our virtual host configurations(whether they&amp;rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&amp;rsquo;s configuration file to &lt;strong&gt;sites-enabled&lt;/strong&gt; directory.&lt;/p&gt;
 
-&lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understand-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
+&lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understanding-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
 
 &lt;h3 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h3&gt;
 
