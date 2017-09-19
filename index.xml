@@ -7,8 +7,129 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Wed, 09 Aug 2017 11:27:15 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2017 17:18:51 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How I learned to stop panicking and play with NGINX</title>
+      <link>https://cse031sust02.github.io/post/getting-started-with-nginx/</link>
+      <pubDate>Sun, 20 Aug 2017 17:18:51 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/getting-started-with-nginx/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-nginx&#34;&gt;What is Nginx&lt;/h3&gt;
+
+&lt;p&gt;Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=11m13s&#34;&gt;web server&lt;/a&gt; (like Apache) or as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Reverse_proxy&#34;&gt;reverse proxy&lt;/a&gt; (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.&lt;/p&gt;
+
+&lt;h5 id=&#34;why-use-nginx&#34;&gt;Why use Nginx?&lt;/h5&gt;
+
+&lt;p&gt;There are other web servers such as Apache, IIS etc. So what makes Nginx special? It is especially good at handling many concurrent connections as it was originally developed to handle &lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;C10k problem&lt;/a&gt; (serving 10000 concurrent connections). Nginx serves requests asynchronously while other web servers (such as Apache, IIS) creates new threads for every request received.&lt;/p&gt;
+
+&lt;p&gt;Nginx can also work alognside other web servers as a reverse proxy. Nginx not only serve HTTP &amp;amp; HTTPS protocol but also IMAP, POP3 and SMPT. We can use Nginx on servers with very limited hardware capabilites. A very detailed overview of why we should use Nginx can be found &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=16m57s&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;There are various ways to download and install Nginx. Please follow &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/&#34;&gt;Official Guide&lt;/a&gt; to install Nginx on your system.&lt;/p&gt;
+
+&lt;p&gt;On Ubuntu, One should be able to install Nginx easily with the &lt;code&gt;apt-get install nginx&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;After installing Nginx, we should see the welcome page by entering the IP address (we can get that using &lt;code&gt;ifconfig&lt;/code&gt; command) of our server on a browser.&lt;/p&gt;
+
+&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;For most linux distributions, all Nginx config files are located in &lt;code&gt;/etc/nginx&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nginx.conf&lt;/strong&gt; is the main configuration file. It is Nginx&amp;rsquo;s main control point which reads in all of the other appropriate configuration files and combines them into a monolithic configuration file when the server starts.&lt;/p&gt;
+
+&lt;p&gt;The structure of that configuration file looks like below :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user nobody; 
+
+events {
+   ...
+}
+
+http {
+    ...
+
+    server {
+    	...
+    }
+
+    server {
+    	...
+    }
+}
+
+stream {
+   ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As we can see, This file consists of &lt;strong&gt;directives&lt;/strong&gt; and their parameters. There are two kinds of directives.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;simple directives&lt;/strong&gt; : These directives end with a semicolon.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user nobody;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;contexts&lt;/strong&gt; : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;To know more details about the configuration file and what is the purpose of the each directives, please visit the &lt;a href=&#34;https://www.nginx.com/resources/admin-guide/configuration-files/&#34;&gt;official guide&lt;/a&gt;. This &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/examples/full/&#34;&gt;example&lt;/a&gt; is helpful too.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;hosting-sites&#34;&gt;Hosting Sites&lt;/h4&gt;
+
+&lt;p&gt;For hosting websites, we need to understand how to set up virtual servers.&lt;/p&gt;
+
+&lt;p&gt;A virtual server is defined by a server directive in the http context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http {
+    server {
+        # Server configuration
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And it is possible to add multiple virtual servers into the http context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http {
+    server {
+        # Server One configuration
+    }
+
+    server {
+        # Server Two configuration
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, if we add 10 virtual servers, the &lt;strong&gt;nginx.conf&lt;/strong&gt; file will become very long and modifying that file will be a headache. This is why &lt;strong&gt;sites-enabled&lt;/strong&gt; folder exists. We can make seperate configuration file for each virtual host. And in the main nginx.conf file, we will include that folder :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http {
+    # Virtual Hosts
+    include /etc/nginx/sites-enabled/*;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, now every virtual servers listed in &lt;strong&gt;sites-enabled&lt;/strong&gt; folder will be public to visitors.&lt;/p&gt;
+
+&lt;p&gt;We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use &lt;strong&gt;sites-available&lt;/strong&gt; folder for storing all of our virtual host configurations(whether they&amp;rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&amp;rsquo;s configuration file to &lt;strong&gt;sites-enabled&lt;/strong&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;I have written another post where i tried to explain the server block in details.&lt;/p&gt;
+
+&lt;h3 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h3&gt;
+
+&lt;p&gt;Whenever we change the configuration, we will need to restart nginx server for changes to take place.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Introduction to Websocket</title>
@@ -1855,145 +1976,6 @@ e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;
 
 &lt;li&gt;&lt;p&gt;JSON values cannot be a function, a date or undefined. (In JavaScript you can have these values)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Blogging with Hugo</title>
-      <link>https://cse031sust02.github.io/post/blogging-with-hugo/</link>
-      <pubDate>Sun, 09 Apr 2017 16:31:49 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/blogging-with-hugo/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
-
-&lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
-
-&lt;p&gt;Hugo allows us to scaffold a website quickly and easily.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new site&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new site blog
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Choose a theme&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Download a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; and put in &amp;lsquo;theme&amp;rsquo; folder&lt;/p&gt;
-
-&lt;p&gt;for example, in order to install the &lt;a href=&#34;http://themes.gohugo.io/theme/casper/&#34;&gt;casper&lt;/a&gt; theme,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ mkdir themes
-blog$ cd themes
-blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;update your configuration in config.toml&lt;/p&gt;
-
-&lt;p&gt;for example,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;languageCode = &amp;quot;en-us&amp;quot;
-title = &amp;quot;My New Hugo Site&amp;quot;
-baseURL = &amp;quot;http://example.org/&amp;quot;
-
-[params]
-description = &amp;quot;YOUR DESCRIPTION GOES HERE&amp;quot;
-author = &amp;quot;YOUR NAME&amp;quot;
-authorlocation = &amp;quot;YOUR LOCATION&amp;quot;
-authorwebsite = &amp;quot;YOUR SITE&amp;quot;
-bio= &amp;quot;YOUR BIO&amp;quot;
-
-[[menu.main]]
-name = &amp;quot;Blog&amp;quot;
-weight = -120
-identifier = &amp;quot;blog&amp;quot;
-url = &amp;quot;/&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new post&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new post/hello-world.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now put content inside the newly created hello-world.md file,&lt;/p&gt;
-
-&lt;p&gt;for example,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+++
-date = &amp;quot;2016-04-17T16:12:50+06:30&amp;quot;
-title = &amp;quot;Hello world&amp;quot;
-
-+++
-
-Hello World. This is my first post.
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Serve content&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -t YOURTHEME
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As i am using casper theme,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -t casper
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can view your blog at &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;deploy-to-github-page&#34;&gt;Deploy to Github page&lt;/h2&gt;
-
-&lt;p&gt;Full details on how to host your Hugo based website on github page can be found here &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog&#34;&gt;https://gohugo.io/tutorials/github-pages-blog&lt;/a&gt;. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&amp;hellip;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;for example, create a new repository in Github named &lt;code&gt;hugo-blog&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, in your terminal, initialize a new git repo.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git init
-blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;for example, in my case it is &lt;code&gt;cse031sust02.github.io&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;now, add a submodule with the public folder&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Push Everything to Github&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git add .
-blog$ git commit -am &#39;push everything&#39;
-blog$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ hugo -t casper
-blog$ cd public
-blog$ git add .
-blog/public$ commit -m &amp;quot;deploy&amp;quot;
-blog/public$ push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Then you should visit the blog at https://(YOUR-USERNAME).github.com. For example, my site is at &lt;a href=&#34;https://cse031sust02.github.com&#34;&gt;https://cse031sust02.github.com&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
