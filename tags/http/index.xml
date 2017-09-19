@@ -10,6 +10,106 @@
     <atom:link href="https://cse031sust02.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Understanding the Nginx Server Block</title>
+      <link>https://cse031sust02.github.io/post/understanding-nginx-server-block/</link>
+      <pubDate>Tue, 19 Sep 2017 16:54:45 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/understanding-nginx-server-block/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;p&gt;We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. We need to understand the directives and settings that make up the server block.&lt;/p&gt;
+
+&lt;p&gt;Here is a sample virtual host :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+  listen       80;
+  server_name  _;
+
+  location / {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+  }
+
+  error_page  404              /404.html;
+  location = /404.html {
+    root   /usr/share/nginx/html;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can see different types of directives such as &lt;em&gt;listen&lt;/em&gt;, &lt;em&gt;root&lt;/em&gt;, &lt;em&gt;server_name&lt;/em&gt;, &lt;em&gt;location&lt;/em&gt; etc. Let&amp;rsquo;s explore those directives.&lt;/p&gt;
+
+&lt;h4 id=&#34;listen&#34;&gt;listen&lt;/h4&gt;
+
+&lt;p&gt;It specifies the IP address / port combination that this server block is designed to respond to.&lt;/p&gt;
+
+&lt;p&gt;We can specify &lt;em&gt;only the port&lt;/em&gt; or &lt;em&gt;only the address&lt;/em&gt; or Both.&lt;/p&gt;
+
+&lt;p&gt;If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examles.&lt;/p&gt;
+
+&lt;p&gt;port is omitted :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     127.0.0.1; 
+# will only respond to 127.0.0.1:80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;address is omitted :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     50; 
+# will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;IP address / port combination :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     192.168.25.19:60; 
+# will only respond to 192.168.25.19:60
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;server-name&#34;&gt;server_name&lt;/h4&gt;
+
+&lt;p&gt;Nginx also checks the &lt;code&gt;Host&lt;/code&gt; header of each request. When client makes a requests, Nginx checks if there is any server block that has a server_name directive defined with that &amp;ldquo;Host&amp;rdquo;. If there is a match, then that server block will responds to that request.&lt;/p&gt;
+
+&lt;p&gt;It will be easy to understand with an example.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create two new host in the &lt;code&gt;/etc/hosts&lt;/code&gt; file :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;127.0.0.1   localhost
+127.0.0.1   www.site-one.com
+127.0.0.1   www.site-two.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, now both &lt;strong&gt;site-one&lt;/strong&gt; and &lt;strong&gt;site-two&lt;/strong&gt; points to same IP address. But we want to put one website in site-one.com and another website in site-two.com. Let&amp;rsquo;s create two different server blocks for those two hosts :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# First Website
+server {
+  listen       70;
+  server_name  www.site-one.com;
+  
+  root   /usr/share/nginx/html/site-one/;
+}
+
+# Second Website
+server {
+  listen       70;
+  server_name  www.site-two.com;
+
+  root   /usr/share/nginx/html/site-two/;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is clear that we can browse First Website with the address &lt;code&gt;www.site-one.com:70&lt;/code&gt;, and the Second Website with &lt;code&gt;www.site-one.com:70&lt;/code&gt;. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?&lt;/p&gt;
+
+&lt;h4 id=&#34;root&#34;&gt;root&lt;/h4&gt;
+
+&lt;p&gt;This directive specifies the directory where the website&amp;rsquo;s contents are located. So, in our last example, If the URL is &lt;em&gt;&lt;a href=&#34;http://www.site-two.com/mypage.html&#34;&gt;http://www.site-two.com/mypage.html&lt;/a&gt;&lt;/em&gt;, Nginx will load &lt;code&gt;mypage.html&lt;/code&gt; file from &lt;code&gt;/usr/share/nginx/site-two&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;A more detailed overview of how nginx porcesses a request can be found &lt;a href=&#34;http://nginx.org/en/docs/http/request_processing.html&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How I learned to stop panicking and play with NGINX</title>
       <link>https://cse031sust02.github.io/post/getting-started-with-nginx/</link>
       <pubDate>Sun, 20 Aug 2017 17:18:51 +0600</pubDate>

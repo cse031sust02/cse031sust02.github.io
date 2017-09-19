@@ -22,7 +22,7 @@
 
   	<meta property="og:title" content="Understanding the Nginx Server Block &middot; cse031sust02" />
   	<meta property="og:site_name" content="cse031sust02" />
-  	<meta property="og:url" content="https://cse031sust02.github.io/post/understand-nginx-server-block/" />
+  	<meta property="og:url" content="https://cse031sust02.github.io/post/understanding-nginx-server-block/" />
 
     
         
@@ -34,10 +34,14 @@
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
     <meta property="og:image" content="https://cse031sust02.github.io/" />
-    <meta property="article:published_time" content="2017-09-19T16:11:06&#43;06:00" />
+    <meta property="article:published_time" content="2017-09-19T16:54:45&#43;06:00" />
 
     
     <meta property="article:tag" content="nginx" />
+    
+    <meta property="article:tag" content="web-server" />
+    
+    <meta property="article:tag" content="http" />
     
     
 
@@ -66,7 +70,7 @@
     
     <meta name="generator" content="Hugo 0.19" />
 
-    <link rel="canonical" href="https://cse031sust02.github.io/post/understand-nginx-server-block/" />
+    <link rel="canonical" href="https://cse031sust02.github.io/post/understanding-nginx-server-block/" />
 
     
       
@@ -105,15 +109,15 @@
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://cse031sust02.github.io/post/understand-nginx-server-block/,
-    "datePublished": 2017-09-19T16:11Z,
-    "dateModified": 2017-09-19T16:11Z,
+    "url": https://cse031sust02.github.io/post/understanding-nginx-server-block/,
+    "datePublished": 2017-09-19T16:54Z,
+    "dateModified": 2017-09-19T16:54Z,
     
-    "keywords": nginx,
+    "keywords": nginx, web-server, http,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://cse031sust02.github.io/post/understand-nginx-server-block/
+        "@id": https://cse031sust02.github.io/post/understanding-nginx-server-block/
     }
 }
     </script>
@@ -193,12 +197,16 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-09-19T16:11:06&#43;06:00">
+          <time class="post-date" datetime="2017-09-19T16:54:45&#43;06:00">
             Sep 19, 2017
           </time>
         
          
           <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/nginx/">#nginx</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/web-server/">#web-server</a></span>
+         
+          <span class="post-tag small"><a href="https://cse031sust02.github.io/tags/http/">#http</a></span>
          
         </section>
     </header>
@@ -326,19 +334,19 @@ server {
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Understanding%20the%20Nginx%20Server%20Block&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstand-nginx-server-block%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Understanding%20the%20Nginx%20Server%20Block&nbsp;-&nbsp;cse031sust02&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstanding-nginx-server-block%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstand-nginx-server-block%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstanding-nginx-server-block%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstand-nginx-server-block%2f&amp;description=Understanding%20the%20Nginx%20Server%20Block"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstanding-nginx-server-block%2f&amp;description=Understanding%20the%20Nginx%20Server%20Block"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstand-nginx-server-block%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2funderstanding-nginx-server-block%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -351,7 +359,7 @@ server {
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'cse031sust02';
-  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/understand-nginx-server-block\/';
+  var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/understanding-nginx-server-block\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
