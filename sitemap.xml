@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/understand-nginx-server-block/</loc>
+    <lastmod>2017-09-19T16:11:06+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/getting-started-with-nginx/</loc>
     <lastmod>2017-08-20T17:18:51+06:00</lastmod>
   </url>
@@ -190,7 +195,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/nginx/</loc>
-    <lastmod>2017-08-20T17:18:51+06:00</lastmod>
+    <lastmod>2017-09-19T16:11:06+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -220,7 +225,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-08-20T17:18:51+06:00</lastmod>
+    <lastmod>2017-09-19T16:11:06+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -279,7 +284,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-08-20T17:18:51+06:00</lastmod>
+    <lastmod>2017-09-19T16:11:06+06:00</lastmod>
     <priority>0</priority>
   </url>
   

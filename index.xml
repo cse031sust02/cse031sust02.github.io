@@ -7,8 +7,108 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2017</copyright>
-    <lastBuildDate>Sun, 20 Aug 2017 17:18:51 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 19 Sep 2017 16:11:06 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Understanding the Nginx Server Block</title>
+      <link>https://cse031sust02.github.io/post/understand-nginx-server-block/</link>
+      <pubDate>Tue, 19 Sep 2017 16:11:06 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/understand-nginx-server-block/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;p&gt;We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. We need to understand the directives and settings that make up the server block.&lt;/p&gt;
+
+&lt;p&gt;Here is a sample virtual host :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+  listen       80;
+  server_name  _;
+
+  location / {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+  }
+
+  error_page  404              /404.html;
+  location = /404.html {
+    root   /usr/share/nginx/html;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can see different types of directives such as &lt;em&gt;listen&lt;/em&gt;, &lt;em&gt;root&lt;/em&gt;, &lt;em&gt;server_name&lt;/em&gt;, &lt;em&gt;location&lt;/em&gt; etc. Let&amp;rsquo;s explore those directives.&lt;/p&gt;
+
+&lt;h4 id=&#34;listen&#34;&gt;listen&lt;/h4&gt;
+
+&lt;p&gt;It specifies the IP address / port combination that this server block is designed to respond to.&lt;/p&gt;
+
+&lt;p&gt;We can specify &lt;em&gt;only the port&lt;/em&gt; or &lt;em&gt;only the address&lt;/em&gt; or Both.&lt;/p&gt;
+
+&lt;p&gt;If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examles.&lt;/p&gt;
+
+&lt;p&gt;port is omitted :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     127.0.0.1; 
+# will only respond to 127.0.0.1:80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;address is omitted :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     50; 
+# will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;IP address / port combination :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen     192.168.25.19:60; 
+# will only respond to 192.168.25.19:60
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;server-name&#34;&gt;server_name&lt;/h4&gt;
+
+&lt;p&gt;Nginx also checks the &lt;code&gt;Host&lt;/code&gt; header of each request. When client makes a requests, Nginx checks if there is any server block that has a server_name directive defined with that &amp;ldquo;Host&amp;rdquo;. If there is a match, then that server block will responds to that request.&lt;/p&gt;
+
+&lt;p&gt;It will be easy to understand with an example.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create two new host in the &lt;code&gt;/etc/hosts&lt;/code&gt; file :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;127.0.0.1   localhost
+127.0.0.1   www.site-one.com
+127.0.0.1   www.site-two.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, now both &lt;strong&gt;site-one&lt;/strong&gt; and &lt;strong&gt;site-two&lt;/strong&gt; points to same IP address. But we want to put one website in site-one.com and another website in site-two.com. Let&amp;rsquo;s create two different server blocks for those two hosts :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# First Website
+server {
+  listen       70;
+  server_name  www.site-one.com;
+  
+  root   /usr/share/nginx/html/site-one/;
+}
+
+# Second Website
+server {
+  listen       70;
+  server_name  www.site-two.com;
+
+  root   /usr/share/nginx/html/site-two/;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is clear that we can browse First Website with the address &lt;code&gt;www.site-one.com:70&lt;/code&gt;, and the Second Website with &lt;code&gt;www.site-one.com:70&lt;/code&gt;. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?&lt;/p&gt;
+
+&lt;h4 id=&#34;root&#34;&gt;root&lt;/h4&gt;
+
+&lt;p&gt;This directive specifies the directory where the website&amp;rsquo;s contents are located. So, in our last example, If the URL is &lt;em&gt;&lt;a href=&#34;http://www.site-two.com/mypage.html&#34;&gt;http://www.site-two.com/mypage.html&lt;/a&gt;&lt;/em&gt;, Nginx will load &lt;code&gt;mypage.html&lt;/code&gt; file from &lt;code&gt;/usr/share/nginx/site-two&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;A more detailed overview of how nginx porcesses a request can be found &lt;a href=&#34;http://nginx.org/en/docs/http/request_processing.html&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How I learned to stop panicking and play with NGINX</title>
@@ -120,7 +220,7 @@ stream {
 
 &lt;p&gt;We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use &lt;strong&gt;sites-available&lt;/strong&gt; folder for storing all of our virtual host configurations(whether they&amp;rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&amp;rsquo;s configuration file to &lt;strong&gt;sites-enabled&lt;/strong&gt; directory.&lt;/p&gt;
 
-&lt;p&gt;I have written another post where i tried to explain the server block in details.&lt;/p&gt;
+&lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understand-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
 
 &lt;h3 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h3&gt;
 
@@ -1824,158 +1924,6 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 &lt;p&gt;HTTPS এ header, message সবই encrypted থাকে।&lt;/p&gt;
 
 &lt;p&gt;কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>JSON</title>
-      <link>https://cse031sust02.github.io/post/json/</link>
-      <pubDate>Sun, 09 Apr 2017 18:15:22 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/json/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h2&gt;
-
-&lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
-
-&lt;p&gt;Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.&lt;/p&gt;
-
-&lt;p&gt;JSON filenames use the extension .json.&lt;/p&gt;
-
-&lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-json&#34;&gt;Why Use JSON?&lt;/h3&gt;
-
-&lt;p&gt;Because It is&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lightweight data-interchange format.&lt;/li&gt;
-&lt;li&gt;language independent&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;usage&#34;&gt;USAGE?&lt;/h3&gt;
-
-&lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
-
-&lt;h3 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h3&gt;
-
-&lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h2&gt;
-
-&lt;p&gt;The JSON syntax is a subset of the JavaScript syntax.&lt;/p&gt;
-
-&lt;h3 id=&#34;data-structures&#34;&gt;Data Structures&lt;/h3&gt;
-
-&lt;p&gt;JSON is defined by two basic structures.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;A collection of name/value pairs.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Different programming languages support this data structure in different names. Like object, record, struct, dictionary, hash table, keyed list, or associative array.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;e.g., &lt;code&gt;{ &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:  30, &amp;quot;member&amp;quot;: false, &amp;quot;spouse&amp;quot;: { &amp;quot;firstName&amp;quot;: &amp;quot;Mary&amp;quot;, &amp;quot;lastName&amp;quot;: &amp;quot;Smith&amp;quot;} }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ordered list of values.&lt;/p&gt;
-
-&lt;p&gt;In various programming languages, it is called as array, vector, list, or sequence.
-e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;Peter&amp;quot;,&amp;quot;Sally&amp;quot;]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;syntax-rules&#34;&gt;Syntax Rules&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Data is written as name/value pairs. &lt;code&gt;e.g., &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;note : &lt;em&gt;JSON names require double quotes. JavaScript object names don&amp;rsquo;t.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Data is seperated by commas. e.g., &lt;code&gt;&amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Curly braces hold objects.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
-  &amp;quot;age&amp;quot;: 30,
-  &amp;quot;member&amp;quot;: false,
-  &amp;quot;spouse&amp;quot;: { //object
-    &amp;quot;first_name&amp;quot;: &amp;quot;Mary&amp;quot;,
-    &amp;quot;last_name&amp;quot;: &amp;quot;Smith&amp;quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Square brackets hold arrays.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-    &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
-    &amp;quot;age&amp;quot;:  30,
-    &amp;quot;member&amp;quot;: false,
-    &amp;quot;phoneNumbers&amp;quot;: [ //array
-        {
-            &amp;quot;description&amp;quot;: &amp;quot;home&amp;quot;,
-            &amp;quot;number&amp;quot;: &amp;quot;123-456-7890&amp;quot;
-        },
-        {
-            &amp;quot;description&amp;quot;: &amp;quot;mobile&amp;quot;,
-            &amp;quot;number&amp;quot;: &amp;quot;000-111-2222&amp;quot;
-        }
-    ]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;data-types&#34;&gt;Data Types&lt;/h3&gt;
-
-&lt;p&gt;Values must be one of the following data types.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;a string
-sequence of zero or more Unicode characters.
-e.g., &lt;code&gt;{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;a number
-Integer, Fraction and Exponent.
-e.g., &lt;code&gt;{ &amp;quot;age&amp;quot;:30 }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;an object (JSON object)
-starts and ends with &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo;. a number of string value pairs can reside between.
-Keys must be strings, and values must be a valid JSON data type.
-e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-&amp;quot;employee&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30, &amp;quot;city&amp;quot;:&amp;quot;New York&amp;quot; }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;an array
-starts and ends with &amp;lsquo;[&amp;rsquo; and &amp;lsquo;]&amp;rsquo;. a number of values can reside between.
-e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-&amp;quot;employees&amp;quot;:[ &amp;quot;John&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;Peter&amp;quot; ]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;a boolean
-true or false. (TRUE or FALSE is not acceptable!).
-e.g., &lt;code&gt;{ &amp;quot;accept&amp;quot;:true }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;null
-null (NULL is not acceptable).
-e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;JSON values cannot be a function, a date or undefined. (In JavaScript you can have these values)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
