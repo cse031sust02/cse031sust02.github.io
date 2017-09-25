@@ -103,8 +103,8 @@
     },
     "headline": Understanding the Nginx Server Block,
     "name": Understanding the Nginx Server Block,
-    "wordCount": 407,
-    "timeRequired": "PT2M",
+    "wordCount": 700,
+    "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -216,9 +216,9 @@
 
 <hr />
 
-<p>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&rsquo;s virtual hosts. We need to understand the directives and settings that make up the server block.</p>
+<p>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.</p>
 
-<p>Here is a sample virtual host :</p>
+<p>Here is a sample server block configuration :</p>
 
 <pre><code>server {
   listen       80;
@@ -242,23 +242,21 @@
 
 <p>It specifies the IP address / port combination that this server block is designed to respond to.</p>
 
-<p>We can specify <em>only the port</em> or <em>only the address</em> or Both.</p>
+<p>We can specify <strong>only the port</strong> or <strong>only the address</strong> or <strong>Both</strong>. If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examples.</p>
 
-<p>If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examles.</p>
-
-<p>port is omitted :</p>
+<p><em>example,</em> port is omitted :</p>
 
 <pre><code>listen     127.0.0.1; 
 # will only respond to 127.0.0.1:80
 </code></pre>
 
-<p>address is omitted :</p>
+<p><em>example,</em> address is omitted :</p>
 
 <pre><code>listen     50; 
 # will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
 </code></pre>
 
-<p>IP address / port combination :</p>
+<p><em>example,</em> IP address / port combination :</p>
 
 <pre><code>listen     192.168.25.19:60; 
 # will only respond to 192.168.25.19:60
@@ -296,11 +294,84 @@ server {
 }
 </code></pre>
 
-<p>It is clear that we can browse First Website with the address <code>www.site-one.com:70</code>, and the Second Website with <code>www.site-one.com:70</code>. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?</p>
+<p>So now we can access the First Website with the address <code>www.site-one.com:70</code>, and the Second Website with <code>www.site-one.com:70</code>. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?</p>
 
 <h4 id="root">root</h4>
 
-<p>This directive specifies the directory where the website&rsquo;s contents are located. So, in our last example, If the URL is <em><a href="http://www.site-two.com/mypage.html">http://www.site-two.com/mypage.html</a></em>, Nginx will load <code>mypage.html</code> file from <code>/usr/share/nginx/site-two</code> directory.</p>
+<p>This directive specifies the directory where the website&rsquo;s contents are located. As in our last example, the root directory was <code>/usr/share/nginx/site-two</code> for the Second Website. So when user hits the URL <em><a href="http://www.site-two.com:70/mypage.html">http://www.site-two.com:70/mypage.html</a></em>, Nginx will load <code>mypage.html</code> file from that directory.</p>
+
+<h4 id="location">location</h4>
+
+<p>location block is used to decide how to process the request URI (after the domain name or IP address/port). e.g. :</p>
+
+<pre><code>location / {
+  # configuration for processing all URIs that do not match other location blocks.
+} 
+
+location /one {
+  # configuration for processing URIs with '/one'
+}
+
+location /two {
+  # configuration for processing URIs with '/two'
+}
+</code></pre>
+
+<p>A location can be defined either by a prefix string or by a regular expression. The syntax is :</p>
+
+<pre><code>location [modifier] match {
+...
+}
+</code></pre>
+
+<p>When there is no modifier, the match acts just as a prefix string for the incoming URL. e.g. :</p>
+
+<pre><code>location /two {
+  # configuration for processing URIs with '/two'
+}
+</code></pre>
+
+<p>And when any modifier exists, the way that Nginx matches the location will change.</p>
+
+<p>Here is what different modifiers do :</p>
+
+<ul>
+<li><p>= <em>:</em> request URI <strong>exactly</strong> matches the location given.</p></li>
+
+<li><p>~ <em>:</em> case-sensitive regular expression match.</p></li>
+
+<li><p>~* <em>:</em> case-insensitive regular expression match.</p></li>
+
+<li><p>^~ <em>:</em> regular expression matching will not take place.</p></li>
+</ul>
+
+<p>How nginx performs the matching can be found on their <a href="https://nginx.org/en/docs/http/ngx_http_core_module.html#location">offcial doc</a>. Here is an example for illustrate different types of modifiers :</p>
+
+<pre><code>location = / {
+    # Only matches the / query.
+}
+
+location / {
+    # URI beginning with '/'
+    # But the process continues searching
+}
+
+location /documents/ {
+    # URI beginning with /documents/ 
+    # But the process continues searching.
+}
+
+location ^~ /images/ {
+    # URI beginning with /images/
+    # The process stops searching
+}
+
+location ~* \.(gif|jpg|jpeg)$ {
+    # Matches requests ending in gif, jpg or jpeg. 
+    # URI beginning with /images/ are NOT handled here
+}
+
+</code></pre>
 
 <p>A more detailed overview of how nginx porcesses a request can be found <a href="http://nginx.org/en/docs/http/request_processing.html">here</a></p>
 

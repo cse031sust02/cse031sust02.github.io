@@ -253,9 +253,9 @@
     </header>
     <section class="post-excerpt">
         
-            <p>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&rsquo;s virtual hosts. We need to understand the directives and settings that make up the server block.
-Here is a sample virtual host :
-server { listen 80; server_name _; location / { root /usr/share/nginx/html; index index.html index.htm; } error_page 404 /404.html; location = /404.html { root /usr/share/nginx/html; } }  We can see different types of directives such as listen, root, server_name, location etc. <a class="read-more" href="https://cse031sust02.github.io/post/understanding-nginx-server-block/">&raquo;</a></p>
+            <p>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.
+Here is a sample server block configuration :
+server { listen 80; server_name _; location / { root /usr/share/nginx/html; index index.html index.htm; } error_page 404 /404. <a class="read-more" href="https://cse031sust02.github.io/post/understanding-nginx-server-block/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
