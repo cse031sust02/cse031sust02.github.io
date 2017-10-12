@@ -84,22 +84,24 @@
     <div class="content">
       
 
-<h2 id="what-is-lemp-stack">What is LEMP stack?</h2>
+<hr />
+
+<h1 id="what-is-lemp-stack">What is LEMP stack?</h1>
 
 <p>LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.</p>
 
-<h2 id="setup">Setup</h2>
+<h1 id="setup">Setup</h1>
 
 <p>So, We are going to setup LEMP stack on our ubuntu 14.04 machine.</p>
 
-<h4 id="step-1-update-apt-get">Step 1 - Update Apt-Get</h4>
+<h4 id="step-1-update-apt-get"><strong>Step 1 - Update Apt-Get</strong></h4>
 
 <p>Update the package database. To know more about <strong>apt-get</strong>, please visit this <a href="https://itsfoss.com/apt-get-linux-guide">page</a>.</p>
 
 <pre><code>sudo apt-get update
 </code></pre>
 
-<h4 id="step-2-install-nginx">Step 2 - Install nginx</h4>
+<h4 id="step-2-install-nginx"><strong>Step 2 - Install nginx</strong></h4>
 
 <p>Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.</p>
 
@@ -108,7 +110,7 @@
 
 <p>We should now be able to access the default Nginx landing page from our browser by entering our server&rsquo;s domain name or public IP address.</p>
 
-<h4 id="step-3-install-php">Step 3 - Install PHP</h4>
+<h4 id="step-3-install-php"><strong>Step 3 - Install PHP</strong></h4>
 
 <p>Now it&rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.</p>
 
@@ -128,7 +130,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 <p>To find out all available PHP7 modules, we can use the <code>sudo apt-cache search php7-*</code> command.</p>
 </blockquote>
 
-<h5 id="configure-nginx-to-use-the-php-processor">Configure Nginx to Use the PHP Processor</h5>
+<h3 id="configure-nginx-to-use-the-php-processor">Configure Nginx to Use the PHP Processor</h3>
 
 <p>Now, we still need to tell nginx to use our PHP processor for serving php files.</p>
 
@@ -170,7 +172,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 
 <p>We can test if everything is working properly by creating a php file in <code>/var/www/html</code> directory and then try to access that file from our browser.</p>
 
-<h4 id="step-4-install-mysql">Step 4 - Install MySQL</h4>
+<h4 id="step-4-install-mysql"><strong>Step 4 - Install MySQL</strong></h4>
 
 <p>Now we will install MySQL. we can do it very easily with the following command,</p>
 

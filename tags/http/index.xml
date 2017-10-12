@@ -334,7 +334,7 @@ HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদে�
 
 &lt;h4 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;Request Line 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Request Line 
 Request Header fields
 Empty Line 
 An Optional Message Body
@@ -342,7 +342,7 @@ An Optional Message Body
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;GET /index.html HTTP/1.1
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /index.html HTTP/1.1
 Host : www.example.com 
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -354,7 +354,7 @@ Host : www.example.com
 
 &lt;h4 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;Status  Line 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Status  Line 
 Response Header Fields 
 Empty Line 
 An Optional Message Body
@@ -362,7 +362,7 @@ An Optional Message Body
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.1 200 OK
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
@@ -373,13 +373,13 @@ An Optional Message Body
 
 &lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;GET  /blog.php HTTP/1.1 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET  /blog.php HTTP/1.1 
 Host : www.example.com 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;আর Server এর response টা এরকম,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
 Date: Tue, 26 May 2015 23:59:59 GMT
 Content-Type: text/html
 Content-Length: 1202 

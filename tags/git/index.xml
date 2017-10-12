@@ -39,6 +39,8 @@
 &lt;li&gt;Can work locally without any central server&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 
 &lt;p&gt;Now let&amp;rsquo;s install Git on our machine and start using it.&lt;/p&gt;
@@ -65,7 +67,7 @@
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Set Config&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
 $ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -73,7 +75,7 @@ $ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
 &lt;li&gt;&lt;strong&gt;Get Config&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git config --list
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --list
 $ git config --global --list
 $ git config --system --list
 &lt;/code&gt;&lt;/pre&gt;
@@ -103,9 +105,7 @@ $ git config --system --list
 
 &lt;p&gt;&lt;img src=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34; alt=&#34;Lifecycle&#34; /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34;&gt;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;em&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34;&gt;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
 
@@ -182,7 +182,7 @@ $ git config --system --list
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git commit -m &#39;initial commit&#39;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git commit -m &#39;initial commit&#39;
 $ git add forgotten_file
 $ git commit --amend
 &lt;/code&gt;&lt;/pre&gt;
@@ -198,7 +198,7 @@ $ git commit --amend
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
 Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
 Date:   Sat Apr 22 12:26:11 2017 +0600
 
@@ -240,7 +240,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;Shows the changes of a particular commit*&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git show COMMIT_HASH
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git show COMMIT_HASH
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt;&lt;/p&gt;

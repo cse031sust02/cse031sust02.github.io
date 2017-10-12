@@ -47,7 +47,7 @@
 
 &lt;p&gt;for example,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
 Content-type: text/html
 Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
@@ -69,7 +69,7 @@ Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT
 
 &lt;p&gt;for example,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;GET /my_page.html HTTP/1.1
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /my_page.html HTTP/1.1
 Host: www.example.com
 Cookie: MyCookieName=MyValue 
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;

@@ -17,22 +17,24 @@
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
       <description>
 
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h1&gt;
 
 &lt;p&gt;LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
 
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
 
 &lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;Step 1 - Update Apt-Get&lt;/h4&gt;
+&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 - Update Apt-Get&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;Step 2 - Install nginx&lt;/h4&gt;
+&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 - Install nginx&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
 
@@ -41,7 +43,7 @@
 
 &lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-3-install-php&#34;&gt;Step 3 - Install PHP&lt;/h4&gt;
+&lt;h4 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 - Install PHP&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
 
@@ -61,7 +63,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 &lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h5&gt;
+&lt;h3 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h3&gt;
 
 &lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
 
@@ -103,7 +105,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 
 &lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;Step 4 - Install MySQL&lt;/h4&gt;
+&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 - Install MySQL&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
 
@@ -182,7 +184,9 @@ mysql&amp;gt;
 
 &lt;p&gt;&lt;em&gt;There are many different Terminals bundled with different &lt;a href=&#34;https://en.wikipedia.org/wiki/Desktop_environment&#34;&gt;Desktop Environments&lt;/a&gt;, such as: gnome-terminal (GNOME), konsole(KDE) etc.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h2&gt;
 
 &lt;p&gt;We should easily find Terminal from the menu. The Terminal Window is like the image below&lt;/p&gt;
 
@@ -207,13 +211,13 @@ mysql&amp;gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;$&lt;/strong&gt; =  It indicates the end of the shell prompt. if user is logged in as &lt;strong&gt;&lt;em&gt;root&lt;/em&gt;&lt;/strong&gt;, then it will show &amp;lsquo;#&amp;rsquo; sign instead of the &amp;lsquo;$&amp;rsquo; sign.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;root&#34;&gt;root?&lt;/h5&gt;
+&lt;h5 id=&#34;root&#34;&gt;&lt;strong&gt;root&lt;/strong&gt;?&lt;/h5&gt;
 
 &lt;p&gt;In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Still you need to know how do i login as root, right? you should able logged in as root by using the &lt;code&gt;su -&lt;/code&gt; command on your terminal. If you getting any error message, your root account is likely locked. please check &lt;a href=&#34;http://www.wikihow.com/Become-Root-in-Linux&#34;&gt;this tutorial&lt;/a&gt; for more information.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;sudo&#34;&gt;sudo?&lt;/h5&gt;
+&lt;h5 id=&#34;sudo&#34;&gt;&lt;strong&gt;sudo&lt;/strong&gt;?&lt;/h5&gt;
 
 &lt;p&gt;As we understand, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is &lt;code&gt;sudo&lt;/code&gt;. the &lt;code&gt;sudo&lt;/code&gt; command allows a permitted user to execute a command as the superuser or another user.&lt;/p&gt;
 
@@ -236,7 +240,9 @@ Hit http://dl.google.com stable Release.gpg
 ........
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 
 &lt;p&gt;I think the best site to learn Linux Commands is &lt;a href=&#34;http://linuxcommand.org/lc3_lts0060.php&#34;&gt;linuxcommand.org&lt;/a&gt;. I am just trying to list some basics points.&lt;/p&gt;
 
@@ -278,7 +284,9 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;mkdir (create directories)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;current-user&#34;&gt;Current User&lt;/h4&gt;
 
@@ -296,7 +304,9 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;chown (change file ownership)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;process&#34;&gt;Process&lt;/h4&gt;
 
@@ -305,17 +315,19 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;kill (send a signal to processes)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h3 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h2&gt;
 
 &lt;p&gt;It&amp;rsquo;s useful to understand Linux Filesystem. Below is a image to get a basic idea.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/T6T0sRW.png&#34; alt=&#34;File System&#34; title=&#34;File System&#34; /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;Src : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Src : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;To know more details, we can visit this &lt;a href=&#34;http://www.pathname.com/fhs/pub/fhs-2.3.html&#34;&gt;Filesystem Hierarchy Standard&lt;/a&gt; page.&lt;/p&gt;
 

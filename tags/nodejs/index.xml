@@ -42,19 +42,11 @@
 
 &lt;p&gt;Please visit the &lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;official page&lt;/a&gt; to install Node.Js in your platform.&lt;/p&gt;
 
-&lt;h4 id=&#34;installing-on-ubuntu-14-04&#34;&gt;installing on Ubuntu 14.04&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;When i tried to install Node.Js with &lt;code&gt;apt-get install nodejs&lt;/code&gt; command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;p&gt;To install recent version of Node.js, we will first add a PPA (personal package archive) maintained by &lt;a href=&#34;https://github.com/nodesource/distributions&#34;&gt;NodeSource&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;i.e, To download v6.X&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -62,7 +54,7 @@ $ sudo apt-get install -y nodejs
 
 &lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ node
 &amp;gt;console.log(&#39;hello nodejs&#39;);
 hello world
 undefined
@@ -71,12 +63,18 @@ undefined
 
 &lt;p&gt;*&lt;strong&gt;REPL&lt;/strong&gt; :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Q. When i tried to install Node.Js with &lt;code&gt;apt-get install nodejs&lt;/code&gt; command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ans. Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h4 id=&#34;install-npm&#34;&gt;install npm?&lt;/h4&gt;
 
 &lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install build-essential
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo apt-get install build-essential
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
@@ -106,9 +104,7 @@ A module is anything that can be loaded with require() in a Node.js program. Mos
 
 &lt;p&gt;we can manually create the &lt;strong&gt;package.json&lt;/strong&gt; file and write the details. Or we can use &amp;lsquo;npm init&amp;rsquo; command which will ask a bunch of questions, and then it will create the &lt;strong&gt;package.json&lt;/strong&gt; for us.&lt;/p&gt;
 
-&lt;p&gt;i.e,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm init
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -122,7 +118,9 @@ Press ^C at any time to quit.
 name: (demo-project) 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;*the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
@@ -136,12 +134,14 @@ name: (demo-project)
 
 &lt;p&gt;To install a specific package,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm install &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;*a &lt;strong&gt;package&lt;/strong&gt; can be a folder, a url, a git remote url etc.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a &lt;strong&gt;package&lt;/strong&gt; can be a folder, a url, a git remote url etc.&lt;/p&gt;
 
-&lt;p&gt;*If we install a package with &lt;code&gt;--save&lt;/code&gt; option, the package will be added to the dependencies list in the package.json file. so, afterwards, running &lt;code&gt;npm install&lt;/code&gt; will automatically install that package.&lt;/p&gt;
+&lt;p&gt;If we install a package with &lt;code&gt;--save&lt;/code&gt; option, the package will be added to the dependencies list in the package.json file. so, afterwards, running &lt;code&gt;npm install&lt;/code&gt; will automatically install that package.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;We can istall packages &lt;strong&gt;locally&lt;/strong&gt; or &lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
 
@@ -152,7 +152,7 @@ name: (demo-project)
 
 &lt;p&gt;for exmplae, first install the &lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt; module locally,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm install lodash
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install lodash
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use in our code,&lt;/p&gt;
@@ -168,16 +168,18 @@ name: (demo-project)
 
 &lt;p&gt;for example, install the &lt;a href=&#34;https://github.com/foreverjs/forever&#34;&gt;forever&lt;/a&gt; package globally.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo npm install forever -g
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo npm install forever -g
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use this package in our terminal,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ forever start app.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;*for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ forever start app.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;list-of-installed-packages&#34;&gt;#list of installed packages&lt;/h4&gt;
 
@@ -186,12 +188,12 @@ name: (demo-project)
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt; installed packages,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ npm list --depth=0
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ npm list --depth=0
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt; installed packages,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm list -g --depth=0
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm list -g --depth=0
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -206,7 +208,7 @@ name: (demo-project)
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm update
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm update
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code&gt;$ npm unistall &amp;lt;package&amp;gt;
@@ -214,10 +216,10 @@ name: (demo-project)
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; npm update -g &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm update -g &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; npm uninstall -g &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm uninstall -g &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 

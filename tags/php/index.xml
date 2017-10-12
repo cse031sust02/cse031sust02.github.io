@@ -17,22 +17,24 @@
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
       <description>
 
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h1&gt;
 
 &lt;p&gt;LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
 
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
 
 &lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;Step 1 - Update Apt-Get&lt;/h4&gt;
+&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 - Update Apt-Get&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;Step 2 - Install nginx&lt;/h4&gt;
+&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 - Install nginx&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
 
@@ -41,7 +43,7 @@
 
 &lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-3-install-php&#34;&gt;Step 3 - Install PHP&lt;/h4&gt;
+&lt;h4 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 - Install PHP&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
 
@@ -61,7 +63,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 &lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h5&gt;
+&lt;h3 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h3&gt;
 
 &lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
 
@@ -103,7 +105,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 
 &lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;Step 4 - Install MySQL&lt;/h4&gt;
+&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 - Install MySQL&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
 
@@ -203,7 +205,7 @@ mysql&amp;gt;
 
 &lt;p&gt;For example, if we want to use &lt;a href=&#34;https://packagist.org/packages/phpmailer/phpmailer&#34;&gt;PHPMailer&lt;/a&gt; and &lt;a href=&#34;https://packagist.org/packages/monolog/monolog&#34;&gt;Monolog&lt;/a&gt;, we can create the following composer.json file.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;{
     &amp;quot;require&amp;quot;: {
         &amp;quot;phpmailer/phpmailer&amp;quot;: &amp;quot;~5.2&amp;quot;,
         &amp;quot;monolog/monolog&amp;quot;: &amp;quot;*&amp;quot;
@@ -257,7 +259,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;So, if we change the &lt;strong&gt;composer.json&lt;/strong&gt; file (ie, add new package, chage version of any package etc) and then try to run the command &lt;code&gt;composer install&lt;/code&gt; command, it will show an warning.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So in that case, we have to use &lt;code&gt;composer update&lt;/code&gt; command. &lt;code&gt;composer update&lt;/code&gt; command fetches the latest matching versions (according to our &lt;strong&gt;composer.json&lt;/strong&gt; file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.&lt;/p&gt;
@@ -270,7 +272,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;for example :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;when we run &lt;code&gt;composer require&lt;/code&gt; command,&lt;/p&gt;
@@ -335,7 +337,7 @@ Generally errors occur at the language level (ie, the syntax is wrong, missing p
 &lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;another example with more details,&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
     if ($number==0) {

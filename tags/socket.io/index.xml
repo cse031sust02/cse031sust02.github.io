@@ -43,20 +43,24 @@
 
 &lt;p&gt;WebSocket is designed to be implemented in web browsers and web servers, but it can be used by any client or server application.&lt;/p&gt;
 
-&lt;h3 id=&#34;servers&#34;&gt;Servers&lt;/h3&gt;
+&lt;h4 id=&#34;servers&#34;&gt;Servers&lt;/h4&gt;
 
 &lt;p&gt;We can build a WebSocket server using any server-side programming language that is capable of &lt;a href=&#34;https://en.wikipedia.org/wiki/Berkeley_sockets&#34;&gt;Berkeley sockets&lt;/a&gt;, such as PHP, Python or Node.js.&lt;/p&gt;
 
-&lt;h6 id=&#34;popular-libraries&#34;&gt;Popular Libraries&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Popular Libraries
 
 &lt;ul&gt;
 &lt;li&gt;Node.js : &lt;a href=&#34;http://socket.io/&#34;&gt;socket.io&lt;/a&gt;,  &lt;a href=&#34;https://github.com/websockets/ws&#34;&gt;ws&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PHP : &lt;a href=&#34;http://socketo.me&#34;&gt;Ratchet&lt;/a&gt;, &lt;a href=&#34;https://github.com/ghedipunk/PHP-Websockets&#34;&gt;PHP WebSockets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.*&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h3 id=&#34;clients&#34;&gt;Clients&lt;/h3&gt;
+&lt;h4 id=&#34;clients&#34;&gt;Clients&lt;/h4&gt;
 
 &lt;p&gt;WebSocket is also a new feature in browsers. It is one of the coolest new features of HTML5 and is currently supported in most modern browsers.&lt;/p&gt;
 </description>

@@ -113,7 +113,7 @@ HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদে�
 
 <h4 id="request-message-এর-format">Request Message এর Format</h4>
 
-<pre><code>Request Line 
+<pre><code class="language-bash">Request Line 
 Request Header fields
 Empty Line 
 An Optional Message Body
@@ -121,7 +121,7 @@ An Optional Message Body
 
 <p>e.g,</p>
 
-<pre><code>GET /index.html HTTP/1.1
+<pre><code class="language-bash">GET /index.html HTTP/1.1
 Host : www.example.com 
 </code></pre>
 
@@ -133,7 +133,7 @@ Host : www.example.com
 
 <h4 id="response-message-এর-format">Response Message এর Format</h4>
 
-<pre><code>Status  Line 
+<pre><code class="language-bash">Status  Line 
 Response Header Fields 
 Empty Line 
 An Optional Message Body
@@ -141,7 +141,7 @@ An Optional Message Body
 
 <p>e.g,</p>
 
-<pre><code>HTTP/1.1 200 OK
+<pre><code class="language-bash">HTTP/1.1 200 OK
 </code></pre>
 
 <ul>
@@ -152,13 +152,13 @@ An Optional Message Body
 
 <p>সুতরাং , আমরা যখন ব্রাউজার এ <code>www.example.com/blog.php</code> লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,</p>
 
-<pre><code>GET  /blog.php HTTP/1.1 
+<pre><code class="language-bash">GET  /blog.php HTTP/1.1 
 Host : www.example.com 
 </code></pre>
 
 <p>আর Server এর response টা এরকম,</p>
 
-<pre><code>HTTP/1.0 200 OK
+<pre><code class="language-bash">HTTP/1.0 200 OK
 Date: Tue, 26 May 2015 23:59:59 GMT
 Content-Type: text/html
 Content-Length: 1202 

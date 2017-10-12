@@ -7,8 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Tue, 19 Sep 2017 16:54:45 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 16:57:51 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Design &amp; Document your APIs with Swagger</title>
+      <link>https://cse031sust02.github.io/post/document-your-api-with-swagger/</link>
+      <pubDate>Thu, 12 Oct 2017 16:57:51 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/document-your-api-with-swagger/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-is-swagger&#34;&gt;#What is Swagger?&lt;/h3&gt;
+
+&lt;p&gt;Swagger is a very popular framework for describing RESTful APIs using a common language that everyone can understand. It is actually a set of open-source tools for designing, building, documenting and consuming REST APIs.&lt;/p&gt;
+
+&lt;h5 id=&#34;swagger-specification&#34;&gt;Swagger Specification?&lt;/h5&gt;
+
+&lt;p&gt;The Swagger Specification (currently known as the OpenAPI specification) is a powerful definition format to describe RESTful APIs. The specification creates a RESTful interface for easily developing and consuming an API by effectively mapping all the resources and operations associated with it. It’s easy-to-learn, language agnostic, and both human and machine readable.&lt;/p&gt;
+
+&lt;h3 id=&#34;swager-tools&#34;&gt;#Swager Tools&lt;/h3&gt;
+
+&lt;p&gt;As stated earlier, Swagger is actually a set of open-source tools :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://editor.swagger.io&#34;&gt;Swagger Editor&lt;/a&gt;&lt;/strong&gt; : We can design new APIs (or edit existing ones) using Swagger Editor. It visually renders our OAS/Swagger definition with concise, real time feedback and error handling.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-codegen/&#34;&gt;Swagger Codegen&lt;/a&gt;&lt;/strong&gt; : It is a tool for turning OAS/Swagger definition into code. Codegen can build and enable consumption of our Swagger defined APIs in every popular language.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-ui/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/strong&gt; : Swagger UI takes OAS/Swagger definition, presents them visually and allows us to execute operations.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-inspector/&#34;&gt;Swagger Inspector&lt;/a&gt;&lt;/strong&gt; : It is a API inspection tool (Like Postman) to work with REST, GraphQL and SOAP based web services.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Desing [Swagger Editor] &amp;ndash;&amp;gt; Build [Swagger Codege] &amp;ndash;&amp;gt; Document [Swagger UI]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;swagerhub&#34;&gt;#SwagerHub&lt;/h3&gt;
+
+&lt;p&gt;SwagerHub is a platform for Designing and Documenting APIs with Swagger. It brings together the power of the open source Swagger tools (Swagger Editor, Swagger UI, and Swagger CodeGen) into a fully integrated platform, with advanced capabilities to make it faster and easier for teams to build and document great APIs with Swagger.&lt;/p&gt;
+
+&lt;p&gt;more info : &lt;a href=&#34;https://swaggerhub.com/swagger-open-source-comparison/&#34;&gt;https://swaggerhub.com/swagger-open-source-comparison/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Understanding the Nginx Server Block</title>
@@ -336,20 +380,24 @@ stream {
 
 &lt;p&gt;WebSocket is designed to be implemented in web browsers and web servers, but it can be used by any client or server application.&lt;/p&gt;
 
-&lt;h3 id=&#34;servers&#34;&gt;Servers&lt;/h3&gt;
+&lt;h4 id=&#34;servers&#34;&gt;Servers&lt;/h4&gt;
 
 &lt;p&gt;We can build a WebSocket server using any server-side programming language that is capable of &lt;a href=&#34;https://en.wikipedia.org/wiki/Berkeley_sockets&#34;&gt;Berkeley sockets&lt;/a&gt;, such as PHP, Python or Node.js.&lt;/p&gt;
 
-&lt;h6 id=&#34;popular-libraries&#34;&gt;Popular Libraries&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Popular Libraries
 
 &lt;ul&gt;
 &lt;li&gt;Node.js : &lt;a href=&#34;http://socket.io/&#34;&gt;socket.io&lt;/a&gt;,  &lt;a href=&#34;https://github.com/websockets/ws&#34;&gt;ws&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;PHP : &lt;a href=&#34;http://socketo.me&#34;&gt;Ratchet&lt;/a&gt;, &lt;a href=&#34;https://github.com/ghedipunk/PHP-Websockets&#34;&gt;PHP WebSockets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.*&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h3 id=&#34;clients&#34;&gt;Clients&lt;/h3&gt;
+&lt;h4 id=&#34;clients&#34;&gt;Clients&lt;/h4&gt;
 
 &lt;p&gt;WebSocket is also a new feature in browsers. It is one of the coolest new features of HTML5 and is currently supported in most modern browsers.&lt;/p&gt;
 </description>
@@ -473,22 +521,24 @@ Types : Singly Linked List, Doubly Linked List, Circular Linked List etc
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
       <description>
 
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h1&gt;
 
 &lt;p&gt;LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
 
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
 
 &lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;Step 1 - Update Apt-Get&lt;/h4&gt;
+&lt;h4 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 - Update Apt-Get&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;Step 2 - Install nginx&lt;/h4&gt;
+&lt;h4 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 - Install nginx&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
 
@@ -497,7 +547,7 @@ Types : Singly Linked List, Doubly Linked List, Circular Linked List etc
 
 &lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-3-install-php&#34;&gt;Step 3 - Install PHP&lt;/h4&gt;
+&lt;h4 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 - Install PHP&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
 
@@ -517,7 +567,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 &lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h5&gt;
+&lt;h3 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h3&gt;
 
 &lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
 
@@ -559,7 +609,7 @@ sudo apt-get install -y php7.0 php7.0-fpm
 
 &lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
 
-&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;Step 4 - Install MySQL&lt;/h4&gt;
+&lt;h4 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 - Install MySQL&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
 
@@ -638,7 +688,9 @@ mysql&amp;gt;
 
 &lt;p&gt;&lt;em&gt;There are many different Terminals bundled with different &lt;a href=&#34;https://en.wikipedia.org/wiki/Desktop_environment&#34;&gt;Desktop Environments&lt;/a&gt;, such as: gnome-terminal (GNOME), konsole(KDE) etc.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h2&gt;
 
 &lt;p&gt;We should easily find Terminal from the menu. The Terminal Window is like the image below&lt;/p&gt;
 
@@ -663,13 +715,13 @@ mysql&amp;gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;$&lt;/strong&gt; =  It indicates the end of the shell prompt. if user is logged in as &lt;strong&gt;&lt;em&gt;root&lt;/em&gt;&lt;/strong&gt;, then it will show &amp;lsquo;#&amp;rsquo; sign instead of the &amp;lsquo;$&amp;rsquo; sign.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;root&#34;&gt;root?&lt;/h5&gt;
+&lt;h5 id=&#34;root&#34;&gt;&lt;strong&gt;root&lt;/strong&gt;?&lt;/h5&gt;
 
 &lt;p&gt;In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Still you need to know how do i login as root, right? you should able logged in as root by using the &lt;code&gt;su -&lt;/code&gt; command on your terminal. If you getting any error message, your root account is likely locked. please check &lt;a href=&#34;http://www.wikihow.com/Become-Root-in-Linux&#34;&gt;this tutorial&lt;/a&gt; for more information.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;sudo&#34;&gt;sudo?&lt;/h5&gt;
+&lt;h5 id=&#34;sudo&#34;&gt;&lt;strong&gt;sudo&lt;/strong&gt;?&lt;/h5&gt;
 
 &lt;p&gt;As we understand, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is &lt;code&gt;sudo&lt;/code&gt;. the &lt;code&gt;sudo&lt;/code&gt; command allows a permitted user to execute a command as the superuser or another user.&lt;/p&gt;
 
@@ -692,7 +744,9 @@ Hit http://dl.google.com stable Release.gpg
 ........
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 
 &lt;p&gt;I think the best site to learn Linux Commands is &lt;a href=&#34;http://linuxcommand.org/lc3_lts0060.php&#34;&gt;linuxcommand.org&lt;/a&gt;. I am just trying to list some basics points.&lt;/p&gt;
 
@@ -734,7 +788,9 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;mkdir (create directories)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;current-user&#34;&gt;Current User&lt;/h4&gt;
 
@@ -752,7 +808,9 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;chown (change file ownership)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;process&#34;&gt;Process&lt;/h4&gt;
 
@@ -761,17 +819,19 @@ Hit http://dl.google.com stable Release.gpg
 &lt;li&gt;kill (send a signal to processes)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h3 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h2&gt;
 
 &lt;p&gt;It&amp;rsquo;s useful to understand Linux Filesystem. Below is a image to get a basic idea.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/T6T0sRW.png&#34; alt=&#34;File System&#34; title=&#34;File System&#34; /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;Src : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Src : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;To know more details, we can visit this &lt;a href=&#34;http://www.pathname.com/fhs/pub/fhs-2.3.html&#34;&gt;Filesystem Hierarchy Standard&lt;/a&gt; page.&lt;/p&gt;
 
@@ -818,19 +878,11 @@ Hit http://dl.google.com stable Release.gpg
 
 &lt;p&gt;Please visit the &lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;official page&lt;/a&gt; to install Node.Js in your platform.&lt;/p&gt;
 
-&lt;h4 id=&#34;installing-on-ubuntu-14-04&#34;&gt;installing on Ubuntu 14.04&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;When i tried to install Node.Js with &lt;code&gt;apt-get install nodejs&lt;/code&gt; command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;p&gt;To install recent version of Node.js, we will first add a PPA (personal package archive) maintained by &lt;a href=&#34;https://github.com/nodesource/distributions&#34;&gt;NodeSource&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;i.e, To download v6.X&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -838,7 +890,7 @@ $ sudo apt-get install -y nodejs
 
 &lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ node
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ node
 &amp;gt;console.log(&#39;hello nodejs&#39;);
 hello world
 undefined
@@ -847,12 +899,18 @@ undefined
 
 &lt;p&gt;*&lt;strong&gt;REPL&lt;/strong&gt; :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Q. When i tried to install Node.Js with &lt;code&gt;apt-get install nodejs&lt;/code&gt; command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ans. Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h4 id=&#34;install-npm&#34;&gt;install npm?&lt;/h4&gt;
 
 &lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install build-essential
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo apt-get install build-essential
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
@@ -882,9 +940,7 @@ A module is anything that can be loaded with require() in a Node.js program. Mos
 
 &lt;p&gt;we can manually create the &lt;strong&gt;package.json&lt;/strong&gt; file and write the details. Or we can use &amp;lsquo;npm init&amp;rsquo; command which will ask a bunch of questions, and then it will create the &lt;strong&gt;package.json&lt;/strong&gt; for us.&lt;/p&gt;
 
-&lt;p&gt;i.e,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm init
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -898,7 +954,9 @@ Press ^C at any time to quit.
 name: (demo-project) 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;*the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
@@ -912,12 +970,14 @@ name: (demo-project)
 
 &lt;p&gt;To install a specific package,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm install &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;*a &lt;strong&gt;package&lt;/strong&gt; can be a folder, a url, a git remote url etc.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a &lt;strong&gt;package&lt;/strong&gt; can be a folder, a url, a git remote url etc.&lt;/p&gt;
 
-&lt;p&gt;*If we install a package with &lt;code&gt;--save&lt;/code&gt; option, the package will be added to the dependencies list in the package.json file. so, afterwards, running &lt;code&gt;npm install&lt;/code&gt; will automatically install that package.&lt;/p&gt;
+&lt;p&gt;If we install a package with &lt;code&gt;--save&lt;/code&gt; option, the package will be added to the dependencies list in the package.json file. so, afterwards, running &lt;code&gt;npm install&lt;/code&gt; will automatically install that package.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;We can istall packages &lt;strong&gt;locally&lt;/strong&gt; or &lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
 
@@ -928,7 +988,7 @@ name: (demo-project)
 
 &lt;p&gt;for exmplae, first install the &lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt; module locally,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm install lodash
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install lodash
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use in our code,&lt;/p&gt;
@@ -944,16 +1004,18 @@ name: (demo-project)
 
 &lt;p&gt;for example, install the &lt;a href=&#34;https://github.com/foreverjs/forever&#34;&gt;forever&lt;/a&gt; package globally.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo npm install forever -g
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo npm install forever -g
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use this package in our terminal,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ forever start app.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;*for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ forever start app.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;list-of-installed-packages&#34;&gt;#list of installed packages&lt;/h4&gt;
 
@@ -962,12 +1024,12 @@ name: (demo-project)
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt; installed packages,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ npm list --depth=0
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ npm list --depth=0
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt; installed packages,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm list -g --depth=0
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm list -g --depth=0
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -982,7 +1044,7 @@ name: (demo-project)
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ npm update
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm update
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code&gt;$ npm unistall &amp;lt;package&amp;gt;
@@ -990,10 +1052,10 @@ name: (demo-project)
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; npm update -g &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm update -g &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; npm uninstall -g &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm uninstall -g &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1066,7 +1128,7 @@ name: (demo-project)
 
 &lt;p&gt;For example, if we want to use &lt;a href=&#34;https://packagist.org/packages/phpmailer/phpmailer&#34;&gt;PHPMailer&lt;/a&gt; and &lt;a href=&#34;https://packagist.org/packages/monolog/monolog&#34;&gt;Monolog&lt;/a&gt;, we can create the following composer.json file.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;{
     &amp;quot;require&amp;quot;: {
         &amp;quot;phpmailer/phpmailer&amp;quot;: &amp;quot;~5.2&amp;quot;,
         &amp;quot;monolog/monolog&amp;quot;: &amp;quot;*&amp;quot;
@@ -1120,7 +1182,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;So, if we change the &lt;strong&gt;composer.json&lt;/strong&gt; file (ie, add new package, chage version of any package etc) and then try to run the command &lt;code&gt;composer install&lt;/code&gt; command, it will show an warning.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So in that case, we have to use &lt;code&gt;composer update&lt;/code&gt; command. &lt;code&gt;composer update&lt;/code&gt; command fetches the latest matching versions (according to our &lt;strong&gt;composer.json&lt;/strong&gt; file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.&lt;/p&gt;
@@ -1133,7 +1195,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;for example :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;when we run &lt;code&gt;composer require&lt;/code&gt; command,&lt;/p&gt;
@@ -1352,6 +1414,8 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;Can work locally without any central server&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 
 &lt;p&gt;Now let&amp;rsquo;s install Git on our machine and start using it.&lt;/p&gt;
@@ -1378,7 +1442,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Set Config&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
 $ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -1386,7 +1450,7 @@ $ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
 &lt;li&gt;&lt;strong&gt;Get Config&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git config --list
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --list
 $ git config --global --list
 $ git config --system --list
 &lt;/code&gt;&lt;/pre&gt;
@@ -1416,9 +1480,7 @@ $ git config --system --list
 
 &lt;p&gt;&lt;img src=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34; alt=&#34;Lifecycle&#34; /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34;&gt;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;em&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&#34;&gt;https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
 
@@ -1495,7 +1557,7 @@ $ git config --system --list
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git commit -m &#39;initial commit&#39;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git commit -m &#39;initial commit&#39;
 $ git add forgotten_file
 $ git commit --amend
 &lt;/code&gt;&lt;/pre&gt;
@@ -1511,7 +1573,7 @@ $ git commit --amend
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
 Author: Talha Ibne Imam &amp;lt;talha@bscheme.com&amp;gt;
 Date:   Sat Apr 22 12:26:11 2017 +0600
 
@@ -1553,7 +1615,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;Shows the changes of a particular commit*&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git show COMMIT_HASH
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git show COMMIT_HASH
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt;&lt;/p&gt;
@@ -1674,7 +1736,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;for example,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
 Content-type: text/html
 Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1696,7 +1758,7 @@ Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT
 
 &lt;p&gt;for example,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;GET /my_page.html HTTP/1.1
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /my_page.html HTTP/1.1
 Host: www.example.com
 Cookie: MyCookieName=MyValue 
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -1763,7 +1825,7 @@ Generally errors occur at the language level (ie, the syntax is wrong, missing p
 &lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;another example with more details,&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
     if ($number==0) {
@@ -1859,142 +1921,6 @@ Checkout, Stripe.js &amp;amp; Mobile SDKs&lt;/p&gt;
 &lt;h4 id=&#34;saving-the-customer-s-card-information&#34;&gt;Saving the customer’s card information&lt;/h4&gt;
 
 &lt;p&gt;If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. &lt;a href=&#34;https://stripe.com/docs/quickstart#saving-card-information&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>HTTP প্রোটোকল  এর বেসিক কাহিনী!</title>
-      <link>https://cse031sust02.github.io/post/protocol-basics/</link>
-      <pubDate>Mon, 10 Apr 2017 11:31:28 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h2&gt;
-
-&lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
-
-&lt;p&gt;IP = Internet Protocol&lt;/p&gt;
-
-&lt;p&gt;TCP/IP হলো একটা Protocol Suite.&lt;/p&gt;
-
-&lt;p&gt;TCP/IP = TCP + IP + more protocols ..&lt;/p&gt;
-
-&lt;p&gt;WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
-HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h2&gt;
-
-&lt;p&gt;HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।&lt;/p&gt;
-
-&lt;p&gt;Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।&lt;/p&gt;
-
-&lt;h4 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;Request Line 
-Request Header fields
-Empty Line 
-An Optional Message Body
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;e.g,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;GET /index.html HTTP/1.1
-Host : www.example.com 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GET হলো Method&lt;/li&gt;
-&lt;li&gt;index.html হলো Requested File&lt;/li&gt;
-&lt;li&gt;Http/1.1 হলো HTTP Version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;Status  Line 
-Response Header Fields 
-Empty Line 
-An Optional Message Body
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;e.g,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;GET  /blog.php HTTP/1.1 
-Host : www.example.com 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;আর Server এর response টা এরকম,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;HTTP/1.0 200 OK
-Date: Tue, 26 May 2015 23:59:59 GMT
-Content-Type: text/html
-Content-Length: 1202 
-
-&amp;lt;html&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;h1&amp;gt;Blog&amp;lt;/h1&amp;gt;
-  content goes here 
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
-
-&lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
-common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
-
-&lt;p&gt;Informational : 1XX &amp;ndash; request recieve হইসে, process চলসে ।&lt;/p&gt;
-
-&lt;p&gt;Successfull : 2XX &amp;ndash; client এর request succssfully receive করা হইসে।&lt;/p&gt;
-
-&lt;p&gt;Redirectional : 3XX &amp;ndash; Client এর extra কিছু করতে হবে, mostly redirected ।&lt;/p&gt;
-
-&lt;p&gt;Client Error : 4XX &amp;ndash; Client কোন error করছে ।&lt;/p&gt;
-
-&lt;p&gt;Server Error : 5XX &amp;ndash; Server এ কোন সমস্যা আছে।&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
-
-&lt;p&gt;HTTPS = HTTP + SSL (Secure Socket Layer)&lt;/p&gt;
-
-&lt;p&gt;এটা HTTP এর উপরে একটা Layer (SSL/TLS Protocol) দিয়ে বানানো যেটা HTTP Communication এ কিছু secuirity যোগ করে।
-এটার মেইন উদ্দেশ্য হলো Wiretapping আর Man-in-the-middle-attack থেকে protect করা।&lt;/p&gt;
-
-&lt;p&gt;HTTPS এ Server ও Client গুলা  HTTP এর মতই communicate করে কিন্তু communication টা একটা Secure SSL connection এর উপরে হয় যেটা request এবং response টাকে encrypt/decrypt করে।&lt;/p&gt;
-
-&lt;p&gt;SSL টার mainly ২ টা কাজ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;এইটা verify করা যে Client টা Directly Server এর সাথেই communicate করতেছে &lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;এইটা ensure করা যে client ও  server এর মধ্যকার কথাবার্তা শুধু client ও server ই পরতে পারতেছে&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;HTTPS এ header, message সবই encrypted থাকে।&lt;/p&gt;
-
-&lt;p&gt;কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।&lt;/p&gt;
 </description>
     </item>
     

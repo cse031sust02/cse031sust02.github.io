@@ -106,6 +106,8 @@
 <li>Can work locally without any central server</li>
 </ul>
 
+<hr />
+
 <h2 id="setup">Setup</h2>
 
 <p>Now let&rsquo;s install Git on our machine and start using it.</p>
@@ -132,7 +134,7 @@
 <li><p><strong>Set Config</strong></p></li>
 </ul>
 
-<pre><code>$ git config --global user.name &quot;John Doe&quot;
+<pre><code class="language-bash">$ git config --global user.name &quot;John Doe&quot;
 $ git config --global user.email &quot;johndoe@example.com&quot;
 </code></pre>
 
@@ -140,7 +142,7 @@ $ git config --global user.email &quot;johndoe@example.com&quot;
 <li><strong>Get Config</strong></li>
 </ul>
 
-<pre><code>$ git config --list
+<pre><code class="language-bash">$ git config --list
 $ git config --global --list
 $ git config --system --list
 </code></pre>
@@ -170,9 +172,7 @@ $ git config --system --list
 
 <p><img src="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="Lifecycle" /></p>
 
-<blockquote>
-<p><strong>source</strong> : <a href="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png">https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png</a></p>
-</blockquote>
+<p><strong>source</strong> : <em><a href="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png">https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png</a></em></p>
 
 <p>Files has mainly 4 statuses :</p>
 
@@ -249,7 +249,7 @@ $ git config --system --list
 
 <p>e.g,</p>
 
-<pre><code>$ git commit -m 'initial commit'
+<pre><code class="language-bash">$ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend
 </code></pre>
@@ -265,7 +265,7 @@ $ git commit --amend
 
 <p>e.g,</p>
 
-<pre><code>commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
+<pre><code class="language-bash">commit 1cddaa29ad059a6083e776cc3e4b950e6487f236
 Author: Talha Ibne Imam &lt;talha@bscheme.com&gt;
 Date:   Sat Apr 22 12:26:11 2017 +0600
 
@@ -307,7 +307,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 <p>Shows the changes of a particular commit*</p>
 
-<pre><code>$ git show COMMIT_HASH
+<pre><code class="language-bash">$ git show COMMIT_HASH
 </code></pre>
 
 <p>*<em>only first 4-5 character of COMMIT_HASH is enough!</em></p>

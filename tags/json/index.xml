@@ -83,7 +83,7 @@ e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;P
 
 &lt;p&gt;e.g.,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
   &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
   &amp;quot;age&amp;quot;: 30,
   &amp;quot;member&amp;quot;: false,
@@ -98,7 +98,7 @@ e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;P
 
 &lt;p&gt;e.g.,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
     &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
     &amp;quot;age&amp;quot;:  30,
     &amp;quot;member&amp;quot;: false,
@@ -134,8 +134,8 @@ starts and ends with &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo;. a numb
 Keys must be strings, and values must be a valid JSON data type.
 e.g.,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
-&amp;quot;employee&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30, &amp;quot;city&amp;quot;:&amp;quot;New York&amp;quot; }
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+	&amp;quot;employee&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30, &amp;quot;city&amp;quot;:&amp;quot;New York&amp;quot; }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
@@ -143,8 +143,8 @@ e.g.,&lt;/p&gt;
 starts and ends with &amp;lsquo;[&amp;rsquo; and &amp;lsquo;]&amp;rsquo;. a number of values can reside between.
 e.g.,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
-&amp;quot;employees&amp;quot;:[ &amp;quot;John&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;Peter&amp;quot; ]
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+	&amp;quot;employees&amp;quot;:[ &amp;quot;John&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;Peter&amp;quot; ]
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 

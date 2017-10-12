@@ -62,7 +62,7 @@ Generally errors occur at the language level (ie, the syntax is wrong, missing p
 &lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;another example with more details,&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
     if ($number==0) {

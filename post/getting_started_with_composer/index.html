@@ -133,7 +133,7 @@
 
 <p>For example, if we want to use <a href="https://packagist.org/packages/phpmailer/phpmailer">PHPMailer</a> and <a href="https://packagist.org/packages/monolog/monolog">Monolog</a>, we can create the following composer.json file.</p>
 
-<pre><code>{
+<pre><code class="language-php">{
     &quot;require&quot;: {
         &quot;phpmailer/phpmailer&quot;: &quot;~5.2&quot;,
         &quot;monolog/monolog&quot;: &quot;*&quot;
@@ -187,7 +187,7 @@ $log-&gt;addWarning('Foo');
 
 <p>So, if we change the <strong>composer.json</strong> file (ie, add new package, chage version of any package etc) and then try to run the command <code>composer install</code> command, it will show an warning.</p>
 
-<pre><code>Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+<pre><code class="language-bash">Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
 </code></pre>
 
 <p>So in that case, we have to use <code>composer update</code> command. <code>composer update</code> command fetches the latest matching versions (according to our <strong>composer.json</strong> file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.</p>
@@ -200,7 +200,7 @@ $log-&gt;addWarning('Foo');
 
 <p>for example :</p>
 
-<pre><code>$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
+<pre><code class="language-bash">$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
 </code></pre>
 
 <p>when we run <code>composer require</code> command,</p>
