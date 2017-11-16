@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/use-case-diagram/</loc>
+    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/document-your-api-with-swagger/</loc>
     <lastmod>2017-10-12T16:57:51+06:00</lastmod>
   </url>
@@ -236,7 +241,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2017-10-12T16:57:51+06:00</lastmod>
+    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -271,6 +276,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/software-engineering/</loc>
+    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/stripe/</loc>
     <lastmod>2017-04-10T15:27:28+06:00</lastmod>
     <priority>0</priority>
@@ -294,6 +305,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/uml/</loc>
+    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/web-server/</loc>
     <lastmod>2017-09-19T16:54:45+06:00</lastmod>
     <priority>0</priority>
@@ -301,7 +318,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2017-10-12T16:57:51+06:00</lastmod>
+    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
     <priority>0</priority>
   </url>
   

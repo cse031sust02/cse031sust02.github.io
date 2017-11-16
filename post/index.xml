@@ -29,14 +29,11 @@
 &lt;h3 id=&#34;use-case-diagram-objects&#34;&gt;Use Case Diagram objects&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Use cases
-A function or an action within the system. i.e, order a meal.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Use cases&lt;/strong&gt; : A function or an action within the system. i.e, order a meal.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Actors
-Users that interact with the system. It can be a person, an organization, or an outside system. i.e, customer, restaurent.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Actors&lt;/strong&gt; : Users that interact with the system. It can be a person, an organization, or an outside system. i.e, customer, restaurent.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;System
-Whatever we are developing. it might be the enitre application or any particualr functionality. i.e, meal delivery system.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;System&lt;/strong&gt; : Whatever we are developing. it might be the enitre application or any particualr functionality. i.e, meal delivery system.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;relationships&#34;&gt;Relationships&lt;/h3&gt;
@@ -62,7 +59,7 @@ Whatever we are developing. it might be the enitre application or any particualr
 
 &lt;li&gt;&lt;p&gt;Assosiations are represented by a line between the actor and use case.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Include relations are represented by dotted line with an arrow between the including use case and included user case. The arrow should point at &lt;strong&gt;included&lt;/strong&gt; use case.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Include relations are represented by dotted line with an arrow between the including use case and included user case. The arrow should point at &lt;em&gt;included&lt;/em&gt; use case.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Extended realations are represented by a line with an arrow between the use cases. The arrow should point at the main use case.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
