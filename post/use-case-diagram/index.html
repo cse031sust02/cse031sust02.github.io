@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="cse031sust02, programming, code" name="keywords">
+<meta content="Talha Ibne Imam" name="author">
+<meta property="og:title" content="Use Case Diagram - cse031sust02">
+<meta property="og:url" content="https://cse031sust02.github.io/post/use-case-diagram/">
+<meta property="og:description" content="A n00b&#39;s rambling journey into the world of programming">
+<meta property="og:type" content="website" />
+<title>Use Case Diagram | cse031sust02</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://cse031sust02.github.io//css/style.css">
+<link rel="shortcut icon" href="https://cse031sust02.github.io//wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://cse031sust02.github.io/"><h1 class="title is-4">cse031sust02</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/cse031sust02" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/cse031sust02" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.linkedin.com/in/talhasust/" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Use Case Diagram</h1>
+    <h2 class="subtitle is-5">November 16, 2017 by Talha Ibne Imam</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/uml">UML</a>
+    
+        <a class="button is-link" href="/tags/software-engineering">Software Engineering</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<hr />
+
+<h2 id="intro">Intro</h2>
+
+<p>Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.</p>
+
+<p>A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person. To describe any use case in detail, we can link the use case to another diagrams (such as activity diagram or sequence diagram).</p>
+
+<h3 id="use-case-diagram-objects">Use Case Diagram objects</h3>
+
+<ul>
+<li><p>Use cases
+A function or an action within the system. i.e, order a meal.</p></li>
+
+<li><p>Actors
+Users that interact with the system. It can be a person, an organization, or an outside system. i.e, customer, restaurent.</p></li>
+
+<li><p>System
+Whatever we are developing. it might be the enitre application or any particualr functionality. i.e, meal delivery system.</p></li>
+</ul>
+
+<h3 id="relationships">Relationships</h3>
+
+<ul>
+<li><p><strong>Association</strong> : Association indicates that an actor takes part in a use case. i.e, Customer Orders a Meal.</p></li>
+
+<li><p><strong>Generalization</strong> : &hellip;</p></li>
+
+<li><p><strong>Include relationship</strong> : Include relation shows how a use case breaks into smaller use cases. An <em>included</em> use case is a step that the actor might have to perform to achieve the overall goal of the <em>including</em> use case. An included use case can be shared by multiple use cases. i.e, &lsquo;Order a Meal&rsquo; and &lsquo;Book a Restaurent&rsquo; both use cases may include an included use case called &lsquo;Pay&rsquo;. <a href="https://msdn.microsoft.com/en-us/library/dd409432.aspx#Include">more details</a></p></li>
+
+<li><p><strong>Extend relationship</strong> : One use case may add functionality to another use case under certain circumstances. <a href="https://msdn.microsoft.com/en-us/library/dd409432.aspx#Extend">more details</a></p></li>
+</ul>
+
+<h3 id="how-to-draw">How to Draw</h3>
+
+<p>We should first identify actors, use cases and their relationships(both include &amp; extend). and then we will start drawing the diagram</p>
+
+<ul>
+<li><p>Actors are represented by stick figures.</p></li>
+
+<li><p>Use cases are represented by ovals.</p></li>
+
+<li><p>Assosiations are represented by a line between the actor and use case.</p></li>
+
+<li><p>Include relations are represented by dotted line with an arrow between the including use case and included user case. The arrow should point at <strong>included</strong> use case.</p></li>
+
+<li><p>Extended realations are represented by a line with an arrow between the use cases. The arrow should point at the main use case.</p></li>
+</ul>
+
+<h4 id="example">Example</h4>
+
+<p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC313333.jpeg" alt="Use Case Diagram" title="Use Case Diagram" /></p>
+
+<blockquote>
+<p>source : <a href="https://msdn.microsoft.com/en-us/library/dd409427.aspx">msdn</a></p>
+</blockquote>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fuse-case-diagram%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fuse-case-diagram%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fuse-case-diagram%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Use%20Case%20Diagram - https%3a%2f%2fcse031sust02.github.io%2fpost%2fuse-case-diagram%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fuse-case-diagram%2f&title=Use%20Case%20Diagram" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'cse031sust02';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 cse031sust02 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/javascript.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67303858-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
