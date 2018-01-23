@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/data-structure/index.xml</link>
     <description>Recent content in Data Structure on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -48,8 +48,8 @@
 
 &lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion, Sorting, Merging
 
-    Searching : Binary Search, Linear Search etc
-    Sorting : Quick sort, Buuble Sort, Heap Sort etc
+Searching : Binary Search, Linear Search etc
+Sorting : Quick sort, Buuble Sort, Heap Sort etc
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif&#34; alt=&#34;Array&#34; /&gt;&lt;/p&gt;
@@ -61,6 +61,7 @@
 &lt;p&gt;A Linked list is a linear collection of data elements called &lt;strong&gt;nodes&lt;/strong&gt;. Each node has two part one is &lt;em&gt;info&lt;/em&gt; and other is &lt;em&gt;link&lt;/em&gt; part. info part gives information of current node and link part is the address of the next node.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion etc
+
 Types : Singly Linked List, Doubly Linked List, Circular Linked List etc 
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -104,9 +105,8 @@ Types : Singly Linked List, Doubly Linked List, Circular Linked List etc
 &lt;p&gt;In tree data structure, every individual element is called as &lt;strong&gt;Node&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The first node is the Root Node.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The remainging nodes forms subtree recursively. Every child node will form a subtree on its parent node.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;The first node is the Root Node.&lt;/li&gt;
+&lt;li&gt;The remainging nodes forms subtree recursively. Every child node will form a subtree on its parent node.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://btechsmartclass.com/DS/images/Tree.png&#34; alt=&#34;Tree&#34; /&gt;&lt;/p&gt;

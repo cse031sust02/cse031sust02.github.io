@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/nodejs/index.xml</link>
     <description>Recent content in Nodejs on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -46,15 +46,15 @@
 
 &lt;p&gt;i.e, To download v6.X&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Full details can be found &lt;a href=&#34;https://github.com/nodesource/distributions#installation-instructions&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ node
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;node
 &amp;gt;console.log(&#39;hello nodejs&#39;);
 hello world
 undefined
@@ -74,7 +74,7 @@ undefined
 &lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
 But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo apt-get install build-essential
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install build-essential
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
@@ -104,7 +104,7 @@ A module is anything that can be loaded with require() in a Node.js program. Mos
 
 &lt;p&gt;we can manually create the &lt;strong&gt;package.json&lt;/strong&gt; file and write the details. Or we can use &amp;lsquo;npm init&amp;rsquo; command which will ask a bunch of questions, and then it will create the &lt;strong&gt;package.json&lt;/strong&gt; for us.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm init
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -128,13 +128,13 @@ name: (demo-project)
 
 &lt;p&gt;One of the most important things that npm does is install packages.&lt;/p&gt;
 
-&lt;h4 id=&#34;install-packages&#34;&gt;#install packages&lt;/h4&gt;
+&lt;h3 id=&#34;install-packages&#34;&gt;Install packages&lt;/h3&gt;
 
 &lt;p&gt;&amp;lsquo;npm install&amp;rsquo; can be used in many ways. By default, &lt;code&gt;npm install&lt;/code&gt; command (without any arguments) will install all modules listed as dependencies in &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
 
 &lt;p&gt;To install a specific package,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install &amp;lt;package&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install &amp;lt;package&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -146,13 +146,14 @@ name: (demo-project)
 &lt;p&gt;We can istall packages &lt;strong&gt;locally&lt;/strong&gt; or &lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;By default &lt;code&gt;npm install&lt;/code&gt; will install modules locally. it downloads the package to &amp;lsquo;node_modules&amp;rsquo; directory. after we installed the package, we can use it in our code.&lt;/p&gt;
 
 &lt;p&gt;for exmplae, first install the &lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt; module locally,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install lodash
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install lodash
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use in our code,&lt;/p&gt;
@@ -160,68 +161,87 @@ name: (demo-project)
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;  var lodash = require(&#39;lodash&#39;);
   var output = lodash.without([1, 2, 3], 1);
   console.log(output);
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;If we want to use any package globally (usually to use it as a command line tool), then we can install those packages globally&lt;/p&gt;
 
 &lt;p&gt;for example, install the &lt;a href=&#34;https://github.com/foreverjs/forever&#34;&gt;forever&lt;/a&gt; package globally.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo npm install forever -g
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo npm install forever -g
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;now, we can use this package in our terminal,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ forever start app.js
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;forever start app.js
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;list-of-installed-packages&#34;&gt;#list of installed packages&lt;/h4&gt;
+&lt;h3 id=&#34;list-of-installed-packages&#34;&gt;list of installed packages&lt;/h3&gt;
 
 &lt;p&gt;To show the installed packages, we can use the &lt;code&gt;npm list&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt; installed packages,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; $ npm list --depth=0
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt; installed packages,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm list -g --depth=0
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt; installed packages,&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;*&lt;em&gt;we can use &amp;lsquo;ls&amp;rsquo; instead of &amp;lsquo;list&amp;rsquo;. ie, &lt;code&gt;$ npm ls&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;*&lt;em&gt;depth = depth of the dependency tree.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;update-and-uninstall-existing-packages&#34;&gt;#update and uninstall existing packages&lt;/h4&gt;
-
-&lt;p&gt;we can update any existing page with &lt;code&gt;npm update&lt;/code&gt; command and unistall packages with &lt;code&gt;npm unistall&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm list --depth=0
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm unistall &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm update -g &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; npm uninstall -g &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt; installed packages,&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm list -g --depth=0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;we can use &amp;lsquo;ls&amp;rsquo; instead of &amp;lsquo;list&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;depth = depth of the dependency tree.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;update-packages&#34;&gt;Update packages&lt;/h3&gt;
+
+&lt;p&gt;We can update any existing package with &lt;code&gt;npm update&lt;/code&gt; command&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm update -g &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;uninstall-packages&#34;&gt;Uninstall packages&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;npm unistall&lt;/code&gt; command is used to uninstall any package&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm unistall &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm uninstall -g &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
 

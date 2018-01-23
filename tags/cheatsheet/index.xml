@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/cheatsheet/index.xml</link>
     <description>Recent content in Cheatsheet on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -23,17 +23,15 @@
 
 &lt;p&gt;Git is a free and open source distributed version control system.&lt;/p&gt;
 
-&lt;p&gt;Why we use VCS (version control system)?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why we use VCS (version control system)?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Code Revision&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Like a Time Machine&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Multiple Developer&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Code Revision&lt;/li&gt;
+&lt;li&gt;Like a Time Machine&lt;/li&gt;
+&lt;li&gt;Multiple Developer&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Why GIT (among other VCS)?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why GIT (among other VCS)?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Can work locally without any central server&lt;/li&gt;
@@ -45,59 +43,51 @@
 
 &lt;p&gt;Now let&amp;rsquo;s install Git on our machine and start using it.&lt;/p&gt;
 
-&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
 
 &lt;p&gt;Please follow the &lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;offical doc&lt;/a&gt; to install git.&lt;/p&gt;
 
-&lt;h4 id=&#34;configuration&#34;&gt;Configuration&lt;/h4&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
 
 &lt;p&gt;Use &lt;strong&gt;&lt;code&gt;git config&lt;/code&gt;&lt;/strong&gt; command to get and set configuration variables&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Config file locations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Config file locations&lt;/strong&gt;  :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&amp;ndash;system : configuaration for every user on the system(OS) and all their repositories.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&amp;ndash;global : configuarations specific to your user. (OS user)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&amp;ndash;local : configuarations for current repository.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Set Config&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--system&lt;/code&gt; : configuaration for every user on the system(OS) and all their repositories.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--global&lt;/code&gt; : configuarations specific to your user. (OS user)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--local&lt;/code&gt; : configuarations for current repository.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --global user.name &amp;quot;John Doe&amp;quot;
-$ git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
+&lt;p&gt;&lt;strong&gt;Set Config&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;John Doe&amp;quot;
+git config --global user.email &amp;quot;johndoe@example.com&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Get Config&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Get Config&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --list
-$ git config --global --list
-$ git config --system --list
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --list
+git config --global --list
+git config --system --list
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html&#34;&gt;What&amp;rsquo;s Inside .git Directory?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Editor&lt;/strong&gt; : By default, Git uses whatever you’ve set as your default text editor ($VISUAL or $EDITOR) or else falls back to the vi editor to create and edit your commit and tag messages.for example, to use Sublime as the editor, &lt;code&gt;git config --global core.editor &amp;quot;subl -n -w&amp;quot;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;aliases&lt;/strong&gt; : we can also easily set up an alias for each command using git config.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html&#34;&gt;What&amp;rsquo;s Inside .git Directory?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Editor&lt;/strong&gt; : By default, Git uses whatever you’ve set as your default text editor ($VISUAL or $EDITOR) or else falls back to the vi editor to create and edit your commit and tag messages.for example, to use Sublime as the editor, &lt;code&gt;git config --global core.editor &amp;quot;subl -n -w&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;aliases&lt;/strong&gt; : we can also easily set up an alias for each command using git config.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;initialization-create-a-new-repository&#34;&gt;Initialization (create a new repository)&lt;/h4&gt;
+&lt;h3 id=&#34;initialization-create-a-new-repository&#34;&gt;Initialization (create a new repository)&lt;/h3&gt;
 
 &lt;p&gt;To initialize git on a project, simply use &lt;code&gt;git init&lt;/code&gt; command.
 ( &lt;em&gt;a hidden folder named &lt;code&gt;.git&lt;/code&gt; will be created in the project&amp;rsquo;s root directory&lt;/em&gt; )&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;To get a copy of an existing Git repository, use the &lt;code&gt;git clone&lt;/code&gt; command.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To get a copy of an existing Git repository, use the &lt;code&gt;git clone&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -109,7 +99,7 @@ $ git config --system --list
 
 &lt;p&gt;Files has mainly 4 statuses :&lt;/p&gt;
 
-&lt;h4 id=&#34;1-untracked&#34;&gt;1. &lt;strong&gt;untracked&lt;/strong&gt; :&lt;/h4&gt;
+&lt;h3 id=&#34;1-untracked&#34;&gt;1. &lt;strong&gt;untracked&lt;/strong&gt; :&lt;/h3&gt;
 
 &lt;p&gt;at first any new file is untracked.&lt;/p&gt;
 
@@ -117,31 +107,31 @@ $ git config --system --list
 &lt;li&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git add&lt;/code&gt; command to stage the file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;2-staged&#34;&gt;2. &lt;strong&gt;staged&lt;/strong&gt; :&lt;/h4&gt;
+&lt;h3 id=&#34;2-staged&#34;&gt;2. &lt;strong&gt;staged&lt;/strong&gt; :&lt;/h3&gt;
 
 &lt;p&gt;after we use &amp;lsquo;git add&amp;rsquo; command, the file is statged.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; use &lt;code&gt;git commit&lt;/code&gt; command to commit the staged file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git reset HEAD&lt;/code&gt; command to unstage that file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;3-unchanged&#34;&gt;3. &lt;strong&gt;unchanged&lt;/strong&gt; :&lt;/h4&gt;
+&lt;h3 id=&#34;3-unchanged&#34;&gt;3. &lt;strong&gt;unchanged&lt;/strong&gt; :&lt;/h3&gt;
 
 &lt;p&gt;If the file is not changed since its last commit, the file is unchanged.&lt;/p&gt;
 
-&lt;h4 id=&#34;4-unstaged&#34;&gt;4. &lt;strong&gt;unstaged&lt;/strong&gt; :&lt;/h4&gt;
+&lt;h3 id=&#34;4-unstaged&#34;&gt;4. &lt;strong&gt;unstaged&lt;/strong&gt; :&lt;/h3&gt;
 
 &lt;p&gt;If there is any modification to that staged or unchanged file, that file becomes unstaged.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;&amp;gt;&lt;/strong&gt; again use &lt;code&gt;git add&lt;/code&gt; command to stage that file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;&amp;ndash;&lt;/strong&gt; use &lt;code&gt;git checkout&lt;/code&gt; command to discard changes&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lsquo;git checkout&amp;rsquo; is a dangerous command! Use stash instead.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;note : &amp;lsquo;git checkout&amp;rsquo; is a dangerous command! Use stash instead.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
@@ -149,48 +139,57 @@ $ git config --system --list
 
 &lt;p&gt;Some basic commands with examples&lt;/p&gt;
 
-&lt;h4 id=&#34;git-add&#34;&gt;git add&lt;/h4&gt;
+&lt;h3 id=&#34;git-add&#34;&gt;git add&lt;/h3&gt;
 
 &lt;p&gt;Use &lt;code&gt;git add&lt;/code&gt; command to track the untracked files (put it on the stage).&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;add single file : &lt;code&gt;git add file.ext&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;add all files : &lt;code&gt;git add .&lt;/code&gt; or &lt;code&gt;git add -A&lt;/code&gt; . &lt;a href=&#34;http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add&#34;&gt;Difference?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;add single file : &lt;code&gt;git add file.ext&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add all files : &lt;code&gt;git add .&lt;/code&gt; or &lt;code&gt;git add -A&lt;/code&gt; . (&lt;a href=&#34;http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add&#34;&gt;Difference?&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;git-commit&#34;&gt;git commit&lt;/h4&gt;
+&lt;h3 id=&#34;git-commit&#34;&gt;git commit&lt;/h3&gt;
 
 &lt;p&gt;Commits the staged snapshot to the project history.&lt;/p&gt;
 
 &lt;p&gt;Different ways to commit,&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;commit all staged files : &lt;code&gt;$ git commit&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;commit all staged files&lt;/strong&gt; :&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;This will open an editor, write your commit message and exit. To write the commit message directly in command line, use the &lt;code&gt;-m&lt;/code&gt; flag. e.g, &lt;code&gt;$ git commit -m &amp;quot;My Commit Message&amp;quot;&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;git commit
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;commit all staged and unstaged files : &lt;code&gt;$ git commit -am &amp;quot;commit message&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will open an editor, write your commit message and exit. To write the commit message directly in command line, use the &lt;code&gt;-m&lt;/code&gt; flag. e.g, &lt;code&gt;git commit -m &amp;quot;My Commit Message&amp;quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;when we use &amp;lsquo;-a&amp;rsquo; flag, it includes all changed files. Git will automatically stage every unstaged files before doing the commit. note that, untracked files will not be commited using this command.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;commit all staged and unstaged files&lt;/strong&gt; :&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;li&gt;&lt;p&gt;commit single file :  &lt;code&gt;$ git commit -m &amp;quot;commit message&amp;quot; FILE_NAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;git commit -am &amp;quot;commit message&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;commit multiple files : &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot; FILE1, FILE2..&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;when we use &amp;lsquo;-a&amp;rsquo; flag, it includes all changed files. Git will automatically stage every unstaged files before doing the commit. note that, untracked files will not be commited using this command.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;ammend the previous commit : &lt;code&gt;git commit --amend&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;commit single file :  &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot; FILE_NAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;commit multiple files : &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot; FILE1, FILE2..&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ammend the previous commit : &lt;code&gt;git commit --amend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;e.g,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git commit -m &#39;initial commit&#39;
-$ git add forgotten_file
-$ git commit --amend
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git commit -m &#39;initial commit&#39;
+git add forgotten_file
+git commit --amend
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;*&lt;em&gt;do not use `&amp;ndash;amend&amp;rsquo; if you already pushed your commit.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;*&lt;em&gt;do not use `&amp;ndash;amend&amp;rsquo; if you already pushed your commit.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h4 id=&#34;git-log&#34;&gt;git log&lt;/h4&gt;
+&lt;h3 id=&#34;git-log&#34;&gt;git log&lt;/h3&gt;
 
 &lt;p&gt;Show commit logs&lt;/p&gt;
 
@@ -223,98 +222,95 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 &lt;p&gt;for example,&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Most recent commits : &lt;code&gt;git log -3&lt;/code&gt; (last 3 commits)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Show commits in one line : &lt;code&gt;git log --pretty=oneline&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Show commits for a specific file : &lt;code&gt;git log test.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Show commits by any specific author : &lt;code&gt;git log --author=talha&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Show in a pretty format : &lt;code&gt;git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&#39; --abbrev-commit --date=relative&lt;/code&gt; [&lt;em&gt;src : &lt;a href=&#34;https://coderwall.com/lordmonkey/comments&#34;&gt;Coderwall&lt;/a&gt;&lt;/em&gt;]&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Most recent commits : &lt;code&gt;git log -3&lt;/code&gt; (last 3 commits)&lt;/li&gt;
+&lt;li&gt;Show commits in one line : &lt;code&gt;git log --pretty=oneline&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Show commits for a specific file : &lt;code&gt;git log test.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Show commits by any specific author : &lt;code&gt;git log --author=talha&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Show in a pretty format : &lt;code&gt;git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&#39; --abbrev-commit --date=relative&lt;/code&gt; [&lt;em&gt;src : &lt;a href=&#34;https://coderwall.com/lordmonkey/comments&#34;&gt;Coderwall&lt;/a&gt;&lt;/em&gt;]&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;for more details, please use the command &lt;code&gt;git log --help&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;git-show&#34;&gt;git show :&lt;/h4&gt;
+&lt;h3 id=&#34;git-show&#34;&gt;git show :&lt;/h3&gt;
 
-&lt;p&gt;Shows the changes of a particular commit*&lt;/p&gt;
+&lt;p&gt;Shows the changes of a particular commit&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git show COMMIT_HASH
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git show COMMIT_HASH*
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;lsquo;git show&amp;rsquo; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;git show&amp;rsquo; can be used to show other objects rather than commits. such as tags, trees etc. for more details, please visit &lt;a href=&#34;https://git-scm.com/docs/git-show&#34;&gt;official link&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;git-diff&#34;&gt;git diff:&lt;/h4&gt;
+&lt;h3 id=&#34;git-diff&#34;&gt;git diff:&lt;/h3&gt;
 
 &lt;p&gt;Show changes between commits, commit and working tree, etc&lt;/p&gt;
 
 &lt;p&gt;we usually use the &lt;code&gt;git status&lt;/code&gt; command to see which files were currently changed. To understand how they were changed in detail, we can use &lt;code&gt;git diff&lt;/code&gt;.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/strong&gt; : show changes only that are unstaged.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;show changes only that are unstaged.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;all unstaged files : &lt;code&gt;$ git diff&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;single unstaged file : &lt;code&gt;$ git diff FILENAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;multiple unstaged file : &lt;code&gt;$ git diff FILE1 FILE2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff --staged&lt;/code&gt;&lt;/strong&gt; : show changes only that are staged.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;all staged files : &lt;code&gt;$ git diff --staged&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;single staged file : &lt;code&gt;$ git diff --staged FILENAME&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;multiple staged file : &lt;code&gt;$ git diff --staged FILE1 FILE2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;all unstaged files : &lt;code&gt;git diff&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;single unstaged file : &lt;code&gt;git diff FILENAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;multiple unstaged file : &lt;code&gt;git diff FILE1 FILE2&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;we can use &lt;code&gt;--cached&lt;/code&gt; instead of &lt;code&gt;--staged&lt;/code&gt; (&lt;code&gt;--staged&lt;/code&gt; is a synonym of &lt;code&gt;--cached&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff --staged&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt; : show changes that are tracked (staged + unstaged).&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;show changes only that are staged.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;all staged files : &lt;code&gt;git diff --staged&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;single staged file : &lt;code&gt;git diff --staged FILENAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;multiple staged file : &lt;code&gt;git diff --staged FILE1 FILE2&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;we can use &lt;code&gt;--cached&lt;/code&gt; instead of &lt;code&gt;--staged&lt;/code&gt; (&lt;code&gt;--staged&lt;/code&gt; is a synonym of &lt;code&gt;--cached&lt;/code&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff HEAD&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;show changes that are tracked (staged + unstaged).&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;working-remotely&#34;&gt;Working Remotely&lt;/h2&gt;
 
-&lt;h4 id=&#34;git-remote&#34;&gt;git remote:&lt;/h4&gt;
+&lt;h3 id=&#34;git-remote&#34;&gt;git remote:&lt;/h3&gt;
 
 &lt;p&gt;Manage repositories&lt;/p&gt;
 
 &lt;p&gt;To collaborating with other developers, we need to manage remote repositories and pushing and pulling data to and from.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;show list with names : &lt;code&gt;git remote -v&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;add new remote : &lt;code&gt;git remote add [remote-name] &amp;lt;url&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;update a remote&amp;rsquo;s url: &lt;code&gt;git remote set-url [remote-name] [new-url]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;remove a remote : &lt;code&gt;git remote rm [remote-name]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;show list with names : &lt;code&gt;git remote -v&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add new remote : &lt;code&gt;git remote add [remote-name] &amp;lt;url&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;update a remote&amp;rsquo;s url: &lt;code&gt;git remote set-url [remote-name] [new-url]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;remove a remote : &lt;code&gt;git remote rm [remote-name]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;git-push&#34;&gt;git push:&lt;/h4&gt;
+&lt;h3 id=&#34;git-push&#34;&gt;git push:&lt;/h3&gt;
 
 &lt;p&gt;Push commits to remote repository&lt;/p&gt;
 
 &lt;p&gt;After we made some commits, we might want to push them to a remote repository. this can be done with a &lt;code&gt;git push [remote-name] [branch-name]&lt;/code&gt; command. ie, &lt;code&gt;git push origin master&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;git-pull&#34;&gt;git pull:&lt;/h4&gt;
+&lt;h3 id=&#34;git-pull&#34;&gt;git pull:&lt;/h3&gt;
 
 &lt;p&gt;Fetch and merge remote changes.&lt;/p&gt;
 
 &lt;p&gt;perform a pull can be done simply with a &lt;code&gt;git pull&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;h5 id=&#34;git-fetch-vs-git-pull&#34;&gt;&amp;lsquo;git fetch&amp;rsquo;  vs  &amp;lsquo;git pull&amp;rsquo; :&lt;/h5&gt;
+&lt;h3 id=&#34;git-fetch-vs-git-pull&#34;&gt;&amp;lsquo;git fetch&amp;rsquo;  vs  &amp;lsquo;git pull&amp;rsquo; :&lt;/h3&gt;
 
 &lt;p&gt;In its default mode, &lt;code&gt;git pull&lt;/code&gt; is shorthand for &lt;code&gt;git fetch&lt;/code&gt; followed by &lt;code&gt;git merge FETCH_HEAD&lt;/code&gt;. src : &lt;a href=&#34;https://git-scm.com/docs/git-pull&#34;&gt;https://git-scm.com/docs/git-pull&lt;/a&gt;&lt;/p&gt;
 

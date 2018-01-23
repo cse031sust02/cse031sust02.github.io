@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/blog/index.xml</link>
     <description>Recent content in Blog on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,13 +27,12 @@
 
 &lt;p&gt;Hugo allows us to scaffold a website quickly and easily.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new site&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-new-site&#34;&gt;create new site&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new site blog
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Choose a theme&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;choose-a-theme&#34;&gt;Choose a theme&lt;/h3&gt;
 
 &lt;p&gt;Download a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; and put in &amp;lsquo;theme&amp;rsquo; folder&lt;/p&gt;
 
@@ -42,13 +41,13 @@
 &lt;pre&gt;&lt;code&gt;blog$ mkdir themes
 blog$ cd themes
 blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;configuration&lt;/h3&gt;
 
 &lt;p&gt;update your configuration in config.toml&lt;/p&gt;
 
-&lt;p&gt;for example,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;languageCode = &amp;quot;en-us&amp;quot;
 title = &amp;quot;My New Hugo Site&amp;quot;
@@ -66,16 +65,16 @@ name = &amp;quot;Blog&amp;quot;
 weight = -120
 identifier = &amp;quot;blog&amp;quot;
 url = &amp;quot;/&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;create new post&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-new-post&#34;&gt;create new post&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new post/hello-world.md
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now put content inside the newly created hello-world.md file,&lt;/p&gt;
 
-&lt;p&gt;for example,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;+++
 date = &amp;quot;2016-04-17T16:12:50+06:30&amp;quot;
@@ -84,9 +83,9 @@ title = &amp;quot;Hello world&amp;quot;
 +++
 
 Hello World. This is my first post.
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Serve content&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;serve-content&#34;&gt;Serve content&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo server -t YOURTHEME
 &lt;/code&gt;&lt;/pre&gt;
@@ -98,8 +97,7 @@ Hello World. This is my first post.
 
 &lt;p&gt;You can view your blog at &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -107,8 +105,7 @@ Hello World. This is my first post.
 
 &lt;p&gt;Full details on how to host your Hugo based website on github page can be found here &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog&#34;&gt;https://gohugo.io/tutorials/github-pages-blog&lt;/a&gt;. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&amp;hellip;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-your-project-hugo-repository&#34;&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/h3&gt;
 
 &lt;p&gt;for example, create a new repository in Github named &lt;code&gt;hugo-blog&lt;/code&gt;.&lt;/p&gt;
 
@@ -116,35 +113,34 @@ Hello World. This is my first post.
 
 &lt;pre&gt;&lt;code&gt;blog$ git init
 blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-your-username-github-io-repository&#34;&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/h3&gt;
 
 &lt;p&gt;for example, in my case it is &lt;code&gt;cse031sust02.github.io&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;now, add a submodule with the public folder&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Push Everything to Github&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;push-everything-to-github&#34;&gt;Push Everything to Github&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ git add .
 blog$ git commit -am &#39;push everything&#39;
 blog$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy&#34;&gt;Deploy&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;blog$ hugo -t casper
 blog$ cd public
 blog$ git add .
 blog/public$ commit -m &amp;quot;deploy&amp;quot;
 blog/public$ push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Then you should visit the blog at https://(YOUR-USERNAME).github.com. For example, my site is at &lt;a href=&#34;https://cse031sust02.github.com&#34;&gt;https://cse031sust02.github.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then you should visit the blog at https://(YOUR-USERNAME).github.io. For example, my site is at &lt;a href=&#34;https://cse031sust02.github.io&#34;&gt;https://cse031sust02.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

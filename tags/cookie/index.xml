@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/cookie/index.xml</link>
     <description>Recent content in Cookie on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -40,12 +40,11 @@
 
 &lt;h3 id=&#34;how-server-client-sends-cookie&#34;&gt;How server/client sends cookie?&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Server to Browser&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;server-to-browser&#34;&gt;Server to Browser&lt;/h4&gt;
 
 &lt;p&gt;The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.&lt;/p&gt;
 
-&lt;p&gt;for example,&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
 Content-type: text/html
@@ -53,31 +52,29 @@ Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;expires date time is in GMT.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &amp;lsquo;session cookies&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;expires date time is in GMT.&lt;/li&gt;
+&lt;li&gt;if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &amp;lsquo;session cookies&amp;rsquo;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;To set cookie using &lt;a href=&#34;http://php.net/manual/en/function.setcookie.php&#34;&gt;php&lt;/a&gt;,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;setcookie(&amp;quot;mycookie&amp;quot;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Browser to the server&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;browser-to-the-server&#34;&gt;Browser to the server&lt;/h4&gt;
 
 &lt;p&gt;The browser will send back all previously stored cookies to the server using the Cookie header.&lt;/p&gt;
 
-&lt;p&gt;for example,&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /my_page.html HTTP/1.1
 Host: www.example.com
 Cookie: MyCookieName=MyValue 
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;For more details, please check &lt;a href=&#34;http://www.cookiecentral.com/faq/#3.2&#34;&gt;http://www.cookiecentral.com/faq/#3.2&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;secuirity&#34;&gt;Secuirity&lt;/h3&gt;
+&lt;h2 id=&#34;secuirity&#34;&gt;Secuirity&lt;/h2&gt;
 
 &lt;p&gt;Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.&lt;/p&gt;
 </description>

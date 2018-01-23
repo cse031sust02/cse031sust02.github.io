@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/http/index.xml</link>
     <description>Recent content in Http on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -41,31 +41,31 @@
 
 &lt;p&gt;We can see different types of directives such as &lt;em&gt;listen&lt;/em&gt;, &lt;em&gt;root&lt;/em&gt;, &lt;em&gt;server_name&lt;/em&gt;, &lt;em&gt;location&lt;/em&gt; etc. Let&amp;rsquo;s explore those directives.&lt;/p&gt;
 
-&lt;h4 id=&#34;listen&#34;&gt;listen&lt;/h4&gt;
+&lt;h3 id=&#34;listen&#34;&gt;listen&lt;/h3&gt;
 
 &lt;p&gt;It specifies the IP address / port combination that this server block is designed to respond to.&lt;/p&gt;
 
 &lt;p&gt;We can specify &lt;strong&gt;only the port&lt;/strong&gt; or &lt;strong&gt;only the address&lt;/strong&gt; or &lt;strong&gt;Both&lt;/strong&gt;. If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examples.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;example,&lt;/em&gt; port is omitted :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; port is omitted :&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;listen     127.0.0.1; 
-# will only respond to 127.0.0.1:80
+// will only respond to 127.0.0.1:80
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;em&gt;example,&lt;/em&gt; address is omitted :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; address is omitted :&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;listen     50; 
-# will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
+// will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;em&gt;example,&lt;/em&gt; IP address / port combination :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; IP address / port combination :&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;listen     192.168.25.19:60; 
-# will only respond to 192.168.25.19:60
+// will only respond to 192.168.25.19:60
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;server-name&#34;&gt;server_name&lt;/h4&gt;
+&lt;h3 id=&#34;server-name&#34;&gt;server_name&lt;/h3&gt;
 
 &lt;p&gt;Nginx also checks the &lt;code&gt;Host&lt;/code&gt; header of each request. When client makes a requests, Nginx checks if there is any server block that has a server_name directive defined with that &amp;ldquo;Host&amp;rdquo;. If there is a match, then that server block will responds to that request.&lt;/p&gt;
 
@@ -99,11 +99,11 @@ server {
 
 &lt;p&gt;So now we can access the First Website with the address &lt;code&gt;www.site-one.com:70&lt;/code&gt;, and the Second Website with &lt;code&gt;www.site-one.com:70&lt;/code&gt;. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?&lt;/p&gt;
 
-&lt;h4 id=&#34;root&#34;&gt;root&lt;/h4&gt;
+&lt;h3 id=&#34;root&#34;&gt;root&lt;/h3&gt;
 
 &lt;p&gt;This directive specifies the directory where the website&amp;rsquo;s contents are located. As in our last example, the root directory was &lt;code&gt;/usr/share/nginx/site-two&lt;/code&gt; for the Second Website. So when user hits the URL &lt;em&gt;&lt;a href=&#34;http://www.site-two.com:70/mypage.html&#34;&gt;http://www.site-two.com:70/mypage.html&lt;/a&gt;&lt;/em&gt;, Nginx will load &lt;code&gt;mypage.html&lt;/code&gt; file from that directory.&lt;/p&gt;
 
-&lt;h4 id=&#34;location&#34;&gt;location&lt;/h4&gt;
+&lt;h3 id=&#34;location&#34;&gt;location&lt;/h3&gt;
 
 &lt;p&gt;location block is used to decide how to process the request URI (after the domain name or IP address/port). e.g. :&lt;/p&gt;
 
@@ -139,13 +139,10 @@ location /two {
 &lt;p&gt;Here is what different modifiers do :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;= &lt;em&gt;:&lt;/em&gt; request URI &lt;strong&gt;exactly&lt;/strong&gt; matches the location given.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;~ &lt;em&gt;:&lt;/em&gt; case-sensitive regular expression match.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;~* &lt;em&gt;:&lt;/em&gt; case-insensitive regular expression match.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;^~ &lt;em&gt;:&lt;/em&gt; regular expression matching will not take place.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;= &lt;em&gt;:&lt;/em&gt; request URI &lt;strong&gt;exactly&lt;/strong&gt; matches the location given.&lt;/li&gt;
+&lt;li&gt;~ &lt;em&gt;:&lt;/em&gt; case-sensitive regular expression match.&lt;/li&gt;
+&lt;li&gt;~* &lt;em&gt;:&lt;/em&gt; case-insensitive regular expression match.&lt;/li&gt;
+&lt;li&gt;^~ &lt;em&gt;:&lt;/em&gt; regular expression matching will not take place.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;How nginx performs the matching can be found on their &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_core_module.html#location&#34;&gt;offcial doc&lt;/a&gt;. Here is an example for illustrate different types of modifiers :&lt;/p&gt;
@@ -190,17 +187,17 @@ location ~* \.(gif|jpg|jpeg)$ {
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-nginx&#34;&gt;What is Nginx&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-nginx&#34;&gt;What is Nginx&lt;/h2&gt;
 
 &lt;p&gt;Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=11m13s&#34;&gt;web server&lt;/a&gt; (like Apache) or as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Reverse_proxy&#34;&gt;reverse proxy&lt;/a&gt; (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.&lt;/p&gt;
 
-&lt;h5 id=&#34;why-use-nginx&#34;&gt;Why use Nginx?&lt;/h5&gt;
+&lt;h4 id=&#34;why-use-nginx&#34;&gt;Why use Nginx?&lt;/h4&gt;
 
 &lt;p&gt;There are other web servers such as Apache, IIS etc. So what makes Nginx special? It is especially good at handling many concurrent connections as it was originally developed to handle &lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;C10k problem&lt;/a&gt; (serving 10000 concurrent connections). Nginx serves requests asynchronously while other web servers (such as Apache, IIS) creates new threads for every request received.&lt;/p&gt;
 
 &lt;p&gt;Nginx can also work alognside other web servers as a reverse proxy. Nginx not only serve HTTP &amp;amp; HTTPS protocol but also IMAP, POP3 and SMPT. We can use Nginx on servers with very limited hardware capabilites. A very detailed overview of why we should use Nginx can be found &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=16m57s&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;There are various ways to download and install Nginx. Please follow &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/&#34;&gt;Official Guide&lt;/a&gt; to install Nginx on your system.&lt;/p&gt;
 
@@ -208,7 +205,7 @@ location ~* \.(gif|jpg|jpeg)$ {
 
 &lt;p&gt;After installing Nginx, we should see the welcome page by entering the IP address (we can get that using &lt;code&gt;ifconfig&lt;/code&gt; command) of our server on a browser.&lt;/p&gt;
 
-&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
 
 &lt;p&gt;For most linux distributions, all Nginx config files are located in &lt;code&gt;/etc/nginx&lt;/code&gt; directory.&lt;/p&gt;
 
@@ -242,17 +239,19 @@ stream {
 &lt;p&gt;As we can see, This file consists of &lt;strong&gt;directives&lt;/strong&gt; and their parameters. There are two kinds of directives.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;simple directives&lt;/strong&gt; : These directives end with a semicolon.&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;simple directives&lt;/strong&gt; : These directives end with a semicolon.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;user nobody;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;contexts&lt;/strong&gt; : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;contexts&lt;/strong&gt; : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;em&gt;To know more details about the configuration file and what is the purpose of the each directives, please visit the &lt;a href=&#34;https://www.nginx.com/resources/admin-guide/configuration-files/&#34;&gt;official guide&lt;/a&gt;. This &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/examples/full/&#34;&gt;example&lt;/a&gt; is helpful too.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;hosting-sites&#34;&gt;Hosting Sites&lt;/h4&gt;
+&lt;h3 id=&#34;hosting-sites&#34;&gt;Hosting Sites&lt;/h3&gt;
 
 &lt;p&gt;For hosting websites, we need to understand how to set up virtual servers.&lt;/p&gt;
 
@@ -292,7 +291,7 @@ stream {
 
 &lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understanding-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
 
-&lt;h3 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h3&gt;
+&lt;h2 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h2&gt;
 
 &lt;p&gt;Whenever we change the configuration, we will need to restart nginx server for changes to take place.&lt;/p&gt;
 
@@ -340,7 +339,7 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;e.g,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /index.html HTTP/1.1
 Host : www.example.com 
@@ -360,7 +359,7 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;e.g,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.1 200 OK
 &lt;/code&gt;&lt;/pre&gt;
@@ -369,7 +368,9 @@ An Optional Message Body
 &lt;li&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
 
@@ -394,14 +395,14 @@ Content-Length: 1202
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
+&lt;h3 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h3&gt;
 
 &lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
 common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
+&lt;h3 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h3&gt;
 
 &lt;p&gt;Informational : 1XX &amp;ndash; request recieve হইসে, process চলসে ।&lt;/p&gt;
 
@@ -415,7 +416,7 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
+&lt;h3 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h3&gt;
 
 &lt;p&gt;HTTPS = HTTP + SSL (Secure Socket Layer)&lt;/p&gt;
 

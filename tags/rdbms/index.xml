@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/rdbms/index.xml</link>
     <description>Recent content in Rdbms on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,7 +19,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;database&#34;&gt;Database :&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-database&#34;&gt;What is Database? :&lt;/h2&gt;
 
 &lt;p&gt;A database is a collection of data that is stored in an organized manner.&lt;/p&gt;
 
@@ -27,7 +27,7 @@
 &lt;p&gt;the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;database-models&#34;&gt;Database Models :&lt;/h4&gt;
+&lt;h3 id=&#34;database-models&#34;&gt;Database Models :&lt;/h3&gt;
 
 &lt;p&gt;A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.&lt;/p&gt;
 
@@ -35,7 +35,7 @@
 
 &lt;p&gt;DBMS popularity broken down by database model : &lt;a href=&#34;http://db-engines.com/en/ranking&#34;&gt;http://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h4&gt;
+&lt;h3 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h3&gt;
 
 &lt;p&gt;DBMS stands for Database Management System. It is the software application to store and manage the data.&lt;/p&gt;
 
@@ -65,19 +65,19 @@
 
 &lt;p&gt;&lt;strong&gt;Durability&lt;/strong&gt; : Once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk).&lt;/p&gt;
 
-&lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&#34;https://s3-us-west-1.amazonaws.com/morpheus-staging/system/spud_media/332/original/acidoverwiew.png?1422558433&#34; alt=&#34;Foo&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Image Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h4&gt;
+&lt;h3 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h3&gt;
 
 &lt;p&gt;Oracle is ACID compliant.&lt;/p&gt;
 
 &lt;p&gt;PostgreSQL is &lt;a href=&#34;https://www.postgresql.org/about&#34;&gt;ACID compliant&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database. Source : &lt;a href=&#34;http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database&#34;&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database.&lt;/p&gt;
+
+&lt;p&gt;-&lt;em&gt;Source&lt;/em&gt; : &lt;a href=&#34;http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database&#34;&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

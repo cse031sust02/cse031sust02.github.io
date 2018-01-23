@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/redis/index.xml</link>
     <description>Recent content in Redis on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -30,24 +30,24 @@
  &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;data-structure-server&#34;&gt;* Data Structure Server&lt;/h4&gt;
+&lt;h4 id=&#34;data-structure-server&#34;&gt;# Data Structure Server&lt;/h4&gt;
 
 &lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;supported data structures&lt;/strong&gt; : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
+&lt;p&gt;Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;more details :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;for more details, please visit the links :&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types&#34;&gt;https://redis.io/topics/data-types&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;popular-nosql-database&#34;&gt;* Popular noSQL Database&lt;/h4&gt;
+&lt;h4 id=&#34;popular-nosql-database&#34;&gt;# Popular noSQL Database&lt;/h4&gt;
 
 &lt;p&gt;It is a very popular noSQL database. Redis is often ranked the &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;most popular key-value database&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;message-broker&#34;&gt;* Message Broker&lt;/h4&gt;
+&lt;h4 id=&#34;message-broker&#34;&gt;# Message Broker&lt;/h4&gt;
 
 &lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.&lt;/p&gt;
 
@@ -102,14 +102,10 @@
 &lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Redis Commander
-&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;https://github.com/joeferner/redis-commander&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Redismin
-&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;https://www.redsmin.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Redis Desktop Manager
-&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;http://docs.redisdesktop.com/en/latest/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;Redis Commander&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;Redismin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;Redis Desktop Manager&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

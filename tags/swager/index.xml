@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/swager/index.xml</link>
     <description>Recent content in Swager on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/swager/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,33 +19,30 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;what-is-swagger&#34;&gt;#What is Swagger?&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-swagger&#34;&gt;What is Swagger?&lt;/h2&gt;
 
 &lt;p&gt;Swagger is a very popular framework for describing RESTful APIs using a common language that everyone can understand. It is actually a set of open-source tools for designing, building, documenting and consuming REST APIs.&lt;/p&gt;
 
-&lt;h5 id=&#34;swagger-specification&#34;&gt;Swagger Specification?&lt;/h5&gt;
+&lt;h4 id=&#34;swagger-specification&#34;&gt;Swagger Specification?&lt;/h4&gt;
 
 &lt;p&gt;The Swagger Specification (currently known as the OpenAPI specification) is a powerful definition format to describe RESTful APIs. The specification creates a RESTful interface for easily developing and consuming an API by effectively mapping all the resources and operations associated with it. It’s easy-to-learn, language agnostic, and both human and machine readable.&lt;/p&gt;
 
-&lt;h3 id=&#34;swager-tools&#34;&gt;#Swager Tools&lt;/h3&gt;
+&lt;h2 id=&#34;swager-tools&#34;&gt;Swager Tools&lt;/h2&gt;
 
 &lt;p&gt;As stated earlier, Swagger is actually a set of open-source tools :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://editor.swagger.io&#34;&gt;Swagger Editor&lt;/a&gt;&lt;/strong&gt; : We can design new APIs (or edit existing ones) using Swagger Editor. It visually renders our OAS/Swagger definition with concise, real time feedback and error handling.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-codegen/&#34;&gt;Swagger Codegen&lt;/a&gt;&lt;/strong&gt; : It is a tool for turning OAS/Swagger definition into code. Codegen can build and enable consumption of our Swagger defined APIs in every popular language.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-ui/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/strong&gt; : Swagger UI takes OAS/Swagger definition, presents them visually and allows us to execute operations.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-inspector/&#34;&gt;Swagger Inspector&lt;/a&gt;&lt;/strong&gt; : It is a API inspection tool (Like Postman) to work with REST, GraphQL and SOAP based web services.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://editor.swagger.io&#34;&gt;Swagger Editor&lt;/a&gt;&lt;/strong&gt; : We can design new APIs (or edit existing ones) using Swagger Editor. It visually renders our OAS/Swagger definition with concise, real time feedback and error handling.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-codegen/&#34;&gt;Swagger Codegen&lt;/a&gt;&lt;/strong&gt; : It is a tool for turning OAS/Swagger definition into code. Codegen can build and enable consumption of our Swagger defined APIs in every popular language.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-ui/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/strong&gt; : Swagger UI takes OAS/Swagger definition, presents them visually and allows us to execute operations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-inspector/&#34;&gt;Swagger Inspector&lt;/a&gt;&lt;/strong&gt; : It is a API inspection tool (Like Postman) to work with REST, GraphQL and SOAP based web services.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Desing [Swagger Editor] &amp;ndash;&amp;gt; Build [Swagger Codege] &amp;ndash;&amp;gt; Document [Swagger UI]&lt;/p&gt;
+&lt;h4 id=&#34;desing-swagger-editor-build-swagger-codege-document-swagger-ui&#34;&gt;Desing [Swagger Editor] &amp;ndash;&amp;gt; Build [Swagger Codege] &amp;ndash;&amp;gt; Document [Swagger UI]&lt;/h4&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;swagerhub&#34;&gt;#SwagerHub&lt;/h3&gt;
+&lt;h2 id=&#34;swagerhub&#34;&gt;SwagerHub&lt;/h2&gt;
 
 &lt;p&gt;SwagerHub is a platform for Designing and Documenting APIs with Swagger. It brings together the power of the open source Swagger tools (Swagger Editor, Swagger UI, and Swagger CodeGen) into a fully integrated platform, with advanced capabilities to make it faster and easier for teams to build and document great APIs with Swagger.&lt;/p&gt;
 

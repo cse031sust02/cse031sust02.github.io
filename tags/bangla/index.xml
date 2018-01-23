@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/bangla/index.xml</link>
     <description>Recent content in Bangla on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/bangla/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -48,7 +48,7 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;e.g,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /index.html HTTP/1.1
 Host : www.example.com 
@@ -68,7 +68,7 @@ Empty Line
 An Optional Message Body
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;e.g,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.1 200 OK
 &lt;/code&gt;&lt;/pre&gt;
@@ -77,7 +77,9 @@ An Optional Message Body
 &lt;li&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
 
@@ -102,14 +104,14 @@ Content-Length: 1202
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h4&gt;
+&lt;h3 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h3&gt;
 
 &lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
 common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h4&gt;
+&lt;h3 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h3&gt;
 
 &lt;p&gt;Informational : 1XX &amp;ndash; request recieve হইসে, process চলসে ।&lt;/p&gt;
 
@@ -123,7 +125,7 @@ common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h4&gt;
+&lt;h3 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h3&gt;
 
 &lt;p&gt;HTTPS = HTTP + SSL (Secure Socket Layer)&lt;/p&gt;
 

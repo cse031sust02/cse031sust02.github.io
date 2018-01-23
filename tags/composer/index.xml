@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/composer/index.xml</link>
     <description>Recent content in Composer on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,11 +22,12 @@
 &lt;h2 id=&#34;what-is-composer-https-getcomposer-org&#34;&gt;What is &lt;a href=&#34;https://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;?&lt;/h2&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
-&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md&#34;&gt;getcomposer.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md&#34;&gt;getcomposer.org&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h4&gt;
+&lt;h3 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h3&gt;
 
 &lt;p&gt;Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say &lt;a href=&#34;https://github.com/PHPMailer/PHPMailer&#34;&gt;PHPMailer&lt;/a&gt;. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.&lt;/p&gt;
 
@@ -46,21 +47,44 @@
 
 &lt;p&gt;Composer requires PHP 5.3.2+ to run. To install composer on your system, just follow the &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx&#34;&gt;official guide&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Some useful commands :&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;some-useful-commands&#34;&gt;Some useful commands&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;composer&lt;/code&gt; : list of available commands and description&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;composer -V&lt;/code&gt; : check current version&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;composer self-update&lt;/code&gt; : update to the latest version&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;composer help [command-name]&lt;/code&gt; : get help for that command&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;composer diagnose&lt;/code&gt; : check for common problems.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;list of available commands and description :&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;check current version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer -V
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;update to the latest version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer self-update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;get help for that command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer help [command-name]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;check for common problems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer diagnose
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;
 
 &lt;p&gt;To start using Composer in our project, all we need is a &lt;code&gt;composer.json&lt;/code&gt; file. This file describes the dependencies of our project (and may contain other metadata as well).&lt;/p&gt;
 
@@ -82,7 +106,7 @@
 
 &lt;p&gt;This will automatically download the dependencies into our project under the directory &amp;lsquo;vendor&amp;rsquo;.&lt;/p&gt;
 
-&lt;h4 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h4&gt;
+&lt;h3 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h3&gt;
 
 &lt;p&gt;As stated before, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :&lt;/p&gt;
 
@@ -93,11 +117,11 @@ $log-&amp;gt;pushHandler(new Monolog\Handler\StreamHandler(&#39;app.log&#39;, Mo
 $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h4&gt;
+&lt;h3 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h3&gt;
 
 &lt;p&gt;Whenever we want to update our dependencies to latest versions, we can use this command &lt;code&gt;composer update&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;To update any single package only, the command will be : &lt;code&gt;composer update [package-name]&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To update any single package only, the command will be : &lt;code&gt;composer update [package-name]&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -105,7 +129,7 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;We have to understand few key facts while working with composer&lt;/p&gt;
 
-&lt;h3 id=&#34;composer-install-vs-composer-update&#34;&gt;&amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h3&gt;
+&lt;h3 id=&#34;composer-install-vs-composer-update&#34;&gt;# &amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h3&gt;
 
 &lt;p&gt;To get a clear idea what actually happens when we use the &lt;code&gt;composer install&lt;/code&gt; &amp;amp; &lt;code&gt;composer update&lt;/code&gt; commands, please visit the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies&#34;&gt;official doc&lt;/a&gt;. I am trying to write the thing in my own way.&lt;/p&gt;
 
@@ -127,13 +151,13 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 
 &lt;p&gt;So, we should only ever run &lt;code&gt;composer update&lt;/code&gt; to get the newest versions of our dependencies, not to install them.&lt;/p&gt;
 
-&lt;h3 id=&#34;install-with-composer-require-command&#34;&gt;install with &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h3&gt;
+&lt;h3 id=&#34;install-with-composer-require-command&#34;&gt;# install with &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h3&gt;
 
 &lt;p&gt;In our example, We could define and install dependencies with a single &lt;a href=&#34;https://getcomposer.org/doc/03-cli.md#require&#34;&gt;&lt;code&gt;composer require&lt;/code&gt;&lt;/a&gt; command.&lt;/p&gt;
 
 &lt;p&gt;for example :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;when we run &lt;code&gt;composer require&lt;/code&gt; command,&lt;/p&gt;

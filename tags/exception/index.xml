@@ -5,8 +5,8 @@
     <link>https://cse031sust02.github.io/tags/exception/index.xml</link>
     <description>Recent content in Exception on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2017 cse031sust02 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     <atom:link href="https://cse031sust02.github.io/tags/exception/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -43,33 +43,20 @@ Generally errors occur at the language level (ie, the syntax is wrong, missing p
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;throw&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;try&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If there is a &amp;lsquo;try&amp;rsquo; block, then there must be atleast one &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block. (Otherwise PHP Fatal Error)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;catch&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block), there will be a PHP Fatal Error with an &amp;ldquo;Uncaught Exception &amp;hellip;&amp;rdquo; message (unless a handler has been defined with set_exception_handler method).&lt;/p&gt;
-
-&lt;p&gt;Exceptions can also be thrown (or re-thrown) within a catch block.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;finally&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;throw&lt;/strong&gt; : The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;try&lt;/strong&gt; : If there is a &amp;lsquo;try&amp;rsquo; block, then there must be atleast one &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block. (Otherwise PHP Fatal Error)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;catch&lt;/strong&gt; : When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block), there will be a PHP Fatal Error with an &amp;ldquo;Uncaught Exception &amp;hellip;&amp;rdquo; message (unless a handler has been defined with set_exception_handler method). Exceptions can also be thrown (or re-thrown) within a catch block.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;finally&lt;/strong&gt; : Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example,&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
-    if ($number==0) {
-        throw new Exception(&#39;Division by zero.&#39;);
-    }
+  if ($number==0) {
+      throw new Exception(&#39;Division by zero.&#39;);
+  }
 
-    return 1/$number;
+  return 1/$number;
 }
 
 try {

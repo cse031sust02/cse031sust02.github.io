@@ -1,88 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta content="cse031sust02, programming, code" name="keywords">
-<meta content="Talha Ibne Imam" name="author">
-<meta property="og:title" content="So you want to start using Redis? - cse031sust02">
-<meta property="og:url" content="https://cse031sust02.github.io/post/intro-to-redis/">
-<meta property="og:description" content="A n00b&#39;s rambling journey into the world of programming">
-<meta property="og:type" content="website" />
-<title>So you want to start using Redis? | cse031sust02</title>
+	<title>So you want to start using Redis?&middot; cse031sust02</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Talha Ibne Imam">
+	
+	<meta name="keywords" content="programming, random thoughts, noob">
+	<meta name="generator" content="Hugo 0.19" />
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<link rel="stylesheet" href="https://cse031sust02.github.io//css/style.css">
-<link rel="shortcut icon" href="https://cse031sust02.github.io//wave.ico">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cse031sust02.github.io/css/main.css">
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://cse031sust02.github.io/favicon.ico" type="image/x-icon">
 
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
-<section class="section">
-  <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://cse031sust02.github.io/"><h1 class="title is-4">cse031sust02</h1></a>
-      </div>
-      <div class="nav-right">
-        <nav class="nav-item level is-mobile">
-          
-          <a class="level-item" href="https://github.com/cse031sust02" target="_blank">
-            <span class="icon">
-              <i class="fa fa-github"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://twitter.com/cse031sust02" target="_blank">
-            <span class="icon">
-              <i class="fa fa-twitter"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.linkedin.com/in/talhasust/" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="/index.xml" target="_blank">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-          </a>
-          
-        </nav>
-      </div>
-    </nav>
-  </div>
-</section>
+	<header class="site-header">
+	<div class="branding">
+		<a href="https://cse031sust02.github.io/">
+		<img class="avatar" src="https://www.gravatar.com/avatar/80cb0cd39df8ecf3a57cfaea70742986?s=100&d=identicon" alt=""/>
+		</a>
+		<h1 class="site-title">
+			<a href="https://cse031sust02.github.io/">cse031sust02</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			<li><a href="/about/"> About </a></li>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title">So you want to start using Redis?</h1>
-    <h2 class="subtitle is-5">April 22, 2017 by Talha Ibne Imam</h2>
-    
-      <div class="tags">
-    
-        <a class="button is-link" href="/tags/redis">redis</a>
-    
-        <a class="button is-link" href="/tags/nosql">noSQL</a>
-    
-</div>
+			<li class="icon">
+	<a href="https://cse031sust02.github.io/" title="">
+		<i class="fa fa-fw fa-home"></i>
+	</a>
+</li>
 
-    
-    <div class="content">
-      
+<li class="icon">
+	<a href="https://cse031sust02.github.io/index.xml" title="Subcribe">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://github.com/cse031sust02" title="GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://twitter.com/cse031sust02" title="Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+
+	<div class="content">
+	<article>
+		<header>
+			<h1 class="title">So you want to start using Redis?</h1>
+			<p class="meta">
+	April 22, 2017 &middot; 2 minute read
+
+	
+		&middot; Tags:
+			<a href="https://cse031sust02.github.io/tags/nosql">noSQL</a>
+			, <a href="https://cse031sust02.github.io/tags/redis">redis</a>
+			
+</p>
+
+		</header>
+
+		<section class="post-content">
+			
 
 <hr />
 
@@ -97,24 +142,24 @@
  <a href="https://en.wikipedia.org/wiki/Key-value_database">https://en.wikipedia.org/wiki/Key-value_database</a></p>
 </blockquote>
 
-<h4 id="data-structure-server">* Data Structure Server</h4>
+<h4 id="data-structure-server"># Data Structure Server</h4>
 
 <p>Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.</p>
 
-<p><strong>supported data structures</strong> : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.</p>
+<p>Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.</p>
 
-<p><strong>more details :</strong></p>
+<p>for more details, please visit the links :</p>
 
 <ul>
 <li><a href="https://redis.io/topics/data-types">https://redis.io/topics/data-types</a></li>
 <li><a href="https://redis.io/topics/data-types-intro">https://redis.io/topics/data-types-intro</a></li>
 </ul>
 
-<h4 id="popular-nosql-database">* Popular noSQL Database</h4>
+<h4 id="popular-nosql-database"># Popular noSQL Database</h4>
 
 <p>It is a very popular noSQL database. Redis is often ranked the <a href="http://db-engines.com/en/ranking/key-value+store">most popular key-value database</a>.</p>
 
-<h4 id="message-broker">* Message Broker</h4>
+<h4 id="message-broker"># Message Broker</h4>
 
 <p>a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.</p>
 
@@ -169,71 +214,48 @@
 <p>While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.</p>
 
 <ul>
-<li><p>Redis Commander
-<a href="https://github.com/joeferner/redis-commander">https://github.com/joeferner/redis-commander</a></p></li>
-
-<li><p>Redismin
-<a href="https://www.redsmin.com/">https://www.redsmin.com/</a></p></li>
-
-<li><p>Redis Desktop Manager
-<a href="http://docs.redisdesktop.com/en/latest/">http://docs.redisdesktop.com/en/latest/</a></p></li>
+<li><a href="https://github.com/joeferner/redis-commander">Redis Commander</a></li>
+<li><a href="https://www.redsmin.com/">Redismin</a></li>
+<li><a href="http://docs.redisdesktop.com/en/latest/">Redis Desktop Manager</a>
+<br /></li>
 </ul>
 
-    </div>
-    
-        <div class="nav-left">
-    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://twitter.com/home?status=So%20you%20want%20to%20start%20using%20Redis%3f - https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
-    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fcse031sust02.github.io%2fpost%2fintro-to-redis%2f&title=So%20you%20want%20to%20start%20using%20Redis%3f" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
-    
-    </div>
-    
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <aside><div id="disqus_thread"></div></aside>
-    <script type="text/javascript">
-      var disqus_shortname = 'cse031sust02';
-      (function() {
+			
+				<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cse031sust02';
+    var disqus_identifier = 'https:\/\/cse031sust02.github.io\/post\/intro-to-redis\/';
+    var disqus_title = 'So you want to start using Redis?';
+    var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/intro-to-redis\/';
+
+    (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+		</section>
+	</article>
+	</div>
 
-
-<section class="section">
-  <div class="container has-text-centered">
-    <p>&copy; 2017 cse031sust02 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
-  </div>
-</section>
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/javascript.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
+	<footer class="site-footer">
+	<p class="text">&copy; 2018 - Talha Ibne Imam | Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+</footer>
 
 
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
 ga('create', 'UA-67303858-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
-
 
 </body>
+</html>
