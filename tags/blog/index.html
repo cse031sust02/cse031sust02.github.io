@@ -117,6 +117,34 @@
 	<div class="post-teaser">
 		<header>
 			<h1>
+			<a class="post-link" href="https://cse031sust02.github.io/post/send-notifications-using-firebase/">
+				Send notifications using Firebase
+			</a>
+			</h1>
+			<p class="meta">
+	January 23, 2018 &middot; 3 minute read
+
+	
+		&middot; Tags:
+			<a href="https://cse031sust02.github.io/tags/cloud-messaging">cloud messaging</a>
+			, <a href="https://cse031sust02.github.io/tags/firebase">firebase</a>
+			
+</p>
+
+		</header>
+
+		<div class="excerpt">
+			What is Firebase? Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this page.
+Firebase Cloud Messaging (FCM) Firebase Cloud Messaging(FCM) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.
+
+			<br>
+			<a class="button" href="https://cse031sust02.github.io/post/send-notifications-using-firebase/">
+				Continue reading
+			</a>
+		</div>
+	</div><div class="post-teaser">
+		<header>
+			<h1>
 			<a class="post-link" href="https://cse031sust02.github.io/post/use-case-diagram/">
 				Use Case Diagram
 			</a>
@@ -370,35 +398,6 @@ Creepy, huh?
 
 			<br>
 			<a class="button" href="https://cse031sust02.github.io/post/say_hello_to_nodejs/">
-				Continue reading
-			</a>
-		</div>
-	</div><div class="post-teaser">
-		<header>
-			<h1>
-			<a class="post-link" href="https://cse031sust02.github.io/post/getting_started_with_composer/">
-				Getting Started with Composer
-			</a>
-			</h1>
-			<p class="meta">
-	April 23, 2017 &middot; 4 minute read
-
-	
-		&middot; Tags:
-			<a href="https://cse031sust02.github.io/tags/composer">composer</a>
-			, <a href="https://cse031sust02.github.io/tags/php">php</a>
-			
-</p>
-
-		</header>
-
-		<div class="excerpt">
-			What is Composer?  Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
-source : getcomposer.org
- Why Use Composer? Suppose, we want to use a mail library for our PHP project, let&rsquo;s say PHPMailer. We would normally download the PHPMailer library and put it on our project&rsquo;s folder. But, PHPMailer depends on some other libraries too.
-
-			<br>
-			<a class="button" href="https://cse031sust02.github.io/post/getting_started_with_composer/">
 				Continue reading
 			</a>
 		</div>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>Send notifications using Firebase&middot; cse031sust02</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Talha Ibne Imam">
+	
+	<meta name="keywords" content="programming, random thoughts, noob">
+	<meta name="generator" content="Hugo 0.19" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cse031sust02.github.io/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://cse031sust02.github.io/favicon.ico" type="image/x-icon">
+
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+	<header class="site-header">
+	<div class="branding">
+		<a href="https://cse031sust02.github.io/">
+		<img class="avatar" src="https://www.gravatar.com/avatar/80cb0cd39df8ecf3a57cfaea70742986?s=100&d=identicon" alt=""/>
+		</a>
+		<h1 class="site-title">
+			<a href="https://cse031sust02.github.io/">cse031sust02</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			<li><a href="/about/"> About </a></li>
+
+			<li class="icon">
+	<a href="https://cse031sust02.github.io/" title="">
+		<i class="fa fa-fw fa-home"></i>
+	</a>
+</li>
+
+<li class="icon">
+	<a href="https://cse031sust02.github.io/index.xml" title="Subcribe">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://github.com/cse031sust02" title="GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://twitter.com/cse031sust02" title="Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+
+	<div class="content">
+	<article>
+		<header>
+			<h1 class="title">Send notifications using Firebase</h1>
+			<p class="meta">
+	January 23, 2018 &middot; 3 minute read
+
+	
+		&middot; Tags:
+			<a href="https://cse031sust02.github.io/tags/cloud-messaging">cloud messaging</a>
+			, <a href="https://cse031sust02.github.io/tags/firebase">firebase</a>
+			
+</p>
+
+		</header>
+
+		<section class="post-content">
+			
+
+<h2 id="what-is-firebase">What is Firebase?</h2>
+
+<p>Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this <a href="https://firebase.google.com/products/">page</a>.</p>
+
+<h2 id="firebase-cloud-messaging-fcm">Firebase Cloud Messaging (FCM)</h2>
+
+<p>Firebase Cloud Messaging(<a href="(https://firebase.google.com/products/cloud-messaging/)">FCM</a>) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.</p>
+
+<h3 id="key-capabilities">Key Capabilities</h3>
+
+<ul>
+<li>We can send message to single devices, to groups of devices, or to devices subscribed to topics.</li>
+<li>Client apps can also send messages to our server over FCM.</li>
+<li>We can send notification messages immediately, or at a future time in the user&rsquo;s local time zone.</li>
+<li>Messages are fully integrated with Firebase Analytics in order to track user engagement and conversion.</li>
+</ul>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+
+<p>An FCM implementation includes two main components for sending and receiving messages or notifications</p>
+
+<p>1) A trusted environment such as <a href="https://firebase.google.com/products/functions/">Cloud Functions</a> for Firebase or an app server</p>
+
+<p>2) An iOS, Android, or web (JavaScript) client app that receives messages.</p>
+
+<p>The app server (or trusted server environment) sends message requests to the FCM servers(provided by Google), which then sends messages to client apps.</p>
+
+<h3 id="fcm-messages">FCM Messages</h3>
+
+<p>FCM messages are divided into two types : Notification messages and Data messages.</p>
+
+<h4 id="1-notification-messages">1) Notification messages :</h4>
+
+<p>Notification messages are handled by the FCM SDK automatically. They are also known as &ldquo;display messages&rdquo; as these messages are displayed on the user’s device by FCM on behalf of the application.</p>
+
+<p>e.g.,</p>
+
+<pre><code>{
+  &quot;message&quot;:{
+    &quot;token&quot;:&quot;YOUR-TOKEN-GOES-HERE...&quot;,
+    &quot;notification&quot;:{
+      &quot;title&quot;:&quot;New Message&quot;,
+      &quot;body&quot;:&quot;You've got a message&quot;
+    }
+  }
+}
+</code></pre>
+
+<h4 id="2-data-messages">2) Data messages :</h4>
+
+<p>Client app is responsible for processing [data messages]. These messages have only custom key-value pairs and maximum payload is 4KB.</p>
+
+<p>e.g.,</p>
+
+<pre><code>    {
+      &quot;message&quot;:{
+        &quot;token&quot;:&quot;YOUR-TOKEN-GOES-HERE...&quot;,
+        &quot;data&quot;:{
+          &quot;id&quot; : 101,
+          &quot;category&quot; : &quot;tech&quot;,
+        }
+      }
+    }
+</code></pre>
+
+<h4 id="notification-messages-with-an-optional-data-payload">Notification messages with an optional data payload</h4>
+
+<p>We can also send notification messages with an optional data payload. In such cases, FCM will handle displaying the notification payload, and the client app will handle the data payload.</p>
+
+<p>i.e., Message with optional data payload :</p>
+
+<pre><code>{
+  &quot;message&quot;:{
+    &quot;token&quot;:&quot;YOUR-TOKEN-GOES-HERE...&quot;,
+    &quot;notification&quot;:{
+      &quot;title&quot;:&quot;New Message&quot;,
+      &quot;body&quot;:&quot;You've got a message&quot;
+    },
+    &quot;data&quot; : {
+      &quot;id&quot; : 101,
+      &quot;category&quot; : &quot;tech&quot;,
+    }
+  }
+}
+</code></pre>
+
+<blockquote>
+<p>When apps receive messages that include both notification and data payloads, the behavior of the app depends on whether the app is in the background or the foreground. For more details, please visit this <a href="https://firebase.google.com/docs/cloud-messaging/concept-options#notification-messages-with-optional-data-payload">page</a>.</p>
+</blockquote>
+
+<h3 id="customizing-a-message-across-platforms">Customizing a message across platforms :</h3>
+
+<p>It is possible to customize FCM messages for different platforms (ios, android etc) using platform-specific key blocks. So, when creating a message, we can target that message for android or iphone apps only. We may also send a common message to all platforms but with some platform-specific values so that different platforms can handle that message correctly.</p>
+
+<p>For example, this request sends a common notification title and content to all platforms, but also sends some platform-specific overrides.</p>
+
+<pre><code>{
+  &quot;message&quot;:{
+    &quot;token&quot;:&quot;YOUR-TOKEN-GOES-HERE...&quot;,
+    &quot;notification&quot;:{
+      &quot;title&quot;:&quot;New Message&quot;,
+      &quot;body&quot;:&quot;You've got a message&quot;
+    },
+    &quot;android&quot;:{
+      &quot;ttl&quot;:&quot;86400s&quot;,
+      &quot;notification&quot;:{
+        &quot;click_action&quot;:&quot;OPEN_ACTIVITY_1&quot;
+      }
+    },
+    &quot;apns&quot;:{
+      &quot;headers&quot;:{
+        &quot;apns-priority&quot;:5
+      },
+      &quot;payload&quot;:{
+        &quot;aps&quot;:{
+          &quot;category&quot;:&quot;NEW_MESSAGE_CATEGORY&quot;
+        }
+      }
+    },
+    &quot;webpush&quot;:{
+      &quot;headers&quot;:{
+        &quot;TTL&quot;:&quot;86400&quot;
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>for more details, please read the <a href="https://firebase.google.com/docs/cloud-messaging/concept-options#customizing_a_message_across_platforms">offical doc</a>.</p>
+
+
+			
+				<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cse031sust02';
+    var disqus_identifier = 'https:\/\/cse031sust02.github.io\/post\/send-notifications-using-firebase\/';
+    var disqus_title = 'Send notifications using Firebase';
+    var disqus_url = 'https:\/\/cse031sust02.github.io\/post\/send-notifications-using-firebase\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+		</section>
+	</article>
+	</div>
+
+	<footer class="site-footer">
+	<p class="text">&copy; 2018 - Talha Ibne Imam | Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+</footer>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-67303858-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

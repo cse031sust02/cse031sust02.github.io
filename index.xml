@@ -7,8 +7,148 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2018 11:21:11 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Send notifications using Firebase</title>
+      <link>https://cse031sust02.github.io/post/send-notifications-using-firebase/</link>
+      <pubDate>Tue, 23 Jan 2018 11:21:11 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/send-notifications-using-firebase/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-firebase&#34;&gt;What is Firebase?&lt;/h2&gt;
+
+&lt;p&gt;Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this &lt;a href=&#34;https://firebase.google.com/products/&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;firebase-cloud-messaging-fcm&#34;&gt;Firebase Cloud Messaging (FCM)&lt;/h2&gt;
+
+&lt;p&gt;Firebase Cloud Messaging(&lt;a href=&#34;(https://firebase.google.com/products/cloud-messaging/)&#34;&gt;FCM&lt;/a&gt;) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.&lt;/p&gt;
+
+&lt;h3 id=&#34;key-capabilities&#34;&gt;Key Capabilities&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We can send message to single devices, to groups of devices, or to devices subscribed to topics.&lt;/li&gt;
+&lt;li&gt;Client apps can also send messages to our server over FCM.&lt;/li&gt;
+&lt;li&gt;We can send notification messages immediately, or at a future time in the user&amp;rsquo;s local time zone.&lt;/li&gt;
+&lt;li&gt;Messages are fully integrated with Firebase Analytics in order to track user engagement and conversion.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h3&gt;
+
+&lt;p&gt;An FCM implementation includes two main components for sending and receiving messages or notifications&lt;/p&gt;
+
+&lt;p&gt;1) A trusted environment such as &lt;a href=&#34;https://firebase.google.com/products/functions/&#34;&gt;Cloud Functions&lt;/a&gt; for Firebase or an app server&lt;/p&gt;
+
+&lt;p&gt;2) An iOS, Android, or web (JavaScript) client app that receives messages.&lt;/p&gt;
+
+&lt;p&gt;The app server (or trusted server environment) sends message requests to the FCM servers(provided by Google), which then sends messages to client apps.&lt;/p&gt;
+
+&lt;h3 id=&#34;fcm-messages&#34;&gt;FCM Messages&lt;/h3&gt;
+
+&lt;p&gt;FCM messages are divided into two types : Notification messages and Data messages.&lt;/p&gt;
+
+&lt;h4 id=&#34;1-notification-messages&#34;&gt;1) Notification messages :&lt;/h4&gt;
+
+&lt;p&gt;Notification messages are handled by the FCM SDK automatically. They are also known as &amp;ldquo;display messages&amp;rdquo; as these messages are displayed on the user’s device by FCM on behalf of the application.&lt;/p&gt;
+
+&lt;p&gt;e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;message&amp;quot;:{
+    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
+    &amp;quot;notification&amp;quot;:{
+      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
+      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-data-messages&#34;&gt;2) Data messages :&lt;/h4&gt;
+
+&lt;p&gt;Client app is responsible for processing [data messages]. These messages have only custom key-value pairs and maximum payload is 4KB.&lt;/p&gt;
+
+&lt;p&gt;e.g.,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    {
+      &amp;quot;message&amp;quot;:{
+        &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
+        &amp;quot;data&amp;quot;:{
+          &amp;quot;id&amp;quot; : 101,
+          &amp;quot;category&amp;quot; : &amp;quot;tech&amp;quot;,
+        }
+      }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;notification-messages-with-an-optional-data-payload&#34;&gt;Notification messages with an optional data payload&lt;/h4&gt;
+
+&lt;p&gt;We can also send notification messages with an optional data payload. In such cases, FCM will handle displaying the notification payload, and the client app will handle the data payload.&lt;/p&gt;
+
+&lt;p&gt;i.e., Message with optional data payload :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;message&amp;quot;:{
+    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
+    &amp;quot;notification&amp;quot;:{
+      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
+      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
+    },
+    &amp;quot;data&amp;quot; : {
+      &amp;quot;id&amp;quot; : 101,
+      &amp;quot;category&amp;quot; : &amp;quot;tech&amp;quot;,
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;When apps receive messages that include both notification and data payloads, the behavior of the app depends on whether the app is in the background or the foreground. For more details, please visit this &lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/concept-options#notification-messages-with-optional-data-payload&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;customizing-a-message-across-platforms&#34;&gt;Customizing a message across platforms :&lt;/h3&gt;
+
+&lt;p&gt;It is possible to customize FCM messages for different platforms (ios, android etc) using platform-specific key blocks. So, when creating a message, we can target that message for android or iphone apps only. We may also send a common message to all platforms but with some platform-specific values so that different platforms can handle that message correctly.&lt;/p&gt;
+
+&lt;p&gt;For example, this request sends a common notification title and content to all platforms, but also sends some platform-specific overrides.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;message&amp;quot;:{
+    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
+    &amp;quot;notification&amp;quot;:{
+      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
+      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
+    },
+    &amp;quot;android&amp;quot;:{
+      &amp;quot;ttl&amp;quot;:&amp;quot;86400s&amp;quot;,
+      &amp;quot;notification&amp;quot;:{
+        &amp;quot;click_action&amp;quot;:&amp;quot;OPEN_ACTIVITY_1&amp;quot;
+      }
+    },
+    &amp;quot;apns&amp;quot;:{
+      &amp;quot;headers&amp;quot;:{
+        &amp;quot;apns-priority&amp;quot;:5
+      },
+      &amp;quot;payload&amp;quot;:{
+        &amp;quot;aps&amp;quot;:{
+          &amp;quot;category&amp;quot;:&amp;quot;NEW_MESSAGE_CATEGORY&amp;quot;
+        }
+      }
+    },
+    &amp;quot;webpush&amp;quot;:{
+      &amp;quot;headers&amp;quot;:{
+        &amp;quot;TTL&amp;quot;:&amp;quot;86400&amp;quot;
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;for more details, please read the &lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/concept-options#customizing_a_message_across_platforms&#34;&gt;offical doc&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -1779,77 +1919,6 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 
 &lt;p&gt;more details : &lt;a href=&#34;http://stackoverflow.com/a/7104747/7804179&#34;&gt;http://stackoverflow.com/a/7104747/7804179&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Introduction to Cookie</title>
-      <link>https://cse031sust02.github.io/post/intro-to-cookie/</link>
-      <pubDate>Tue, 11 Apr 2017 11:11:22 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/intro-to-cookie/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-a-http-cookie&#34;&gt;What is a HTTP Cookie?&lt;/h2&gt;
-
-&lt;p&gt;Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.&lt;/p&gt;
-
-&lt;p&gt;It is also called web cookie, Internet cookie, browser cookie or simply cookie.&lt;/p&gt;
-
-&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;Cookies are mainly used for these purposes&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Session management (user logins, shopping carts)&lt;/li&gt;
-&lt;li&gt;Personalization (user preferences)&lt;/li&gt;
-&lt;li&gt;Tracking (analyzing user behavior)
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;source : &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-server-client-sends-cookie&#34;&gt;How server/client sends cookie?&lt;/h3&gt;
-
-&lt;h4 id=&#34;server-to-browser&#34;&gt;Server to Browser&lt;/h4&gt;
-
-&lt;p&gt;The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
-Content-type: text/html
-Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;expires date time is in GMT.&lt;/li&gt;
-&lt;li&gt;if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &amp;lsquo;session cookies&amp;rsquo;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To set cookie using &lt;a href=&#34;http://php.net/manual/en/function.setcookie.php&#34;&gt;php&lt;/a&gt;,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;setcookie(&amp;quot;mycookie&amp;quot;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;browser-to-the-server&#34;&gt;Browser to the server&lt;/h4&gt;
-
-&lt;p&gt;The browser will send back all previously stored cookies to the server using the Cookie header.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /my_page.html HTTP/1.1
-Host: www.example.com
-Cookie: MyCookieName=MyValue 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For more details, please check &lt;a href=&#34;http://www.cookiecentral.com/faq/#3.2&#34;&gt;http://www.cookiecentral.com/faq/#3.2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;secuirity&#34;&gt;Secuirity&lt;/h2&gt;
-
-&lt;p&gt;Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.&lt;/p&gt;
 </description>
     </item>
     
