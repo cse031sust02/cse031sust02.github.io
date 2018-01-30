@@ -137,7 +137,13 @@ git config --system --list
 
 &lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 
-&lt;p&gt;Some basic commands with examples&lt;/p&gt;
+&lt;p&gt;The diagram below show how the git works locally and remotely using different commands.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images.osteele.com/2008/git-transport.png&#34; alt=&#34;Commands&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;em&gt;&lt;a href=&#34;http://blog.osteele.com/2008/05/my-git-workflow/&#34;&gt;http://blog.osteele.com/2008/05/my-git-workflow/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I found this &lt;a href=&#34;https://www.youtube.com/watch?v=3a2x1iJFJWc&#34;&gt;video&lt;/a&gt; really useful to understand  the workflow.&lt;/p&gt;
 
 &lt;h3 id=&#34;git-add&#34;&gt;git add&lt;/h3&gt;
 
@@ -239,7 +245,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;*&lt;em&gt;only first 4-5 character of COMMIT_HASH is enough!&lt;/em&gt; &lt;a href=&#34;https://stackoverflow.com/questions/34764195/how-does-git-create-unique-commit-hashes-mainly-the-first-few-characters&#34;&gt;(or not?)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)&lt;/p&gt;

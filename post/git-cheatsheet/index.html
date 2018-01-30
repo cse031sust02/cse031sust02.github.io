@@ -115,7 +115,7 @@
 		<header>
 			<h1 class="title">My Personal Git Cheat Sheet</h1>
 			<p class="meta">
-	April 11, 2017 &middot; 5 minute read
+	April 11, 2017 &middot; 6 minute read
 
 	
 		&middot; Tags:
@@ -249,7 +249,13 @@ git config --system --list
 
 <h2 id="basic-commands">Basic Commands</h2>
 
-<p>Some basic commands with examples</p>
+<p>The diagram below show how the git works locally and remotely using different commands.</p>
+
+<p><img src="http://images.osteele.com/2008/git-transport.png" alt="Commands" /></p>
+
+<p><strong>source</strong> : <em><a href="http://blog.osteele.com/2008/05/my-git-workflow/">http://blog.osteele.com/2008/05/my-git-workflow/</a></em></p>
+
+<p>I found this <a href="https://www.youtube.com/watch?v=3a2x1iJFJWc">video</a> really useful to understand  the workflow.</p>
 
 <h3 id="git-add">git add</h3>
 
@@ -351,7 +357,7 @@ Date:   Thu Apr 20 11:35:36 2017 +0600
 </code></pre>
 
 <blockquote>
-<p>*<em>only first 4-5 character of COMMIT_HASH is enough!</em></p>
+<p>*<em>only first 4-5 character of COMMIT_HASH is enough!</em> <a href="https://stackoverflow.com/questions/34764195/how-does-git-create-unique-commit-hashes-mainly-the-first-few-characters">(or not?)</a></p>
 </blockquote>
 
 <p>If we do not specify COMMIT_HASH, then it will show changes from HEAD. (HEAD is a reference to the last commit in the currently checked-out branch.)</p>

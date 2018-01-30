@@ -117,6 +117,31 @@
 	<div class="post-teaser">
 		<header>
 			<h1>
+			<a class="post-link" href="https://cse031sust02.github.io/post/database-normalization/">
+				Database Normalization
+			</a>
+			</h1>
+			<p class="meta">
+	January 30, 2018 &middot; 2 minute read
+
+	
+</p>
+
+		</header>
+
+		<div class="excerpt">
+			Intro Database normalization is the process of organizing a relational database to reduce data redundancy (duplicate data) and improve data integrity. The concept of Normalization was introduced by Edgar F. Codd.
+Normalization is part of a successful database design. It makes a Relation or Table free from insert/update/delete anomalies and saves space by removing duplicate data.
+Normal Forms : Theory of Data Normalization is still being developed further. There are discussions even on 6th Normal Form.
+
+			<br>
+			<a class="button" href="https://cse031sust02.github.io/post/database-normalization/">
+				Continue reading
+			</a>
+		</div>
+	</div><div class="post-teaser">
+		<header>
+			<h1>
 			<a class="post-link" href="https://cse031sust02.github.io/post/send-notifications-using-firebase/">
 				Send notifications using Firebase
 			</a>
@@ -370,34 +395,6 @@ Linux Commands We should have some basic ideas of Shell, Bash and Terminal first
 
 			<br>
 			<a class="button" href="https://cse031sust02.github.io/post/linux-cheatsheet/">
-				Continue reading
-			</a>
-		</div>
-	</div><div class="post-teaser">
-		<header>
-			<h1>
-			<a class="post-link" href="https://cse031sust02.github.io/post/say_hello_to_nodejs/">
-				Say &#39;Hello&#39; to Node.js
-			</a>
-			</h1>
-			<p class="meta">
-	May 7, 2017 &middot; 5 minute read
-
-	
-		&middot; Tags:
-			<a href="https://cse031sust02.github.io/tags/nodejs">nodejs</a>
-			
-</p>
-
-		</header>
-
-		<div class="excerpt">
-			What is Node.js? :  Node.js® is a JavaScript runtime built on Chrome&rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world. - Official Website
-Creepy, huh?
- npm? npm is the Node.js package manager. It allows us to easily install modules and packages to use with Node.
-
-			<br>
-			<a class="button" href="https://cse031sust02.github.io/post/say_hello_to_nodejs/">
 				Continue reading
 			</a>
 		</div>
