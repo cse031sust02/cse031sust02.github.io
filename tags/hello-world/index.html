@@ -256,6 +256,36 @@ server { listen 80; server_name _; location / { root /usr/share/nginx/html; inde
 	</div><div class="post-teaser">
 		<header>
 			<h1>
+			<a class="post-link" href="https://cse031sust02.github.io/post/getting-started-with-AWS/">
+				Getting started with AWS
+			</a>
+			</h1>
+			<p class="meta">
+	September 12, 2017 &middot; 3 minute read
+
+	
+		&middot; Tags:
+			<a href="https://cse031sust02.github.io/tags/aws">AWS</a>
+			, <a href="https://cse031sust02.github.io/tags/cloud">Cloud</a>
+			
+</p>
+
+		</header>
+
+		<div class="excerpt">
+			What is AWS? Amazon Web Services (AWS) is a secure cloud services platform. It provides a broad set of infrastructure services, such as computing power, storage options, networking and databases. Millions of customers use AWS cloud products and solutions to build sophisticated applications.
+source : https://aws.amazon.com/what-is-aws/
+Getting Started Create a New Account Go to https://portal.aws.amazon.com/billing/signup#
+Get Hands On These 10-Minute Tutorials are simple “Hello, World!” technical documents to help you get hands-on with AWS.
+
+			<br>
+			<a class="button" href="https://cse031sust02.github.io/post/getting-started-with-AWS/">
+				Continue reading
+			</a>
+		</div>
+	</div><div class="post-teaser">
+		<header>
+			<h1>
 			<a class="post-link" href="https://cse031sust02.github.io/post/getting-started-with-nginx/">
 				How I learned to stop panicking and play with NGINX
 			</a>
@@ -366,35 +396,6 @@ sudo apt-get update  Step 2 : Install nginx Installing nginx is very easy as Ubu
 
 			<br>
 			<a class="button" href="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/">
-				Continue reading
-			</a>
-		</div>
-	</div><div class="post-teaser">
-		<header>
-			<h1>
-			<a class="post-link" href="https://cse031sust02.github.io/post/linux-cheatsheet/">
-				Getting Started with Linux Command Line
-			</a>
-			</h1>
-			<p class="meta">
-	May 17, 2017 &middot; 4 minute read
-
-	
-		&middot; Tags:
-			<a href="https://cse031sust02.github.io/tags/bash">bash</a>
-			, <a href="https://cse031sust02.github.io/tags/linux">linux</a>
-			
-</p>
-
-		</header>
-
-		<div class="excerpt">
-			What is Linux? Just like Windows and Mac OS X, Linux is an operating system. It is an open source Unix-like operating system.
-Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was developed by Linus Torvalds. I think this answer explains it all.
-Linux Commands We should have some basic ideas of Shell, Bash and Terminal first if we want to work with Linux Command Line.
-
-			<br>
-			<a class="button" href="https://cse031sust02.github.io/post/linux-cheatsheet/">
 				Continue reading
 			</a>
 		</div>

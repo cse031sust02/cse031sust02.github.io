@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on cse031sust02</title>
+    <link>https://cse031sust02.github.io/tags/aws/index.xml</link>
+    <description>Recent content in Aws on cse031sust02</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
+    <atom:link href="https://cse031sust02.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting started with AWS</title>
+      <link>https://cse031sust02.github.io/post/getting-started-with-AWS/</link>
+      <pubDate>Tue, 12 Sep 2017 16:05:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/getting-started-with-AWS/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-is-aws&#34;&gt;What is AWS?&lt;/h2&gt;
+
+&lt;p&gt;Amazon Web Services (AWS) is a secure cloud services platform. It provides a broad set of infrastructure services, such as computing power, storage options, networking and databases. Millions of customers use AWS cloud &lt;a href=&#34;https://aws.amazon.com/products/&#34;&gt;products&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/solutions/&#34;&gt;solutions&lt;/a&gt; to build sophisticated applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://aws.amazon.com/what-is-aws/&#34;&gt;https://aws.amazon.com/what-is-aws/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h4 id=&#34;create-a-new-account&#34;&gt;Create a New Account&lt;/h4&gt;
+
+&lt;p&gt;Go to &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup#&#34;&gt;https://portal.aws.amazon.com/billing/signup#&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;get-hands-on&#34;&gt;Get Hands On&lt;/h4&gt;
+
+&lt;p&gt;These &lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/&#34;&gt;10-Minute Tutorials&lt;/a&gt; are simple “Hello, World!” technical documents to help you get hands-on with AWS.&lt;/p&gt;
+
+&lt;h2 id=&#34;most-used-services&#34;&gt;Most Used Services&lt;/h2&gt;
+
+&lt;h3 id=&#34;amazon-ec2&#34;&gt;Amazon EC2&lt;/h3&gt;
+
+&lt;p&gt;Amazon Elastic Compute Cloud (&lt;a href=&#34;(https://aws.amazon.com/ec2)&#34;&gt;Amazon EC2&lt;/a&gt;) is the Amazon Web Service to create and run &lt;strong&gt;virtual machines&lt;/strong&gt; (instances) in the cloud.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to get started with Amazon EC2. We can use the AWS Management Console, the AWS Command Line Tools (CLI), or AWS SDKs.&lt;/p&gt;
+
+&lt;p&gt;We can follow the offical docs to get started with EC2 :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/ec2/getting-started/&#34;&gt;Getting Started with Amazon EC2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/&#34;&gt;Launch a Linux Virtual Machine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;amazon-rds&#34;&gt;Amazon RDS&lt;/h3&gt;
+
+&lt;p&gt;Amazon Relational Database Service (Amazon RDS) is a managed service that enables developers to set up, operate, and scale a relational database in the cloud. It also automates time-consuming database administration tasks such as backups, software patching, automatic failure detection, and recovery.&lt;/p&gt;
+
+&lt;p&gt;Amazon RDS supports Amazon Aurora, MySQL, MariaDB, Oracle, SQL Server, and PostgreSQL database engines.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/rds/getting-started/&#34;&gt;Getting Started with Amazon RDS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/create-mysql-db/&#34;&gt;Create and Connect to a MySQL Database&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;amazon-lambda&#34;&gt;Amazon Lambda&lt;/h3&gt;
+
+&lt;p&gt;AWS Lambda lets us run code without thinking about servers. We just need to write the code*  and upload it to Lambda. Lambda takes care of everything required to run and scale the code with high availability. It is also possible to automatically trigger that code from other AWS services or from any web or mobile app.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;*AWS Lambda supports Java, Node.js, C#, and Python code, with support for other languages coming in the future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://d1.awsstatic.com/Test%20Images/MasonTests/Lambda_HowItWorks.662f209027a4fdfde72164fde6f01f51127e8c21.png&#34; alt=&#34;Lambda_HowItWorks&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Image Source : &lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;AWS&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/getting-started/&#34;&gt;Getting Started With Amazon Lambda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/run-serverless-code/&#34;&gt;Run a Serverless &amp;ldquo;Hello, World!&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;amazon-s3&#34;&gt;Amazon S3&lt;/h3&gt;
+
+&lt;p&gt;Amazon Simple Storage Service(S3) is a storage platform. The goal of S3 is to store and retrieve any amount of data from anywhere (i.e, web sites, mobile apps, corporate applications, IoT etc).&lt;/p&gt;
+
+&lt;p&gt;AWS provides developer tools and SDKs for &lt;a href=&#34;https://aws.amazon.com/s3/getting-started/#sdk&#34;&gt;different programming languages and platforms&lt;/a&gt; such as Java, PHP, NodeJs, .NET, Python and Ruby. Also, there is a &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html&#34;&gt;a web-based interface&lt;/a&gt; for accessing and managing Amazon S3 resources.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/s3/getting-started/&#34;&gt;Getting Started with Amazon S3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/backup-files-to-amazon-s3/&#34;&gt;Store and Retrieve a File using Amazon S3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There are many more cool services AWS provides. Sometimes it is little bit difficult to understand the purpose of the services from the name. I found this &lt;a href=&#34;https://www.expeditedssl.com/aws-in-plain-english&#34;&gt;post&lt;/a&gt; very helpful to get an basic idea about different services of AWS.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
