@@ -125,6 +125,35 @@
 	<div class="post-teaser">
 		<header>
 			<h1>
+			<a class="post-link" href="https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/">
+				Configure phpMyAdmin to access multiple servers
+			</a>
+			</h1>
+			<p class="meta">
+	February 19, 2018 &middot; 2 minute read
+
+	
+		&middot; Tags:
+			<a href="https://cse031sust02.github.io/tags/database">database</a>
+			, <a href="https://cse031sust02.github.io/tags/phpmyadmin">phpmyadmin</a>
+			
+</p>
+
+		</header>
+
+		<div class="excerpt">
+			By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in /etc/phpmyadmin/conf.d directory.
+lets create a new server
+sudo nano /etc/phpmyadmin/conf.d/second-server.php  &lt;?php $cfg['Servers'][2]['verbose'] = 'Database Server #2'; $cfg['Servers'][2]['host'] = 'DB_HOST'; $cfg['Servers'][2]['user'] = 'DB_USERNAME'; $cfg['Servers'][2]['password'] = 'DB_PASSWORD';  That&rsquo;s it!
+
+			<br>
+			<a class="button" href="https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/">
+				Continue reading
+			</a>
+		</div>
+	</div><div class="post-teaser">
+		<header>
+			<h1>
 			<a class="post-link" href="https://cse031sust02.github.io/post/database-normalization/">
 				Database Normalization
 			</a>
@@ -374,36 +403,6 @@ Types  Linear : Array, Linked List, Stack, Queue etc Non Linear : Tree, Graph et
 
 			<br>
 			<a class="button" href="https://cse031sust02.github.io/post/data-structure-basics/">
-				Continue reading
-			</a>
-		</div>
-	</div><div class="post-teaser">
-		<header>
-			<h1>
-			<a class="post-link" href="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/">
-				Installing LEMP stack on ubuntu 14.04
-			</a>
-			</h1>
-			<p class="meta">
-	June 20, 2017 &middot; 3 minute read
-
-	
-		&middot; Tags:
-			<a href="https://cse031sust02.github.io/tags/linux">linux</a>
-			, <a href="https://cse031sust02.github.io/tags/php">php</a>
-			
-</p>
-
-		</header>
-
-		<div class="excerpt">
-			What is LEMP stack? LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.
-Setup So, We are going to setup LEMP stack on our ubuntu 14.04 machine.
-Step 1 : Update Apt-Get Update the package database. To know more about apt-get, please visit this page.
-sudo apt-get update  Step 2 : Install nginx Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.
-
-			<br>
-			<a class="button" href="https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/">
 				Continue reading
 			</a>
 		</div>

@@ -7,8 +7,80 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <lastBuildDate>Tue, 30 Jan 2018 11:50:23 +0600</lastBuildDate>
+    <lastBuildDate>Mon, 19 Feb 2018 14:45:53 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configure phpMyAdmin to access multiple servers</title>
+      <link>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</link>
+      <pubDate>Mon, 19 Feb 2018 14:45:53 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</guid>
+      <description>&lt;p&gt;By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in &lt;code&gt;/etc/phpmyadmin/conf.d&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;lets create a new server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/phpmyadmin/conf.d/second-server.php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
+
+$cfg[&#39;Servers&#39;][2][&#39;verbose&#39;]  = &#39;Database Server #2&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;host&#39;]     = &#39;DB_HOST&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! We should now be able to access this new server from phpMyAdmin.&lt;/p&gt;
+
+&lt;p&gt;Note that, the array index is 2, because 1 is for localhost. So if we want to add another new server, the config will be as follow :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
+
+$cfg[&#39;Servers&#39;][3][&#39;verbose&#39;]  = &#39;Database Server #3&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;host&#39;]     = &#39;DB_HOST&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also add multiple servers in one config file, for example :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$i=1;
+$hosts = array (
+    &amp;quot;foo.example.com&amp;quot;,
+    &amp;quot;bar.example.com&amp;quot;,
+    &amp;quot;baz.example.com&amp;quot;,
+    &amp;quot;quux.example.com&amp;quot;,
+);
+
+foreach ($hosts as $host) {
+    $i++;
+    $cfg[&#39;Servers&#39;][$i][&#39;host&#39;]     = $host;
+    $cfg[&#39;Servers&#39;][$i][&#39;port&#39;]     = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;socket&#39;]   = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;connect_type&#39;]     = &#39;tcp&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;extension&#39;]        = &#39;mysql&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;compress&#39;] = FALSE;
+    $cfg[&#39;Servers&#39;][$i][&#39;controluser&#39;]      = &#39;pma&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;controlpass&#39;]      = &#39;pmapass&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;auth_type&#39;]        = &#39;cookie&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;user&#39;]     = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;password&#39;] = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;only_db&#39;]  = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;verbose&#39;]  = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;pmadb&#39;]    = &#39;phpmyadmin&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;bookmarktable&#39;]    = &#39;pma_bookmark&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;relation&#39;] = &#39;pma_relation&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;table_info&#39;]       = &#39;pma_table_info&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;table_coords&#39;]     = &#39;pma_table_coords&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;pdf_pages&#39;]        = &#39;pma_pdf_pages&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;column_info&#39;]      = &#39;pma_column_info&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;history&#39;]  = &#39;pma_history&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;designer_coords&#39;] = &#39;pma_designer_coords&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Database Normalization</title>
@@ -1666,78 +1738,6 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;li&gt;&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;Redis Desktop Manager&lt;/a&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Database &amp; ACID properties</title>
-      <link>https://cse031sust02.github.io/post/database-acid/</link>
-      <pubDate>Tue, 11 Apr 2017 11:13:09 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/database-acid/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-database&#34;&gt;What is Database? :&lt;/h2&gt;
-
-&lt;p&gt;A database is a collection of data that is stored in an organized manner.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;database-models&#34;&gt;Database Models :&lt;/h3&gt;
-
-&lt;p&gt;A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.&lt;/p&gt;
-
-&lt;p&gt;There are many kinds of data models. Such as Relational model, Network model, Entity-attribute-value model, Object-oriented database model and many more..&lt;/p&gt;
-
-&lt;p&gt;DBMS popularity broken down by database model : &lt;a href=&#34;http://db-engines.com/en/ranking&#34;&gt;http://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;dbms-rdbms&#34;&gt;DBMS &amp;amp; RDBMS :&lt;/h3&gt;
-
-&lt;p&gt;DBMS stands for Database Management System. It is the software application to store and manage the data.&lt;/p&gt;
-
-&lt;p&gt;RDBMS stands for Relational Database Management System. It is based on the relational model. The relational model has relationship between tables using primary keys, foreign keys and indexes.&lt;/p&gt;
-
-&lt;p&gt;Example : MySQL, PostgreSQL, MongoDB, Microsoft SQL Server, Oracle etc.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You can say that a RDBMS is an in an extension of a DBMS. The key difference is that RDBMS applications store data in a tabular form, while DBMS applications store data as files. Does that mean there are no tables in a DBMS? There can be, but there will be no “relation” between the tables, like in a RDBMS.&lt;/p&gt;
-
-&lt;p&gt;src - &lt;a href=&#34;https://blog.udemy.com/differences-between-dbms-and-rdbms/&#34;&gt;https://blog.udemy.com/differences-between-dbms-and-rdbms/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Most software products in the market today are both DBMS and RDBMS compliant.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-acid&#34;&gt;What is ACID? :&lt;/h2&gt;
-
-&lt;p&gt;ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; :  If one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Consistency&lt;/strong&gt; : Any data written to the database must be valid according to all defined rules.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Isolation&lt;/strong&gt; : One transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait until the other is finished.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Durability&lt;/strong&gt; : Once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://s3-us-west-1.amazonaws.com/morpheus-staging/system/spud_media/332/original/acidoverwiew.png?1422558433&#34; alt=&#34;Foo&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Image Source :&lt;/strong&gt; &lt;a href=&#34;https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-&#34;&gt;morpheusdata&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;acid-compliants&#34;&gt;ACID compliants :&lt;/h3&gt;
-
-&lt;p&gt;Oracle is ACID compliant.&lt;/p&gt;
-
-&lt;p&gt;PostgreSQL is &lt;a href=&#34;https://www.postgresql.org/about&#34;&gt;ACID compliant&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database.&lt;/p&gt;
-
-&lt;p&gt;-&lt;em&gt;Source&lt;/em&gt; : &lt;a href=&#34;http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database&#34;&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

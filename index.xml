@@ -7,8 +7,80 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <lastBuildDate>Tue, 30 Jan 2018 11:50:23 +0600</lastBuildDate>
+    <lastBuildDate>Mon, 19 Feb 2018 14:45:53 +0600</lastBuildDate>
     <atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configure phpMyAdmin to access multiple servers</title>
+      <link>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</link>
+      <pubDate>Mon, 19 Feb 2018 14:45:53 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</guid>
+      <description>&lt;p&gt;By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in &lt;code&gt;/etc/phpmyadmin/conf.d&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;lets create a new server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/phpmyadmin/conf.d/second-server.php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
+
+$cfg[&#39;Servers&#39;][2][&#39;verbose&#39;]  = &#39;Database Server #2&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;host&#39;]     = &#39;DB_HOST&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
+$cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! We should now be able to access this new server from phpMyAdmin.&lt;/p&gt;
+
+&lt;p&gt;Note that, the array index is 2, because 1 is for localhost. So if we want to add another new server, the config will be as follow :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
+
+$cfg[&#39;Servers&#39;][3][&#39;verbose&#39;]  = &#39;Database Server #3&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;host&#39;]     = &#39;DB_HOST&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
+$cfg[&#39;Servers&#39;][3][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also add multiple servers in one config file, for example :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$i=1;
+$hosts = array (
+    &amp;quot;foo.example.com&amp;quot;,
+    &amp;quot;bar.example.com&amp;quot;,
+    &amp;quot;baz.example.com&amp;quot;,
+    &amp;quot;quux.example.com&amp;quot;,
+);
+
+foreach ($hosts as $host) {
+    $i++;
+    $cfg[&#39;Servers&#39;][$i][&#39;host&#39;]     = $host;
+    $cfg[&#39;Servers&#39;][$i][&#39;port&#39;]     = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;socket&#39;]   = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;connect_type&#39;]     = &#39;tcp&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;extension&#39;]        = &#39;mysql&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;compress&#39;] = FALSE;
+    $cfg[&#39;Servers&#39;][$i][&#39;controluser&#39;]      = &#39;pma&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;controlpass&#39;]      = &#39;pmapass&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;auth_type&#39;]        = &#39;cookie&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;user&#39;]     = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;password&#39;] = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;only_db&#39;]  = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;verbose&#39;]  = &#39;&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;pmadb&#39;]    = &#39;phpmyadmin&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;bookmarktable&#39;]    = &#39;pma_bookmark&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;relation&#39;] = &#39;pma_relation&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;table_info&#39;]       = &#39;pma_table_info&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;table_coords&#39;]     = &#39;pma_table_coords&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;pdf_pages&#39;]        = &#39;pma_pdf_pages&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;column_info&#39;]      = &#39;pma_column_info&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;history&#39;]  = &#39;pma_history&#39;;
+    $cfg[&#39;Servers&#39;][$i][&#39;designer_coords&#39;] = &#39;pma_designer_coords&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Database Normalization</title>
@@ -1574,107 +1646,6 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
 &lt;ul&gt;
 &lt;li&gt;it adds new packages to the composer.json (If composer.json file does&amp;rsquo;nt exists, it will create one)&lt;/li&gt;
 &lt;li&gt;the modified requirements will be installed or updated.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>So you want to start using Redis?</title>
-      <link>https://cse031sust02.github.io/post/intro-to-redis/</link>
-      <pubDate>Sat, 22 Apr 2017 16:13:16 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/intro-to-redis/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-redis&#34;&gt;What is Redis?&lt;/h2&gt;
-
-&lt;p&gt;Redis is an in-memory data structure server. Which can be used as database, cache and message broker.&lt;/p&gt;
-
-&lt;p&gt;Redis = REmote DIctionary Server.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a key-value store is commonly known today as a dictionary.
- &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;data-structure-server&#34;&gt;# Data Structure Server&lt;/h4&gt;
-
-&lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
-
-&lt;p&gt;Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
-
-&lt;p&gt;for more details, please visit the links :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types&#34;&gt;https://redis.io/topics/data-types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;popular-nosql-database&#34;&gt;# Popular noSQL Database&lt;/h4&gt;
-
-&lt;p&gt;It is a very popular noSQL database. Redis is often ranked the &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;most popular key-value database&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;message-broker&#34;&gt;# Message Broker&lt;/h4&gt;
-
-&lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-redis&#34;&gt;Why use Redis?&lt;/h3&gt;
-
-&lt;p&gt;Redis is a fantastic choice if you want a highly scalable data store shared by multiple processes, multiple applications, or multiple servers.&lt;/p&gt;
-
-&lt;p&gt;You can found more detailed answers on &lt;a href=&#34;http://stackoverflow.com/a/13645017/7804179&#34;&gt;Stackoverflow&lt;/a&gt; or &lt;a href=&#34;https://www.quora.com/Why-use-Redis&#34;&gt;Quora&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;performances-benchmarks&#34;&gt;Performances &amp;amp; Benchmarks&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/benchmarks&#34;&gt;https://redis.io/topics/benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis#performance--benchmarks&#34;&gt;https://github.com/dwyl/learn-redis#performance--benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;let-s-start&#34;&gt;Let&amp;rsquo;s Start&lt;/h2&gt;
-
-&lt;p&gt;So, How do i start using Redis?&lt;/p&gt;
-
-&lt;h3 id=&#34;install&#34;&gt;Install&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;try&#34;&gt;Try&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://try.redis.io/&#34;&gt;http://try.redis.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis&#34;&gt;https://github.com/dwyl/learn-redis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;all-commands&#34;&gt;All Commands&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;cli&#34;&gt;CLI&lt;/h3&gt;
-
-&lt;p&gt;After we install Redis on our local pc, we can start using the Redis CLI with the &lt;code&gt;redis-cli&lt;/code&gt; command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ redis-cli
-127.0.0.1:6379&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;gui&#34;&gt;GUI&lt;/h3&gt;
-
-&lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;Redis Commander&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;Redismin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;Redis Desktop Manager&lt;/a&gt;
-&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
