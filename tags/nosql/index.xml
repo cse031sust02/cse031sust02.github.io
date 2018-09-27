@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nosql on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/nosql/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/nosql/</link>
     <description>Recent content in Nosql on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Apr 2017 16:13:16 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>So you want to start using Redis?</title>
@@ -15,99 +17,10 @@
       <pubDate>Sat, 22 Apr 2017 16:13:16 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/intro-to-redis/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-redis&#34;&gt;What is Redis?&lt;/h2&gt;
-
-&lt;p&gt;Redis is an in-memory data structure server. Which can be used as database, cache and message broker.&lt;/p&gt;
-
-&lt;p&gt;Redis = REmote DIctionary Server.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a key-value store is commonly known today as a dictionary.
- &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;data-structure-server&#34;&gt;# Data Structure Server&lt;/h4&gt;
-
-&lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
-
-&lt;p&gt;Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
-
-&lt;p&gt;for more details, please visit the links :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types&#34;&gt;https://redis.io/topics/data-types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;popular-nosql-database&#34;&gt;# Popular noSQL Database&lt;/h4&gt;
-
-&lt;p&gt;It is a very popular noSQL database. Redis is often ranked the &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;most popular key-value database&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;message-broker&#34;&gt;# Message Broker&lt;/h4&gt;
-
-&lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-redis&#34;&gt;Why use Redis?&lt;/h3&gt;
-
-&lt;p&gt;Redis is a fantastic choice if you want a highly scalable data store shared by multiple processes, multiple applications, or multiple servers.&lt;/p&gt;
-
-&lt;p&gt;You can found more detailed answers on &lt;a href=&#34;http://stackoverflow.com/a/13645017/7804179&#34;&gt;Stackoverflow&lt;/a&gt; or &lt;a href=&#34;https://www.quora.com/Why-use-Redis&#34;&gt;Quora&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;performances-benchmarks&#34;&gt;Performances &amp;amp; Benchmarks&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/benchmarks&#34;&gt;https://redis.io/topics/benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis#performance--benchmarks&#34;&gt;https://github.com/dwyl/learn-redis#performance--benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;let-s-start&#34;&gt;Let&amp;rsquo;s Start&lt;/h2&gt;
-
-&lt;p&gt;So, How do i start using Redis?&lt;/p&gt;
-
-&lt;h3 id=&#34;install&#34;&gt;Install&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;try&#34;&gt;Try&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://try.redis.io/&#34;&gt;http://try.redis.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis&#34;&gt;https://github.com/dwyl/learn-redis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;all-commands&#34;&gt;All Commands&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;cli&#34;&gt;CLI&lt;/h3&gt;
-
-&lt;p&gt;After we install Redis on our local pc, we can start using the Redis CLI with the &lt;code&gt;redis-cli&lt;/code&gt; command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ redis-cli
-127.0.0.1:6379&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;gui&#34;&gt;GUI&lt;/h3&gt;
-
-&lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;Redis Commander&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;Redismin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;Redis Desktop Manager&lt;/a&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Redis? Redis is an in-memory data structure server. Which can be used as database, cache and message broker.
+Redis = REmote DIctionary Server.
+ a key-value store is commonly known today as a dictionary. https://en.wikipedia.org/wiki/Key-value_database
+ # Data Structure Server Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.</description>
     </item>
     
   </channel>

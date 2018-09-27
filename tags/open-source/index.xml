@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on cse031sust02</title>
+    <link>https://cse031sust02.github.io/tags/open-source/</link>
+    <description>Recent content in Open Source on cse031sust02</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Sep 2018 11:36:51 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A step-by-step technical guide for open source contribution</title>
+      <link>https://cse031sust02.github.io/post/open-source-contribution-steps/</link>
+      <pubDate>Thu, 27 Sep 2018 11:36:51 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/open-source-contribution-steps/</guid>
+      <description>Intro This is a very simple guide for first-timers to making open source contributions. I guess that you already have a GitHub account and know basic git commands.
+Steps for Contributing Fork First, we need to choose a project we want to contribute. Then we will fork the project to our github account.
+Clone Now, we need to clone the project to our machine from our fork.
+$ git clone &amp;lt;url&amp;gt;  Syncing the fork We should keep our fork up-to-date with the main(aka upstream) repository.</description>
+    </item>
+    
+  </channel>
+</rss>

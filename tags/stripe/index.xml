@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stripe on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/stripe/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/stripe/</link>
     <description>Recent content in Stripe on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/stripe/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2017 15:27:28 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/stripe/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Accepting payments on your site using Stripe</title>
@@ -15,67 +17,10 @@
       <pubDate>Mon, 10 Apr 2017 15:27:28 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/payment-using-stripe/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-stripe-https-stripe-com&#34;&gt;What is &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.&lt;/p&gt;
-
-&lt;h3 id=&#34;payment-types&#34;&gt;Payment types&lt;/h3&gt;
-
-&lt;p&gt;Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;accepting-payments-with-cards&#34;&gt;Accepting Payments with Cards&lt;/h2&gt;
-
-&lt;p&gt;Using card information with Stripe is a two-step process&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Securely collect payment information using tokenization&lt;/li&gt;
-&lt;li&gt;Use the payment information in a charge request or save it for later&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;step-1-securely-collect-payment-information-using-tokenization&#34;&gt;Step 1. Securely collect payment information using tokenization&lt;/h3&gt;
-
-&lt;p&gt;Stripe provides three methods for tokenizing customer’s payment information over HTTPS
-Checkout, Stripe.js &amp;amp; Mobile SDKs&lt;/p&gt;
-
-&lt;h4 id=&#34;1-checkout-https-stripe-com-checkout&#34;&gt;1. &lt;a href=&#34;https://stripe.com/checkout&#34;&gt;Checkout&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;The easiest way to integrate Stripe is via Checkout, an embedded tool that takes care of building an HTML form, validating user input, and securing your customers&amp;rsquo; card data. Using Checkout, sensitive credit card information is sent directly to Stripe, and does not touch your server. customers can pay instantly, without being redirected away to complete the transaction.&lt;/p&gt;
-
-&lt;p&gt;In addition to credit and debit cards, Checkout supports Alipay and Bitcoin too. more types of payment coming soon.&lt;/p&gt;
-
-&lt;p&gt;Checkout has 12 languages to pay with a localized experience.&lt;/p&gt;
-
-&lt;p&gt;Embedding checkout in your site
-&lt;a href=&#34;https://stripe.com/docs/checkout/tutorial&#34;&gt;https://stripe.com/docs/checkout/tutorial&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-elements-https-stripe-com-docs-quickstart-elements&#34;&gt;2. &lt;a href=&#34;https://stripe.com/docs/quickstart#elements&#34;&gt;Elements&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;If we want to customize the payment form for our need, then we can make use of Stripe Elements.&lt;/p&gt;
-
-&lt;h4 id=&#34;3-mobile-sdks-https-stripe-com-docs-mobile&#34;&gt;3. &lt;a href=&#34;https://stripe.com/docs/mobile&#34;&gt;Mobile SDKs&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Stripe has native libraries for iOS and Android applications.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-2-use-the-tokenized-payment-information&#34;&gt;Step 2. Use the tokenized payment information&lt;/h3&gt;
-
-&lt;p&gt;While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,&lt;/p&gt;
-
-&lt;h4 id=&#34;charging-the-customer-immediately&#34;&gt;Charging the customer immediately&lt;/h4&gt;
-
-&lt;p&gt;We can create a one-time charge request to charge a customer’s card.&lt;/p&gt;
-
-&lt;p&gt;The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. &lt;a href=&#34;https://stripe.com/docs/quickstart#charge-immediately&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;saving-the-customer-s-card-information&#34;&gt;Saving the customer’s card information&lt;/h4&gt;
-
-&lt;p&gt;If we’d like to have the ability to charge the customers again in future (without them needing to enter their payment information again), we can create an API request to store their payment details inside a customer record instead. &lt;a href=&#34;https://stripe.com/docs/quickstart#saving-card-information&#34;&gt;more details..&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>What is Stripe A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.
+Payment types Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.
+Accepting Payments with Cards Using card information with Stripe is a two-step process
+ Securely collect payment information using tokenization Use the payment information in a charge request or save it for later  Step 1.</description>
     </item>
     
   </channel>

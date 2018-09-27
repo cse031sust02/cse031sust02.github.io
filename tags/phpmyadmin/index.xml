@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phpmyadmin on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/phpmyadmin/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/phpmyadmin/</link>
     <description>Recent content in Phpmyadmin on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/phpmyadmin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2018 14:45:53 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/phpmyadmin/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Configure phpMyAdmin to access multiple servers</title>
@@ -15,70 +17,9 @@
       <pubDate>Mon, 19 Feb 2018 14:45:53 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</guid>
-      <description>&lt;p&gt;By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in &lt;code&gt;/etc/phpmyadmin/conf.d&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;lets create a new server&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/phpmyadmin/conf.d/second-server.php
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
-
-$cfg[&#39;Servers&#39;][2][&#39;verbose&#39;]  = &#39;Database Server #2&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;host&#39;]     = &#39;DB_HOST&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s it! We should now be able to access this new server from phpMyAdmin.&lt;/p&gt;
-
-&lt;p&gt;Note that, the array index is 2, because 1 is for localhost. So if we want to add another new server, the config will be as follow :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
-
-$cfg[&#39;Servers&#39;][3][&#39;verbose&#39;]  = &#39;Database Server #3&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;host&#39;]     = &#39;DB_HOST&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can also add multiple servers in one config file, for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$i=1;
-$hosts = array (
-    &amp;quot;foo.example.com&amp;quot;,
-    &amp;quot;bar.example.com&amp;quot;,
-    &amp;quot;baz.example.com&amp;quot;,
-    &amp;quot;quux.example.com&amp;quot;,
-);
-
-foreach ($hosts as $host) {
-    $i++;
-    $cfg[&#39;Servers&#39;][$i][&#39;host&#39;]     = $host;
-    $cfg[&#39;Servers&#39;][$i][&#39;port&#39;]     = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;socket&#39;]   = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;connect_type&#39;]     = &#39;tcp&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;extension&#39;]        = &#39;mysql&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;compress&#39;] = FALSE;
-    $cfg[&#39;Servers&#39;][$i][&#39;controluser&#39;]      = &#39;pma&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;controlpass&#39;]      = &#39;pmapass&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;auth_type&#39;]        = &#39;cookie&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;user&#39;]     = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;password&#39;] = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;only_db&#39;]  = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;verbose&#39;]  = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;pmadb&#39;]    = &#39;phpmyadmin&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;bookmarktable&#39;]    = &#39;pma_bookmark&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;relation&#39;] = &#39;pma_relation&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;table_info&#39;]       = &#39;pma_table_info&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;table_coords&#39;]     = &#39;pma_table_coords&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;pdf_pages&#39;]        = &#39;pma_pdf_pages&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;column_info&#39;]      = &#39;pma_column_info&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;history&#39;]  = &#39;pma_history&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;designer_coords&#39;] = &#39;pma_designer_coords&#39;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in /etc/phpmyadmin/conf.d directory.
+lets create a new server
+sudo nano /etc/phpmyadmin/conf.d/second-server.php  &amp;lt;?php $cfg[&#39;Servers&#39;][2][&#39;verbose&#39;] = &#39;Database Server #2&#39;; $cfg[&#39;Servers&#39;][2][&#39;host&#39;] = &#39;DB_HOST&#39;; $cfg[&#39;Servers&#39;][2][&#39;user&#39;] = &#39;DB_USERNAME&#39;; $cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;  That&amp;rsquo;s it!</description>
     </item>
     
   </channel>

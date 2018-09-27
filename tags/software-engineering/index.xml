@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Engineering on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/software-engineering/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/software-engineering/</link>
     <description>Recent content in Software Engineering on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Nov 2017 18:37:12 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Use Case Diagram</title>
@@ -15,54 +17,8 @@
       <pubDate>Thu, 16 Nov 2017 18:37:12 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/use-case-diagram/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.&lt;/p&gt;
-
-&lt;p&gt;A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person. To describe any use case in detail, we can link the use case to another diagrams (such as activity diagram or sequence diagram).&lt;/p&gt;
-
-&lt;h3 id=&#34;use-case-diagram-objects&#34;&gt;Use Case Diagram objects&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Use cases&lt;/strong&gt; : A function or an action within the system. i.e, order a meal.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Actors&lt;/strong&gt; : Users that interact with the system. It can be a person, an organization, or an outside system. i.e, customer, restaurent.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;System&lt;/strong&gt; : Whatever we are developing. it might be the enitre application or any particualr functionality. i.e, meal delivery system.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;relationships&#34;&gt;Relationships&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Association&lt;/strong&gt; : Association indicates that an actor takes part in a use case. i.e, Customer Orders a Meal.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Generalization&lt;/strong&gt; : Generalization relationship is similar to inhertince in OOP concepts. We can use this relationship when two or more use cases have common behavior. The parent use case is specialized into two or more specialized child use cases. i.e, &lt;em&gt;Pay&lt;/em&gt; use case can be specialized into two child use cases &lt;em&gt;Pay by Credit Card&lt;/em&gt; and &lt;em&gt;Pay by Cash&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Include relationship&lt;/strong&gt; : Include relation shows how a use case breaks into smaller use cases. An &lt;em&gt;included&lt;/em&gt; use case is a step that the actor might have to perform to achieve the overall goal of the &lt;em&gt;including&lt;/em&gt; use case. An included use case can be shared by multiple use cases. i.e, &amp;lsquo;Order a Meal&amp;rsquo; and &amp;lsquo;Book a Restaurent&amp;rsquo; both use cases may include an included use case called &amp;lsquo;Pay&amp;rsquo;. &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409432.aspx#Include&#34;&gt;more details&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Extend relationship&lt;/strong&gt; : One use case may add functionality to another use case under certain circumstances. &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409432.aspx#Extend&#34;&gt;more details&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;how-to-draw&#34;&gt;How to Draw&lt;/h3&gt;
-
-&lt;p&gt;We should first identify actors, use cases and their relationships(both include &amp;amp; extend). and then we will start drawing the diagram&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Actors are represented by stick figures.&lt;/li&gt;
-&lt;li&gt;Use cases are represented by ovals.&lt;/li&gt;
-&lt;li&gt;Assosiations are represented by a line between the actor and use case.&lt;/li&gt;
-&lt;li&gt;Generalization realations are represented by a line with an arrow between the use cases. The arrow should point at the parent use case.&lt;/li&gt;
-&lt;li&gt;Include relations are represented by dotted line with an arrow between the &lt;em&gt;including&lt;/em&gt; use case and &lt;em&gt;included&lt;/em&gt; user case. The arrow should point at &lt;em&gt;included&lt;/em&gt; use case.&lt;/li&gt;
-&lt;li&gt;Extend realations are represented by a line with an arrow between the use cases. The arrow should point at the main use case.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://i-msdn.sec.s-msft.com/dynimg/IC313333.jpeg&#34; alt=&#34;Use Case Diagram&#34; title=&#34;Use Case Diagram&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;source : &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409427.aspx&#34;&gt;msdn&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>Intro Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.
+A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person.</description>
     </item>
     
   </channel>

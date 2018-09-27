@@ -2,13 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cse031sust02</title>
-    <link>https://cse031sust02.github.io/post/index.xml</link>
+    <link>https://cse031sust02.github.io/post/</link>
     <description>Recent content in Posts on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <lastBuildDate>Mon, 19 Feb 2018 14:45:53 +0600</lastBuildDate>
-    <atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Sep 2018 11:36:51 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A step-by-step technical guide for open source contribution</title>
+      <link>https://cse031sust02.github.io/post/open-source-contribution-steps/</link>
+      <pubDate>Thu, 27 Sep 2018 11:36:51 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/open-source-contribution-steps/</guid>
+      <description>Intro This is a very simple guide for first-timers to making open source contributions. I guess that you already have a GitHub account and know basic git commands.
+Steps for Contributing Fork First, we need to choose a project we want to contribute. Then we will fork the project to our github account.
+Clone Now, we need to clone the project to our machine from our fork.
+$ git clone &amp;lt;url&amp;gt;  Syncing the fork We should keep our fork up-to-date with the main(aka upstream) repository.</description>
+    </item>
     
     <item>
       <title>Configure phpMyAdmin to access multiple servers</title>
@@ -16,70 +29,9 @@
       <pubDate>Mon, 19 Feb 2018 14:45:53 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</guid>
-      <description>&lt;p&gt;By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in &lt;code&gt;/etc/phpmyadmin/conf.d&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;lets create a new server&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/phpmyadmin/conf.d/second-server.php
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
-
-$cfg[&#39;Servers&#39;][2][&#39;verbose&#39;]  = &#39;Database Server #2&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;host&#39;]     = &#39;DB_HOST&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
-$cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s it! We should now be able to access this new server from phpMyAdmin.&lt;/p&gt;
-
-&lt;p&gt;Note that, the array index is 2, because 1 is for localhost. So if we want to add another new server, the config will be as follow :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
-
-$cfg[&#39;Servers&#39;][3][&#39;verbose&#39;]  = &#39;Database Server #3&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;host&#39;]     = &#39;DB_HOST&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;user&#39;]     = &#39;DB_USERNAME&#39;;
-$cfg[&#39;Servers&#39;][3][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can also add multiple servers in one config file, for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$i=1;
-$hosts = array (
-    &amp;quot;foo.example.com&amp;quot;,
-    &amp;quot;bar.example.com&amp;quot;,
-    &amp;quot;baz.example.com&amp;quot;,
-    &amp;quot;quux.example.com&amp;quot;,
-);
-
-foreach ($hosts as $host) {
-    $i++;
-    $cfg[&#39;Servers&#39;][$i][&#39;host&#39;]     = $host;
-    $cfg[&#39;Servers&#39;][$i][&#39;port&#39;]     = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;socket&#39;]   = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;connect_type&#39;]     = &#39;tcp&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;extension&#39;]        = &#39;mysql&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;compress&#39;] = FALSE;
-    $cfg[&#39;Servers&#39;][$i][&#39;controluser&#39;]      = &#39;pma&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;controlpass&#39;]      = &#39;pmapass&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;auth_type&#39;]        = &#39;cookie&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;user&#39;]     = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;password&#39;] = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;only_db&#39;]  = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;verbose&#39;]  = &#39;&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;pmadb&#39;]    = &#39;phpmyadmin&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;bookmarktable&#39;]    = &#39;pma_bookmark&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;relation&#39;] = &#39;pma_relation&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;table_info&#39;]       = &#39;pma_table_info&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;table_coords&#39;]     = &#39;pma_table_coords&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;pdf_pages&#39;]        = &#39;pma_pdf_pages&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;column_info&#39;]      = &#39;pma_column_info&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;history&#39;]  = &#39;pma_history&#39;;
-    $cfg[&#39;Servers&#39;][$i][&#39;designer_coords&#39;] = &#39;pma_designer_coords&#39;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>By default, phpMyAdmin allows us to connect to local MySQL server only. But we may need to access multiple database servers from our single phpMyAdmin. It&amp;rsquo;s such an easy job. For each new server, we will just need to create a new config file (with .php extension) in /etc/phpmyadmin/conf.d directory.
+lets create a new server
+sudo nano /etc/phpmyadmin/conf.d/second-server.php  &amp;lt;?php $cfg[&#39;Servers&#39;][2][&#39;verbose&#39;] = &#39;Database Server #2&#39;; $cfg[&#39;Servers&#39;][2][&#39;host&#39;] = &#39;DB_HOST&#39;; $cfg[&#39;Servers&#39;][2][&#39;user&#39;] = &#39;DB_USERNAME&#39;; $cfg[&#39;Servers&#39;][2][&#39;password&#39;] = &#39;DB_PASSWORD&#39;;  That&amp;rsquo;s it!</description>
     </item>
     
     <item>
@@ -88,51 +40,9 @@ foreach ($hosts as $host) {
       <pubDate>Tue, 30 Jan 2018 11:50:23 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/database-normalization/</guid>
-      <description>
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;Database normalization is the process of organizing a relational database to reduce data redundancy (duplicate data) and improve data integrity. The concept of Normalization was introduced by &lt;a href=&#34;https://en.wikipedia.org/wiki/Edgar_F._Codd&#34;&gt;Edgar F. Codd&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Normalization is part of a successful database design. It makes a Relation or Table free from insert/update/delete anomalies and saves space by removing duplicate data.&lt;/p&gt;
-
-&lt;h2 id=&#34;normal-forms&#34;&gt;Normal Forms :&lt;/h2&gt;
-
-&lt;p&gt;Theory of Data Normalization is still being developed further. There are discussions even on 6th Normal Form. But usually we call a relational database as &amp;ldquo;normalized&amp;rdquo; if it meets third normal form. &lt;a href=&#34;https://en.wikipedia.org/wiki/Database_normalization#cite_ref-Codd1970_4-0&#34;&gt;(src)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;first-normal-form&#34;&gt;First Normal Form&lt;/h3&gt;
-
-&lt;p&gt;Once a table is in first normal form, it is easier to search, filter, and sort information from that table.&lt;/p&gt;
-
-&lt;p&gt;The rules for first normal form :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;End row should contain a primary key to uniquely identify that row. The primary key can be a single column or combination of multiple columns.&lt;/li&gt;
-&lt;li&gt;Each column should contains atomic value (can not be subdivided). i.e., &amp;ldquo;red, green&amp;rdquo; is not acceptable.&lt;/li&gt;
-&lt;li&gt;Each column should contains values that are same type (i.e., do not put &amp;lsquo;address&amp;rsquo; in &amp;lsquo;phone&amp;rsquo; column)&lt;/li&gt;
-&lt;li&gt;There are no repeating groups of columns (i.e., do not have columns like Phone1, Phone2, and Phone3)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;second-normal-form&#34;&gt;Second Normal Form&lt;/h3&gt;
-
-&lt;p&gt;The rules for second normal form :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The database must meet all the requirements of the 1NF.&lt;/li&gt;
-&lt;li&gt;All the non-key columns depend on the table’s primary key.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;third-normal-form&#34;&gt;Third Normal Form&lt;/h3&gt;
-
-&lt;p&gt;The rules for third nomal form :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The database must meet all the requirements of the 2NF.&lt;/li&gt;
-&lt;li&gt;All the columns of the table are not transitively dependent on the primary key.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This &lt;a href=&#34;https://www.youtube.com/watch?v=UrYLYV7WSHM&#34;&gt;video&lt;/a&gt; is very helpful to understand all the normal forms with example.&lt;/p&gt;
-</description>
+      <description>Intro Database normalization is the process of organizing a relational database to reduce data redundancy (duplicate data) and improve data integrity. The concept of Normalization was introduced by Edgar F. Codd.
+Normalization is part of a successful database design. It makes a Relation or Table free from insert/update/delete anomalies and saves space by removing duplicate data.
+Normal Forms : Theory of Data Normalization is still being developed further. There are discussions even on 6th Normal Form.</description>
     </item>
     
     <item>
@@ -141,138 +51,8 @@ foreach ($hosts as $host) {
       <pubDate>Tue, 23 Jan 2018 11:21:11 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/send-notifications-using-firebase/</guid>
-      <description>
-
-&lt;h2 id=&#34;what-is-firebase&#34;&gt;What is Firebase?&lt;/h2&gt;
-
-&lt;p&gt;Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this &lt;a href=&#34;https://firebase.google.com/products/&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;firebase-cloud-messaging-fcm&#34;&gt;Firebase Cloud Messaging (FCM)&lt;/h2&gt;
-
-&lt;p&gt;Firebase Cloud Messaging(&lt;a href=&#34;(https://firebase.google.com/products/cloud-messaging/)&#34;&gt;FCM&lt;/a&gt;) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.&lt;/p&gt;
-
-&lt;h3 id=&#34;key-capabilities&#34;&gt;Key Capabilities&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We can send message to single devices, to groups of devices, or to devices subscribed to topics.&lt;/li&gt;
-&lt;li&gt;Client apps can also send messages to our server over FCM.&lt;/li&gt;
-&lt;li&gt;We can send notification messages immediately, or at a future time in the user&amp;rsquo;s local time zone.&lt;/li&gt;
-&lt;li&gt;Messages are fully integrated with Firebase Analytics in order to track user engagement and conversion.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h3&gt;
-
-&lt;p&gt;An FCM implementation includes two main components for sending and receiving messages or notifications&lt;/p&gt;
-
-&lt;p&gt;1) A trusted environment such as &lt;a href=&#34;https://firebase.google.com/products/functions/&#34;&gt;Cloud Functions&lt;/a&gt; for Firebase or an app server&lt;/p&gt;
-
-&lt;p&gt;2) An iOS, Android, or web (JavaScript) client app that receives messages.&lt;/p&gt;
-
-&lt;p&gt;The app server (or trusted server environment) sends message requests to the FCM servers(provided by Google), which then sends messages to client apps.&lt;/p&gt;
-
-&lt;h3 id=&#34;fcm-messages&#34;&gt;FCM Messages&lt;/h3&gt;
-
-&lt;p&gt;FCM messages are divided into two types : Notification messages and Data messages.&lt;/p&gt;
-
-&lt;h4 id=&#34;1-notification-messages&#34;&gt;1) Notification messages :&lt;/h4&gt;
-
-&lt;p&gt;Notification messages are handled by the FCM SDK automatically. They are also known as &amp;ldquo;display messages&amp;rdquo; as these messages are displayed on the user’s device by FCM on behalf of the application.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;message&amp;quot;:{
-    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
-    &amp;quot;notification&amp;quot;:{
-      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
-      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;2-data-messages&#34;&gt;2) Data messages :&lt;/h4&gt;
-
-&lt;p&gt;Client app is responsible for processing [data messages]. These messages have only custom key-value pairs and maximum payload is 4KB.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    {
-      &amp;quot;message&amp;quot;:{
-        &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
-        &amp;quot;data&amp;quot;:{
-          &amp;quot;id&amp;quot; : 101,
-          &amp;quot;category&amp;quot; : &amp;quot;tech&amp;quot;,
-        }
-      }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;notification-messages-with-an-optional-data-payload&#34;&gt;Notification messages with an optional data payload&lt;/h4&gt;
-
-&lt;p&gt;We can also send notification messages with an optional data payload. In such cases, FCM will handle displaying the notification payload, and the client app will handle the data payload.&lt;/p&gt;
-
-&lt;p&gt;i.e., Message with optional data payload :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;message&amp;quot;:{
-    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
-    &amp;quot;notification&amp;quot;:{
-      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
-      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
-    },
-    &amp;quot;data&amp;quot; : {
-      &amp;quot;id&amp;quot; : 101,
-      &amp;quot;category&amp;quot; : &amp;quot;tech&amp;quot;,
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;When apps receive messages that include both notification and data payloads, the behavior of the app depends on whether the app is in the background or the foreground. For more details, please visit this &lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/concept-options#notification-messages-with-optional-data-payload&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;customizing-a-message-across-platforms&#34;&gt;Customizing a message across platforms :&lt;/h3&gt;
-
-&lt;p&gt;It is possible to customize FCM messages for different platforms (ios, android etc) using platform-specific key blocks. So, when creating a message, we can target that message for android or iphone apps only. We may also send a common message to all platforms but with some platform-specific values so that different platforms can handle that message correctly.&lt;/p&gt;
-
-&lt;p&gt;For example, this request sends a common notification title and content to all platforms, but also sends some platform-specific overrides.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;message&amp;quot;:{
-    &amp;quot;token&amp;quot;:&amp;quot;YOUR-TOKEN-GOES-HERE...&amp;quot;,
-    &amp;quot;notification&amp;quot;:{
-      &amp;quot;title&amp;quot;:&amp;quot;New Message&amp;quot;,
-      &amp;quot;body&amp;quot;:&amp;quot;You&#39;ve got a message&amp;quot;
-    },
-    &amp;quot;android&amp;quot;:{
-      &amp;quot;ttl&amp;quot;:&amp;quot;86400s&amp;quot;,
-      &amp;quot;notification&amp;quot;:{
-        &amp;quot;click_action&amp;quot;:&amp;quot;OPEN_ACTIVITY_1&amp;quot;
-      }
-    },
-    &amp;quot;apns&amp;quot;:{
-      &amp;quot;headers&amp;quot;:{
-        &amp;quot;apns-priority&amp;quot;:5
-      },
-      &amp;quot;payload&amp;quot;:{
-        &amp;quot;aps&amp;quot;:{
-          &amp;quot;category&amp;quot;:&amp;quot;NEW_MESSAGE_CATEGORY&amp;quot;
-        }
-      }
-    },
-    &amp;quot;webpush&amp;quot;:{
-      &amp;quot;headers&amp;quot;:{
-        &amp;quot;TTL&amp;quot;:&amp;quot;86400&amp;quot;
-      }
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;for more details, please read the &lt;a href=&#34;https://firebase.google.com/docs/cloud-messaging/concept-options#customizing_a_message_across_platforms&#34;&gt;offical doc&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>What is Firebase? Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this page.
+Firebase Cloud Messaging (FCM) Firebase Cloud Messaging(FCM) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.</description>
     </item>
     
     <item>
@@ -281,54 +61,8 @@ foreach ($hosts as $host) {
       <pubDate>Thu, 16 Nov 2017 18:37:12 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/use-case-diagram/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.&lt;/p&gt;
-
-&lt;p&gt;A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person. To describe any use case in detail, we can link the use case to another diagrams (such as activity diagram or sequence diagram).&lt;/p&gt;
-
-&lt;h3 id=&#34;use-case-diagram-objects&#34;&gt;Use Case Diagram objects&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Use cases&lt;/strong&gt; : A function or an action within the system. i.e, order a meal.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Actors&lt;/strong&gt; : Users that interact with the system. It can be a person, an organization, or an outside system. i.e, customer, restaurent.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;System&lt;/strong&gt; : Whatever we are developing. it might be the enitre application or any particualr functionality. i.e, meal delivery system.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;relationships&#34;&gt;Relationships&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Association&lt;/strong&gt; : Association indicates that an actor takes part in a use case. i.e, Customer Orders a Meal.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Generalization&lt;/strong&gt; : Generalization relationship is similar to inhertince in OOP concepts. We can use this relationship when two or more use cases have common behavior. The parent use case is specialized into two or more specialized child use cases. i.e, &lt;em&gt;Pay&lt;/em&gt; use case can be specialized into two child use cases &lt;em&gt;Pay by Credit Card&lt;/em&gt; and &lt;em&gt;Pay by Cash&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Include relationship&lt;/strong&gt; : Include relation shows how a use case breaks into smaller use cases. An &lt;em&gt;included&lt;/em&gt; use case is a step that the actor might have to perform to achieve the overall goal of the &lt;em&gt;including&lt;/em&gt; use case. An included use case can be shared by multiple use cases. i.e, &amp;lsquo;Order a Meal&amp;rsquo; and &amp;lsquo;Book a Restaurent&amp;rsquo; both use cases may include an included use case called &amp;lsquo;Pay&amp;rsquo;. &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409432.aspx#Include&#34;&gt;more details&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Extend relationship&lt;/strong&gt; : One use case may add functionality to another use case under certain circumstances. &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409432.aspx#Extend&#34;&gt;more details&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;how-to-draw&#34;&gt;How to Draw&lt;/h3&gt;
-
-&lt;p&gt;We should first identify actors, use cases and their relationships(both include &amp;amp; extend). and then we will start drawing the diagram&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Actors are represented by stick figures.&lt;/li&gt;
-&lt;li&gt;Use cases are represented by ovals.&lt;/li&gt;
-&lt;li&gt;Assosiations are represented by a line between the actor and use case.&lt;/li&gt;
-&lt;li&gt;Generalization realations are represented by a line with an arrow between the use cases. The arrow should point at the parent use case.&lt;/li&gt;
-&lt;li&gt;Include relations are represented by dotted line with an arrow between the &lt;em&gt;including&lt;/em&gt; use case and &lt;em&gt;included&lt;/em&gt; user case. The arrow should point at &lt;em&gt;included&lt;/em&gt; use case.&lt;/li&gt;
-&lt;li&gt;Extend realations are represented by a line with an arrow between the use cases. The arrow should point at the main use case.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://i-msdn.sec.s-msft.com/dynimg/IC313333.jpeg&#34; alt=&#34;Use Case Diagram&#34; title=&#34;Use Case Diagram&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;source : &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dd409427.aspx&#34;&gt;msdn&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>Intro Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.
+A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person.</description>
     </item>
     
     <item>
@@ -337,39 +71,8 @@ foreach ($hosts as $host) {
       <pubDate>Thu, 12 Oct 2017 16:57:51 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/document-your-api-with-swagger/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-swagger&#34;&gt;What is Swagger?&lt;/h2&gt;
-
-&lt;p&gt;Swagger is a very popular framework for describing RESTful APIs using a common language that everyone can understand. It is actually a set of open-source tools for designing, building, documenting and consuming REST APIs.&lt;/p&gt;
-
-&lt;h4 id=&#34;swagger-specification&#34;&gt;Swagger Specification?&lt;/h4&gt;
-
-&lt;p&gt;The Swagger Specification (currently known as the OpenAPI specification) is a powerful definition format to describe RESTful APIs. The specification creates a RESTful interface for easily developing and consuming an API by effectively mapping all the resources and operations associated with it. It’s easy-to-learn, language agnostic, and both human and machine readable.&lt;/p&gt;
-
-&lt;h2 id=&#34;swager-tools&#34;&gt;Swager Tools&lt;/h2&gt;
-
-&lt;p&gt;As stated earlier, Swagger is actually a set of open-source tools :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://editor.swagger.io&#34;&gt;Swagger Editor&lt;/a&gt;&lt;/strong&gt; : We can design new APIs (or edit existing ones) using Swagger Editor. It visually renders our OAS/Swagger definition with concise, real time feedback and error handling.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-codegen/&#34;&gt;Swagger Codegen&lt;/a&gt;&lt;/strong&gt; : It is a tool for turning OAS/Swagger definition into code. Codegen can build and enable consumption of our Swagger defined APIs in every popular language.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-ui/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/strong&gt; : Swagger UI takes OAS/Swagger definition, presents them visually and allows us to execute operations.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://swagger.io/swagger-inspector/&#34;&gt;Swagger Inspector&lt;/a&gt;&lt;/strong&gt; : It is a API inspection tool (Like Postman) to work with REST, GraphQL and SOAP based web services.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;h4 id=&#34;desing-swagger-editor-build-swagger-codege-document-swagger-ui&#34;&gt;Desing [Swagger Editor] &amp;ndash;&amp;gt; Build [Swagger Codege] &amp;ndash;&amp;gt; Document [Swagger UI]&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;swagerhub&#34;&gt;SwagerHub&lt;/h2&gt;
-
-&lt;p&gt;SwagerHub is a platform for Designing and Documenting APIs with Swagger. It brings together the power of the open source Swagger tools (Swagger Editor, Swagger UI, and Swagger CodeGen) into a fully integrated platform, with advanced capabilities to make it faster and easier for teams to build and document great APIs with Swagger.&lt;/p&gt;
-
-&lt;p&gt;more info : &lt;a href=&#34;https://swaggerhub.com/swagger-open-source-comparison/&#34;&gt;https://swaggerhub.com/swagger-open-source-comparison/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>What is Swagger? Swagger is a very popular framework for describing RESTful APIs using a common language that everyone can understand. It is actually a set of open-source tools for designing, building, documenting and consuming REST APIs.
+Swagger Specification? The Swagger Specification (currently known as the OpenAPI specification) is a powerful definition format to describe RESTful APIs. The specification creates a RESTful interface for easily developing and consuming an API by effectively mapping all the resources and operations associated with it.</description>
     </item>
     
     <item>
@@ -378,252 +81,21 @@ foreach ($hosts as $host) {
       <pubDate>Tue, 19 Sep 2017 16:54:45 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/understanding-nginx-server-block/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;p&gt;We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.&lt;/p&gt;
-
-&lt;p&gt;Here is a sample server block configuration :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-  listen       80;
-  server_name  _;
-
-  location / {
-    root   /usr/share/nginx/html;
-    index  index.html index.htm;
-  }
-
-  error_page  404              /404.html;
-  location = /404.html {
-    root   /usr/share/nginx/html;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can see different types of directives such as &lt;em&gt;listen&lt;/em&gt;, &lt;em&gt;root&lt;/em&gt;, &lt;em&gt;server_name&lt;/em&gt;, &lt;em&gt;location&lt;/em&gt; etc. Let&amp;rsquo;s explore those directives.&lt;/p&gt;
-
-&lt;h3 id=&#34;listen&#34;&gt;listen&lt;/h3&gt;
-
-&lt;p&gt;It specifies the IP address / port combination that this server block is designed to respond to.&lt;/p&gt;
-
-&lt;p&gt;We can specify &lt;strong&gt;only the port&lt;/strong&gt; or &lt;strong&gt;only the address&lt;/strong&gt; or &lt;strong&gt;Both&lt;/strong&gt;. If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examples.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; port is omitted :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     127.0.0.1; 
-// will only respond to 127.0.0.1:80
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; address is omitted :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     50; 
-// will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; IP address / port combination :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     192.168.25.19:60; 
-// will only respond to 192.168.25.19:60
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;server-name&#34;&gt;server_name&lt;/h3&gt;
-
-&lt;p&gt;Nginx also checks the &lt;code&gt;Host&lt;/code&gt; header of each request. When client makes a requests, Nginx checks if there is any server block that has a server_name directive defined with that &amp;ldquo;Host&amp;rdquo;. If there is a match, then that server block will responds to that request.&lt;/p&gt;
-
-&lt;p&gt;It will be easy to understand with an example.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s create two new host in the &lt;code&gt;/etc/hosts&lt;/code&gt; file :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;127.0.0.1   localhost
-127.0.0.1   www.site-one.com
-127.0.0.1   www.site-two.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, now both &lt;strong&gt;site-one&lt;/strong&gt; and &lt;strong&gt;site-two&lt;/strong&gt; points to same IP address. But we want to put one website in site-one.com and another website in site-two.com. Let&amp;rsquo;s create two different server blocks for those two hosts :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# First Website
-server {
-  listen       70;
-  server_name  www.site-one.com;
-  
-  root   /usr/share/nginx/html/site-one/;
-}
-
-# Second Website
-server {
-  listen       70;
-  server_name  www.site-two.com;
-
-  root   /usr/share/nginx/html/site-two/;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So now we can access the First Website with the address &lt;code&gt;www.site-one.com:70&lt;/code&gt;, and the Second Website with &lt;code&gt;www.site-one.com:70&lt;/code&gt;. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?&lt;/p&gt;
-
-&lt;h3 id=&#34;root&#34;&gt;root&lt;/h3&gt;
-
-&lt;p&gt;This directive specifies the directory where the website&amp;rsquo;s contents are located. As in our last example, the root directory was &lt;code&gt;/usr/share/nginx/site-two&lt;/code&gt; for the Second Website. So when user hits the URL &lt;em&gt;&lt;a href=&#34;http://www.site-two.com:70/mypage.html&#34;&gt;http://www.site-two.com:70/mypage.html&lt;/a&gt;&lt;/em&gt;, Nginx will load &lt;code&gt;mypage.html&lt;/code&gt; file from that directory.&lt;/p&gt;
-
-&lt;h3 id=&#34;location&#34;&gt;location&lt;/h3&gt;
-
-&lt;p&gt;location block is used to decide how to process the request URI (after the domain name or IP address/port). e.g. :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location / {
-  # configuration for processing all URIs that do not match other location blocks.
-} 
-
-location /one {
-  # configuration for processing URIs with &#39;/one&#39;
-}
-
-location /two {
-  # configuration for processing URIs with &#39;/two&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A location can be defined either by a prefix string or by a regular expression. The syntax is :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location [modifier] match {
-...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When there is no modifier, the match acts just as a prefix string for the incoming URL. e.g. :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location /two {
-  # configuration for processing URIs with &#39;/two&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And when any modifier exists, the way that Nginx matches the location will change.&lt;/p&gt;
-
-&lt;p&gt;Here is what different modifiers do :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;= &lt;em&gt;:&lt;/em&gt; request URI &lt;strong&gt;exactly&lt;/strong&gt; matches the location given.&lt;/li&gt;
-&lt;li&gt;~ &lt;em&gt;:&lt;/em&gt; case-sensitive regular expression match.&lt;/li&gt;
-&lt;li&gt;~* &lt;em&gt;:&lt;/em&gt; case-insensitive regular expression match.&lt;/li&gt;
-&lt;li&gt;^~ &lt;em&gt;:&lt;/em&gt; regular expression matching will not take place.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;How nginx performs the matching can be found on their &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_core_module.html#location&#34;&gt;offcial doc&lt;/a&gt;. Here is an example for illustrate different types of modifiers :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location = / {
-    # Only matches the / query.
-}
-
-location / {
-    # URI beginning with &#39;/&#39;
-    # But the process continues searching
-}
-
-location /documents/ {
-    # URI beginning with /documents/ 
-    # But the process continues searching.
-}
-
-location ^~ /images/ {
-    # URI beginning with /images/
-    # The process stops searching
-}
-
-location ~* \.(gif|jpg|jpeg)$ {
-    # Matches requests ending in gif, jpg or jpeg. 
-    # URI beginning with /images/ are NOT handled here
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A more detailed overview of how nginx porcesses a request can be found &lt;a href=&#34;http://nginx.org/en/docs/http/request_processing.html&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.
+Here is a sample server block configuration :
+server { listen 80; server_name _; location / { root /usr/share/nginx/html; index index.html index.htm; } error_page 404 /404.</description>
     </item>
     
     <item>
       <title>Getting started with AWS</title>
-      <link>https://cse031sust02.github.io/post/getting-started-with-AWS/</link>
+      <link>https://cse031sust02.github.io/post/getting-started-with-aws/</link>
       <pubDate>Tue, 12 Sep 2017 16:05:22 +0600</pubDate>
       
-      <guid>https://cse031sust02.github.io/post/getting-started-with-AWS/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-aws&#34;&gt;What is AWS?&lt;/h2&gt;
-
-&lt;p&gt;Amazon Web Services (AWS) is a secure cloud services platform. It provides a broad set of infrastructure services, such as computing power, storage options, networking and databases. Millions of customers use AWS cloud &lt;a href=&#34;https://aws.amazon.com/products/&#34;&gt;products&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/solutions/&#34;&gt;solutions&lt;/a&gt; to build sophisticated applications.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://aws.amazon.com/what-is-aws/&#34;&gt;https://aws.amazon.com/what-is-aws/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
-
-&lt;h4 id=&#34;create-a-new-account&#34;&gt;Create a New Account&lt;/h4&gt;
-
-&lt;p&gt;Go to &lt;a href=&#34;https://portal.aws.amazon.com/billing/signup#&#34;&gt;https://portal.aws.amazon.com/billing/signup#&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;get-hands-on&#34;&gt;Get Hands On&lt;/h4&gt;
-
-&lt;p&gt;These &lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/&#34;&gt;10-Minute Tutorials&lt;/a&gt; are simple “Hello, World!” technical documents to help you get hands-on with AWS.&lt;/p&gt;
-
-&lt;h2 id=&#34;most-used-services&#34;&gt;Most Used Services&lt;/h2&gt;
-
-&lt;h3 id=&#34;amazon-ec2&#34;&gt;Amazon EC2&lt;/h3&gt;
-
-&lt;p&gt;Amazon Elastic Compute Cloud (&lt;a href=&#34;(https://aws.amazon.com/ec2)&#34;&gt;Amazon EC2&lt;/a&gt;) is the Amazon Web Service to create and run &lt;strong&gt;virtual machines&lt;/strong&gt; (instances) in the cloud.&lt;/p&gt;
-
-&lt;p&gt;There are several ways to get started with Amazon EC2. We can use the AWS Management Console, the AWS Command Line Tools (CLI), or AWS SDKs.&lt;/p&gt;
-
-&lt;p&gt;We can follow the offical docs to get started with EC2 :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/ec2/getting-started/&#34;&gt;Getting Started with Amazon EC2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/&#34;&gt;Launch a Linux Virtual Machine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;amazon-rds&#34;&gt;Amazon RDS&lt;/h3&gt;
-
-&lt;p&gt;Amazon Relational Database Service (Amazon RDS) is a managed service that enables developers to set up, operate, and scale a relational database in the cloud. It also automates time-consuming database administration tasks such as backups, software patching, automatic failure detection, and recovery.&lt;/p&gt;
-
-&lt;p&gt;Amazon RDS supports Amazon Aurora, MySQL, MariaDB, Oracle, SQL Server, and PostgreSQL database engines.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/rds/getting-started/&#34;&gt;Getting Started with Amazon RDS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/create-mysql-db/&#34;&gt;Create and Connect to a MySQL Database&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;amazon-lambda&#34;&gt;Amazon Lambda&lt;/h3&gt;
-
-&lt;p&gt;AWS Lambda lets us run code without thinking about servers. We just need to write the code*  and upload it to Lambda. Lambda takes care of everything required to run and scale the code with high availability. It is also possible to automatically trigger that code from other AWS services or from any web or mobile app.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;*AWS Lambda supports Java, Node.js, C#, and Python code, with support for other languages coming in the future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://d1.awsstatic.com/Test%20Images/MasonTests/Lambda_HowItWorks.662f209027a4fdfde72164fde6f01f51127e8c21.png&#34; alt=&#34;Lambda_HowItWorks&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Image Source : &lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;AWS&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/getting-started/&#34;&gt;Getting Started With Amazon Lambda&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/run-serverless-code/&#34;&gt;Run a Serverless &amp;ldquo;Hello, World!&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;amazon-s3&#34;&gt;Amazon S3&lt;/h3&gt;
-
-&lt;p&gt;Amazon Simple Storage Service(S3) is a storage platform. The goal of S3 is to store and retrieve any amount of data from anywhere (i.e, web sites, mobile apps, corporate applications, IoT etc).&lt;/p&gt;
-
-&lt;p&gt;AWS provides developer tools and SDKs for &lt;a href=&#34;https://aws.amazon.com/s3/getting-started/#sdk&#34;&gt;different programming languages and platforms&lt;/a&gt; such as Java, PHP, NodeJs, .NET, Python and Ruby. Also, there is a &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html&#34;&gt;a web-based interface&lt;/a&gt; for accessing and managing Amazon S3 resources.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/s3/getting-started/&#34;&gt;Getting Started with Amazon S3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/backup-files-to-amazon-s3/&#34;&gt;Store and Retrieve a File using Amazon S3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;There are many more cool services AWS provides. Sometimes it is little bit difficult to understand the purpose of the services from the name. I found this &lt;a href=&#34;https://www.expeditedssl.com/aws-in-plain-english&#34;&gt;post&lt;/a&gt; very helpful to get an basic idea about different services of AWS.&lt;/p&gt;
-</description>
+      <guid>https://cse031sust02.github.io/post/getting-started-with-aws/</guid>
+      <description>What is AWS? Amazon Web Services (AWS) is a secure cloud services platform. It provides a broad set of infrastructure services, such as computing power, storage options, networking and databases. Millions of customers use AWS cloud products and solutions to build sophisticated applications.
+source : https://aws.amazon.com/what-is-aws/
+Getting Started Create a New Account Go to https://portal.aws.amazon.com/billing/signup#
+Get Hands On These 10-Minute Tutorials are simple “Hello, World!” technical documents to help you get hands-on with AWS.</description>
     </item>
     
     <item>
@@ -632,121 +104,8 @@ location ~* \.(gif|jpg|jpeg)$ {
       <pubDate>Sun, 20 Aug 2017 17:18:51 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/getting-started-with-nginx/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-nginx&#34;&gt;What is Nginx&lt;/h2&gt;
-
-&lt;p&gt;Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=11m13s&#34;&gt;web server&lt;/a&gt; (like Apache) or as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Reverse_proxy&#34;&gt;reverse proxy&lt;/a&gt; (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.&lt;/p&gt;
-
-&lt;h4 id=&#34;why-use-nginx&#34;&gt;Why use Nginx?&lt;/h4&gt;
-
-&lt;p&gt;There are other web servers such as Apache, IIS etc. So what makes Nginx special? It is especially good at handling many concurrent connections as it was originally developed to handle &lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;C10k problem&lt;/a&gt; (serving 10000 concurrent connections). Nginx serves requests asynchronously while other web servers (such as Apache, IIS) creates new threads for every request received.&lt;/p&gt;
-
-&lt;p&gt;Nginx can also work alognside other web servers as a reverse proxy. Nginx not only serve HTTP &amp;amp; HTTPS protocol but also IMAP, POP3 and SMPT. We can use Nginx on servers with very limited hardware capabilites. A very detailed overview of why we should use Nginx can be found &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=16m57s&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;There are various ways to download and install Nginx. Please follow &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/&#34;&gt;Official Guide&lt;/a&gt; to install Nginx on your system.&lt;/p&gt;
-
-&lt;p&gt;On Ubuntu, One should be able to install Nginx easily with the &lt;code&gt;apt-get install nginx&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;After installing Nginx, we should see the welcome page by entering the IP address (we can get that using &lt;code&gt;ifconfig&lt;/code&gt; command) of our server on a browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
-
-&lt;p&gt;For most linux distributions, all Nginx config files are located in &lt;code&gt;/etc/nginx&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;nginx.conf&lt;/strong&gt; is the main configuration file. It is Nginx&amp;rsquo;s main control point which reads in all of the other appropriate configuration files and combines them into a monolithic configuration file when the server starts.&lt;/p&gt;
-
-&lt;p&gt;The structure of that configuration file looks like below :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;user nobody; 
-
-events {
-   ...
-}
-
-http {
-    ...
-
-    server {
-    	...
-    }
-
-    server {
-    	...
-    }
-}
-
-stream {
-   ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As we can see, This file consists of &lt;strong&gt;directives&lt;/strong&gt; and their parameters. There are two kinds of directives.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;simple directives&lt;/strong&gt; : These directives end with a semicolon.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;user nobody;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;contexts&lt;/strong&gt; : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;To know more details about the configuration file and what is the purpose of the each directives, please visit the &lt;a href=&#34;https://www.nginx.com/resources/admin-guide/configuration-files/&#34;&gt;official guide&lt;/a&gt;. This &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/examples/full/&#34;&gt;example&lt;/a&gt; is helpful too.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;hosting-sites&#34;&gt;Hosting Sites&lt;/h3&gt;
-
-&lt;p&gt;For hosting websites, we need to understand how to set up virtual servers.&lt;/p&gt;
-
-&lt;p&gt;A virtual server is defined by a server directive in the http context.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    server {
-        # Server configuration
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And it is possible to add multiple virtual servers into the http context.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    server {
-        # Server One configuration
-    }
-
-    server {
-        # Server Two configuration
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, if we add 10 virtual servers, the &lt;strong&gt;nginx.conf&lt;/strong&gt; file will become very long and modifying that file will be a headache. This is why &lt;strong&gt;sites-enabled&lt;/strong&gt; folder exists. We can make seperate configuration file for each virtual host. And in the main nginx.conf file, we will include that folder :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    # Virtual Hosts
-    include /etc/nginx/sites-enabled/*;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, now every virtual servers listed in &lt;strong&gt;sites-enabled&lt;/strong&gt; folder will be public to visitors.&lt;/p&gt;
-
-&lt;p&gt;We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use &lt;strong&gt;sites-available&lt;/strong&gt; folder for storing all of our virtual host configurations(whether they&amp;rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&amp;rsquo;s configuration file to &lt;strong&gt;sites-enabled&lt;/strong&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understanding-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
-
-&lt;h2 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h2&gt;
-
-&lt;p&gt;Whenever we change the configuration, we will need to restart nginx server for changes to take place.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>What is Nginx Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone web server (like Apache) or as a reverse proxy (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.
+Why use Nginx? There are other web servers such as Apache, IIS etc. So what makes Nginx special?</description>
     </item>
     
     <item>
@@ -755,53 +114,10 @@ stream {
       <pubDate>Wed, 09 Aug 2017 11:27:15 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/intro-to-websocket/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;WebSocket is a protocol (like HTTP) which defines how two parties can communicate. It is a technique for two-way communication over one (TCP) socket.&lt;/p&gt;
-
-&lt;p&gt;A very good intro is written in this &lt;a href=&#34;http://blog.teamtreehouse.com/an-introduction-to-websockets&#34;&gt;post&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-it-works&#34;&gt;How It Works&lt;/h3&gt;
-
-&lt;p&gt;WebSockets provide a &lt;strong&gt;persistent connection&lt;/strong&gt; between a &lt;strong&gt;client&lt;/strong&gt; and &lt;strong&gt;server&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once a WebSocket connection is established the connection stays open until the client or server decides to close this connection. With this open connection, the client or server can send messages to each other at any given time.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-websocket&#34;&gt;Why Use Websocket?&lt;/h3&gt;
-
-&lt;p&gt;WebSockets let us talk to the server without using AJAX requests. It provides great solution for real-time, event-driven web applications. We can use WebSocket whenever we need a truly low latency, near realtime connection between the client and the server. Such as Multiplayer online games, Chat applications, Live Updates.&lt;/p&gt;
-
-&lt;p&gt;Another use case for WebSocket is developing WebRTC-based applications.&lt;/p&gt;
-
-&lt;p&gt;Websockets can replace long-polling (keeping an HTTP connection open until the server has some data to push down to the client).&lt;/p&gt;
-
-&lt;h2 id=&#34;client-server&#34;&gt;Client &amp;amp; Server&lt;/h2&gt;
-
-&lt;p&gt;WebSocket is designed to be implemented in web browsers and web servers, but it can be used by any client or server application.&lt;/p&gt;
-
-&lt;h3 id=&#34;servers&#34;&gt;Servers&lt;/h3&gt;
-
-&lt;p&gt;We can build a WebSocket server using any server-side programming language that is capable of &lt;a href=&#34;https://en.wikipedia.org/wiki/Berkeley_sockets&#34;&gt;Berkeley sockets&lt;/a&gt;, such as PHP, Python or Node.js.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Popular Libraries :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Node.js : &lt;a href=&#34;http://socket.io/&#34;&gt;socket.io&lt;/a&gt;,  &lt;a href=&#34;https://github.com/websockets/ws&#34;&gt;ws&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PHP : &lt;a href=&#34;http://socketo.me&#34;&gt;Ratchet&lt;/a&gt;, &lt;a href=&#34;https://github.com/ghedipunk/PHP-Websockets&#34;&gt;PHP WebSockets&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;clients&#34;&gt;Clients&lt;/h3&gt;
-
-&lt;p&gt;WebSocket is also a new feature in browsers. It is one of the coolest new features of HTML5 and is currently supported in most modern browsers.&lt;/p&gt;
-</description>
+      <description>Intro WebSocket is a protocol (like HTTP) which defines how two parties can communicate. It is a technique for two-way communication over one (TCP) socket.
+A very good intro is written in this post
+How It Works WebSockets provide a persistent connection between a client and server.
+Once a WebSocket connection is established the connection stays open until the client or server decides to close this connection. With this open connection, the client or server can send messages to each other at any given time.</description>
     </item>
     
     <item>
@@ -810,108 +126,8 @@ stream {
       <pubDate>Tue, 08 Aug 2017 17:46:18 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/data-structure-basics/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-data-structure&#34;&gt;What is Data Structure?&lt;/h2&gt;
-
-&lt;p&gt;Data structures are ways to store data in an organized fashion so that it can be used efficiently. Just like there are many ways (i.e alphabetically or by genre) you can organize your books in a bookshelf.&lt;/p&gt;
-
-&lt;h4 id=&#34;types&#34;&gt;Types&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Linear&lt;/strong&gt; : Array, Linked List, Stack, Queue etc&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Non Linear&lt;/strong&gt; : Tree, Graph etc&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;operations&#34;&gt;Operations&lt;/h4&gt;
-
-&lt;p&gt;We can do different types of operations on different data structures. Such as : Traversing, Searching, Insertion, Deletion etc.&lt;/p&gt;
-
-&lt;h4 id=&#34;complexity&#34;&gt;Complexity?&lt;/h4&gt;
-
-&lt;p&gt;We can calculate complexity of different operations on different Data Structures. i.e, Complexity of Stack&amp;rsquo;s push() operations is 0(1).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;some-basic-data-structures&#34;&gt;Some Basic Data Structures&lt;/h2&gt;
-
-&lt;h3 id=&#34;array&#34;&gt;Array&lt;/h3&gt;
-
-&lt;p&gt;An array is a collection of homogeneous type of data elements.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion, Sorting, Merging
-
-Searching : Binary Search, Linear Search etc
-Sorting : Quick sort, Buuble Sort, Heap Sort etc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif&#34; alt=&#34;Array&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif&#34;&gt;oracle&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;linked-list&#34;&gt;Linked List&lt;/h3&gt;
-
-&lt;p&gt;A Linked list is a linear collection of data elements called &lt;strong&gt;nodes&lt;/strong&gt;. Each node has two part one is &lt;em&gt;info&lt;/em&gt; and other is &lt;em&gt;link&lt;/em&gt; part. info part gives information of current node and link part is the address of the next node.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Operations: Traversing, Searching, Insertion, Deletion etc
-
-Types : Singly Linked List, Doubly Linked List, Circular Linked List etc 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png&#34; alt=&#34;Linkded List&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png&#34;&gt;wikimedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;stack&#34;&gt;Stack&lt;/h3&gt;
-
-&lt;p&gt;Stack is a LIFO (Last In First Out) structure. A Stack is a list of elements where both insertion and deletion are allowed at only one end called Top.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Operations : 
-    push - insert new elements into the Stack
-    pop - delete the top element from the Stack
-    peek - returns the top element of stack.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.studytonight.com/data-structures/images/stack-data-structure.png&#34; alt=&#34;Stack&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://www.studytonight.com/data-structures/images/stack-data-structure.png&#34;&gt;studytonight&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;A Stack is called &lt;strong&gt;Overflow&lt;/strong&gt; when it is completely full, and is called &lt;strong&gt;Underflow&lt;/strong&gt; when it is completely empty.&lt;/p&gt;
-
-&lt;h3 id=&#34;queue&#34;&gt;Queue&lt;/h3&gt;
-
-&lt;p&gt;Queue is a linear data structure, in which the first element is inserted from one end called REAR, and the deletion of exisiting element takes place from the other end called as FRONT. It is a FIFO (First In First Out) structure.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Operations : 
-    enqueue - insert new elements into the Queue
-    dequeue - delete an existing element from the Queue
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.studytonight.com/data-structures/images/introduction-to-queue.png&#34; alt=&#34;Queue&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://www.studytonight.com/data-structures/images/introduction-to-queue.png&#34;&gt;studytonight&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;tree&#34;&gt;Tree&lt;/h3&gt;
-
-&lt;p&gt;A Tree is a non-linear data structure which organizes data in hierarchical (arranged in order of rank) structure.&lt;/p&gt;
-
-&lt;p&gt;In tree data structure, every individual element is called as &lt;strong&gt;Node&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The first node is the Root Node.&lt;/li&gt;
-&lt;li&gt;The remainging nodes forms subtree recursively. Every child node will form a subtree on its parent node.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://btechsmartclass.com/DS/images/Tree.png&#34; alt=&#34;Tree&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://btechsmartclass.com/DS/images/Tree.png&#34;&gt;btechsmartclass&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;terminology&#34;&gt;Terminology&lt;/h5&gt;
-
-&lt;p&gt;please check this &lt;a href=&#34;http://btechsmartclass.com/DS/U3_T1.html&#34;&gt;article&lt;/a&gt; to get a very good understanding about terminologies used in trees.&lt;/p&gt;
-</description>
+      <description>What is Data Structure? Data structures are ways to store data in an organized fashion so that it can be used efficiently. Just like there are many ways (i.e alphabetically or by genre) you can organize your books in a bookshelf.
+Types  Linear : Array, Linked List, Stack, Queue etc Non Linear : Tree, Graph etc  Operations We can do different types of operations on different data structures.</description>
     </item>
     
     <item>
@@ -920,137 +136,10 @@ Types : Singly Linked List, Doubly Linked List, Circular Linked List etc
       <pubDate>Tue, 20 Jun 2017 16:21:21 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
-
-&lt;p&gt;LEMP stands for &lt;strong&gt;Linux&lt;/strong&gt;, &lt;strong&gt;nginx&lt;/strong&gt; (pronounced engine-x), &lt;strong&gt;MySQL&lt;/strong&gt;, and &lt;strong&gt;PHP&lt;/strong&gt;. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 : Update Apt-Get&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 : Install nginx&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 : Install PHP&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
-
-&lt;p&gt;First we need to add &lt;a href=&#34;https://launchpad.net/%7Eondrej/+archive/ubuntu/php&#34;&gt;PPA for PHP 7&lt;/a&gt; to system&amp;rsquo;s Apt sources using &lt;a href=&#34;http://manpages.ubuntu.com/manpages/trusty/man1/add-apt-repository.1.html&#34;&gt;add-apt-repository&lt;/a&gt; command and then install php and php-fpm packages (since nginx communicates with php-fpm).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.0 php7.0-fpm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We may also need to install modules like php7.0-mysql, php7.0-cli etc based on our application requirements.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install php7.0-mysql php7.0-cli php7.0-mbstring
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h4&gt;
-
-&lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
-
-&lt;p&gt;First we have to open the default Nginx server block configuration file&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/nginx/sites-available/default
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There is already a server block there, we will change that with the following code,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.php index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-    }
-
-    location ~ /\.ht {
-        deny all;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, We will restart the nginx server with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 : Install MySQL&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To verify if MySQL is installed properly, we can try to login&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should then see a Welcome Screen and we can start writing SQLs there&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 13
-Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-mysql&amp;gt; show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.00 sec)
-
-mysql&amp;gt; 
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>What is LEMP stack? LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.
+Setup So, We are going to setup LEMP stack on our ubuntu 14.04 machine.
+Step 1 : Update Apt-Get Update the package database. To know more about apt-get, please visit this page.
+sudo apt-get update  Step 2 : Install nginx Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.</description>
     </item>
     
     <item>
@@ -1059,179 +148,9 @@ mysql&amp;gt;
       <pubDate>Wed, 17 May 2017 15:50:31 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/linux-cheatsheet/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-linux&#34;&gt;What is Linux?&lt;/h2&gt;
-
-&lt;p&gt;Just like Windows and Mac OS X, Linux is an operating system. It is an open source &lt;a href=&#34;https://en.wikipedia.org/wiki/Unix-like&#34;&gt;Unix-like&lt;/a&gt; operating system.&lt;/p&gt;
-
-&lt;p&gt;Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;developed&lt;/a&gt; by &lt;a href=&#34;https://github.com/torvalds&#34;&gt;Linus Torvalds&lt;/a&gt;. I think &lt;a href=&#34;https://unix.stackexchange.com/a/94407&#34;&gt;this answer&lt;/a&gt; explains it all.&lt;/p&gt;
-
-&lt;h2 id=&#34;linux-commands&#34;&gt;Linux Commands&lt;/h2&gt;
-
-&lt;p&gt;We should have some basic ideas of &lt;strong&gt;Shell&lt;/strong&gt;, &lt;strong&gt;Bash&lt;/strong&gt; and &lt;strong&gt;Terminal&lt;/strong&gt; first if we want to work with Linux Command Line.&lt;/p&gt;
-
-&lt;h3 id=&#34;shell&#34;&gt;Shell&lt;/h3&gt;
-
-&lt;p&gt;The shell is a program that takes commands from the keyboard and gives them to the operating system to perform. Linux operating system offers several shells such as : &lt;strong&gt;bash&lt;/strong&gt;, &lt;strong&gt;sh&lt;/strong&gt;, &lt;strong&gt;csh&lt;/strong&gt; etc. Although they have many commands in common, each type has unique features.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;bash&lt;/strong&gt; (Bourne Again SHell) : bash is the default shell for most &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_Linux_distributions&#34;&gt;Linux distributions&lt;/a&gt;. It is an enhanced version of the original Unix shell program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;terminal&#34;&gt;Terminal&lt;/h3&gt;
-
-&lt;p&gt;Terminal (or Terminal Emulator) is a GUI which lets us interact with the shell. So, we can type and execute commands from the Terminal Window. There are many different Terminals bundled with different &lt;a href=&#34;https://en.wikipedia.org/wiki/Desktop_environment&#34;&gt;Desktop Environments&lt;/a&gt;, such as: gnome-terminal (GNOME), konsole(KDE) etc.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h2&gt;
-
-&lt;p&gt;We should easily find Terminal from the menu. The Terminal Window is like the image below&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34; alt=&#34;terminal&#34; title=&#34;Terminal&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;So, when we open the Terminal, we see something like this :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;username&lt;/strong&gt; = the username of the current user.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;hostname&lt;/strong&gt; = name of the computer (to identify on the network).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;~&lt;/strong&gt; = name of the directory you’re in. &lt;em&gt;`~&amp;rsquo; refers to user&amp;rsquo;s home directory&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;$&lt;/strong&gt; =  It indicates the end of the shell prompt. if user is logged in as &lt;strong&gt;&lt;em&gt;root&lt;/em&gt;&lt;/strong&gt;, then it will show &amp;lsquo;#&amp;rsquo; sign instead of the &amp;lsquo;$&amp;rsquo; sign.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;root&#34;&gt;root&lt;/h4&gt;
-
-&lt;p&gt;In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Still you need to know how do i login as root, right? you should able logged in as root by using the &lt;code&gt;su -&lt;/code&gt; command on your terminal. If you getting any error message, your root account is likely locked. please check &lt;a href=&#34;http://www.wikihow.com/Become-Root-in-Linux&#34;&gt;this tutorial&lt;/a&gt; for more information.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;sudo&#34;&gt;sudo&lt;/h4&gt;
-
-&lt;p&gt;As we understand, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is &lt;code&gt;sudo&lt;/code&gt;. the &lt;code&gt;sudo&lt;/code&gt; command allows a permitted user to execute a command as the superuser or another user.&lt;/p&gt;
-
-&lt;p&gt;for example, if we enter &lt;code&gt;apt-get update&lt;/code&gt; command in our terminal, we will get the following error,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ apt-get update
-E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
-E: Unable to lock directory /var/lib/apt/lists/
-E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
-E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;but, when we use &lt;code&gt;sudo&lt;/code&gt; in that same command, it works perfectly,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ sudo apt-get update
-[sudo] password for username: 
-Ign http://dl.google.com stable InRelease
-Hit http://packages.microsoft.com stable InRelease                             
-Hit http://dl.google.com stable Release.gpg  
-........
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
-
-&lt;p&gt;I think the best site to learn Linux Commands is &lt;a href=&#34;http://linuxcommand.org/lc3_lts0060.php&#34;&gt;linuxcommand.org&lt;/a&gt;. I am just trying to list some basics points.&lt;/p&gt;
-
-&lt;h4 id=&#34;type-of-commands&#34;&gt;Type of Commands&lt;/h4&gt;
-
-&lt;p&gt;There are four different kinds of Commands :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Executable program&lt;/strong&gt; : Any executable program. i.e : &lt;code&gt;vlc&lt;/code&gt;, &lt;code&gt;gedit&lt;/code&gt; etc&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shell Builtin&lt;/strong&gt; : Builtin commands provided by Bash. i.e : &lt;code&gt;cd&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt; etc&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shell function&lt;/strong&gt; : Functions of some commands.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alias&lt;/strong&gt; : alias of any command.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If we want to know the type of any command, we can use the &lt;code&gt;type&lt;/code&gt; command. i.e, &lt;code&gt;type cd&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;navigation&#34;&gt;Navigation&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;pwd (print working directory)&lt;/li&gt;
-&lt;li&gt;cd (change directory)&lt;/li&gt;
-&lt;li&gt;ls (list files and directories)
-
-&lt;ul&gt;
-&lt;li&gt;ls -l (in long format)&lt;/li&gt;
-&lt;li&gt;ls -a (including hidden files)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;manipulating-files&#34;&gt;Manipulating Files&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cp (copy files and directories)&lt;/li&gt;
-&lt;li&gt;mv (move or rename files and directories)&lt;/li&gt;
-&lt;li&gt;rm (remove files and directories)&lt;/li&gt;
-&lt;li&gt;mkdir (create directories)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;current-user&#34;&gt;Current User&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;whoami (show user name of current user)&lt;/li&gt;
-&lt;li&gt;id (show user and group information)&lt;/li&gt;
-&lt;li&gt;groups (groups that current user belongs to)&lt;/li&gt;
-&lt;li&gt;passwd (changes password)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;permissions&#34;&gt;Permissions&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;chmod (modify file access rights)&lt;/li&gt;
-&lt;li&gt;chown (change file ownership)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;process&#34;&gt;Process&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ps (list of running processes)&lt;/li&gt;
-&lt;li&gt;kill (send a signal to processes)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h2&gt;
-
-&lt;p&gt;It&amp;rsquo;s useful to understand Linux Filesystem. Below is a image to get a basic idea.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/T6T0sRW.png&#34; alt=&#34;File System&#34; title=&#34;File System&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Image Source&lt;/strong&gt; : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To know more details, we can visit this &lt;a href=&#34;http://www.pathname.com/fhs/pub/fhs-2.3.html&#34;&gt;Filesystem Hierarchy Standard&lt;/a&gt; page.&lt;/p&gt;
-
-&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://linuxcommand.org&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://sh.howtocode.com.bd&#34;&gt;howtocode.com.bd&lt;/a&gt; (Bengali)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/&#34;&gt;cheatsheetworld.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Linux? Just like Windows and Mac OS X, Linux is an operating system. It is an open source Unix-like operating system.
+Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was developed by Linus Torvalds. I think this answer explains it all.
+Linux Commands We should have some basic ideas of Shell, Bash and Terminal first if we want to work with Linux Command Line.</description>
     </item>
     
     <item>
@@ -1240,244 +159,9 @@ Hit http://dl.google.com stable Release.gpg
       <pubDate>Sun, 07 May 2017 16:21:40 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/say_hello_to_nodejs/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-node-js&#34;&gt;What is Node.js? :&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
-- &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Official Website&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Creepy, huh?&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;npm&#34;&gt;npm?&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is the Node.js package manager. It allows us to easily install modules and packages to use with Node.js.&lt;/p&gt;
-
-&lt;h4 id=&#34;nvm&#34;&gt;nvm?&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/creationix/nvm/blob/master/README.md&#34;&gt;nvm&lt;/a&gt; is Node Version Manager. We can install multiple, self-contained versions of Node.js usng nvm. It allows us to control the environment easier (quickly switch to other versions of Node.js).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;installing-node-js&#34;&gt;Installing Node.js&lt;/h2&gt;
-
-&lt;p&gt;Please visit the &lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;official page&lt;/a&gt; to install Node.Js in your platform.&lt;/p&gt;
-
-&lt;p&gt;To install recent version of Node.js, we will first add a PPA (personal package archive) maintained by &lt;a href=&#34;https://github.com/nodesource/distributions&#34;&gt;NodeSource&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;i.e, To download v6.X&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Full details can be found &lt;a href=&#34;https://github.com/nodesource/distributions#installation-instructions&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To verify that the installation was successful, let’s give Node’s &lt;strong&gt;REPL&lt;/strong&gt; a try.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;node
-&amp;gt;console.log(&#39;hello nodejs&#39;);
-hello world
-undefined
-&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;*&lt;strong&gt;REPL&lt;/strong&gt; :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Q. When i tried to install Node.Js with &lt;code&gt;apt-get install nodejs&lt;/code&gt; command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ans. Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;install-npm&#34;&gt;install npm?&lt;/h4&gt;
-
-&lt;p&gt;The nodejs package contains the nodejs binary as well as npm, so we don&amp;rsquo;t need to install npm separately.
-But, to run nodejs/npm properly, We may need to install the &lt;code&gt;build-essentials&lt;/code&gt; package.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install build-essential
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;about-npm-things&#34;&gt;About npm things&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; is a package manager for javascript. npm makes it easy for JavaScript developers to share and reuse code. Although npm started as the node package manager, but it is now used by almost every popular javascript libraries/frameworks. Please read the &lt;a href=&#34;https://docs.npmjs.com/getting-started&#34;&gt;official doc&lt;/a&gt; if you want to know more.&lt;/p&gt;
-
-&lt;h4 id=&#34;what-is-a-package&#34;&gt;what is a package?&lt;/h4&gt;
-
-&lt;p&gt;A package (or sometimes module) contains reusable codes to serve a particular purpose. A package is just a directory with one or more files in it.&lt;/p&gt;
-
-&lt;p&gt;Every package contains a file named &lt;strong&gt;package.json&lt;/strong&gt; with some metadata (a short description, GitHub repository etc) about that package.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Module vs Package :
-A module is anything that can be loaded with require() in a Node.js program. Most npm packages are modules. &lt;a href=&#34;https://docs.npmjs.com/how-npm-works/packages#most-npm-packages-are-modules&#34;&gt;more details..&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;npm-registry&#34;&gt;npm Registry?&lt;/h4&gt;
-
-&lt;p&gt;Every time we download a package using npm install, we&amp;rsquo;re downloading it from npm Registry and put in our project&amp;rsquo;s &lt;code&gt;node_modules&lt;/code&gt; folder. npm Registry is basically a huge database containing each package&amp;rsquo;s files and associated metadata.&lt;/p&gt;
-
-&lt;h4 id=&#34;initialize-a-project&#34;&gt;Initialize a project&lt;/h4&gt;
-
-&lt;p&gt;npm helps us build projects, but for npm to be able to do that, we need to tell npm a little bit about our project. we have to write the details in &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
-
-&lt;p&gt;we can manually create the &lt;strong&gt;package.json&lt;/strong&gt; file and write the details. Or we can use &amp;lsquo;npm init&amp;rsquo; command which will ask a bunch of questions, and then it will create the &lt;strong&gt;package.json&lt;/strong&gt; for us.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm init
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sensible defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install &amp;lt;pkg&amp;gt; --save` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-name: (demo-project) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;the next time we use &lt;code&gt;npm init&lt;/code&gt; command, it will update the existing &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;dealing-with-packages&#34;&gt;Dealing with packages&lt;/h2&gt;
-
-&lt;p&gt;One of the most important things that npm does is install packages.&lt;/p&gt;
-
-&lt;h3 id=&#34;install-packages&#34;&gt;Install packages&lt;/h3&gt;
-
-&lt;p&gt;&amp;lsquo;npm install&amp;rsquo; can be used in many ways. By default, &lt;code&gt;npm install&lt;/code&gt; command (without any arguments) will install all modules listed as dependencies in &lt;strong&gt;package.json&lt;/strong&gt; file.&lt;/p&gt;
-
-&lt;p&gt;To install a specific package,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a &lt;strong&gt;package&lt;/strong&gt; can be a folder, a url, a git remote url etc.&lt;/p&gt;
-
-&lt;p&gt;If we install a package with &lt;code&gt;--save&lt;/code&gt; option, the package will be added to the dependencies list in the package.json file. so, afterwards, running &lt;code&gt;npm install&lt;/code&gt; will automatically install that package.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;We can istall packages &lt;strong&gt;locally&lt;/strong&gt; or &lt;strong&gt;globally&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By default &lt;code&gt;npm install&lt;/code&gt; will install modules locally. it downloads the package to &amp;lsquo;node_modules&amp;rsquo; directory. after we installed the package, we can use it in our code.&lt;/p&gt;
-
-&lt;p&gt;for exmplae, first install the &lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt; module locally,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install lodash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;now, we can use in our code,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;  var lodash = require(&#39;lodash&#39;);
-  var output = lodash.without([1, 2, 3], 1);
-  console.log(output);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If we want to use any package globally (usually to use it as a command line tool), then we can install those packages globally&lt;/p&gt;
-
-&lt;p&gt;for example, install the &lt;a href=&#34;https://github.com/foreverjs/forever&#34;&gt;forever&lt;/a&gt; package globally.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo npm install forever -g
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;now, we can use this package in our terminal,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;forever start app.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;for permission error, please check &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;list-of-installed-packages&#34;&gt;list of installed packages&lt;/h3&gt;
-
-&lt;p&gt;To show the installed packages, we can use the &lt;code&gt;npm list&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt; installed packages,&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm list --depth=0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt; installed packages,&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm list -g --depth=0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;we can use &amp;lsquo;ls&amp;rsquo; instead of &amp;lsquo;list&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;depth = depth of the dependency tree.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;update-packages&#34;&gt;Update packages&lt;/h3&gt;
-
-&lt;p&gt;We can update any existing package with &lt;code&gt;npm update&lt;/code&gt; command&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm update -g &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;uninstall-packages&#34;&gt;Uninstall packages&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;npm unistall&lt;/code&gt; command is used to uninstall any package&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;locally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm unistall &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;globally&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm uninstall -g &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.npmjs.com/#getting-started&#34;&gt;Official Getting Started Page&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://nodeschool.io/&#34;&gt;NodeSchool&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js?rq=1&#34;&gt;Stackoverflow post&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Node.js? :  Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&amp;rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world. - Official Website
+Creepy, huh?
+ npm? npm is the Node.js package manager. It allows us to easily install modules and packages to use with Node.</description>
     </item>
     
     <item>
@@ -1486,158 +170,9 @@ name: (demo-project)
       <pubDate>Sun, 23 Apr 2017 17:37:13 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/getting_started_with_composer/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-composer-https-getcomposer-org&#34;&gt;What is &lt;a href=&#34;https://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md&#34;&gt;getcomposer.org&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h3&gt;
-
-&lt;p&gt;Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say &lt;a href=&#34;https://github.com/PHPMailer/PHPMailer&#34;&gt;PHPMailer&lt;/a&gt;. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This kind of concept is not new, and in fact, Composer is strongly inspired by node&amp;rsquo;s &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; and ruby&amp;rsquo;s &lt;a href=&#34;http://bundler.io/&#34;&gt;bundler&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Another benefit of using composer is avoid the pain of autloading. As we have all many different packages in our project, we need the ability to autoload them into our project. For libraries that specify autoload information, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. We can simply include this file and start using the classes that those libraries provide without any extra work.&lt;/p&gt;
-
-&lt;p&gt;Composer is used in all modern PHP frameworks (Symfony, Laravel etc).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;using-composer&#34;&gt;Using Composer&lt;/h2&gt;
-
-&lt;p&gt;Now, let&amp;rsquo;s start using composer.&lt;/p&gt;
-
-&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;Composer requires PHP 5.3.2+ to run. To install composer on your system, just follow the &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx&#34;&gt;official guide&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;some-useful-commands&#34;&gt;Some useful commands&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;list of available commands and description :&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;check current version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer -V
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;update to the latest version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer self-update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;get help for that command&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer help [command-name]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;check for common problems.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer diagnose
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;
-
-&lt;p&gt;To start using Composer in our project, all we need is a &lt;code&gt;composer.json&lt;/code&gt; file. This file describes the dependencies of our project (and may contain other metadata as well).&lt;/p&gt;
-
-&lt;p&gt;For example, if we want to use &lt;a href=&#34;https://packagist.org/packages/phpmailer/phpmailer&#34;&gt;PHPMailer&lt;/a&gt; and &lt;a href=&#34;https://packagist.org/packages/monolog/monolog&#34;&gt;Monolog&lt;/a&gt;, we can create the following composer.json file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;{
-    &amp;quot;require&amp;quot;: {
-        &amp;quot;phpmailer/phpmailer&amp;quot;: &amp;quot;~5.2&amp;quot;,
-        &amp;quot;monolog/monolog&amp;quot;: &amp;quot;*&amp;quot;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For more information about &lt;code&gt;composer.json&lt;/code&gt; file, please see the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup&#34;&gt;composer documentation&lt;/a&gt;. We also need to have a clear idea about &lt;a href=&#34;https://getcomposer.org/doc/articles/versions.md&#34;&gt;versions&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;install-dependencies&#34;&gt;Install Dependencies&lt;/h3&gt;
-
-&lt;p&gt;Then we can install the dependencies for our project simply with a &lt;code&gt;composer install&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;This will automatically download the dependencies into our project under the directory &amp;lsquo;vendor&amp;rsquo;.&lt;/p&gt;
-
-&lt;h3 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h3&gt;
-
-&lt;p&gt;As stated before, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;require __DIR__ . &#39;/vendor/autoload.php&#39;;
-
-$log = new Monolog\Logger(&#39;name&#39;);
-$log-&amp;gt;pushHandler(new Monolog\Handler\StreamHandler(&#39;app.log&#39;, Monolog\Logger::WARNING));
-$log-&amp;gt;addWarning(&#39;Foo&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h3&gt;
-
-&lt;p&gt;Whenever we want to update our dependencies to latest versions, we can use this command &lt;code&gt;composer update&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;To update any single package only, the command will be : &lt;code&gt;composer update [package-name]&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;did-you-know&#34;&gt;Did you know?&lt;/h2&gt;
-
-&lt;p&gt;We have to understand few key facts while working with composer&lt;/p&gt;
-
-&lt;h3 id=&#34;composer-install-vs-composer-update&#34;&gt;# &amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h3&gt;
-
-&lt;p&gt;To get a clear idea what actually happens when we use the &lt;code&gt;composer install&lt;/code&gt; &amp;amp; &lt;code&gt;composer update&lt;/code&gt; commands, please visit the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies&#34;&gt;official doc&lt;/a&gt;. I am trying to write the thing in my own way.&lt;/p&gt;
-
-&lt;p&gt;if we run &lt;code&gt;composer install&lt;/code&gt; for the first time in our project,&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Composer will download the dependencies (with defined versions) listed in &lt;strong&gt;composer.json&lt;/strong&gt; file.&lt;/li&gt;
-&lt;li&gt;After installation is complete, Composer will create a file named &lt;strong&gt;composer.lock&lt;/strong&gt; to store information of all the downloaded packages and their versions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From next time, whenever we run &lt;code&gt;composer install&lt;/code&gt; command, Composer will download the dependencies listed on &lt;strong&gt;composer.json&lt;/strong&gt;, But it will use the &lt;em&gt;exact versions&lt;/em&gt; listed in &lt;strong&gt;composer.lock&lt;/strong&gt; file.&lt;/p&gt;
-
-&lt;p&gt;So, if we change the &lt;strong&gt;composer.json&lt;/strong&gt; file (ie, add new package, chage version of any package etc) and then try to run the command &lt;code&gt;composer install&lt;/code&gt; command, it will show an warning.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So in that case, we have to use &lt;code&gt;composer update&lt;/code&gt; command. &lt;code&gt;composer update&lt;/code&gt; command fetches the latest matching versions (according to our &lt;strong&gt;composer.json&lt;/strong&gt; file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.&lt;/p&gt;
-
-&lt;p&gt;So, we should only ever run &lt;code&gt;composer update&lt;/code&gt; to get the newest versions of our dependencies, not to install them.&lt;/p&gt;
-
-&lt;h3 id=&#34;install-with-composer-require-command&#34;&gt;# install with &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h3&gt;
-
-&lt;p&gt;In our example, We could define and install dependencies with a single &lt;a href=&#34;https://getcomposer.org/doc/03-cli.md#require&#34;&gt;&lt;code&gt;composer require&lt;/code&gt;&lt;/a&gt; command.&lt;/p&gt;
-
-&lt;p&gt;for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;when we run &lt;code&gt;composer require&lt;/code&gt; command,&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it adds new packages to the composer.json (If composer.json file does&amp;rsquo;nt exists, it will create one)&lt;/li&gt;
-&lt;li&gt;the modified requirements will be installed or updated.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Composer?  Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+source : getcomposer.org
+ Why Use Composer? Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say PHPMailer. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too.</description>
     </item>
     
     <item>
@@ -1646,99 +181,120 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
       <pubDate>Sat, 22 Apr 2017 16:13:16 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/intro-to-redis/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-redis&#34;&gt;What is Redis?&lt;/h2&gt;
-
-&lt;p&gt;Redis is an in-memory data structure server. Which can be used as database, cache and message broker.&lt;/p&gt;
-
-&lt;p&gt;Redis = REmote DIctionary Server.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a key-value store is commonly known today as a dictionary.
- &lt;a href=&#34;https://en.wikipedia.org/wiki/Key-value_database&#34;&gt;https://en.wikipedia.org/wiki/Key-value_database&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;data-structure-server&#34;&gt;# Data Structure Server&lt;/h4&gt;
-
-&lt;p&gt;Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.&lt;/p&gt;
-
-&lt;p&gt;Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.&lt;/p&gt;
-
-&lt;p&gt;for more details, please visit the links :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types&#34;&gt;https://redis.io/topics/data-types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/data-types-intro&#34;&gt;https://redis.io/topics/data-types-intro&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;popular-nosql-database&#34;&gt;# Popular noSQL Database&lt;/h4&gt;
-
-&lt;p&gt;It is a very popular noSQL database. Redis is often ranked the &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34;&gt;most popular key-value database&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;message-broker&#34;&gt;# Message Broker&lt;/h4&gt;
-
-&lt;p&gt;a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-redis&#34;&gt;Why use Redis?&lt;/h3&gt;
-
-&lt;p&gt;Redis is a fantastic choice if you want a highly scalable data store shared by multiple processes, multiple applications, or multiple servers.&lt;/p&gt;
-
-&lt;p&gt;You can found more detailed answers on &lt;a href=&#34;http://stackoverflow.com/a/13645017/7804179&#34;&gt;Stackoverflow&lt;/a&gt; or &lt;a href=&#34;https://www.quora.com/Why-use-Redis&#34;&gt;Quora&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;performances-benchmarks&#34;&gt;Performances &amp;amp; Benchmarks&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/topics/benchmarks&#34;&gt;https://redis.io/topics/benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis#performance--benchmarks&#34;&gt;https://github.com/dwyl/learn-redis#performance--benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;let-s-start&#34;&gt;Let&amp;rsquo;s Start&lt;/h2&gt;
-
-&lt;p&gt;So, How do i start using Redis?&lt;/p&gt;
-
-&lt;h3 id=&#34;install&#34;&gt;Install&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://redis.io/download#installation&#34;&gt;http://redis.io/download#installation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;try&#34;&gt;Try&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://try.redis.io/&#34;&gt;http://try.redis.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dwyl/learn-redis&#34;&gt;https://github.com/dwyl/learn-redis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;all-commands&#34;&gt;All Commands&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/commands&#34;&gt;https://redis.io/commands&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;cli&#34;&gt;CLI&lt;/h3&gt;
-
-&lt;p&gt;After we install Redis on our local pc, we can start using the Redis CLI with the &lt;code&gt;redis-cli&lt;/code&gt; command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ redis-cli
-127.0.0.1:6379&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;gui&#34;&gt;GUI&lt;/h3&gt;
-
-&lt;p&gt;While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/joeferner/redis-commander&#34;&gt;Redis Commander&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.redsmin.com/&#34;&gt;Redismin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.redisdesktop.com/en/latest/&#34;&gt;Redis Desktop Manager&lt;/a&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Redis? Redis is an in-memory data structure server. Which can be used as database, cache and message broker.
+Redis = REmote DIctionary Server.
+ a key-value store is commonly known today as a dictionary. https://en.wikipedia.org/wiki/Key-value_database
+ # Data Structure Server Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.</description>
+    </item>
+    
+    <item>
+      <title>Database &amp; ACID properties</title>
+      <link>https://cse031sust02.github.io/post/database-acid/</link>
+      <pubDate>Tue, 11 Apr 2017 11:13:09 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/database-acid/</guid>
+      <description>What is Database? : A database is a collection of data that is stored in an organized manner.
+ the term &amp;ldquo;database&amp;rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.
+ Database Models : A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.</description>
+    </item>
+    
+    <item>
+      <title>My Personal Git Cheat Sheet</title>
+      <link>https://cse031sust02.github.io/post/git-cheatsheet/</link>
+      <pubDate>Tue, 11 Apr 2017 11:11:48 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/git-cheatsheet/</guid>
+      <description>What is GIT? Git is a free and open source distributed version control system.
+Why we use VCS (version control system)?
+ Code Revision Like a Time Machine Multiple Developer  Why GIT (among other VCS)?
+ Can work locally without any central server  Setup Now let&amp;rsquo;s install Git on our machine and start using it.
+Installation Please follow the offical doc to install git.
+Configuration Use git config command to get and set configuration variables</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Cookie</title>
+      <link>https://cse031sust02.github.io/post/intro-to-cookie/</link>
+      <pubDate>Tue, 11 Apr 2017 11:11:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/intro-to-cookie/</guid>
+      <description>What is a HTTP Cookie? Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.
+It is also called web cookie, Internet cookie, browser cookie or simply cookie.
+Usage Cookies are mainly used for these purposes
+ Session management (user logins, shopping carts) Personalization (user preferences) Tracking (analyzing user behavior)   source : MDN
+How server/client sends cookie? Server to Browser The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.</description>
+    </item>
+    
+    <item>
+      <title>Exception Handling with PHP</title>
+      <link>https://cse031sust02.github.io/post/exception-handling-with-php/</link>
+      <pubDate>Mon, 10 Apr 2017 15:56:44 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/exception-handling-with-php/</guid>
+      <description>What is Exception Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.
+&amp;lsquo;errors&amp;rsquo; vs &amp;lsquo;exceptions&amp;rsquo; : Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)
+Exceptions in PHP Exceptions were introduced in PHP 5. It is used in an object oriented way.</description>
+    </item>
+    
+    <item>
+      <title>Accepting payments on your site using Stripe</title>
+      <link>https://cse031sust02.github.io/post/payment-using-stripe/</link>
+      <pubDate>Mon, 10 Apr 2017 15:27:28 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/payment-using-stripe/</guid>
+      <description>What is Stripe A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.
+Payment types Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.
+Accepting Payments with Cards Using card information with Stripe is a two-step process
+ Securely collect payment information using tokenization Use the payment information in a charge request or save it for later  Step 1.</description>
+    </item>
+    
+    <item>
+      <title>HTTP প্রোটোকল  এর বেসিক কাহিনী!</title>
+      <link>https://cse031sust02.github.io/post/protocol-basics/</link>
+      <pubDate>Mon, 10 Apr 2017 11:31:28 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
+      <description>TCP/IP TCP = Transmission Control Protocol
+IP = Internet Protocol
+TCP/IP হলো একটা Protocol Suite.
+TCP/IP = TCP + IP + more protocols ..
+WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে। HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য TCP কে use করে।
+HTTP (HyperText Transfer Protocol) HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।</description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://cse031sust02.github.io/post/json/</link>
+      <pubDate>Sun, 09 Apr 2017 18:15:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/json/</guid>
+      <description>What is JSON? JSON stands for JavaScript Object Notation.
+Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.
+JSON filenames use the extension .json.
+The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;
+Why use JSON? Because It is
+ lightweight data-interchange format. language independent &amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).</description>
+    </item>
+    
+    <item>
+      <title>Blogging with Hugo</title>
+      <link>https://cse031sust02.github.io/post/blogging-with-hugo/</link>
+      <pubDate>Sun, 09 Apr 2017 16:31:49 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/blogging-with-hugo/</guid>
+      <description>Install Hugo To install Hugo in your operating system, please visit the official guide. As I am using ubuntu, installing Hugo is as simple as sudo apt install hugo
+Getting Started Hugo allows us to scaffold a website quickly and easily.
+create new site $ hugo new site blog  Choose a theme Download a theme from https://themes.gohugo.io/ and put in &amp;lsquo;theme&amp;rsquo; folder
+for example, in order to install the casper theme,</description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>https://cse031sust02.github.io/post/hello-world/</link>
+      <pubDate>Sun, 09 Apr 2017 15:36:30 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/hello-world/</guid>
+      <description>Hello World. This is my first post.</description>
     </item>
     
   </channel>

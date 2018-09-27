@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cookie on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/cookie/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/cookie/</link>
     <description>Recent content in Cookie on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2017 11:11:22 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Introduction to Cookie</title>
@@ -15,69 +17,11 @@
       <pubDate>Tue, 11 Apr 2017 11:11:22 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/intro-to-cookie/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-a-http-cookie&#34;&gt;What is a HTTP Cookie?&lt;/h2&gt;
-
-&lt;p&gt;Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.&lt;/p&gt;
-
-&lt;p&gt;It is also called web cookie, Internet cookie, browser cookie or simply cookie.&lt;/p&gt;
-
-&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;Cookies are mainly used for these purposes&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Session management (user logins, shopping carts)&lt;/li&gt;
-&lt;li&gt;Personalization (user preferences)&lt;/li&gt;
-&lt;li&gt;Tracking (analyzing user behavior)
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;source : &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-server-client-sends-cookie&#34;&gt;How server/client sends cookie?&lt;/h3&gt;
-
-&lt;h4 id=&#34;server-to-browser&#34;&gt;Server to Browser&lt;/h4&gt;
-
-&lt;p&gt;The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
-Content-type: text/html
-Set-Cookie:&amp;quot;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;expires date time is in GMT.&lt;/li&gt;
-&lt;li&gt;if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &amp;lsquo;session cookies&amp;rsquo;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To set cookie using &lt;a href=&#34;http://php.net/manual/en/function.setcookie.php&#34;&gt;php&lt;/a&gt;,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;setcookie(&amp;quot;mycookie&amp;quot;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;browser-to-the-server&#34;&gt;Browser to the server&lt;/h4&gt;
-
-&lt;p&gt;The browser will send back all previously stored cookies to the server using the Cookie header.&lt;/p&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /my_page.html HTTP/1.1
-Host: www.example.com
-Cookie: MyCookieName=MyValue 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For more details, please check &lt;a href=&#34;http://www.cookiecentral.com/faq/#3.2&#34;&gt;http://www.cookiecentral.com/faq/#3.2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;secuirity&#34;&gt;Secuirity&lt;/h2&gt;
-
-&lt;p&gt;Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.&lt;/p&gt;
-</description>
+      <description>What is a HTTP Cookie? Cookies are small files that is sent from a website(server) and stored on users&amp;rsquo;s computer by a browser.
+It is also called web cookie, Internet cookie, browser cookie or simply cookie.
+Usage Cookies are mainly used for these purposes
+ Session management (user logins, shopping carts) Personalization (user preferences) Tracking (analyzing user behavior)   source : MDN
+How server/client sends cookie? Server to Browser The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.</description>
     </item>
     
   </channel>

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://cse031sust02.github.io/post/open-source-contribution-steps/</loc>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
+  </url>
   
   <url>
     <loc>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</loc>
@@ -37,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/getting-started-with-AWS/</loc>
+    <loc>https://cse031sust02.github.io/post/getting-started-with-aws/</loc>
     <lastmod>2017-09-12T16:05:22+06:00</lastmod>
   </url>
   
@@ -163,6 +169,11 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/cheatsheet/</loc>
     <lastmod>2017-04-11T11:11:48+06:00</lastmod>
     <priority>0</priority>
@@ -218,7 +229,13 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/git/</loc>
-    <lastmod>2017-04-11T11:11:48+06:00</lastmod>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/tags/github/</loc>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -277,6 +294,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/open-source/</loc>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/payment/</loc>
     <lastmod>2017-04-10T15:27:28+06:00</lastmod>
     <priority>0</priority>
@@ -296,7 +319,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2018-02-19T14:45:53+06:00</lastmod>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -325,7 +348,7 @@
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/tags/socket/index.io/</loc>
+    <loc>https://cse031sust02.github.io/tags/socket.io/</loc>
     <lastmod>2017-08-09T11:27:15+06:00</lastmod>
     <priority>0</priority>
   </url>
@@ -350,11 +373,12 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/</loc>
+    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/tags/tcp/ip/</loc>
+    <loc>https://cse031sust02.github.io/tags/tcp-ip/</loc>
     <lastmod>2017-04-10T11:31:28+06:00</lastmod>
     <priority>0</priority>
   </url>
@@ -373,7 +397,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2018-02-19T14:45:53+06:00</lastmod>
+    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
     <priority>0</priority>
   </url>
   

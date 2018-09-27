@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github Page on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/github-page/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/github-page/</link>
     <description>Recent content in Github Page on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Apr 2017 16:31:49 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Blogging with Hugo</title>
@@ -15,133 +17,10 @@
       <pubDate>Sun, 09 Apr 2017 16:31:49 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/blogging-with-hugo/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
-
-&lt;p&gt;To install Hugo in your operating system, please visit the &lt;a href=&#34;http://gohugo.io/overview/installing/&#34;&gt;official guide&lt;/a&gt;. As I am using ubuntu, installing Hugo is as simple as &lt;code&gt;sudo apt install hugo&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
-
-&lt;p&gt;Hugo allows us to scaffold a website quickly and easily.&lt;/p&gt;
-
-&lt;h3 id=&#34;create-new-site&#34;&gt;create new site&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new site blog
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;choose-a-theme&#34;&gt;Choose a theme&lt;/h3&gt;
-
-&lt;p&gt;Download a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; and put in &amp;lsquo;theme&amp;rsquo; folder&lt;/p&gt;
-
-&lt;p&gt;for example, in order to install the &lt;a href=&#34;http://themes.gohugo.io/theme/casper/&#34;&gt;casper&lt;/a&gt; theme,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ mkdir themes
-blog$ cd themes
-blog/themese$ git clone https://github.com/vjeantet/hugo-theme-casper casper
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;configuration&#34;&gt;configuration&lt;/h3&gt;
-
-&lt;p&gt;update your configuration in config.toml&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;languageCode = &amp;quot;en-us&amp;quot;
-title = &amp;quot;My New Hugo Site&amp;quot;
-baseURL = &amp;quot;http://example.org/&amp;quot;
-
-[params]
-description = &amp;quot;YOUR DESCRIPTION GOES HERE&amp;quot;
-author = &amp;quot;YOUR NAME&amp;quot;
-authorlocation = &amp;quot;YOUR LOCATION&amp;quot;
-authorwebsite = &amp;quot;YOUR SITE&amp;quot;
-bio= &amp;quot;YOUR BIO&amp;quot;
-
-[[menu.main]]
-name = &amp;quot;Blog&amp;quot;
-weight = -120
-identifier = &amp;quot;blog&amp;quot;
-url = &amp;quot;/&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;create-new-post&#34;&gt;create new post&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new post/hello-world.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now put content inside the newly created hello-world.md file,&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+++
-date = &amp;quot;2016-04-17T16:12:50+06:30&amp;quot;
-title = &amp;quot;Hello world&amp;quot;
-
-+++
-
-Hello World. This is my first post.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;serve-content&#34;&gt;Serve content&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -t YOURTHEME
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As i am using casper theme,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -t casper
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can view your blog at &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;for more details, pleaes visit the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;official doc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;deploy-to-github-page&#34;&gt;Deploy to Github page&lt;/h2&gt;
-
-&lt;p&gt;Full details on how to host your Hugo based website on github page can be found here &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog&#34;&gt;https://gohugo.io/tutorials/github-pages-blog&lt;/a&gt;. But if you are a newbie like me, it may will look much complex at first time. So, here are some easy steps&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;create-your-project-hugo-repository&#34;&gt;Create &lt;code&gt;(your-project)-hugo&lt;/code&gt; repository&lt;/h3&gt;
-
-&lt;p&gt;for example, create a new repository in Github named &lt;code&gt;hugo-blog&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, in your terminal, initialize a new git repo.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git init
-blog$ git remote add origin https://github.com/YOURUSERNAME/hugo-blog.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;create-your-username-github-io-repository&#34;&gt;Create &lt;code&gt;(your-username).github.io&lt;/code&gt; repository&lt;/h3&gt;
-
-&lt;p&gt;for example, in my case it is &lt;code&gt;cse031sust02.github.io&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;now, add a submodule with the public folder&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git submodule add https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git public
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;push-everything-to-github&#34;&gt;Push Everything to Github&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ git add .
-blog$ git commit -am &#39;push everything&#39;
-blog$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;deploy&#34;&gt;Deploy&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;blog$ hugo -t casper
-blog$ cd public
-blog$ git add .
-blog/public$ commit -m &amp;quot;deploy&amp;quot;
-blog/public$ push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then you should visit the blog at https://(YOUR-USERNAME).github.io. For example, my site is at &lt;a href=&#34;https://cse031sust02.github.io&#34;&gt;https://cse031sust02.github.io&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Install Hugo To install Hugo in your operating system, please visit the official guide. As I am using ubuntu, installing Hugo is as simple as sudo apt install hugo
+Getting Started Hugo allows us to scaffold a website quickly and easily.
+create new site $ hugo new site blog  Choose a theme Download a theme from https://themes.gohugo.io/ and put in &amp;lsquo;theme&amp;rsquo; folder
+for example, in order to install the casper theme,</description>
     </item>
     
   </channel>

@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/linux/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/linux/</link>
     <description>Recent content in Linux on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jun 2017 16:21:21 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Installing LEMP stack on ubuntu 14.04</title>
@@ -15,137 +17,10 @@
       <pubDate>Tue, 20 Jun 2017 16:21:21 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
-
-&lt;p&gt;LEMP stands for &lt;strong&gt;Linux&lt;/strong&gt;, &lt;strong&gt;nginx&lt;/strong&gt; (pronounced engine-x), &lt;strong&gt;MySQL&lt;/strong&gt;, and &lt;strong&gt;PHP&lt;/strong&gt;. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 : Update Apt-Get&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 : Install nginx&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 : Install PHP&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
-
-&lt;p&gt;First we need to add &lt;a href=&#34;https://launchpad.net/%7Eondrej/+archive/ubuntu/php&#34;&gt;PPA for PHP 7&lt;/a&gt; to system&amp;rsquo;s Apt sources using &lt;a href=&#34;http://manpages.ubuntu.com/manpages/trusty/man1/add-apt-repository.1.html&#34;&gt;add-apt-repository&lt;/a&gt; command and then install php and php-fpm packages (since nginx communicates with php-fpm).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.0 php7.0-fpm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We may also need to install modules like php7.0-mysql, php7.0-cli etc based on our application requirements.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install php7.0-mysql php7.0-cli php7.0-mbstring
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h4&gt;
-
-&lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
-
-&lt;p&gt;First we have to open the default Nginx server block configuration file&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/nginx/sites-available/default
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There is already a server block there, we will change that with the following code,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.php index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-    }
-
-    location ~ /\.ht {
-        deny all;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, We will restart the nginx server with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 : Install MySQL&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To verify if MySQL is installed properly, we can try to login&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should then see a Welcome Screen and we can start writing SQLs there&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 13
-Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-mysql&amp;gt; show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.00 sec)
-
-mysql&amp;gt; 
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>What is LEMP stack? LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.
+Setup So, We are going to setup LEMP stack on our ubuntu 14.04 machine.
+Step 1 : Update Apt-Get Update the package database. To know more about apt-get, please visit this page.
+sudo apt-get update  Step 2 : Install nginx Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.</description>
     </item>
     
     <item>
@@ -154,179 +29,9 @@ mysql&amp;gt;
       <pubDate>Wed, 17 May 2017 15:50:31 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/linux-cheatsheet/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-linux&#34;&gt;What is Linux?&lt;/h2&gt;
-
-&lt;p&gt;Just like Windows and Mac OS X, Linux is an operating system. It is an open source &lt;a href=&#34;https://en.wikipedia.org/wiki/Unix-like&#34;&gt;Unix-like&lt;/a&gt; operating system.&lt;/p&gt;
-
-&lt;p&gt;Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;developed&lt;/a&gt; by &lt;a href=&#34;https://github.com/torvalds&#34;&gt;Linus Torvalds&lt;/a&gt;. I think &lt;a href=&#34;https://unix.stackexchange.com/a/94407&#34;&gt;this answer&lt;/a&gt; explains it all.&lt;/p&gt;
-
-&lt;h2 id=&#34;linux-commands&#34;&gt;Linux Commands&lt;/h2&gt;
-
-&lt;p&gt;We should have some basic ideas of &lt;strong&gt;Shell&lt;/strong&gt;, &lt;strong&gt;Bash&lt;/strong&gt; and &lt;strong&gt;Terminal&lt;/strong&gt; first if we want to work with Linux Command Line.&lt;/p&gt;
-
-&lt;h3 id=&#34;shell&#34;&gt;Shell&lt;/h3&gt;
-
-&lt;p&gt;The shell is a program that takes commands from the keyboard and gives them to the operating system to perform. Linux operating system offers several shells such as : &lt;strong&gt;bash&lt;/strong&gt;, &lt;strong&gt;sh&lt;/strong&gt;, &lt;strong&gt;csh&lt;/strong&gt; etc. Although they have many commands in common, each type has unique features.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;bash&lt;/strong&gt; (Bourne Again SHell) : bash is the default shell for most &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_Linux_distributions&#34;&gt;Linux distributions&lt;/a&gt;. It is an enhanced version of the original Unix shell program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;terminal&#34;&gt;Terminal&lt;/h3&gt;
-
-&lt;p&gt;Terminal (or Terminal Emulator) is a GUI which lets us interact with the shell. So, we can type and execute commands from the Terminal Window. There are many different Terminals bundled with different &lt;a href=&#34;https://en.wikipedia.org/wiki/Desktop_environment&#34;&gt;Desktop Environments&lt;/a&gt;, such as: gnome-terminal (GNOME), konsole(KDE) etc.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;working-with-the-terminal&#34;&gt;Working With the Terminal&lt;/h2&gt;
-
-&lt;p&gt;We should easily find Terminal from the menu. The Terminal Window is like the image below&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34; alt=&#34;terminal&#34; title=&#34;Terminal&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;image source&lt;/strong&gt; : &lt;a href=&#34;http://linuxcommand.org/images/Screenshot-Terminal.png&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;So, when we open the Terminal, we see something like this :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;username&lt;/strong&gt; = the username of the current user.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;hostname&lt;/strong&gt; = name of the computer (to identify on the network).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;~&lt;/strong&gt; = name of the directory you’re in. &lt;em&gt;`~&amp;rsquo; refers to user&amp;rsquo;s home directory&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;$&lt;/strong&gt; =  It indicates the end of the shell prompt. if user is logged in as &lt;strong&gt;&lt;em&gt;root&lt;/em&gt;&lt;/strong&gt;, then it will show &amp;lsquo;#&amp;rsquo; sign instead of the &amp;lsquo;$&amp;rsquo; sign.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;root&#34;&gt;root&lt;/h4&gt;
-
-&lt;p&gt;In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Still you need to know how do i login as root, right? you should able logged in as root by using the &lt;code&gt;su -&lt;/code&gt; command on your terminal. If you getting any error message, your root account is likely locked. please check &lt;a href=&#34;http://www.wikihow.com/Become-Root-in-Linux&#34;&gt;this tutorial&lt;/a&gt; for more information.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;sudo&#34;&gt;sudo&lt;/h4&gt;
-
-&lt;p&gt;As we understand, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is &lt;code&gt;sudo&lt;/code&gt;. the &lt;code&gt;sudo&lt;/code&gt; command allows a permitted user to execute a command as the superuser or another user.&lt;/p&gt;
-
-&lt;p&gt;for example, if we enter &lt;code&gt;apt-get update&lt;/code&gt; command in our terminal, we will get the following error,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ apt-get update
-E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
-E: Unable to lock directory /var/lib/apt/lists/
-E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
-E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;but, when we use &lt;code&gt;sudo&lt;/code&gt; in that same command, it works perfectly,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;username@hostname:~$ sudo apt-get update
-[sudo] password for username: 
-Ign http://dl.google.com stable InRelease
-Hit http://packages.microsoft.com stable InRelease                             
-Hit http://dl.google.com stable Release.gpg  
-........
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
-
-&lt;p&gt;I think the best site to learn Linux Commands is &lt;a href=&#34;http://linuxcommand.org/lc3_lts0060.php&#34;&gt;linuxcommand.org&lt;/a&gt;. I am just trying to list some basics points.&lt;/p&gt;
-
-&lt;h4 id=&#34;type-of-commands&#34;&gt;Type of Commands&lt;/h4&gt;
-
-&lt;p&gt;There are four different kinds of Commands :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Executable program&lt;/strong&gt; : Any executable program. i.e : &lt;code&gt;vlc&lt;/code&gt;, &lt;code&gt;gedit&lt;/code&gt; etc&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shell Builtin&lt;/strong&gt; : Builtin commands provided by Bash. i.e : &lt;code&gt;cd&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt; etc&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shell function&lt;/strong&gt; : Functions of some commands.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alias&lt;/strong&gt; : alias of any command.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If we want to know the type of any command, we can use the &lt;code&gt;type&lt;/code&gt; command. i.e, &lt;code&gt;type cd&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;navigation&#34;&gt;Navigation&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;pwd (print working directory)&lt;/li&gt;
-&lt;li&gt;cd (change directory)&lt;/li&gt;
-&lt;li&gt;ls (list files and directories)
-
-&lt;ul&gt;
-&lt;li&gt;ls -l (in long format)&lt;/li&gt;
-&lt;li&gt;ls -a (including hidden files)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;manipulating-files&#34;&gt;Manipulating Files&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cp (copy files and directories)&lt;/li&gt;
-&lt;li&gt;mv (move or rename files and directories)&lt;/li&gt;
-&lt;li&gt;rm (remove files and directories)&lt;/li&gt;
-&lt;li&gt;mkdir (create directories)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We need to understand &lt;a href=&#34;http://linuxcommand.org/lc3_lts0050.php&#34;&gt;Wildcards&lt;/a&gt; feature in order to make powerful commands.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;current-user&#34;&gt;Current User&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;whoami (show user name of current user)&lt;/li&gt;
-&lt;li&gt;id (show user and group information)&lt;/li&gt;
-&lt;li&gt;groups (groups that current user belongs to)&lt;/li&gt;
-&lt;li&gt;passwd (changes password)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;permissions&#34;&gt;Permissions&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;chmod (modify file access rights)&lt;/li&gt;
-&lt;li&gt;chown (change file ownership)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We should understand &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions&#34;&gt;Linux Permissions&lt;/a&gt; clearly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;process&#34;&gt;Process&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ps (list of running processes)&lt;/li&gt;
-&lt;li&gt;kill (send a signal to processes)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We should have clear idea about Linux &lt;a href=&#34;http://www.tldp.org/LDP/tlk/kernel/processes.html&#34;&gt;Processes&lt;/a&gt; and &lt;a href=&#34;http://linuxcommand.org/lc3_lts0100.php&#34;&gt;Job Control&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;linux-filesystem&#34;&gt;Linux Filesystem&lt;/h2&gt;
-
-&lt;p&gt;It&amp;rsquo;s useful to understand Linux Filesystem. Below is a image to get a basic idea.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/T6T0sRW.png&#34; alt=&#34;File System&#34; title=&#34;File System&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Image Source&lt;/strong&gt; : &lt;a href=&#34;http://imgur.com/gallery/1DH0O&#34;&gt;http://imgur.com/gallery/1DH0O&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To know more details, we can visit this &lt;a href=&#34;http://www.pathname.com/fhs/pub/fhs-2.3.html&#34;&gt;Filesystem Hierarchy Standard&lt;/a&gt; page.&lt;/p&gt;
-
-&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://linuxcommand.org&#34;&gt;linuxcommand.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://sh.howtocode.com.bd&#34;&gt;howtocode.com.bd&lt;/a&gt; (Bengali)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/&#34;&gt;cheatsheetworld.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Linux? Just like Windows and Mac OS X, Linux is an operating system. It is an open source Unix-like operating system.
+Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was developed by Linus Torvalds. I think this answer explains it all.
+Linux Commands We should have some basic ideas of Shell, Bash and Terminal first if we want to work with Linux Command Line.</description>
     </item>
     
   </channel>

@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/php/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/php/</link>
     <description>Recent content in Php on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jun 2017 16:21:21 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Installing LEMP stack on ubuntu 14.04</title>
@@ -15,137 +17,10 @@
       <pubDate>Tue, 20 Jun 2017 16:21:21 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-lemp-stack&#34;&gt;What is LEMP stack?&lt;/h2&gt;
-
-&lt;p&gt;LEMP stands for &lt;strong&gt;Linux&lt;/strong&gt;, &lt;strong&gt;nginx&lt;/strong&gt; (pronounced engine-x), &lt;strong&gt;MySQL&lt;/strong&gt;, and &lt;strong&gt;PHP&lt;/strong&gt;. It is actually a variation of the LAMP stack where Apache is replaced with nginx.&lt;/p&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;So, We are going to setup LEMP stack on our ubuntu 14.04 machine.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-1-update-apt-get&#34;&gt;&lt;strong&gt;Step 1 : Update Apt-Get&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Update the package database. To know more about &lt;strong&gt;apt-get&lt;/strong&gt;, please visit this &lt;a href=&#34;https://itsfoss.com/apt-get-linux-guide&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;step-2-install-nginx&#34;&gt;&lt;strong&gt;Step 2 : Install nginx&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should now be able to access the default Nginx landing page from our browser by entering our server&amp;rsquo;s domain name or public IP address.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-install-php&#34;&gt;&lt;strong&gt;Step 3 : Install PHP&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now it&amp;rsquo;s time to install PHP. We will be using PHP 7 which is the latest version.&lt;/p&gt;
-
-&lt;p&gt;First we need to add &lt;a href=&#34;https://launchpad.net/%7Eondrej/+archive/ubuntu/php&#34;&gt;PPA for PHP 7&lt;/a&gt; to system&amp;rsquo;s Apt sources using &lt;a href=&#34;http://manpages.ubuntu.com/manpages/trusty/man1/add-apt-repository.1.html&#34;&gt;add-apt-repository&lt;/a&gt; command and then install php and php-fpm packages (since nginx communicates with php-fpm).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.0 php7.0-fpm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We may also need to install modules like php7.0-mysql, php7.0-cli etc based on our application requirements.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install php7.0-mysql php7.0-cli php7.0-mbstring
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To find out all available PHP7 modules, we can use the &lt;code&gt;sudo apt-cache search php7-*&lt;/code&gt; command.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;configure-nginx-to-use-the-php-processor&#34;&gt;Configure Nginx to Use the PHP Processor&lt;/h4&gt;
-
-&lt;p&gt;Now, we still need to tell nginx to use our PHP processor for serving php files.&lt;/p&gt;
-
-&lt;p&gt;First we have to open the default Nginx server block configuration file&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/nginx/sites-available/default
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There is already a server block there, we will change that with the following code,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.php index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-    }
-
-    location ~ /\.ht {
-        deny all;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, We will restart the nginx server with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can test if everything is working properly by creating a php file in &lt;code&gt;/var/www/html&lt;/code&gt; directory and then try to access that file from our browser.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-install-mysql&#34;&gt;&lt;strong&gt;Step 4 : Install MySQL&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Now we will install MySQL. we can do it very easily with the following command,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To verify if MySQL is installed properly, we can try to login&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should then see a Welcome Screen and we can start writing SQLs there&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 13
-Server version: 5.7.18-0ubuntu0.16.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-mysql&amp;gt; show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.00 sec)
-
-mysql&amp;gt; 
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>What is LEMP stack? LEMP stands for Linux, nginx (pronounced engine-x), MySQL, and PHP. It is actually a variation of the LAMP stack where Apache is replaced with nginx.
+Setup So, We are going to setup LEMP stack on our ubuntu 14.04 machine.
+Step 1 : Update Apt-Get Update the package database. To know more about apt-get, please visit this page.
+sudo apt-get update  Step 2 : Install nginx Installing nginx is very easy as Ubuntu provides nginx package in its default repositories.</description>
     </item>
     
     <item>
@@ -154,158 +29,9 @@ mysql&amp;gt;
       <pubDate>Sun, 23 Apr 2017 17:37:13 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/getting_started_with_composer/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-composer-https-getcomposer-org&#34;&gt;What is &lt;a href=&#34;https://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;source&lt;/strong&gt; : &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md&#34;&gt;getcomposer.org&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;why-use-composer&#34;&gt;Why Use Composer?&lt;/h3&gt;
-
-&lt;p&gt;Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say &lt;a href=&#34;https://github.com/PHPMailer/PHPMailer&#34;&gt;PHPMailer&lt;/a&gt;. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This kind of concept is not new, and in fact, Composer is strongly inspired by node&amp;rsquo;s &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; and ruby&amp;rsquo;s &lt;a href=&#34;http://bundler.io/&#34;&gt;bundler&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Another benefit of using composer is avoid the pain of autloading. As we have all many different packages in our project, we need the ability to autoload them into our project. For libraries that specify autoload information, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. We can simply include this file and start using the classes that those libraries provide without any extra work.&lt;/p&gt;
-
-&lt;p&gt;Composer is used in all modern PHP frameworks (Symfony, Laravel etc).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;using-composer&#34;&gt;Using Composer&lt;/h2&gt;
-
-&lt;p&gt;Now, let&amp;rsquo;s start using composer.&lt;/p&gt;
-
-&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;Composer requires PHP 5.3.2+ to run. To install composer on your system, just follow the &lt;a href=&#34;https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx&#34;&gt;official guide&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;some-useful-commands&#34;&gt;Some useful commands&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;list of available commands and description :&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;check current version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer -V
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;update to the latest version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer self-update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;get help for that command&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer help [command-name]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;check for common problems.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer diagnose
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;
-
-&lt;p&gt;To start using Composer in our project, all we need is a &lt;code&gt;composer.json&lt;/code&gt; file. This file describes the dependencies of our project (and may contain other metadata as well).&lt;/p&gt;
-
-&lt;p&gt;For example, if we want to use &lt;a href=&#34;https://packagist.org/packages/phpmailer/phpmailer&#34;&gt;PHPMailer&lt;/a&gt; and &lt;a href=&#34;https://packagist.org/packages/monolog/monolog&#34;&gt;Monolog&lt;/a&gt;, we can create the following composer.json file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;{
-    &amp;quot;require&amp;quot;: {
-        &amp;quot;phpmailer/phpmailer&amp;quot;: &amp;quot;~5.2&amp;quot;,
-        &amp;quot;monolog/monolog&amp;quot;: &amp;quot;*&amp;quot;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For more information about &lt;code&gt;composer.json&lt;/code&gt; file, please see the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup&#34;&gt;composer documentation&lt;/a&gt;. We also need to have a clear idea about &lt;a href=&#34;https://getcomposer.org/doc/articles/versions.md&#34;&gt;versions&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;install-dependencies&#34;&gt;Install Dependencies&lt;/h3&gt;
-
-&lt;p&gt;Then we can install the dependencies for our project simply with a &lt;code&gt;composer install&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;This will automatically download the dependencies into our project under the directory &amp;lsquo;vendor&amp;rsquo;.&lt;/p&gt;
-
-&lt;h3 id=&#34;start-using-those-dependencies&#34;&gt;Start using those Dependencies&lt;/h3&gt;
-
-&lt;p&gt;As stated before, Composer generates a &amp;lsquo;vendor/autoload.php&amp;rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;require __DIR__ . &#39;/vendor/autoload.php&#39;;
-
-$log = new Monolog\Logger(&#39;name&#39;);
-$log-&amp;gt;pushHandler(new Monolog\Handler\StreamHandler(&#39;app.log&#39;, Monolog\Logger::WARNING));
-$log-&amp;gt;addWarning(&#39;Foo&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;update-dependencies&#34;&gt;Update Dependencies&lt;/h3&gt;
-
-&lt;p&gt;Whenever we want to update our dependencies to latest versions, we can use this command &lt;code&gt;composer update&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;To update any single package only, the command will be : &lt;code&gt;composer update [package-name]&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;did-you-know&#34;&gt;Did you know?&lt;/h2&gt;
-
-&lt;p&gt;We have to understand few key facts while working with composer&lt;/p&gt;
-
-&lt;h3 id=&#34;composer-install-vs-composer-update&#34;&gt;# &amp;lsquo;composer install&amp;rsquo; vs &amp;lsquo;composer update&amp;rsquo;&lt;/h3&gt;
-
-&lt;p&gt;To get a clear idea what actually happens when we use the &lt;code&gt;composer install&lt;/code&gt; &amp;amp; &lt;code&gt;composer update&lt;/code&gt; commands, please visit the &lt;a href=&#34;https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies&#34;&gt;official doc&lt;/a&gt;. I am trying to write the thing in my own way.&lt;/p&gt;
-
-&lt;p&gt;if we run &lt;code&gt;composer install&lt;/code&gt; for the first time in our project,&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Composer will download the dependencies (with defined versions) listed in &lt;strong&gt;composer.json&lt;/strong&gt; file.&lt;/li&gt;
-&lt;li&gt;After installation is complete, Composer will create a file named &lt;strong&gt;composer.lock&lt;/strong&gt; to store information of all the downloaded packages and their versions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From next time, whenever we run &lt;code&gt;composer install&lt;/code&gt; command, Composer will download the dependencies listed on &lt;strong&gt;composer.json&lt;/strong&gt;, But it will use the &lt;em&gt;exact versions&lt;/em&gt; listed in &lt;strong&gt;composer.lock&lt;/strong&gt; file.&lt;/p&gt;
-
-&lt;p&gt;So, if we change the &lt;strong&gt;composer.json&lt;/strong&gt; file (ie, add new package, chage version of any package etc) and then try to run the command &lt;code&gt;composer install&lt;/code&gt; command, it will show an warning.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So in that case, we have to use &lt;code&gt;composer update&lt;/code&gt; command. &lt;code&gt;composer update&lt;/code&gt; command fetches the latest matching versions (according to our &lt;strong&gt;composer.json&lt;/strong&gt; file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.&lt;/p&gt;
-
-&lt;p&gt;So, we should only ever run &lt;code&gt;composer update&lt;/code&gt; to get the newest versions of our dependencies, not to install them.&lt;/p&gt;
-
-&lt;h3 id=&#34;install-with-composer-require-command&#34;&gt;# install with &lt;code&gt;composer require&lt;/code&gt; Command&lt;/h3&gt;
-
-&lt;p&gt;In our example, We could define and install dependencies with a single &lt;a href=&#34;https://getcomposer.org/doc/03-cli.md#require&#34;&gt;&lt;code&gt;composer require&lt;/code&gt;&lt;/a&gt; command.&lt;/p&gt;
-
-&lt;p&gt;for example :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;when we run &lt;code&gt;composer require&lt;/code&gt; command,&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it adds new packages to the composer.json (If composer.json file does&amp;rsquo;nt exists, it will create one)&lt;/li&gt;
-&lt;li&gt;the modified requirements will be installed or updated.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>What is Composer?  Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+source : getcomposer.org
+ Why Use Composer? Suppose, we want to use a mail library for our PHP project, let&amp;rsquo;s say PHPMailer. We would normally download the PHPMailer library and put it on our project&amp;rsquo;s folder. But, PHPMailer depends on some other libraries too.</description>
     </item>
     
     <item>
@@ -314,68 +40,9 @@ $log-&amp;gt;addWarning(&#39;Foo&#39;);
       <pubDate>Mon, 10 Apr 2017 15:56:44 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/exception-handling-with-php/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;what-is-exception&#34;&gt;What is Exception&lt;/h3&gt;
-
-&lt;p&gt;Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lsquo;errors&amp;rsquo; vs &amp;lsquo;exceptions&amp;rsquo; :&lt;/strong&gt;
-Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)&lt;/p&gt;
-
-&lt;h3 id=&#34;exceptions-in-php&#34;&gt;Exceptions in PHP&lt;/h3&gt;
-
-&lt;p&gt;Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.&lt;/p&gt;
-
-&lt;p&gt;Exceptions can be thrown and caught.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;one basic example,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;  try {
-    throw new Exception(&#39;An Exception&#39;);
-  } catch (Exception $e) {
-    echo $e-&amp;gt;getMessage();
-  }
-  //output : An Exception
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;throw&lt;/strong&gt; : The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;try&lt;/strong&gt; : If there is a &amp;lsquo;try&amp;rsquo; block, then there must be atleast one &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block. (Otherwise PHP Fatal Error)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;catch&lt;/strong&gt; : When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &amp;lsquo;catch&amp;rsquo; or &amp;lsquo;finally&amp;rsquo; block), there will be a PHP Fatal Error with an &amp;ldquo;Uncaught Exception &amp;hellip;&amp;rdquo; message (unless a handler has been defined with set_exception_handler method). Exceptions can also be thrown (or re-thrown) within a catch block.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;finally&lt;/strong&gt; : Introduces in PHP 5.5. &amp;lsquo;finally&amp;rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;example&#34;&gt;Example,&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;function inverse($number) {
-  if ($number==0) {
-      throw new Exception(&#39;Division by zero.&#39;);
-  }
-
-  return 1/$number;
-}
-
-try {
-    $random_number = rand(0,5);
-    $result = inverse($random_number);
-    // ONLY echo when no exception is thrown
-    echo $result;
-} catch (Exception $e) {
-    //ONLY echo if there is an exception
-    echo &amp;quot;Exception Message :&amp;quot;.$e-&amp;gt;getMessage();
-} finally {
-    // always echo
-    echo &amp;quot;I am always there&amp;quot;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - &lt;a href=&#34;http://php.net/manual/en/language.exceptions.php&#34;&gt;php.net&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>What is Exception Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.
+&amp;lsquo;errors&amp;rsquo; vs &amp;lsquo;exceptions&amp;rsquo; : Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)
+Exceptions in PHP Exceptions were introduced in PHP 5. It is used in an object oriented way.</description>
     </item>
     
   </channel>

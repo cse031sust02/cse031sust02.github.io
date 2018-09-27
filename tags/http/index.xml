@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Http on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/http/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/http/</link>
     <description>Recent content in Http on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Sep 2017 16:54:45 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Understanding the Nginx Server Block</title>
@@ -15,166 +17,9 @@
       <pubDate>Tue, 19 Sep 2017 16:54:45 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/understanding-nginx-server-block/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;p&gt;We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.&lt;/p&gt;
-
-&lt;p&gt;Here is a sample server block configuration :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-  listen       80;
-  server_name  _;
-
-  location / {
-    root   /usr/share/nginx/html;
-    index  index.html index.htm;
-  }
-
-  error_page  404              /404.html;
-  location = /404.html {
-    root   /usr/share/nginx/html;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can see different types of directives such as &lt;em&gt;listen&lt;/em&gt;, &lt;em&gt;root&lt;/em&gt;, &lt;em&gt;server_name&lt;/em&gt;, &lt;em&gt;location&lt;/em&gt; etc. Let&amp;rsquo;s explore those directives.&lt;/p&gt;
-
-&lt;h3 id=&#34;listen&#34;&gt;listen&lt;/h3&gt;
-
-&lt;p&gt;It specifies the IP address / port combination that this server block is designed to respond to.&lt;/p&gt;
-
-&lt;p&gt;We can specify &lt;strong&gt;only the port&lt;/strong&gt; or &lt;strong&gt;only the address&lt;/strong&gt; or &lt;strong&gt;Both&lt;/strong&gt;. If a port is omitted, the standard port(80) is used. And if an address is omitted, the server listens on all addresses. We can also use more than one listen directive, if needed. Here are some examples.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; port is omitted :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     127.0.0.1; 
-// will only respond to 127.0.0.1:80
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; address is omitted :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     50; 
-// will respond to port 50 of all addresses. i.e: 127.0.0.1:50, localhost:50 etc..
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; IP address / port combination :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;listen     192.168.25.19:60; 
-// will only respond to 192.168.25.19:60
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;server-name&#34;&gt;server_name&lt;/h3&gt;
-
-&lt;p&gt;Nginx also checks the &lt;code&gt;Host&lt;/code&gt; header of each request. When client makes a requests, Nginx checks if there is any server block that has a server_name directive defined with that &amp;ldquo;Host&amp;rdquo;. If there is a match, then that server block will responds to that request.&lt;/p&gt;
-
-&lt;p&gt;It will be easy to understand with an example.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s create two new host in the &lt;code&gt;/etc/hosts&lt;/code&gt; file :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;127.0.0.1   localhost
-127.0.0.1   www.site-one.com
-127.0.0.1   www.site-two.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, now both &lt;strong&gt;site-one&lt;/strong&gt; and &lt;strong&gt;site-two&lt;/strong&gt; points to same IP address. But we want to put one website in site-one.com and another website in site-two.com. Let&amp;rsquo;s create two different server blocks for those two hosts :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# First Website
-server {
-  listen       70;
-  server_name  www.site-one.com;
-  
-  root   /usr/share/nginx/html/site-one/;
-}
-
-# Second Website
-server {
-  listen       70;
-  server_name  www.site-two.com;
-
-  root   /usr/share/nginx/html/site-two/;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So now we can access the First Website with the address &lt;code&gt;www.site-one.com:70&lt;/code&gt;, and the Second Website with &lt;code&gt;www.site-one.com:70&lt;/code&gt;. Now, there is a Quiz. What website will open when we go to 127.0.0.1:70?&lt;/p&gt;
-
-&lt;h3 id=&#34;root&#34;&gt;root&lt;/h3&gt;
-
-&lt;p&gt;This directive specifies the directory where the website&amp;rsquo;s contents are located. As in our last example, the root directory was &lt;code&gt;/usr/share/nginx/site-two&lt;/code&gt; for the Second Website. So when user hits the URL &lt;em&gt;&lt;a href=&#34;http://www.site-two.com:70/mypage.html&#34;&gt;http://www.site-two.com:70/mypage.html&lt;/a&gt;&lt;/em&gt;, Nginx will load &lt;code&gt;mypage.html&lt;/code&gt; file from that directory.&lt;/p&gt;
-
-&lt;h3 id=&#34;location&#34;&gt;location&lt;/h3&gt;
-
-&lt;p&gt;location block is used to decide how to process the request URI (after the domain name or IP address/port). e.g. :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location / {
-  # configuration for processing all URIs that do not match other location blocks.
-} 
-
-location /one {
-  # configuration for processing URIs with &#39;/one&#39;
-}
-
-location /two {
-  # configuration for processing URIs with &#39;/two&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A location can be defined either by a prefix string or by a regular expression. The syntax is :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location [modifier] match {
-...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When there is no modifier, the match acts just as a prefix string for the incoming URL. e.g. :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location /two {
-  # configuration for processing URIs with &#39;/two&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And when any modifier exists, the way that Nginx matches the location will change.&lt;/p&gt;
-
-&lt;p&gt;Here is what different modifiers do :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;= &lt;em&gt;:&lt;/em&gt; request URI &lt;strong&gt;exactly&lt;/strong&gt; matches the location given.&lt;/li&gt;
-&lt;li&gt;~ &lt;em&gt;:&lt;/em&gt; case-sensitive regular expression match.&lt;/li&gt;
-&lt;li&gt;~* &lt;em&gt;:&lt;/em&gt; case-insensitive regular expression match.&lt;/li&gt;
-&lt;li&gt;^~ &lt;em&gt;:&lt;/em&gt; regular expression matching will not take place.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;How nginx performs the matching can be found on their &lt;a href=&#34;https://nginx.org/en/docs/http/ngx_http_core_module.html#location&#34;&gt;offcial doc&lt;/a&gt;. Here is an example for illustrate different types of modifiers :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location = / {
-    # Only matches the / query.
-}
-
-location / {
-    # URI beginning with &#39;/&#39;
-    # But the process continues searching
-}
-
-location /documents/ {
-    # URI beginning with /documents/ 
-    # But the process continues searching.
-}
-
-location ^~ /images/ {
-    # URI beginning with /images/
-    # The process stops searching
-}
-
-location ~* \.(gif|jpg|jpeg)$ {
-    # Matches requests ending in gif, jpg or jpeg. 
-    # URI beginning with /images/ are NOT handled here
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A more detailed overview of how nginx porcesses a request can be found &lt;a href=&#34;http://nginx.org/en/docs/http/request_processing.html&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>We can think of Server Blocks as specifications for individual web sites. Server blocks are the NGINX equivalent of Apache&amp;rsquo;s virtual hosts. So in order to host our websites on Nginx server, we need to understand the directives and settings that make up the server block.
+Here is a sample server block configuration :
+server { listen 80; server_name _; location / { root /usr/share/nginx/html; index index.html index.htm; } error_page 404 /404.</description>
     </item>
     
     <item>
@@ -183,121 +28,8 @@ location ~* \.(gif|jpg|jpeg)$ {
       <pubDate>Sun, 20 Aug 2017 17:18:51 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/getting-started-with-nginx/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-nginx&#34;&gt;What is Nginx&lt;/h2&gt;
-
-&lt;p&gt;Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=11m13s&#34;&gt;web server&lt;/a&gt; (like Apache) or as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Reverse_proxy&#34;&gt;reverse proxy&lt;/a&gt; (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.&lt;/p&gt;
-
-&lt;h4 id=&#34;why-use-nginx&#34;&gt;Why use Nginx?&lt;/h4&gt;
-
-&lt;p&gt;There are other web servers such as Apache, IIS etc. So what makes Nginx special? It is especially good at handling many concurrent connections as it was originally developed to handle &lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;C10k problem&lt;/a&gt; (serving 10000 concurrent connections). Nginx serves requests asynchronously while other web servers (such as Apache, IIS) creates new threads for every request received.&lt;/p&gt;
-
-&lt;p&gt;Nginx can also work alognside other web servers as a reverse proxy. Nginx not only serve HTTP &amp;amp; HTTPS protocol but also IMAP, POP3 and SMPT. We can use Nginx on servers with very limited hardware capabilites. A very detailed overview of why we should use Nginx can be found &lt;a href=&#34;https://youtu.be/XhgUClE5uC0?t=16m57s&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;There are various ways to download and install Nginx. Please follow &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/&#34;&gt;Official Guide&lt;/a&gt; to install Nginx on your system.&lt;/p&gt;
-
-&lt;p&gt;On Ubuntu, One should be able to install Nginx easily with the &lt;code&gt;apt-get install nginx&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;After installing Nginx, we should see the welcome page by entering the IP address (we can get that using &lt;code&gt;ifconfig&lt;/code&gt; command) of our server on a browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
-
-&lt;p&gt;For most linux distributions, all Nginx config files are located in &lt;code&gt;/etc/nginx&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;nginx.conf&lt;/strong&gt; is the main configuration file. It is Nginx&amp;rsquo;s main control point which reads in all of the other appropriate configuration files and combines them into a monolithic configuration file when the server starts.&lt;/p&gt;
-
-&lt;p&gt;The structure of that configuration file looks like below :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;user nobody; 
-
-events {
-   ...
-}
-
-http {
-    ...
-
-    server {
-    	...
-    }
-
-    server {
-    	...
-    }
-}
-
-stream {
-   ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As we can see, This file consists of &lt;strong&gt;directives&lt;/strong&gt; and their parameters. There are two kinds of directives.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;simple directives&lt;/strong&gt; : These directives end with a semicolon.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;user nobody;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;contexts&lt;/strong&gt; : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;To know more details about the configuration file and what is the purpose of the each directives, please visit the &lt;a href=&#34;https://www.nginx.com/resources/admin-guide/configuration-files/&#34;&gt;official guide&lt;/a&gt;. This &lt;a href=&#34;https://www.nginx.com/resources/wiki/start/topics/examples/full/&#34;&gt;example&lt;/a&gt; is helpful too.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;hosting-sites&#34;&gt;Hosting Sites&lt;/h3&gt;
-
-&lt;p&gt;For hosting websites, we need to understand how to set up virtual servers.&lt;/p&gt;
-
-&lt;p&gt;A virtual server is defined by a server directive in the http context.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    server {
-        # Server configuration
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And it is possible to add multiple virtual servers into the http context.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    server {
-        # Server One configuration
-    }
-
-    server {
-        # Server Two configuration
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, if we add 10 virtual servers, the &lt;strong&gt;nginx.conf&lt;/strong&gt; file will become very long and modifying that file will be a headache. This is why &lt;strong&gt;sites-enabled&lt;/strong&gt; folder exists. We can make seperate configuration file for each virtual host. And in the main nginx.conf file, we will include that folder :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http {
-    # Virtual Hosts
-    include /etc/nginx/sites-enabled/*;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, now every virtual servers listed in &lt;strong&gt;sites-enabled&lt;/strong&gt; folder will be public to visitors.&lt;/p&gt;
-
-&lt;p&gt;We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use &lt;strong&gt;sites-available&lt;/strong&gt; folder for storing all of our virtual host configurations(whether they&amp;rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&amp;rsquo;s configuration file to &lt;strong&gt;sites-enabled&lt;/strong&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;I have written another &lt;a href=&#34;https://cse031sust02.github.io/post/understanding-nginx-server-block/&#34;&gt;post&lt;/a&gt; where i tried to explain the server block in details.&lt;/p&gt;
-
-&lt;h2 id=&#34;reloading-nginx&#34;&gt;Reloading Nginx&lt;/h2&gt;
-
-&lt;p&gt;Whenever we change the configuration, we will need to restart nginx server for changes to take place.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>What is Nginx Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone web server (like Apache) or as a reverse proxy (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.
+Why use Nginx? There are other web servers such as Apache, IIS etc. So what makes Nginx special?</description>
     </item>
     
     <item>
@@ -306,136 +38,12 @@ stream {
       <pubDate>Mon, 10 Apr 2017 11:31:28 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/protocol-basics/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;tcp-ip&#34;&gt;TCP/IP&lt;/h2&gt;
-
-&lt;p&gt;TCP = Transmission Control Protocol&lt;/p&gt;
-
-&lt;p&gt;IP = Internet Protocol&lt;/p&gt;
-
-&lt;p&gt;TCP/IP হলো একটা Protocol Suite.&lt;/p&gt;
-
-&lt;p&gt;TCP/IP = TCP + IP + more protocols ..&lt;/p&gt;
-
-&lt;p&gt;WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
-HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;http-hypertext-transfer-protocol&#34;&gt;HTTP (HyperText Transfer Protocol)&lt;/h2&gt;
-
-&lt;p&gt;HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।&lt;/p&gt;
-
-&lt;p&gt;Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।&lt;/p&gt;
-
-&lt;h4 id=&#34;request-message-এর-format&#34;&gt;Request Message এর Format&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Request Line 
-Request Header fields
-Empty Line 
-An Optional Message Body
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET /index.html HTTP/1.1
-Host : www.example.com 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GET হলো Method&lt;/li&gt;
-&lt;li&gt;index.html হলো Requested File&lt;/li&gt;
-&lt;li&gt;Http/1.1 হলো HTTP Version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;response-message-এর-format&#34;&gt;Response Message এর Format&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Status  Line 
-Response Header Fields 
-Empty Line 
-An Optional Message Body
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.1 200 OK
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Header fields এর সম্পর্কে জানতে &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_HTTP_header_fields&#34;&gt;Wikipedia&lt;/a&gt; তে দেখুন&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;সুতরাং , আমরা যখন ব্রাউজার এ &lt;code&gt;www.example.com/blog.php&lt;/code&gt; লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;GET  /blog.php HTTP/1.1 
-Host : www.example.com 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;আর Server এর response টা এরকম,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;HTTP/1.0 200 OK
-Date: Tue, 26 May 2015 23:59:59 GMT
-Content-Type: text/html
-Content-Length: 1202 
-
-&amp;lt;html&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;h1&amp;gt;Blog&amp;lt;/h1&amp;gt;
-  content goes here 
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;http-methods-verbs&#34;&gt;HTTP Methods/Verbs&lt;/h3&gt;
-
-&lt;p&gt;Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
-common method গুলা হলো  GET, POST, PUT, DELETE .&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;status-codes&#34;&gt;Status Codes&lt;/h3&gt;
-
-&lt;p&gt;Informational : 1XX &amp;ndash; request recieve হইসে, process চলসে ।&lt;/p&gt;
-
-&lt;p&gt;Successfull : 2XX &amp;ndash; client এর request succssfully receive করা হইসে।&lt;/p&gt;
-
-&lt;p&gt;Redirectional : 3XX &amp;ndash; Client এর extra কিছু করতে হবে, mostly redirected ।&lt;/p&gt;
-
-&lt;p&gt;Client Error : 4XX &amp;ndash; Client কোন error করছে ।&lt;/p&gt;
-
-&lt;p&gt;Server Error : 5XX &amp;ndash; Server এ কোন সমস্যা আছে।&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;https-hypertext-transfer-protocol-secure&#34;&gt;HTTPS ( HyperText Transfer Protocol Secure )&lt;/h3&gt;
-
-&lt;p&gt;HTTPS = HTTP + SSL (Secure Socket Layer)&lt;/p&gt;
-
-&lt;p&gt;এটা HTTP এর উপরে একটা Layer (SSL/TLS Protocol) দিয়ে বানানো যেটা HTTP Communication এ কিছু secuirity যোগ করে।
-এটার মেইন উদ্দেশ্য হলো Wiretapping আর Man-in-the-middle-attack থেকে protect করা।&lt;/p&gt;
-
-&lt;p&gt;HTTPS এ Server ও Client গুলা  HTTP এর মতই communicate করে কিন্তু communication টা একটা Secure SSL connection এর উপরে হয় যেটা request এবং response টাকে encrypt/decrypt করে।&lt;/p&gt;
-
-&lt;p&gt;SSL টার mainly ২ টা কাজ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;এইটা verify করা যে Client টা Directly Server এর সাথেই communicate করতেছে &lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;এইটা ensure করা যে client ও  server এর মধ্যকার কথাবার্তা শুধু client ও server ই পরতে পারতেছে&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;HTTPS এ header, message সবই encrypted থাকে।&lt;/p&gt;
-
-&lt;p&gt;কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।&lt;/p&gt;
-</description>
+      <description>TCP/IP TCP = Transmission Control Protocol
+IP = Internet Protocol
+TCP/IP হলো একটা Protocol Suite.
+TCP/IP = TCP + IP + more protocols ..
+WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে। HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য TCP কে use করে।
+HTTP (HyperText Transfer Protocol) HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।</description>
     </item>
     
   </channel>

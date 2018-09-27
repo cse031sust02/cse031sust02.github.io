@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Json on cse031sust02</title>
-    <link>https://cse031sust02.github.io/tags/json/index.xml</link>
+    <link>https://cse031sust02.github.io/tags/json/</link>
     <description>Recent content in Json on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Talha Ibne Imam | Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
-    <atom:link href="https://cse031sust02.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Apr 2017 18:15:22 +0600</lastBuildDate>
+    
+	<atom:link href="https://cse031sust02.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>JSON</title>
@@ -15,140 +17,12 @@
       <pubDate>Sun, 09 Apr 2017 18:15:22 +0600</pubDate>
       
       <guid>https://cse031sust02.github.io/post/json/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h2&gt;
-
-&lt;p&gt;JSON stands for JavaScript Object Notation.&lt;/p&gt;
-
-&lt;p&gt;Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.&lt;/p&gt;
-
-&lt;p&gt;JSON filenames use the extension .json.&lt;/p&gt;
-
-&lt;p&gt;The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-json&#34;&gt;Why use JSON?&lt;/h3&gt;
-
-&lt;p&gt;Because It is&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lightweight data-interchange format.&lt;/li&gt;
-&lt;li&gt;language independent&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;areas-of-usage&#34;&gt;Areas of Usage?&lt;/h3&gt;
-
-&lt;p&gt;JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)&lt;/p&gt;
-
-&lt;h3 id=&#34;why-better-than-xml&#34;&gt;Why better than XML?&lt;/h3&gt;
-
-&lt;p&gt;JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;data-structure-rules&#34;&gt;Data Structure &amp;amp; Rules&lt;/h2&gt;
-
-&lt;p&gt;The JSON syntax is a subset of the JavaScript syntax.&lt;/p&gt;
-
-&lt;h3 id=&#34;data-structures&#34;&gt;Data Structures&lt;/h3&gt;
-
-&lt;p&gt;JSON is defined by two basic structures.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. A collection of name/value pairs.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Different programming languages support this data structure in different names. Like object, record, struct, dictionary, hash table, keyed list, or associative array.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt; &lt;code&gt;{ &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:  30, &amp;quot;member&amp;quot;: false, &amp;quot;spouse&amp;quot;: { &amp;quot;firstName&amp;quot;: &amp;quot;Mary&amp;quot;, &amp;quot;lastName&amp;quot;: &amp;quot;Smith&amp;quot;} }&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Ordered list of values.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In various programming languages, it is called as array, vector, list, or sequence.
-e.g., &lt;code&gt;[&amp;quot;John&amp;quot;,&amp;quot;Mary&amp;quot;,&amp;quot;Peter&amp;quot;,&amp;quot;Sally&amp;quot;]&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;syntax-rules&#34;&gt;Syntax Rules&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data is written as name/value pairs. &lt;code&gt;e.g., &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;&lt;/code&gt; (note : &lt;em&gt;JSON names require double quotes. JavaScript object names don&amp;rsquo;t.&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;Data is seperated by commas. e.g., &lt;code&gt;&amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Curly braces hold objects.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
-  &amp;quot;age&amp;quot;: 30,
-  &amp;quot;member&amp;quot;: false,
-  &amp;quot;spouse&amp;quot;: { //object
-    &amp;quot;first_name&amp;quot;: &amp;quot;Mary&amp;quot;,
-    &amp;quot;last_name&amp;quot;: &amp;quot;Smith&amp;quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Square brackets hold arrays.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;e.g.,&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-    &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;,
-    &amp;quot;age&amp;quot;:  30,
-    &amp;quot;member&amp;quot;: false,
-    &amp;quot;phoneNumbers&amp;quot;: [ //array
-        {
-            &amp;quot;description&amp;quot;: &amp;quot;home&amp;quot;,
-            &amp;quot;number&amp;quot;: &amp;quot;123-456-7890&amp;quot;
-        },
-        {
-            &amp;quot;description&amp;quot;: &amp;quot;mobile&amp;quot;,
-            &amp;quot;number&amp;quot;: &amp;quot;000-111-2222&amp;quot;
-        }
-    ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;data-types&#34;&gt;Data Types&lt;/h3&gt;
-
-&lt;p&gt;Values must be one of the following data types.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;a string&lt;/strong&gt; : sequence of zero or more Unicode characters. e.g., &lt;code&gt;{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot; }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;a number&lt;/strong&gt; : Integer, Fraction and Exponent. e.g., &lt;code&gt;{ &amp;quot;age&amp;quot;:30 }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;an object (JSON object)&lt;/strong&gt; : starts and ends with &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo;. a number of string value pairs can reside between. Keys must be strings, and values must be a valid JSON data type.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-    &amp;quot;employee&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;John&amp;quot;, &amp;quot;age&amp;quot;:30, &amp;quot;city&amp;quot;:&amp;quot;New York&amp;quot; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;an array&lt;/strong&gt; : starts and ends with &amp;lsquo;[&amp;rsquo; and &amp;lsquo;]&amp;rsquo;. a number of values can reside between.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;e.g.,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-    &amp;quot;employees&amp;quot;:[ &amp;quot;John&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;Peter&amp;quot; ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;a boolean&lt;/strong&gt; : true or false. (TRUE or FALSE is not acceptable!). e.g., &lt;code&gt;{ &amp;quot;accept&amp;quot;:true }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;null&lt;/strong&gt; : null (NULL is not acceptable). e.g., &lt;code&gt;{ &amp;quot;coupon&amp;quot;:null }&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;note : JSON values cannot be a function, a date or undefined. (In JavaScript you can have these values)&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>What is JSON? JSON stands for JavaScript Object Notation.
+Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.
+JSON filenames use the extension .json.
+The official internet media type for JSON is &amp;lsquo;application/json&amp;rsquo;
+Why use JSON? Because It is
+ lightweight data-interchange format. language independent &amp;ldquo;self-describing&amp;rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).</description>
     </item>
     
   </channel>
