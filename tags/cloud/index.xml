@@ -6,10 +6,19 @@
     <description>Recent content in Cloud on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 16:05:22 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 14:29:14 +0600</lastBuildDate>
     
 	<atom:link href="https://cse031sust02.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws Iam in Plain English</title>
+      <link>https://cse031sust02.github.io/post/aws-iam-in-plain-english/</link>
+      <pubDate>Thu, 29 Aug 2019 14:29:14 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/aws-iam-in-plain-english/</guid>
+      <description>Intro AWS Identity and Access Management (IAM) is a web service that helps us securely control access to AWS resources. We can control authentication (who can signed in) and authorization (who has permissions to use resources) using IAM. When we create an AWS account, we get a root user which has complete access to all AWS services and resources in the account. It is recommended that we do not use the root account regularly, instead we should create IAM users to access the AWS services and resources frequently.</description>
+    </item>
     
     <item>
       <title>Getting started with AWS</title>
