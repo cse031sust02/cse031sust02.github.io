@@ -149,7 +149,7 @@ As the name (AWS Identity and Access Management) says, there is Identities and t
 <p>When creating an IAM user, We can select the type of access the user will have. We can select programmatic access, access to the AWS Management Console, or both. After new users are created, they can’t access anything in our account until we give them permission. We give permissions to a user by creating an identity-based policy, which is a policy that is attached to the user or a group to which the user belongs.</p>
 
 <blockquote>
-<p>For creating an IAM user with full admin access, we can create an IAM user and attach the “AdministratorAccess” policy to that user.</p>
+<p>For creating an IAM user with full admin access, Just create an IAM user and attach the “AdministratorAccess” policy to that user.</p>
 </blockquote>
 
 <h3 id="groups">Groups</h3>
@@ -172,13 +172,17 @@ As the name (AWS Identity and Access Management) says, there is Identities and t
 
 <p>A policy is an object that defines permissions. Most policies are stored as JSON documents. Policies are attached to IAM identities or AWS resources. AWS evaluates these policies when a principal entity (user or role) makes a request. Permissions in the policies determine whether the request is allowed or denied. There are different types fo policies. Two importat types are Identity-based policies &amp; Resource-based policies.</p>
 
-<h3 id="identity-based-policies">Identity-based policies :</h3>
+<h4 id="identity-based-policies">Identity-based policies :</h4>
 
 <p>Identity-based policies are attached to an IAM identity (user, group or role). These policies defines what actions the identity can perform, on which resources, and under what conditions.</p>
 
-<h4 id="managed-policies-these-are-standalone-policies-that-we-can-attach-to-multiple-users-groups-and-roles">Managed Policies : These are standalone policies that we can attach to multiple users, groups and roles.</h4>
+<h5 id="managed-policies">Managed Policies :</h5>
 
-<p>Inline Policies : We can create inline policies that are embedded directly into a single user, group or role.</p>
+<p>These are standalone policies that we can attach to multiple users, groups and roles.</p>
+
+<h5 id="inline-policies">Inline Policies :</h5>
+
+<p>We can create inline policies that are embedded directly into a single user, group or role.</p>
 
 <h4 id="resource-based-policies">Resource-based policies :</h4>
 
@@ -186,8 +190,10 @@ As the name (AWS Identity and Access Management) says, there is Identities and t
 
 <h2 id="references">References</h2>
 
-<p><a href="https://aws.amazon.com/iam/faqs/">https://aws.amazon.com/iam/faqs/</a>
-<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html</a></p>
+<ul>
+<li><a href="https://aws.amazon.com/iam/faqs/">https://aws.amazon.com/iam/faqs/</a></li>
+<li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html</a></li>
+</ul>
 
 
 		
