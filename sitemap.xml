@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</loc>
+    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/aws-iam-in-plain-english/</loc>
     <lastmod>2019-08-29T14:29:14+06:00</lastmod>
   </url>
@@ -35,11 +40,6 @@
   <url>
     <loc>https://cse031sust02.github.io/post/use-case-diagram/</loc>
     <lastmod>2017-11-16T18:37:12+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</loc>
-    <lastmod>2017-10-12T16:57:51+06:00</lastmod>
   </url>
   
   <url>
@@ -292,6 +292,12 @@
   </url>
   
   <url>
+    <loc>https://cse031sust02.github.io/tags/mongodb/</loc>
+    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/tags/nginx/</loc>
     <lastmod>2017-09-19T16:54:45+06:00</lastmod>
     <priority>0</priority>
@@ -335,7 +341,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2019-08-29T14:29:14+06:00</lastmod>
+    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -413,7 +419,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2019-08-29T14:29:14+06:00</lastmod>
+    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
     <priority>0</priority>
   </url>
   

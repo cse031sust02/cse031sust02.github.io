@@ -6,10 +6,20 @@
     <description>Recent content on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Aug 2019 14:29:14 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 01:29:14 +0600</lastBuildDate>
     
 	<atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backup and Restore MongoDB Databases</title>
+      <link>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</link>
+      <pubDate>Thu, 05 Sep 2019 01:29:14 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</guid>
+      <description>MongoDB comes with two commands that allow us to quickly backupand restore to our running MongoDB instances. In order to take backups, we can use the mongodump command which creates BSON dump files. And to restore those dump, we can use the mongorestore command.
+Taking Backups - all databases $ mongodump  - single database $ mongodump -db &amp;lt;DATABASE&amp;gt;  - single collection $ mongodump -db &amp;lt;DATABASE&amp;gt; --collection &amp;lt;COLLECTION&amp;gt;  - from remote host $ mongodump --host &amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt; --username &amp;lt;USERNAME&amp;gt; --password &amp;lt;USERNAME&amp;gt; -db &amp;lt;DATABASE&amp;gt;   we can also use -d instead of -db.</description>
+    </item>
     
     <item>
       <title>AWS IAM in Plain English</title>
@@ -81,16 +91,6 @@ Firebase Cloud Messaging (FCM) Firebase Cloud Messaging(FCM) (Formerly known as 
       <guid>https://cse031sust02.github.io/post/use-case-diagram/</guid>
       <description>Intro Use Case Diagrams are used to visualize different types of users in a system and how those users interact with the system. It provides a higher-level view of the system.
 A single use case diagram captures a particular functionality of a system. So to model the entire system, a few major use cases are used. A Use case diagram should not go deep into the details of use cases rather it should be easily understood by any non-technical person.</description>
-    </item>
-    
-    <item>
-      <title>Backup and Restore data in MongoDB</title>
-      <link>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</link>
-      <pubDate>Thu, 12 Oct 2017 16:57:51 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</guid>
-      <description>MongoDB comes with two commands that allow us to quickly backupand restore to our running MongoDB instances. In order to take backups, we can use the mongodump command which creates BSON dump files. And to restore those dump, we can use the mongorestore command.
-Taking Backups - all databases $ mongodump  - single database $ mongodump -db &amp;lt;DATABASE&amp;gt;  - single collection $ mongodump -db &amp;lt;DATABASE&amp;gt; --collection &amp;lt;COLLECTION&amp;gt;  - from remote host $ mongodump --host &amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt; --username &amp;lt;USERNAME&amp;gt; --password &amp;lt;USERNAME&amp;gt; -db &amp;lt;DATABASE&amp;gt;   we can also use -d instead of -db.</description>
     </item>
     
     <item>
