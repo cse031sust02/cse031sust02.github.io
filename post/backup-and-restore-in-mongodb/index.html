@@ -141,21 +141,21 @@
 
 <h4 id="single-database">- single database</h4>
 
-<pre><code>$ mongodump -db &lt;DATABASE&gt;
+<pre><code>$ mongodump --db &lt;DATABASE&gt;
 </code></pre>
 
 <h4 id="single-collection">- single collection</h4>
 
-<pre><code>$ mongodump -db &lt;DATABASE&gt; --collection &lt;COLLECTION&gt;
+<pre><code>$ mongodump --db &lt;DATABASE&gt; --collection &lt;COLLECTION&gt;
 </code></pre>
 
 <h4 id="from-remote-host">- from remote host</h4>
 
-<pre><code>$ mongodump --host &lt;HOST&gt;:&lt;PORT&gt; --username &lt;USERNAME&gt; --password &lt;USERNAME&gt; -db &lt;DATABASE&gt;
+<pre><code>$ mongodump --host &lt;HOST&gt;:&lt;PORT&gt; --username &lt;USERNAME&gt; --password &lt;USERNAME&gt; --db &lt;DATABASE&gt;
 </code></pre>
 
 <blockquote>
-<p>we can also use <code>-d</code> instead of <code>-db</code>. and <code>-c</code> instead of <code>-collection</code></p>
+<p>we can also use <code>-d</code> instead of <code>--db</code>, and <code>-c</code> instead of <code>--collection</code></p>
 </blockquote>
 
 <p>src : <a href="https://docs.mongodb.com/manual/reference/program/mongodump">https://docs.mongodb.com/manual/reference/program/mongodump</a></p>
@@ -180,7 +180,12 @@
 
 <h4 id="single-collection-1">- single collection</h4>
 
-<pre><code>$ mongorestore -db &lt;NEW_DATABASE&gt; --collection &lt;NEW_COLLECTION&gt; &lt;COLLECTION.bson&gt;
+<pre><code>$ mongorestore -d &lt;NEW_DATABASE&gt; -c &lt;NEW_COLLECTION&gt; &lt;COLLECTION.bson&gt;
+</code></pre>
+
+<p>To remote host,</p>
+
+<pre><code>$ mongorestore --uri=&quot;&lt;DB_URI&gt;&quot; -d &lt;NEW_DATABASE&gt; -c &lt;NEW_COLLECTION&gt; &lt;COLLECTION.bson&gt;
 </code></pre>
 
 <h3 id="note">Note :</h3>

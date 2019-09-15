@@ -142,7 +142,7 @@
 
 		<div class="excerpt">
 			MongoDB comes with two commands that allow us to quickly backupand restore to our running MongoDB instances. In order to take backups, we can use the mongodump command which creates BSON dump files. And to restore those dump, we can use the mongorestore command.
-Taking Backups - all databases $ mongodump  - single database $ mongodump -db &lt;DATABASE&gt;  - single collection $ mongodump -db &lt;DATABASE&gt; --collection &lt;COLLECTION&gt;  - from remote host $ mongodump --host &lt;HOST&gt;:&lt;PORT&gt; --username &lt;USERNAME&gt; --password &lt;USERNAME&gt; -db &lt;DATABASE&gt;   we can also use -d instead of -db.
+Taking Backups - all databases $ mongodump  - single database $ mongodump --db &lt;DATABASE&gt;  - single collection $ mongodump --db &lt;DATABASE&gt; --collection &lt;COLLECTION&gt;  - from remote host $ mongodump --host &lt;HOST&gt;:&lt;PORT&gt; --username &lt;USERNAME&gt; --password &lt;USERNAME&gt; --db &lt;DATABASE&gt;   we can also use -d instead of --db, and -c instead of --collection
 			
 			<br>
 			<a class="button" href="https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/">
