@@ -115,7 +115,7 @@
 		<header>
 			<h1 class="title">Backup and Restore MongoDB Databases</h1>
 			<p class="meta">
-    September 5, 2019 &middot; 1 minute read
+    September 5, 2019 &middot; 2 minute read
 
     
         &middot; Tags:
@@ -153,6 +153,15 @@
 
 <pre><code>$ mongodump --host &lt;HOST&gt;:&lt;PORT&gt; --username &lt;USERNAME&gt; --password &lt;USERNAME&gt; --db &lt;DATABASE&gt;
 </code></pre>
+
+<h3 id="using-uri">- using uri</h3>
+
+<pre><code>$ mongodump --uri=&quot;&lt;CONNECTION STRING&gt;&quot;
+</code></pre>
+
+<ul>
+<li>if your local mongodump is lower version than remote mongodb and the above command does not work, try adding the  <code>--forceTableScan</code> option</li>
+</ul>
 
 <blockquote>
 <p>we can also use <code>-d</code> instead of <code>--db</code>, and <code>-c</code> instead of <code>--collection</code></p>
