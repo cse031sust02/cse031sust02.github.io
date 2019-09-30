@@ -18,7 +18,7 @@
       
       <guid>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</guid>
       <description>MongoDB comes with two commands that allow us to quickly backupand restore to our running MongoDB instances. In order to take backups, we can use the mongodump command which creates BSON dump files. And to restore those dump, we can use the mongorestore command.
-Taking Backups - all databases $ mongodump  - single database $ mongodump --db &amp;lt;DATABASE&amp;gt;  - single collection $ mongodump --db &amp;lt;DATABASE&amp;gt; --collection &amp;lt;COLLECTION&amp;gt;  - from remote host $ mongodump --host &amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt; --username &amp;lt;USERNAME&amp;gt; --password &amp;lt;USERNAME&amp;gt; --db &amp;lt;DATABASE&amp;gt;  - using uri $ mongodump --uri=&amp;quot;&amp;lt;CONNECTION STRING&amp;gt;&amp;quot;   if your local mongodump is lower version than remote mongodb and the above command does not work, try adding the --forceTableScan option   we can also use -d instead of --db, and -c instead of --collection</description>
+Taking Backups - all databases $ mongodump  - single database $ mongodump --db &amp;lt;DATABASE&amp;gt;  - single collection $ mongodump --db &amp;lt;DATABASE&amp;gt; --collection &amp;lt;COLLECTION&amp;gt;  - from remote host $ mongodump --host &amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt; --username &amp;lt;USERNAME&amp;gt; --password &amp;lt;USERNAME&amp;gt; --db &amp;lt;DATABASE&amp;gt;  - using uri $ mongodump --uri=&amp;quot;&amp;lt;CONNECTION STRING&amp;gt;&amp;quot;  *if your local mongodump is having lower version than remote mongodb and the above command does not work, try adding the --forceTableScan option.</description>
     </item>
     
     <item>
