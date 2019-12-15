@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cse031sust02.github.io/post/getting-started-with-mongodb/</loc>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</loc>
     <lastmod>2019-09-05T01:29:14+06:00</lastmod>
   </url>
@@ -221,7 +226,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/database/</loc>
-    <lastmod>2018-02-19T14:45:53+06:00</lastmod>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -293,7 +298,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/mongodb/</loc>
-    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -311,7 +316,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/tags/nosql/</loc>
-    <lastmod>2017-04-22T16:13:16+06:00</lastmod>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -341,7 +346,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -419,7 +424,7 @@
   
   <url>
     <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2019-09-05T01:29:14+06:00</lastmod>
+    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
     <priority>0</priority>
   </url>
   

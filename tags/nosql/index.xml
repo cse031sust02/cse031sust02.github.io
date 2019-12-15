@@ -6,10 +6,21 @@
     <description>Recent content in Nosql on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Apr 2017 16:13:16 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 10:05:22 +0600</lastBuildDate>
     
 	<atom:link href="https://cse031sust02.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My notes about the basics of MongoDB</title>
+      <link>https://cse031sust02.github.io/post/getting-started-with-mongodb/</link>
+      <pubDate>Tue, 10 Dec 2019 10:05:22 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/getting-started-with-mongodb/</guid>
+      <description>Intro MongoDB is a document-oriented NoSQL database. It is one of the most powerful NoSQL systems and databases around, today.
+Key Features : Here is the key features of MongoDB :
+ MongoDB is free to use. MongoDB stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time The document model maps to the objects in your application code, making data easy to work with Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use  src : MongoDB Website</description>
+    </item>
     
     <item>
       <title>So you want to start using Redis?</title>
