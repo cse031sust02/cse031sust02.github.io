@@ -6,10 +6,22 @@
     <description>Recent content on cse031sust02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 10:05:22 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2020 01:29:14 +0600</lastBuildDate>
     
 	<atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backup and Restore in PostgreSQL</title>
+      <link>https://cse031sust02.github.io/post/backup-and-restore-in-postgresql/</link>
+      <pubDate>Thu, 21 May 2020 01:29:14 +0600</pubDate>
+      
+      <guid>https://cse031sust02.github.io/post/backup-and-restore-in-postgresql/</guid>
+      <description>PostgreSQL is a object-relational database management system. It is most advanced open soruce relational database.
+Taking backups using pg_dump : pg_dump is a utility for backing up a PostgreSQL database.
+We can extract the database in script file or archive file formats :
+ Script Files : These are plain-text files containing the SQL commands. We can restore data from these script files using psql. Archive Files : The archive files allow pg_restore to rebuild the database.</description>
+    </item>
     
     <item>
       <title>My notes about the basics of MongoDB</title>
