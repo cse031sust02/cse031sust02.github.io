@@ -115,7 +115,7 @@
 		<header>
 			<h1 class="title">My notes about the basics of MongoDB</h1>
 			<p class="meta">
-    December 10, 2019 &middot; 4 minute read
+    December 10, 2019 &middot; 5 minute read
 
     
         &middot; Tags:
@@ -167,16 +167,52 @@ Collections do not enforce a schema. Documents within a collection can have diff
 
 <h4 id="document">document :</h4>
 
-<p>Document is the basic unit of storage data. They are more oftenly referred to as Objects. They are analogous to JSON objects but exist in the database in BSON format.</p>
+<p>Document is the basic unit of storage data. They are more oftenly referred to as Objects. They are analogous to JSON objects but exist in the database in <a href="https://www.mongodb.com/json-and-bson">BSON</a> format.</p>
 
 <p><img src="https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg" alt="" /></p>
 
 <p>src : <a href="https://docs.mongodb.com/manual/core/document/">MongoDB Docs</a></p>
 
-<ul>
-<li>field : A name-value pair in a document. It is the analogous to column in RDBMS tables.</li>
-<li>_id : _id is used to represent unique documents in a collection. It is a mandatory field for every Document. If we create a new document without and _id field, MongoDB will automatically create the field.</li>
-</ul>
+<p>MongoDB supports a range of scalar value types such as : string, null, integer, double, and decimal, as well as document values, and array values.</p>
+
+<p>Example :</p>
+
+<pre><code class="language-json">{
+  &quot;_id&quot;: &quot;5553a98ce4b02cf7150dee1f&quot;,
+  &quot;st&quot;: &quot;x+50600-002700&quot;, 
+  &quot;position&quot;: {
+    &quot;type&quot;: &quot;Point&quot;,
+    &quot;coordinates&quot;: [
+      -2.7,
+      50.6
+    ]
+  },
+  &quot;elevation&quot;: 9999,
+  &quot;callLetters&quot;: &quot;BUOY&quot;,
+  &quot;qualityControlProcess&quot;: &quot;V020&quot;,
+  &quot;dataSource&quot;: &quot;4&quot;,
+  &quot;type&quot;: &quot;FM-13&quot;,
+  &quot;airTemperature&quot;: {
+    &quot;value&quot;: 999.9,
+    &quot;quality&quot;: &quot;9&quot;
+  },
+  &quot;wind&quot;: {
+    &quot;direction&quot;: {
+      &quot;angle&quot;: 999,
+      &quot;quality&quot;: &quot;9&quot;
+    },
+    &quot;type&quot;: &quot;9&quot;,
+    &quot;speed&quot;: {
+      &quot;rate&quot;: 999.9,
+      &quot;quality&quot;: &quot;9&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>src : <a href="https://www.youtube.com/watch?time_continue=110&amp;v=KM_GMvAinG8&amp;feature=emb_title">MongoDB University Course : MongoDB Basics</a></p>
+
+<p><strong>_id</strong> : All documents in MongoDB must contain this _id field. This is the unique identifier for a given document within a collection. If we don&rsquo;t supply the value, MongoDB will automatically create one for us.</p>
 
 <h4 id="cursor">cursor :</h4>
 
@@ -209,6 +245,30 @@ MongoDB server version: 3.6.3
 Server has startup warnings: 
 2019-12-15T15:41:29.671+0600 I STORAGE  [initandlisten] 
 ....
+</code></pre>
+
+<p>Here is some basic commands with examples in mongo shell</p>
+
+<pre><code>&gt; show dbs
+admin             0.000GB
+config            0.000GB
+blog              0.000GB
+&gt; use blog
+switched to db blog
+&gt; show collections
+articles
+users
+tags
+comments
+&gt; db
+blog
+&gt; db.users.find()
+[{&quot;_id&quot;:ObjectId(&quot;5d4910d0aac3dee44cfb98ec&quot;),&quot;name&quot;:&quot;Talha Ibne Imam&quot;,&quot;username&quot;:&quot;talha&quot;,&quot;email&quot;:&quot;talha@demo.com&quot;,},{&quot;_id&quot;:ObjectId(&quot;5de4ea9caaeb9cb649ca6dc2&quot;),&quot;name&quot;:&quot;Ruhul Amin&quot;,&quot;username&quot;:&quot;sujon&quot;,&quot;email&quot;:&quot;sujon@demo.com&quot;,}]
+</code></pre>
+
+<p><strong>Note</strong> : The find() method returns a cursor to the results. We can use several cursor methods (i.e: limit, skip) to call on the returned cursor and get our desired results. i.e.:</p>
+
+<pre><code>&gt; db.users.find({&quot;name&quot;:&quot;Talha&quot;}, {&quot;name&quot;:1, &quot;email&quot;:1}).limit(2)
 </code></pre>
 
 <h2 id="security">Security:</h2>
@@ -301,7 +361,7 @@ Server has startup warnings:
     </div>
 
     <footer class="site-footer">
-	<p class="text">&copy; 2019 - Talha Ibne Imam | Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2020 - Talha Ibne Imam | Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 
