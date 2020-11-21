@@ -1,448 +1,188 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cse031sust02.github.io/post/backup-and-restore-in-postgresql/</loc>
+    <loc>https://cse031sust02.github.io/</loc>
+    <lastmod>2020-11-21T12:09:42+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/new-theme/</loc>
+    <lastmod>2020-11-21T12:09:42+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/</loc>
+    <lastmod>2020-11-21T12:09:42+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/a-journey-into-docker/</loc>
+    <lastmod>2020-11-01T01:29:14+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/customizing-authentication-in-django/</loc>
+    <lastmod>2020-10-21T06:05:22+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/backup-and-restore-in-postgresql/</loc>
     <lastmod>2020-05-21T01:29:14+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/getting-started-with-mongodb/</loc>
+    <loc>https://cse031sust02.github.io/posts/getting-started-with-mongodb/</loc>
     <lastmod>2019-12-10T10:05:22+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/backup-and-restore-in-mongodb/</loc>
+    <loc>https://cse031sust02.github.io/posts/backup-and-restore-in-mongodb/</loc>
     <lastmod>2019-09-05T01:29:14+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/aws-iam-in-plain-english/</loc>
+    <loc>https://cse031sust02.github.io/posts/aws-iam-in-plain-english/</loc>
     <lastmod>2019-08-29T14:29:14+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/open-source-contribution-steps/</loc>
+    <loc>https://cse031sust02.github.io/posts/open-source-contribution-steps/</loc>
     <lastmod>2018-09-27T11:36:51+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/configure-phpmyadmin-to-access-multiple-servers/</loc>
+    <loc>https://cse031sust02.github.io/posts/configure-phpmyadmin-to-access-multiple-servers/</loc>
     <lastmod>2018-02-19T14:45:53+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/database-normalization/</loc>
+    <loc>https://cse031sust02.github.io/posts/database-normalization/</loc>
     <lastmod>2018-01-30T11:50:23+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/send-notifications-using-firebase/</loc>
+    <loc>https://cse031sust02.github.io/posts/send-notifications-using-firebase/</loc>
     <lastmod>2018-01-23T11:21:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/about/</loc>
-    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/post/use-case-diagram/</loc>
+    <loc>https://cse031sust02.github.io/posts/use-case-diagram/</loc>
     <lastmod>2017-11-16T18:37:12+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/document-your-api-with-swagger/</loc>
+    <loc>https://cse031sust02.github.io/posts/document-your-api-with-swagger/</loc>
     <lastmod>2017-10-12T16:57:51+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/understanding-nginx-server-block/</loc>
+    <loc>https://cse031sust02.github.io/posts/understanding-nginx-server-block/</loc>
     <lastmod>2017-09-19T16:54:45+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/getting-started-with-aws/</loc>
+    <loc>https://cse031sust02.github.io/posts/getting-started-with-aws/</loc>
     <lastmod>2017-09-12T16:05:22+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/getting-started-with-nginx/</loc>
+    <loc>https://cse031sust02.github.io/posts/getting-started-with-nginx/</loc>
     <lastmod>2017-08-20T17:18:51+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/intro-to-websocket/</loc>
+    <loc>https://cse031sust02.github.io/posts/intro-to-websocket/</loc>
     <lastmod>2017-08-09T11:27:15+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/data-structure-basics/</loc>
+    <loc>https://cse031sust02.github.io/posts/data-structure-basics/</loc>
     <lastmod>2017-08-08T17:46:18+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/installing-lemp-ubuntu-14/</loc>
+    <loc>https://cse031sust02.github.io/posts/installing-lemp-ubuntu-14/</loc>
     <lastmod>2017-06-20T16:21:21+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/linux-cheatsheet/</loc>
+    <loc>https://cse031sust02.github.io/posts/linux-cheatsheet/</loc>
     <lastmod>2017-05-17T15:50:31+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/say_hello_to_nodejs/</loc>
+    <loc>https://cse031sust02.github.io/posts/say_hello_to_nodejs/</loc>
     <lastmod>2017-05-07T16:21:40+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/getting_started_with_composer/</loc>
+    <loc>https://cse031sust02.github.io/posts/getting_started_with_composer/</loc>
     <lastmod>2017-04-23T17:37:13+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/intro-to-redis/</loc>
+    <loc>https://cse031sust02.github.io/posts/intro-to-redis/</loc>
     <lastmod>2017-04-22T16:13:16+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/database-acid/</loc>
+    <loc>https://cse031sust02.github.io/posts/intro-to-nosql-martin-fowler/</loc>
+    <lastmod>2017-04-20T17:19:35+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cse031sust02.github.io/posts/database-acid/</loc>
     <lastmod>2017-04-11T11:13:09+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/git-cheatsheet/</loc>
+    <loc>https://cse031sust02.github.io/posts/git-cheatsheet/</loc>
     <lastmod>2017-04-11T11:11:48+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/intro-to-cookie/</loc>
+    <loc>https://cse031sust02.github.io/posts/intro-to-cookie/</loc>
     <lastmod>2017-04-11T11:11:22+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/exception-handling-with-php/</loc>
+    <loc>https://cse031sust02.github.io/posts/exception-handling-with-php/</loc>
     <lastmod>2017-04-10T15:56:44+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/payment-using-stripe/</loc>
+    <loc>https://cse031sust02.github.io/posts/payment-using-stripe/</loc>
     <lastmod>2017-04-10T15:27:28+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/protocol-basics/</loc>
+    <loc>https://cse031sust02.github.io/posts/protocol-basics/</loc>
     <lastmod>2017-04-10T11:31:28+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/json/</loc>
+    <loc>https://cse031sust02.github.io/posts/json/</loc>
     <lastmod>2017-04-09T18:15:22+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/blogging-with-hugo/</loc>
+    <loc>https://cse031sust02.github.io/posts/blogging-with-hugo/</loc>
     <lastmod>2017-04-09T16:31:49+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cse031sust02.github.io/post/hello-world/</loc>
+    <loc>https://cse031sust02.github.io/posts/hello-world/</loc>
     <lastmod>2017-04-09T15:36:30+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/acid/</loc>
-    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/api/</loc>
-    <lastmod>2017-10-12T16:57:51+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/aws/</loc>
-    <lastmod>2019-08-29T14:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/bangla/</loc>
-    <lastmod>2017-04-10T11:31:28+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/bash/</loc>
-    <lastmod>2017-05-17T15:50:31+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/blog/</loc>
-    <lastmod>2017-04-09T16:31:49+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cse031sust02.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/cheatsheet/</loc>
-    <lastmod>2017-04-11T11:11:48+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/cloud/</loc>
-    <lastmod>2019-08-29T14:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/cloud-messaging/</loc>
-    <lastmod>2018-01-23T11:21:11+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/composer/</loc>
-    <lastmod>2017-04-23T17:37:13+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/cookie/</loc>
-    <lastmod>2017-04-11T11:11:22+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/data-structure/</loc>
-    <lastmod>2017-08-08T17:46:18+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/database/</loc>
-    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/databse/</loc>
-    <lastmod>2020-05-21T01:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/exception/</loc>
-    <lastmod>2017-04-10T15:56:44+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/firebase/</loc>
-    <lastmod>2018-01-23T11:21:11+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/git/</loc>
-    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/github/</loc>
-    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/github-page/</loc>
-    <lastmod>2017-04-09T16:31:49+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/hello-world/</loc>
-    <lastmod>2017-04-09T15:36:30+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/http/</loc>
-    <lastmod>2017-09-19T16:54:45+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/hugo/</loc>
-    <lastmod>2017-04-09T16:31:49+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/iam/</loc>
-    <lastmod>2019-08-29T14:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/json/</loc>
-    <lastmod>2017-04-09T18:15:22+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/linux/</loc>
-    <lastmod>2017-06-20T16:21:21+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/mongodb/</loc>
-    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/nginx/</loc>
-    <lastmod>2017-09-19T16:54:45+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/nodejs/</loc>
-    <lastmod>2017-05-07T16:21:40+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/nosql/</loc>
-    <lastmod>2019-12-10T10:05:22+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/open-source/</loc>
-    <lastmod>2018-09-27T11:36:51+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/payment/</loc>
-    <lastmod>2017-04-10T15:27:28+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/php/</loc>
-    <lastmod>2017-06-20T16:21:21+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/phpmyadmin/</loc>
-    <lastmod>2018-02-19T14:45:53+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/postgresql/</loc>
-    <lastmod>2020-05-21T01:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/post/</loc>
-    <lastmod>2020-05-21T01:29:14+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/protocol/</loc>
-    <lastmod>2017-04-10T11:31:28+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/rdbms/</loc>
-    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/redis/</loc>
-    <lastmod>2017-04-22T16:13:16+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/socket/</loc>
-    <lastmod>2017-08-09T11:27:15+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/socket.io/</loc>
-    <lastmod>2017-08-09T11:27:15+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/software-engineering/</loc>
-    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/stripe/</loc>
-    <lastmod>2017-04-10T15:27:28+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/swager/</loc>
-    <lastmod>2017-10-12T16:57:51+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cse031sust02.github.io/tags/</loc>
-    <lastmod>2017-04-11T11:13:09+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/tcp/ip/</loc>
-    <lastmod>2017-04-10T11:31:28+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/uml/</loc>
-    <lastmod>2017-11-16T18:37:12+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/tags/web-server/</loc>
-    <lastmod>2017-09-19T16:54:45+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cse031sust02.github.io/</loc>
-    <lastmod>2020-05-21T01:29:14+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

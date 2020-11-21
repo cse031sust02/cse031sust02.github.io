@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>So you want to start using Redis? | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/intro-to-redis/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>So you want to start using Redis?</h1>
+    <time datetime="2017-04-22T16:13:16&#43;06:00">April 22, 2017</time>
+  </header>
+  <h2 id="what-is-redis">What is Redis?</h2>
+<p>Redis is an in-memory data structure server. Which can be used as database, cache and message broker.</p>
+<p>Redis = REmote DIctionary Server.</p>
+<blockquote>
+<p>a key-value store is commonly known today as a dictionary.
+<a href="https://en.wikipedia.org/wiki/Key-value_database">https://en.wikipedia.org/wiki/Key-value_database</a></p>
+</blockquote>
+<h4 id="-data-structure-server"># Data Structure Server</h4>
+<p>Data Structure is a particular way of organizing data. Redis is a data structure server. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types.</p>
+<p>Supported data structures : strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.</p>
+<p>for more details, please visit the links :</p>
+<ul>
+<li><a href="https://redis.io/topics/data-types">https://redis.io/topics/data-types</a></li>
+<li><a href="https://redis.io/topics/data-types-intro">https://redis.io/topics/data-types-intro</a></li>
+</ul>
+<h4 id="-popular-nosql-database"># Popular noSQL Database</h4>
+<p>It is a very popular noSQL database. Redis is often ranked the <a href="http://db-engines.com/en/ranking/key-value+store">most popular key-value database</a>.</p>
+<h4 id="-message-broker"># Message Broker</h4>
+<p>a messaging broker is an intermediary for messaging. It gives applications a common platform to send and receive messages, and the messages are safe until received. Redis is a widely used use as Message Broker.</p>
+<h3 id="why-use-redis">Why use Redis?</h3>
+<p>Redis is a fantastic choice if you want a highly scalable data store shared by multiple processes, multiple applications, or multiple servers.</p>
+<p>You can found more detailed answers on <a href="http://stackoverflow.com/a/13645017/7804179">Stackoverflow</a> or <a href="https://www.quora.com/Why-use-Redis">Quora</a></p>
+<h3 id="performances--benchmarks">Performances &amp; Benchmarks</h3>
+<ul>
+<li><a href="https://redis.io/topics/benchmarks">https://redis.io/topics/benchmarks</a></li>
+<li><a href="https://github.com/dwyl/learn-redis#performance--benchmarks">https://github.com/dwyl/learn-redis#performance--benchmarks</a></li>
+</ul>
+<hr>
+<h2 id="lets-start">Let&rsquo;s Start</h2>
+<p>So, How do i start using Redis?</p>
+<h3 id="install">Install</h3>
+<ul>
+<li><a href="http://redis.io/download#installation">http://redis.io/download#installation</a></li>
+</ul>
+<h3 id="try">Try</h3>
+<ul>
+<li><a href="http://try.redis.io/">http://try.redis.io/</a></li>
+<li><a href="https://github.com/dwyl/learn-redis">https://github.com/dwyl/learn-redis</a></li>
+</ul>
+<h3 id="all-commands">All Commands</h3>
+<ul>
+<li><a href="https://redis.io/commands">https://redis.io/commands</a></li>
+</ul>
+<h3 id="cli">CLI</h3>
+<p>After we install Redis on our local pc, we can start using the Redis CLI with the <code>redis-cli</code> command,</p>
+<pre><code>$ redis-cli
+127.0.0.1:6379&gt;
+</code></pre><h3 id="gui">GUI</h3>
+<p>While Redis users heavily use the Command Line Interface (CLI), sometime we may like to use any Graphical User Interface (GUI). Here are some GUIs available for different platform.</p>
+<ul>
+<li><a href="https://github.com/joeferner/redis-commander">Redis Commander</a></li>
+<li><a href="https://www.redsmin.com/">Redismin</a></li>
+<li><a href="http://docs.redisdesktop.com/en/latest/">Redis Desktop Manager</a></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

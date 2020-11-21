@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Getting Started with Composer | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/getting_started_with_composer/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Getting Started with Composer</h1>
+    <time datetime="2017-04-23T17:37:13&#43;06:00">April 23, 2017</time>
+  </header>
+  <h2 id="what-is-composerhttpsgetcomposerorg">What is <a href="https://getcomposer.org/">Composer</a>?</h2>
+<blockquote>
+<p>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.</p>
+</blockquote>
+<blockquote>
+<p><strong>source</strong> : <a href="https://getcomposer.org/doc/00-intro.md">getcomposer.org</a></p>
+</blockquote>
+<h3 id="why-use-composer">Why Use Composer?</h3>
+<p>Suppose, we want to use a mail library for our PHP project, let&rsquo;s say <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>. We would normally download the PHPMailer library and put it on our project&rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.</p>
+<p><em>This kind of concept is not new, and in fact, Composer is strongly inspired by node&rsquo;s <a href="https://www.npmjs.com/">npm</a> and ruby&rsquo;s <a href="http://bundler.io/">bundler</a>.</em></p>
+<p>Another benefit of using composer is avoid the pain of autloading. As we have all many different packages in our project, we need the ability to autoload them into our project. For libraries that specify autoload information, Composer generates a &lsquo;vendor/autoload.php&rsquo; file. We can simply include this file and start using the classes that those libraries provide without any extra work.</p>
+<p>Composer is used in all modern PHP frameworks (Symfony, Laravel etc).</p>
+<hr>
+<h2 id="using-composer">Using Composer</h2>
+<p>Now, let&rsquo;s start using composer.</p>
+<h3 id="installation">Installation</h3>
+<p>Composer requires PHP 5.3.2+ to run. To install composer on your system, just follow the <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx">official guide</a></p>
+<h3 id="some-useful-commands">Some useful commands</h3>
+<ul>
+<li>list of available commands and description :</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer
+</code></pre></div><ul>
+<li>check current version</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer -V
+</code></pre></div><ul>
+<li>update to the latest version</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer self-update
+</code></pre></div><ul>
+<li>get help for that command</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer help <span style="color:#f92672">[</span>command-name<span style="color:#f92672">]</span>
+</code></pre></div><ul>
+<li>check for common problems.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer diagnose
+</code></pre></div><h2 id="project-setup">Project Setup</h2>
+<p>To start using Composer in our project, all we need is a <code>composer.json</code> file. This file describes the dependencies of our project (and may contain other metadata as well).</p>
+<p>For example, if we want to use <a href="https://packagist.org/packages/phpmailer/phpmailer">PHPMailer</a> and <a href="https://packagist.org/packages/monolog/monolog">Monolog</a>, we can create the following composer.json file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">{
+    &#34;require&#34;: {
+        &#34;phpmailer/phpmailer&#34;: &#34;~5.2&#34;,
+        &#34;monolog/monolog&#34;: &#34;*&#34;
+    }
+}
+</code></pre></div><p>For more information about <code>composer.json</code> file, please see the <a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">composer documentation</a>. We also need to have a clear idea about <a href="https://getcomposer.org/doc/articles/versions.md">versions</a>.</p>
+<h3 id="install-dependencies">Install Dependencies</h3>
+<p>Then we can install the dependencies for our project simply with a <code>composer install</code> command.</p>
+<p>This will automatically download the dependencies into our project under the directory &lsquo;vendor&rsquo;.</p>
+<h3 id="start-using-those-dependencies">Start using those Dependencies</h3>
+<p>As stated before, Composer generates a &lsquo;vendor/autoload.php&rsquo; file. So, we can just include that file and start using the classes the installed libraries provide. for example :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">require __DIR__ . &#39;/vendor/autoload.php&#39;;
+
+$log = new Monolog\Logger(&#39;name&#39;);
+$log-&gt;pushHandler(new Monolog\Handler\StreamHandler(&#39;app.log&#39;, Monolog\Logger::WARNING));
+$log-&gt;addWarning(&#39;Foo&#39;);
+</code></pre></div><h3 id="update-dependencies">Update Dependencies</h3>
+<p>Whenever we want to update our dependencies to latest versions, we can use this command <code>composer update</code>.</p>
+<p>To update any single package only, the command will be : <code>composer update [package-name]</code></p>
+<hr>
+<h2 id="did-you-know">Did you know?</h2>
+<p>We have to understand few key facts while working with composer</p>
+<h3 id="-composer-install-vs-composer-update"># &lsquo;composer install&rsquo; vs &lsquo;composer update&rsquo;</h3>
+<p>To get a clear idea what actually happens when we use the <code>composer install</code> &amp; <code>composer update</code> commands, please visit the <a href="https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies">official doc</a>. I am trying to write the thing in my own way.</p>
+<p>if we run <code>composer install</code> for the first time in our project,</p>
+<ul>
+<li>Composer will download the dependencies (with defined versions) listed in <strong>composer.json</strong> file.</li>
+<li>After installation is complete, Composer will create a file named <strong>composer.lock</strong> to store information of all the downloaded packages and their versions.</li>
+</ul>
+<p>From next time, whenever we run <code>composer install</code> command, Composer will download the dependencies listed on <strong>composer.json</strong>, But it will use the <em>exact versions</em> listed in <strong>composer.lock</strong> file.</p>
+<p>So, if we change the <strong>composer.json</strong> file (ie, add new package, chage version of any package etc) and then try to run the command <code>composer install</code> command, it will show an warning.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+</code></pre></div><p>So in that case, we have to use <code>composer update</code> command. <code>composer update</code> command fetches the latest matching versions (according to our <strong>composer.json</strong> file) and update the composer.lock file with the new versions. This is equivalent to deleting the composer.lock file and running install again.</p>
+<p>So, we should only ever run <code>composer update</code> to get the newest versions of our dependencies, not to install them.</p>
+<h3 id="-install-with-composer-require-command"># install with <code>composer require</code> Command</h3>
+<p>In our example, We could define and install dependencies with a single <a href="https://getcomposer.org/doc/03-cli.md#require"><code>composer require</code></a> command.</p>
+<p>for example :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require phpmailer/phpmailer:5~5.2 monolog/monolog:*
+</code></pre></div><p>when we run <code>composer require</code> command,</p>
+<ul>
+<li>it adds new packages to the composer.json (If composer.json file does&rsquo;nt exists, it will create one)</li>
+<li>the modified requirements will be installed or updated.</li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

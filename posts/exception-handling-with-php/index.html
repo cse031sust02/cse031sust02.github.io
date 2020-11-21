@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Exception Handling with PHP | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/exception-handling-with-php/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Exception Handling with PHP</h1>
+    <time datetime="2017-04-10T15:56:44&#43;06:00">April 10, 2017</time>
+  </header>
+  <h3 id="what-is-exception">What is Exception</h3>
+<p>Exception is an error condition which change the normal flow of code execution. Exceptions are catchable. That means, we can catch and try to recover or continue with the execution of the program.</p>
+<p><strong>&lsquo;errors&rsquo; vs &lsquo;exceptions&rsquo; :</strong>
+Generally errors occur at the language level (ie, the syntax is wrong, missing parenthesis etc)</p>
+<h3 id="exceptions-in-php">Exceptions in PHP</h3>
+<p>Exceptions were introduced in PHP 5. It is used in an object oriented way. The exception model of PHP is very similar to exception model of other programming languages.</p>
+<p>Exceptions can be thrown and caught.</p>
+<p><strong>one basic example,</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  try {
+    throw new Exception(&#39;An Exception&#39;);
+  } catch (Exception $e) {
+    echo $e-&gt;getMessage();
+  }
+  //output : An Exception
+</code></pre></div><ul>
+<li><strong>throw</strong> : The thrown object must be an instance of the Exception class (or a subclass of Exception). Otherwise, there will be a PHP Fatal Error.</li>
+<li><strong>try</strong> : If there is a &lsquo;try&rsquo; block, then there must be atleast one &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block. (Otherwise PHP Fatal Error)</li>
+<li><strong>catch</strong> : When an exception is thrown, code following the statement will not be executed, and PHP will attempt to find the first matching catch block. If an exception is not caught (either by &lsquo;catch&rsquo; or &lsquo;finally&rsquo; block), there will be a PHP Fatal Error with an &ldquo;Uncaught Exception &hellip;&rdquo; message (unless a handler has been defined with set_exception_handler method). Exceptions can also be thrown (or re-thrown) within a catch block.</li>
+<li><strong>finally</strong> : Introduces in PHP 5.5. &lsquo;finally&rsquo; block can be used after or instead of catch blocks. Code within the finally block will ALWAYS be executed after the try and catch blocks ( regardless of whether an exception has been thrown or not)</li>
+</ul>
+<h4 id="example">Example,</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function inverse($number) {
+  if ($number==0) {
+      throw new Exception(&#39;Division by zero.&#39;);
+  }
+
+  return 1/$number;
+}
+
+try {
+    $random_number = rand(0,5);
+    $result = inverse($random_number);
+    // ONLY echo when no exception is thrown
+    echo $result;
+} catch (Exception $e) {
+    //ONLY echo if there is an exception
+    echo &#34;Exception Message :&#34;.$e-&gt;getMessage();
+} finally {
+    // always echo
+    echo &#34;I am always there&#34;;
+}
+</code></pre></div><blockquote>
+<p>Note : Internal PHP functions mainly use Error reporting, only modern Object oriented extensions use exceptions. However, errors can be simply translated to exceptions with ErrorException. - <a href="http://php.net/manual/en/language.exceptions.php">php.net</a></p>
+</blockquote>
+
+</article>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>How I learned to stop panicking and play with NGINX | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/getting-started-with-nginx/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>How I learned to stop panicking and play with NGINX</h1>
+    <time datetime="2017-08-20T17:18:51&#43;06:00">August 20, 2017</time>
+  </header>
+  <h2 id="what-is-nginx">What is Nginx</h2>
+<p>Nginx is a high performance web server which is lightweight, free and open-source. It can be used as a standalone <a href="https://youtu.be/XhgUClE5uC0?t=11m13s">web server</a> (like Apache) or as a <a href="https://en.wikipedia.org/wiki/Reverse_proxy">reverse proxy</a> (serve in front of the web servers). Nginx is also used as mail proxy server, load balancer and HTTP cache.</p>
+<h4 id="why-use-nginx">Why use Nginx?</h4>
+<p>There are other web servers such as Apache, IIS etc. So what makes Nginx special? It is especially good at handling many concurrent connections as it was originally developed to handle <a href="http://www.kegel.com/c10k.html">C10k problem</a> (serving 10000 concurrent connections). Nginx serves requests asynchronously while other web servers (such as Apache, IIS) creates new threads for every request received.</p>
+<p>Nginx can also work alognside other web servers as a reverse proxy. Nginx not only serve HTTP &amp; HTTPS protocol but also IMAP, POP3 and SMPT. We can use Nginx on servers with very limited hardware capabilites. A very detailed overview of why we should use Nginx can be found <a href="https://youtu.be/XhgUClE5uC0?t=16m57s">here</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>There are various ways to download and install Nginx. Please follow <a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/">Official Guide</a> to install Nginx on your system.</p>
+<p>On Ubuntu, One should be able to install Nginx easily with the <code>apt-get install nginx</code> command.</p>
+<p>After installing Nginx, we should see the welcome page by entering the IP address (we can get that using <code>ifconfig</code> command) of our server on a browser.</p>
+<h2 id="configuration">Configuration</h2>
+<p>For most linux distributions, all Nginx config files are located in <code>/etc/nginx</code> directory.</p>
+<p><strong>nginx.conf</strong> is the main configuration file. It is Nginx&rsquo;s main control point which reads in all of the other appropriate configuration files and combines them into a monolithic configuration file when the server starts.</p>
+<p>The structure of that configuration file looks like below :</p>
+<pre><code>user nobody; 
+
+events {
+   ...
+}
+
+http {
+    ...
+
+    server {
+    	...
+    }
+
+    server {
+    	...
+    }
+}
+
+stream {
+   ...
+}
+</code></pre><p>As we can see, This file consists of <strong>directives</strong> and their parameters. There are two kinds of directives.</p>
+<ul>
+<li><strong>simple directives</strong> : These directives end with a semicolon.</li>
+</ul>
+<pre><code>user nobody;
+</code></pre><ul>
+<li><strong>contexts</strong> : A few directives group together related directives. Those directives are referred to as contexts. i.e, events, http and server etc.</li>
+</ul>
+<p><em>To know more details about the configuration file and what is the purpose of the each directives, please visit the <a href="https://www.nginx.com/resources/admin-guide/configuration-files/">official guide</a>. This <a href="https://www.nginx.com/resources/wiki/start/topics/examples/full/">example</a> is helpful too.</em></p>
+<h3 id="hosting-sites">Hosting Sites</h3>
+<p>For hosting websites, we need to understand how to set up virtual servers.</p>
+<p>A virtual server is defined by a server directive in the http context.</p>
+<pre><code>http {
+    server {
+        # Server configuration
+    }
+}
+</code></pre><p>And it is possible to add multiple virtual servers into the http context.</p>
+<pre><code>http {
+    server {
+        # Server One configuration
+    }
+
+    server {
+        # Server Two configuration
+    }
+}
+</code></pre><p>Now, if we add 10 virtual servers, the <strong>nginx.conf</strong> file will become very long and modifying that file will be a headache. This is why <strong>sites-enabled</strong> folder exists. We can make seperate configuration file for each virtual host. And in the main nginx.conf file, we will include that folder :</p>
+<pre><code>http {
+    # Virtual Hosts
+    include /etc/nginx/sites-enabled/*;
+}
+</code></pre><p>So, now every virtual servers listed in <strong>sites-enabled</strong> folder will be public to visitors.</p>
+<p>We usually have to manage many different sites and may need to activate/deactivate any particular site anytime. This is why we use <strong>sites-available</strong> folder for storing all of our virtual host configurations(whether they&rsquo;re currently enabled or not). To enable any particular virtual host, we will symbolically link it&rsquo;s configuration file to <strong>sites-enabled</strong> directory.</p>
+<p>I have written another <a href="https://cse031sust02.github.io/post/understanding-nginx-server-block/">post</a> where i tried to explain the server block in details.</p>
+<h2 id="reloading-nginx">Reloading Nginx</h2>
+<p>Whenever we change the configuration, we will need to restart nginx server for changes to take place.</p>
+<pre><code>sudo service nginx restart
+</code></pre>
+</article>
+
+
+
+</body>
+
+</html>

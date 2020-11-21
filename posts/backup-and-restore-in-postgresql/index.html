@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Backup and Restore in PostgreSQL | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/backup-and-restore-in-postgresql/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Backup and Restore in PostgreSQL</h1>
+    <time datetime="2020-05-21T01:29:14&#43;06:00">May 21, 2020</time>
+  </header>
+  <p>PostgreSQL is a object-relational database management system. It is most advanced open soruce relational database.</p>
+<h3 id="taking-backups-using-pg_dump-">Taking backups using pg_dump :</h3>
+<p><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html">pg_dump</a> is a utility for backing up a PostgreSQL database.</p>
+<p>We can extract the database in script file or archive file formats :</p>
+<ul>
+<li>Script Files : These are plain-text files containing the SQL commands. We can restore data from these script files using <em>psql</em>.</li>
+<li>Archive Files : The archive files allow <em>pg_restore</em> to rebuild the database. It also allow to be selective about what is restored.</li>
+</ul>
+<h4 id="examples-">Examples :</h4>
+<ul>
+<li>output in script file :</li>
+</ul>
+<pre><code>$ pg_dump {DATABASENAME} &gt; {FILENAME}.sql
+</code></pre><ul>
+<li>output in archive file formats :</li>
+</ul>
+<pre><code>$ pg_dump -Fc {DATABASENAME} &gt; {FILENAME}.dump
+$ pg_dump -Fc {DATABASENAME} &gt; {FILENAME}.zip
+</code></pre><ul>
+<li>using host and username :</li>
+</ul>
+<pre><code>$ pg_dump -h {HOSTNAME} -U {USERNAME} {DATABASENAME} &gt; {FILENAME}.sql
+
+</code></pre><ul>
+<li>extract a single table :</li>
+</ul>
+<pre><code>$ pg_dump -t {TABLENAME} {DATABASENAME} &gt; {FILENAME}.sql
+</code></pre><h3 id="restore-database-using-pg_restore-">Restore database using pg_restore :</h3>
+<p><a href="https://www.postgresql.org/docs/9.3/app-pgrestore.html">pg_restore</a> is a utility for restoring a PostgreSQL database from an archive created by pg_dump (in one of the non-plain-text formats).</p>
+<h4 id="examples--1">Examples :</h4>
+<ul>
+<li>restore from archives :</li>
+</ul>
+<pre><code>$ pg_restore -d {NEWDATABASE} {FILENAME}.dump
+$ pg_restore -d {NEWDATABASE} {FILENAME}.zip
+</code></pre><ul>
+<li>using host and username :</li>
+</ul>
+<pre><code>$ pg_restore -h {HOSTNAME} -U {USERNAME} -d {NEWDATABASE} {FILENAME}.dump
+</code></pre><h3 id="restore-database-using-psql-">Restore database using psql :</h3>
+<p><a href="https://www.postgresql.org/docs/9.3/app-psql.html">Psql</a> is the interactive terminal for working with Postgres.</p>
+<h4 id="examples--2">Examples :</h4>
+<ul>
+<li>restore data from script files :</li>
+</ul>
+<pre><code>$  psql -d {NEWDATABASE} -f {FILENAME}.zip
+</code></pre><ul>
+<li>using host and username :</li>
+</ul>
+<pre><code>$  psql -h {HOSTNAME} -U {USERNAME} -d {NEWDATABASE} -f {FILENAME}.zip
+</code></pre>
+</article>
+
+
+
+</body>
+
+</html>

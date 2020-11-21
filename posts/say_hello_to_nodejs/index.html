@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Say &#39;Hello&#39; to Node.js | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/say_hello_to_nodejs/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Say &#39;Hello&#39; to Node.js</h1>
+    <time datetime="2017-05-07T16:21:40&#43;06:00">May 07, 2017</time>
+  </header>
+  <h2 id="what-is-nodejs-">What is Node.js? :</h2>
+<blockquote>
+<p>Node.js® is a JavaScript runtime built on Chrome&rsquo;s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js&rsquo; package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
+</blockquote>
+<ul>
+<li><a href="https://nodejs.org/en/">Official Website</a></li>
+</ul>
+<blockquote>
+<p><strong>Creepy, huh?</strong></p>
+</blockquote>
+<h4 id="npm">npm?</h4>
+<p><a href="https://www.npmjs.com/">npm</a> is the Node.js package manager. It allows us to easily install modules and packages to use with Node.js.</p>
+<h4 id="nvm">nvm?</h4>
+<p><a href="https://github.com/creationix/nvm/blob/master/README.md">nvm</a> is Node Version Manager. We can install multiple, self-contained versions of Node.js usng nvm. It allows us to control the environment easier (quickly switch to other versions of Node.js).</p>
+<hr>
+<h2 id="installing-nodejs">Installing Node.js</h2>
+<p>Please visit the <a href="https://nodejs.org/en/download/package-manager/">official page</a> to install Node.Js in your platform.</p>
+<p>To install recent version of Node.js, we will first add a PPA (personal package archive) maintained by <a href="https://github.com/nodesource/distributions">NodeSource</a></p>
+<p>i.e, To download v6.X</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+</code></pre></div><p>Full details can be found <a href="https://github.com/nodesource/distributions#installation-instructions">here</a></p>
+<p>To verify that the installation was successful, let’s give Node’s <strong>REPL</strong> a try.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node
+&gt;console.log<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;hello nodejs&#39;</span><span style="color:#f92672">)</span>;
+hello world
+undefined
+&gt; 
+</code></pre></div><p>*<strong>REPL</strong> :  REPL (Read-Eval-Print Loop) is an interactive computer programming environment. It takes single user inputs, evaluates them, and returns the result to the user.</p>
+<blockquote>
+<p><strong>Q. When i tried to install Node.Js with <code>apt-get install nodejs</code> command in Ubuntu 14.04, it installed v0.10.25 instead of the latest version.</strong></p>
+</blockquote>
+<blockquote>
+<p>Ans. Ubuntu 14.04 contains a version of Node.js in its default repositories. The version in the repositories is 0.10.25. This is not be the latest version, but it should be quite stable.</p>
+</blockquote>
+<h4 id="install-npm">install npm?</h4>
+<p>The nodejs package contains the nodejs binary as well as npm, so we don&rsquo;t need to install npm separately.
+But, to run nodejs/npm properly, We may need to install the <code>build-essentials</code> package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install build-essential
+</code></pre></div><hr>
+<h2 id="about-npm-things">About npm things</h2>
+<p><a href="https://www.npmjs.com/">npm</a> is a package manager for javascript. npm makes it easy for JavaScript developers to share and reuse code. Although npm started as the node package manager, but it is now used by almost every popular javascript libraries/frameworks. Please read the <a href="https://docs.npmjs.com/getting-started">official doc</a> if you want to know more.</p>
+<h4 id="what-is-a-package">what is a package?</h4>
+<p>A package (or sometimes module) contains reusable codes to serve a particular purpose. A package is just a directory with one or more files in it.</p>
+<p>Every package contains a file named <strong>package.json</strong> with some metadata (a short description, GitHub repository etc) about that package.</p>
+<ul>
+<li>Module vs Package :
+A module is anything that can be loaded with require() in a Node.js program. Most npm packages are modules. <a href="https://docs.npmjs.com/how-npm-works/packages#most-npm-packages-are-modules">more details..</a></li>
+</ul>
+<h4 id="npm-registry">npm Registry?</h4>
+<p>Every time we download a package using npm install, we&rsquo;re downloading it from npm Registry and put in our project&rsquo;s <code>node_modules</code> folder. npm Registry is basically a huge database containing each package&rsquo;s files and associated metadata.</p>
+<h4 id="initialize-a-project">Initialize a project</h4>
+<p>npm helps us build projects, but for npm to be able to do that, we need to tell npm a little bit about our project. we have to write the details in <strong>package.json</strong> file.</p>
+<p>we can manually create the <strong>package.json</strong> file and write the details. Or we can use &lsquo;npm init&rsquo; command which will ask a bunch of questions, and then it will create the <strong>package.json</strong> for us.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See <span style="color:#e6db74">`</span>npm help json<span style="color:#e6db74">`</span> <span style="color:#66d9ef">for</span> definitive documentation on these fields
+and exactly what they <span style="color:#66d9ef">do</span>.
+
+Use <span style="color:#e6db74">`</span>npm install &lt;pkg&gt; --save<span style="color:#e6db74">`</span> afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: <span style="color:#f92672">(</span>demo-project<span style="color:#f92672">)</span> 
+</code></pre></div><blockquote>
+<p>the next time we use <code>npm init</code> command, it will update the existing <strong>package.json</strong> file.</p>
+</blockquote>
+<hr>
+<h2 id="dealing-with-packages">Dealing with packages</h2>
+<p>One of the most important things that npm does is install packages.</p>
+<h3 id="install-packages">Install packages</h3>
+<p>&lsquo;npm install&rsquo; can be used in many ways. By default, <code>npm install</code> command (without any arguments) will install all modules listed as dependencies in <strong>package.json</strong> file.</p>
+<p>To install a specific package,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install &lt;package&gt;
+</code></pre></div><blockquote>
+<p>a <strong>package</strong> can be a folder, a url, a git remote url etc.</p>
+</blockquote>
+<blockquote>
+<p>If we install a package with <code>--save</code> option, the package will be added to the dependencies list in the package.json file. so, afterwards, running <code>npm install</code> will automatically install that package.</p>
+</blockquote>
+<p>We can istall packages <strong>locally</strong> or <strong>globally</strong></p>
+<ul>
+<li><strong>locally</strong></li>
+</ul>
+<p>By default <code>npm install</code> will install modules locally. it downloads the package to &lsquo;node_modules&rsquo; directory. after we installed the package, we can use it in our code.</p>
+<p>for exmplae, first install the <a href="https://lodash.com/">lodash</a> module locally,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install lodash
+</code></pre></div><p>now, we can use in our code,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lodash</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;lodash&#39;</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lodash</span>.<span style="color:#a6e22e">without</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">1</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>);
+</code></pre></div><ul>
+<li><strong>globally</strong></li>
+</ul>
+<p>If we want to use any package globally (usually to use it as a command line tool), then we can install those packages globally</p>
+<p>for example, install the <a href="https://github.com/foreverjs/forever">forever</a> package globally.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo npm install forever -g
+</code></pre></div><p>now, we can use this package in our terminal,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">forever start app.js
+</code></pre></div><blockquote>
+<p>for permission error, please check <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a></p>
+</blockquote>
+<h3 id="list-of-installed-packages">list of installed packages</h3>
+<p>To show the installed packages, we can use the <code>npm list</code> command.</p>
+<ul>
+<li><strong>locally</strong> installed packages,</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm list --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</code></pre></div><ul>
+<li><strong>globally</strong> installed packages,</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm list -g --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</code></pre></div><blockquote>
+<p>we can use &lsquo;ls&rsquo; instead of &lsquo;list&rsquo;.</p>
+</blockquote>
+<blockquote>
+<p>depth = depth of the dependency tree.</p>
+</blockquote>
+<h3 id="update-packages">Update packages</h3>
+<p>We can update any existing package with <code>npm update</code> command</p>
+<ul>
+<li><strong>locally</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update
+</code></pre></div><ul>
+<li><strong>globally</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm update -g &lt;package&gt;
+</code></pre></div><h3 id="uninstall-packages">Uninstall packages</h3>
+<p><code>npm unistall</code> command is used to uninstall any package</p>
+<ul>
+<li><strong>locally</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm unistall &lt;package&gt;
+</code></pre></div><ul>
+<li><strong>globally</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm uninstall -g &lt;package&gt;
+</code></pre></div><hr>
+<h3 id="useful-links">Useful Links</h3>
+<ul>
+<li><strong><a href="https://www.npmjs.com/#getting-started">Official Getting Started Page</a></strong></li>
+<li><strong><a href="https://nodeschool.io/">NodeSchool</a></strong></li>
+<li><strong><a href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js?rq=1">Stackoverflow post</a></strong></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

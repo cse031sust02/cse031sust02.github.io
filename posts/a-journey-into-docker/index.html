@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>A Journey into the Docker World | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/a-journey-into-docker/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>A Journey into the Docker World</h1>
+    <time datetime="2020-11-01T01:29:14&#43;06:00">November 01, 2020</time>
+  </header>
+  <h2 id="what-is-docker">What is Docker?</h2>
+<p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package — <a href="https://opensource.com/resources/what-docker">OpenSource.com, What is Docker?</a></p>
+<p>Docker enables us to separate our applications from our infrastructure. So we developers can focus on writing code without worrying about the system it will ultimately run on.</p>
+<hr>
+<h2 id="concepts">Concepts</h2>
+<p>Here is a very brief summary of the key terms we need to be familiar with when working with Docker.</p>
+<h4 id="dockerfile-">Dockerfile :</h4>
+<p>A Dockerfile is a blueprint for building Docker images. It is simply a text file that contains the build instructions to build a a Docker image.</p>
+<h4 id="image-">Image :</h4>
+<p>Docker images are executable packages that include everything needed to run an application — the code, a runtime, libraries, environment variables, and configuration files. An image is a read-only template with instructions for creating a Docker container. We can build our own images (using a Dockerfile) or use images that have been built by others and are available in a registry (such as Docker Hub).</p>
+<h4 id="container-">Container :</h4>
+<p>A Docker container is a running instance of a Docker image. A container is an isolated environment which can expose ports and volumes to interact with other containers or/and the outer world.</p>
+<h4 id="volume-">Volume :</h4>
+<p>Volumes are the “data” part of a container. They are designed to persist data and share between containers. Volumes are independent of the container’s lifecycle.</p>
+<h4 id="docker-compose-">Docker Compose :</h4>
+<p>Docker Compose is a tool for defining and running multi-container Docker applications. The <code>docker-compose.yml</code> file allows us to configure all our application&rsquo;s services in one place and start them all with a single command.</p>
+<h4 id="docker-hub-">Docker Hub :</h4>
+<p>A Docker registry stores Docker images. <a href="https://hub.docker.com/">Docker Hub</a> is the default public registry which is managed by Docker (the company). We can find images for most of the apps and linux distros we need there. Anybody can build and host their Docker images on Docker Hub. It&rsquo;s like github for Docker images.</p>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<p>Everything starts with the Dockerfile. It is the source code of the Image. Once the Dockerfile is created, we build the image using that file. Next, we can use the image to run containers. A running container is an isolated environment. We can create, start, stop, move, or delete a container using the Docker API or CLI. We can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="https://docs.docker.com/engine/images/architecture.svg" alt="Architectire"></p>
+<p><em>image source: <a href="https://docs.docker.com/get-started/overview/#docker-architecture">docker docs</a></em></p>
+<hr>
+<h2 id="docker-commands--cheat-sheet">Docker Commands : Cheat Sheet</h2>
+<p><strong>-</strong> download images (from docker hub) to our computer</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker pull &lt;image&gt;
+</code></pre></div><p><br>
+<strong>-</strong> build an image from a Dockerfile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build &lt;path&gt;
+
+<span style="color:#75715e"># example : build a image (using the Dockerfile in the current directory) with a tag named my-image</span>
+$ docker build --tag my-image .
+
+<span style="color:#75715e"># By default the docker build command will look for a Dockerfile at the root of the build context.</span>
+<span style="color:#75715e"># We can specify an alternative file using the -f (or --file) option. for example, the command below</span>
+<span style="color:#75715e"># will build a image from the Dockerfile.dev file</span> 
+$ docker build -f Dockerfile.dev .
+</code></pre></div><p><br>
+<strong>-</strong> list of images (that have been downloaded/built)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker images
+</code></pre></div><p><br>
+<strong>-</strong> remove images</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker rmi &lt;image1&gt; &lt;image2&gt;
+</code></pre></div><p><br>
+<strong>-</strong> run a container</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run &lt;image&gt;
+<span style="color:#75715e"># note : docker run = docker create + docker start + docker attach</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># example : docker run with options  :</span>
+<span style="color:#75715e"># --------------------------------------</span>
+<span style="color:#75715e"># Run a container</span> 
+<span style="color:#75715e"># - from the specific image,</span>
+<span style="color:#75715e"># - name the running container “my_container”,</span>
+<span style="color:#75715e"># - expose port 5000 externally and</span>
+<span style="color:#75715e"># - mapped to port 80 inside the container</span>
+$ docker container run --name my_container -p 5000:80 &lt;image&gt;
+</code></pre></div><p><br>
+<strong>-</strong> list of containers</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker ps      <span style="color:#75715e"># list out the running containers only</span>
+$ docker ps -a   <span style="color:#75715e"># list out all contaiers (including  the stopped containers)</span>
+</code></pre></div><p><br>
+<strong>-</strong> executing commands inside a running container</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec &lt;container&gt; &lt;command&gt;
+
+<span style="color:#75715e"># example : enter the bash of a container</span>
+$ docker exec -it &lt;container&gt; bash
+</code></pre></div><p><br>
+<strong>-</strong> accessing logs from a running container</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker logs &lt;container&gt;
+
+<span style="color:#75715e"># get logs realtime</span>
+$ docker logs -f &lt;container&gt;
+</code></pre></div><p><br>
+<strong>-</strong> stop/kill containers</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop &lt;container&gt; <span style="color:#75715e"># stop gracefully</span>
+$ docker kill &lt;container&gt; <span style="color:#75715e"># stop immediately</span>
+</code></pre></div><p><br>
+<strong>-</strong> remove one or more containers</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker rm &lt;container&gt;
+</code></pre></div><p><br>
+<strong>-</strong> remove unused data</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker system prune
+</code></pre></div><p>Few Notes:</p>
+<ul>
+<li><code>docker start</code> runs any container that is not already running.</li>
+<li><code>docker restart</code> kills the running container and starts that again.</li>
+<li><code>docker run</code> creates and starts a new container every time.</li>
+</ul>
+<blockquote>
+<p><em>Assume a scenario, where we&rsquo;re working inside a container for a while. Then we stop the container and on the next day we run the container once again using <code>docker run</code> command. We&rsquo;ll see that all of our works have been lost. So we should remember to start previously created containers using the <code>docker start</code> command and not the <code>docker run</code> command.</em></p>
+</blockquote>
+<hr>
+<h2 id="dockerfile">Dockerfile</h2>
+<p>Every single Docker container begins as a pure vanilla Linux machine that knows nothing. We need to tell the container everything it needs to know — all the dependencies it needs to download and install in order to run the application. We do that with a <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>.</p>
+<p>A Dockerfile is simply a text file that contains the build instructions to build a a Docker image. It contains all the commands a user could call on the command line to assemble an image.</p>
+<h3 id="example-">Example :</h3>
+<p>Let&rsquo;s start with a very simple example by creating a Dockerfile to run an ubuntu container.</p>
+<p><strong>-</strong> Create a new file named <em>Dockerfile</em> and put the following instructions there:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># Get the base ubuntu 18.04 from Docker hub</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu:18.04</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Command to execute when we run the container</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> echo <span style="color:#e6db74">&#34;Hello World!&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><br>
+<strong>-</strong> Let&rsquo;s build an image from that Dockerfile. Note that, we need to run the command from the same directory where we have our Dockerfile.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM ubuntu:18.04
+ ---&gt; 56def654ec22
+Step 2/2 : CMD echo <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+ ---&gt; Running in a49ebaf5c0f1
+Removing intermediate container a49ebaf5c0f1
+ ---&gt; 339710e878e8
+Successfully built 339710e878e8
+</code></pre></div><p>We can see that the Docker image was successfully built and the ID of the image is <strong>339710e878e8</strong>.</p>
+<p><br>
+<strong>-</strong> Let&rsquo;s now start and run a container from that image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run 339710e878e8
+Hello World!
+</code></pre></div><p>Great! So now we have an Ubuntu container running inside our machine. We can enter into the shell of that container, install new packages, and run commands in the same way as we would do on any other Ubuntu machine.</p>
+<h3 id="common-dockerfile-instructions-">Common Dockerfile Instructions :</h3>
+<p>Docker can build images automatically by reading the instructions from a Dockerfile. In this list below I have included some of the most frequently used Dockerfile Instructions. For the complete list, please go through the <a href="https://docs.docker.com/engine/reference/builder/">documentation</a>.</p>
+<p><strong>FROM</strong> — Sets the base image for subsequent instructions. A Dockerfile must start with a FROM instruction.</p>
+<p><strong>RUN</strong> — Execute commands in a new layer on top of the current image and commit the results.</p>
+<p><strong>CMD</strong> - Sets a default command, which will be executed when we run the container.</p>
+<p><strong>ENTRYPOINT</strong> - Specifies a command that will always be executed when the container starts (unless we add the <code>--entrypoint</code> flag).</p>
+<blockquote>
+<p><em>Note: The RUN, CMD, and ENTRYPOINT instructions are used to run commands. These instructions look similar and cause confusion among developers. We should know the difference between <a href="https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/">CMD, RUN, and ENTRYPOINT</a>.</em></p>
+</blockquote>
+<p><strong>ENV</strong> — Sets the environment variable.</p>
+<p><strong>COPY</strong>- Copies new files or directories (from host) into the filesystem of the container.</p>
+<p><strong>ADD</strong> - Copies new files, directories, or remote file URLs. We can also extract a tar file from the source directly into the destination.</p>
+<blockquote>
+<p><em>Note: It&rsquo;s best practice to use COPY. We should avoid the ADD command unless we need to extract a local tar file.</em></p>
+</blockquote>
+<p><strong>VOLUME</strong> — Creates a mount point with the specified name and marks it as holding externally mounted volumes from the native host or other containers.</p>
+<p><strong>EXPOSE</strong> — Informs Docker that the container listens on the specified network ports at runtime.</p>
+<blockquote>
+<p><em>Note: Most people confuse exposing a port with publishing a port. This <a href="https://stackoverflow.com/a/47594352/3158021">stackoverflow answer</a> explained the difference very well.
+The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the <code>-p</code> flag on docker run to publish and map one or more ports, or the <code>-P</code> flag to publish all exposed ports and map them to high-order ports - <a href="https://docs.docker.com/engine/reference/builder/#expose">documentation</a>.</em></p>
+</blockquote>
+<hr>
+<h2 id="docker-compose">Docker Compose</h2>
+<p><a href="https://docs.docker.com/compose/">Docker Compose</a> is a tool for defining and running multi-container Docker applications. With Docker Compose, we use a YAML file to configure our application’s services. Then, we create and start all the services from that configuration with a single command.</p>
+<p>Imagine, we have a simple web application which is composed of 3 different services: client(React App), server(Django API Backend) and database(PostgreSQL). We can use docker compose to run the entire application with a single command.</p>
+<h4 id="difference-between-docker-and-docker-compose-">Difference between Docker and Docker-Compose :</h4>
+<p>Docker is used to manage an individual container (service) for our application. Docker-Compose is used to manage multiple container applications.</p>
+<p><img src="https://miro.medium.com/max/700/1*LHq5mhynSjYBIhfgY3czkQ.png" alt="docker-vs-docker-compose"></p>
+<p><em>image source: <a href="https://medium.com/free-code-camp/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa">freeCodeCamp</a></em></p>
+<h3 id="compose-file-">Compose File :</h3>
+<p>The Compose file is a <a href="https://yaml.org/">YAML</a> file defining services, networks, and volumes for a Docker application. There are <a href="https://docs.docker.com/compose/compose-file/compose-versioning/">several versions</a> of the docker-compose file.</p>
+<h3 id="steps-">Steps :</h3>
+<p>Using Compose is basically a three-step process:</p>
+<ol>
+<li>Define your app’s environment with a Dockerfile.</li>
+<li>Define the services that make up your app in compose file (<em>docker-compose.yml</em>) so that thy can be run together in an isolated environment.</li>
+<li>Run command (<code>docker-compose up</code>) to start and run the entire app.</li>
+</ol>
+<p>To get started with Docker Compose, please follow the <a href="https://docs.docker.com/compose/gettingstarted/">official documentation</a>.</p>
+<hr>
+<h2 id="references">References</h2>
+<h5 id="docker">Docker:</h5>
+<ul>
+<li><a href="https://docs.docker.com/">Docker Docs</a></li>
+<li><a href="https://www.freecodecamp.org/news/the-docker-handbook">freeCodeCamp : The Docker Handbook</a></li>
+<li><a href="https://towardsdatascience.com/why-you-should-care-about-docker-9622725a5cb8">towardsdatascience : Why you should care about Docker?</a></li>
+<li><a href="https://design.jboss.org/redhatdeveloper/marketing/docker_cheatsheet/cheatsheet/images/docker_cheatsheet_r3v2.pdf">Red Hat Developers : docker CLI &amp; Dockerfile Cheat Sheet</a></li>
+</ul>
+<h5 id="docker-compose-1">Docker Compose:</h5>
+<ul>
+<li><a href="https://docs.docker.com/compose/">Docker Docs</a></li>
+<li><a href="https://medium.com/rate-engineering/using-docker-containers-to-run-a-distributed-application-locally-eeabd360bca3">medium : Using Docker Compose to Run Your Applications</a></li>
+<li><a href="https://medium.com/free-code-camp/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa">medium : A beginner’s guide to Docker — how to create a client/server side with Docker-Compos</a></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

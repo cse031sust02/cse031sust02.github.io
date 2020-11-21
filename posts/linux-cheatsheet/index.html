@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Getting Started with Linux Command Line | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/linux-cheatsheet/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Getting Started with Linux Command Line</h1>
+    <time datetime="2017-05-17T15:50:31&#43;06:00">May 17, 2017</time>
+  </header>
+  <h2 id="what-is-linux">What is Linux?</h2>
+<p>Just like Windows and Mac OS X, Linux is an operating system. It is an open source <a href="https://en.wikipedia.org/wiki/Unix-like">Unix-like</a> operating system.</p>
+<p>Although Linux is generally used to refer to the entire OS, Linux is basically the name of the Kernel which was <a href="https://github.com/torvalds/linux">developed</a> by <a href="https://github.com/torvalds">Linus Torvalds</a>. I think <a href="https://unix.stackexchange.com/a/94407">this answer</a> explains it all.</p>
+<h2 id="linux-commands">Linux Commands</h2>
+<p>We should have some basic ideas of <strong>Shell</strong>, <strong>Bash</strong> and <strong>Terminal</strong> first if we want to work with Linux Command Line.</p>
+<h3 id="shell">Shell</h3>
+<p>The shell is a program that takes commands from the keyboard and gives them to the operating system to perform. Linux operating system offers several shells such as : <strong>bash</strong>, <strong>sh</strong>, <strong>csh</strong> etc. Although they have many commands in common, each type has unique features.</p>
+<ul>
+<li><strong>bash</strong> (Bourne Again SHell) : bash is the default shell for most <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">Linux distributions</a>. It is an enhanced version of the original Unix shell program.</li>
+</ul>
+<h3 id="terminal">Terminal</h3>
+<p>Terminal (or Terminal Emulator) is a GUI which lets us interact with the shell. So, we can type and execute commands from the Terminal Window. There are many different Terminals bundled with different <a href="https://en.wikipedia.org/wiki/Desktop_environment">Desktop Environments</a>, such as: gnome-terminal (GNOME), konsole(KDE) etc.</p>
+<hr>
+<h2 id="working-with-the-terminal">Working With the Terminal</h2>
+<p>We should easily find Terminal from the menu. The Terminal Window is like the image below</p>
+<p><img src="http://linuxcommand.org/images/Screenshot-Terminal.png" alt="terminal" title="Terminal"></p>
+<p><strong>image source</strong> : <a href="http://linuxcommand.org/images/Screenshot-Terminal.png">linuxcommand.org</a></p>
+<p>So, when we open the Terminal, we see something like this :</p>
+<pre><code>username@hostname:~$ 
+</code></pre><ul>
+<li><strong>username</strong> = the username of the current user.</li>
+<li><strong>hostname</strong> = name of the computer (to identify on the network).</li>
+<li><strong>~</strong> = name of the directory you’re in. <em>`~&rsquo; refers to user&rsquo;s home directory</em></li>
+<li><strong>$</strong> =  It indicates the end of the shell prompt. if user is logged in as <em><strong>root</strong></em>, then it will show &lsquo;#&rsquo; sign instead of the &lsquo;$&rsquo; sign.</li>
+</ul>
+<h4 id="root">root</h4>
+<p>In Linux, the root user is the superuser account. this is a special user account that has permission to do any task on a server. So, logged in as root can be potentially dangerous and we should not do that unless we really have to.</p>
+<p><em>Still you need to know how do i login as root, right? you should able logged in as root by using the <code>su -</code> command on your terminal. If you getting any error message, your root account is likely locked. please check <a href="http://www.wikihow.com/Become-Root-in-Linux">this tutorial</a> for more information.</em></p>
+<h4 id="sudo">sudo</h4>
+<p>As we understand, logged in as root can be potentially dangerous and we should try to avoid that. so, how can we execute the restricted commands when needed? the answer is <code>sudo</code>. the <code>sudo</code> command allows a permitted user to execute a command as the superuser or another user.</p>
+<p>for example, if we enter <code>apt-get update</code> command in our terminal, we will get the following error,</p>
+<pre><code>username@hostname:~$ apt-get update
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+</code></pre><p>but, when we use <code>sudo</code> in that same command, it works perfectly,</p>
+<pre><code>username@hostname:~$ sudo apt-get update
+[sudo] password for username: 
+Ign http://dl.google.com stable InRelease
+Hit http://packages.microsoft.com stable InRelease                             
+Hit http://dl.google.com stable Release.gpg  
+........
+</code></pre><hr>
+<h2 id="basic-commands">Basic Commands</h2>
+<p>I think the best site to learn Linux Commands is <a href="http://linuxcommand.org/lc3_lts0060.php">linuxcommand.org</a>. I am just trying to list some basics points.</p>
+<h4 id="type-of-commands">Type of Commands</h4>
+<p>There are four different kinds of Commands :</p>
+<ul>
+<li><strong>Executable program</strong> : Any executable program. i.e : <code>vlc</code>, <code>gedit</code> etc</li>
+<li><strong>Shell Builtin</strong> : Builtin commands provided by Bash. i.e : <code>cd</code>, <code>type</code> etc</li>
+<li><strong>Shell function</strong> : Functions of some commands.</li>
+<li><strong>Alias</strong> : alias of any command.</li>
+</ul>
+<p>If we want to know the type of any command, we can use the <code>type</code> command. i.e, <code>type cd</code></p>
+<h4 id="navigation">Navigation</h4>
+<ul>
+<li>pwd (print working directory)</li>
+<li>cd (change directory)</li>
+<li>ls (list files and directories)
+<ul>
+<li>ls -l (in long format)</li>
+<li>ls -a (including hidden files)</li>
+</ul>
+</li>
+</ul>
+<h4 id="manipulating-files">Manipulating Files</h4>
+<ul>
+<li>cp (copy files and directories)</li>
+<li>mv (move or rename files and directories)</li>
+<li>rm (remove files and directories)</li>
+<li>mkdir (create directories)</li>
+</ul>
+<blockquote>
+<p>We need to understand <a href="http://linuxcommand.org/lc3_lts0050.php">Wildcards</a> feature in order to make powerful commands.</p>
+</blockquote>
+<h4 id="current-user">Current User</h4>
+<ul>
+<li>whoami (show user name of current user)</li>
+<li>id (show user and group information)</li>
+<li>groups (groups that current user belongs to)</li>
+<li>passwd (changes password)</li>
+</ul>
+<h4 id="permissions">Permissions</h4>
+<ul>
+<li>chmod (modify file access rights)</li>
+<li>chown (change file ownership)</li>
+</ul>
+<blockquote>
+<p>We should understand <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions">Linux Permissions</a> clearly.</p>
+</blockquote>
+<h4 id="process">Process</h4>
+<ul>
+<li>ps (list of running processes)</li>
+<li>kill (send a signal to processes)</li>
+</ul>
+<blockquote>
+<p>We should have clear idea about Linux <a href="http://www.tldp.org/LDP/tlk/kernel/processes.html">Processes</a> and <a href="http://linuxcommand.org/lc3_lts0100.php">Job Control</a>.</p>
+</blockquote>
+<hr>
+<h2 id="linux-filesystem">Linux Filesystem</h2>
+<p>It&rsquo;s useful to understand Linux Filesystem. Below is a image to get a basic idea.</p>
+<p><img src="http://i.imgur.com/T6T0sRW.png" alt="File System" title="File System"></p>
+<p><strong>Image Source</strong> : <a href="http://imgur.com/gallery/1DH0O">http://imgur.com/gallery/1DH0O</a></p>
+<p>To know more details, we can visit this <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html">Filesystem Hierarchy Standard</a> page.</p>
+<h3 id="useful-links">Useful Links</h3>
+<ul>
+<li><a href="http://linuxcommand.org">linuxcommand.org</a></li>
+<li><a href="http://sh.howtocode.com.bd">howtocode.com.bd</a> (Bengali)</li>
+<li><a href="http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/">cheatsheetworld.com</a></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

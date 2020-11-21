@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Customizing authentication in Django | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/customizing-authentication-in-django/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Customizing authentication in Django</h1>
+    <time datetime="2020-10-21T06:05:22&#43;06:00">October 21, 2020</time>
+  </header>
+  <h2 id="intro">Intro</h2>
+<p>The authentication that comes with Django is good enough for most common cases. Django also allows us to customize authentication if the defaults don&rsquo;t match our requirements.</p>
+<p>There are multiple approaches we can take to customize the Django authentication system. We can <strong>extend</strong> the default User model, or <strong>substitute</strong> a completely customized model.</p>
+<hr>
+<h2 id="extending-the-default-user-model">Extending the default User model</h2>
+<p>There are two ways to extend the default User model without substituting our own model.</p>
+<h3 id="1-using-proxy-model-">1) Using Proxy Model :</h3>
+<h5 id="what">What?</h5>
+<p>A proxy model is just another class that provides a different interface for the same underlying database model without creating a new table in the database.</p>
+<h5 id="when-to-use">When to use?</h5>
+<p>When we don’t need to have any change in the database, but we need to change the behaviour a little bit (e.g. default ordering, add new methods, etc)</p>
+<h5 id="code-example">Code Example</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app/models.py</span>
+<span style="color:#75715e"># ----------------</span>
+
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+<span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> User
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserProxy</span>(User):
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
+        proxy <span style="color:#f92672">=</span> True
+        ordering <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;username&#39;</span>, )
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>(self):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;doing something&#34;</span>)
+</code></pre></div><blockquote>
+<p>Note : In the above example, <code>User.objects.all()</code> and <code>UserProxy.objects.all()</code> will call the same database but they will differ in behaviour (UserProxy will sort the result by username). Also UserProxy can use the new method named <em>do_something</em>.</p>
+</blockquote>
+<h3 id="2-using-one-to-one-link-with-a-user-model-profile-">2) Using One-To-One Link With a User Model (Profile) :</h3>
+<h5 id="what-1">What?</h5>
+<p>It is a regular Django model that has it’s own database table and holds a One-To-One relationship with the existing User Model. This is often called a profile model.</p>
+<h5 id="when-to-use-1">When to use?</h5>
+<p>When we wish to store additional (non-auth) information related to User.</p>
+<h5 id="code-example-">Code Example :</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app/models.py</span>
+<span style="color:#75715e"># ----------------</span>
+
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+<span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> User
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Profile</span>(models<span style="color:#f92672">.</span>Model):
+    user <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>OneToOneField(User, on_delete<span style="color:#f92672">=</span>models<span style="color:#f92672">.</span>CASCADE)
+    bio <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>)
+    website <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>)
+</code></pre></div><blockquote>
+<p>Note : we can define <a href="https://docs.djangoproject.com/en/3.1/topics/signals/">signals</a> to automatically create/update the Profile model when we create/update User instances.</p>
+</blockquote>
+<hr>
+<h2 id="substituting-a-custom-user-model">Substituting a custom User model</h2>
+<p>We may have different authentication requirements for our Django project for which Django’s built-in User model may not be appropriate. For instance, we may need to use an email address as the identification token instead of a username.</p>
+<p>If we want to use a custom User model for our project, we need to override the default user model by providing a value for the AUTH_USER_MODEL setting that references that custom model:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># settings.py</span>
+<span style="color:#75715e">#-------------</span>
+
+AUTH_USER_MODEL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;myapp.MyUser&#39;</span>
+</code></pre></div><blockquote>
+<p>Notes :</p>
+<ul>
+<li>It’s highly recommended to set up a custom user model when starting a new project, even if the default User model is sufficient for us. In this way we’ll be able to customize it in the future if the needed. Changing AUTH_USER_MODEL after we&rsquo;ve created database tables is significantly more difficult and can’t be done automatically.</li>
+<li>After changing the AUTH_USER_MODEL setting to a different user model, we should not reference the <a href="https://docs.djangoproject.com/en/3.1/ref/contrib/auth/#django.contrib.auth.models.User"><strong>User</strong></a> directly. Instead we should reference the user model with either <a href="https://docs.djangoproject.com/en/3.1/topics/auth/customizing/#django.contrib.auth.get_user_model"><code>get_user_model()</code></a> or <code>settings.AUTH_USER_MODEL</code> to get the currently active user model.</li>
+<li>Reusable apps shouldn’t implement a custom user model.</li>
+</ul>
+</blockquote>
+<p>There are two ways to create a custom user model in Django : <strong>AbstractUser</strong> and <strong>AbstractBaseUser</strong></p>
+<h3 id="1-custom-user-model-extending-abstractuser-">1) Custom User Model Extending AbstractUser :</h3>
+<h5 id="what-2">What?</h5>
+<p>It is a new User model that inherit from AbstractUser class. AbstractUser is a full User model, complete with fields. We can inherit from it and add our own profile fields and methods.</p>
+<h5 id="when-to-use-2">When to use?</h5>
+<p>We should use it when we are perfectly happy with the default authentication process of Django and want to keep the default fields in the user model, yet we want to add some extra information directly in the User model without having to create an extra class. We can also change the username to a different field with minimal overhead.</p>
+<blockquote>
+<p>Note : AbstractUser actually subclasses AbstractBaseUser but provides more default configuration.</p>
+</blockquote>
+<h5 id="code-example-1">Code Example</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app/models.py</span>
+<span style="color:#75715e"># --------------</span>
+
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+<span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> AbstractUser
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BloggerUser</span>(AbstractUser):
+    <span style="color:#75715e"># The model already has an email field, but we</span>
+    <span style="color:#75715e"># need add here to add the unique=True Paremeter</span>
+    email <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>EmailField(unique<span style="color:#f92672">=</span>True) 
+    bio <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>)
+    website <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>)
+
+    USERNAME_FIELD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;email&#39;</span>
+    REQUIRED_FIELD <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;website&#39;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># settings.py</span>
+<span style="color:#75715e"># ----------------</span>
+
+AUTH_USER_MODEL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accounts.BloggerUser&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># articles/models..py</span>
+<span style="color:#75715e"># --------------------</span>
+
+<span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Article</span>(models<span style="color:#f92672">.</span>Model):
+    author <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>ForeignKey(
+        settings<span style="color:#f92672">.</span>AUTH_USER_MODEL,
+        on_delete<span style="color:#f92672">=</span>models<span style="color:#f92672">.</span>CASCADE,
+    )
+</code></pre></div><blockquote>
+<p>Note : In the above example, We are still having username field. In most cases, we may want to remove the username field as we are using email as the identifier. This <a href="https://www.fomfus.com/articles/how-to-use-email-as-username-for-django-authentication-removing-the-username">blog post</a> covers well how to do that.</p>
+</blockquote>
+<h3 id="2-custom-user-model-extending-abstractbaseuser-">2) Custom User Model Extending AbstractBaseUser :</h3>
+<h5 id="what-3">What?</h5>
+<p>This one is the most difficult option but gives the highest flexibility too. It is a new User model that inherit from AbstractBaseUser class. AbstractBaseUser only contains the authentication functionality, but no actual fields. We have to supply them when you subclass.</p>
+<h5 id="when-to-use-3">When to use?</h5>
+<p>We should use it when our application will have different requirements than the default authentication process and we want to start from scratch by creating our own, completely new User model.</p>
+<h5 id="rules">Rules</h5>
+<p>While we inherit from the AbstractBaseUser, we have to follow some rules. Please follow the <a href="https://docs.djangoproject.com/en/3.1/topics/auth/customizing/#specifying-a-custom-user-model">offical doc</a> to know more about the rules.</p>
+<h5 id="code-example--1">Code Example :</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app/managers.py</span>
+<span style="color:#75715e"># -----------------</span>
+
+<span style="color:#f92672">from</span> django.contrib.auth.base_user <span style="color:#f92672">import</span> BaseUserManager
+<span style="color:#f92672">from</span> django.utils.translation <span style="color:#f92672">import</span> ugettext_lazy <span style="color:#66d9ef">as</span> _
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomUserManager</span>(BaseUserManager):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Custom user model manager where identifier is the unique identifiers
+</span><span style="color:#e6db74">    for authentication instead of usernames.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user</span>(self, identifier, password, <span style="color:#f92672">**</span>extra_fields):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        Create and save a identifier with the given identifier and password.
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> identifier:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(_(<span style="color:#e6db74">&#39;The identifier must be set&#39;</span>))
+        user <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>model(identifier<span style="color:#f92672">=</span>identifier, <span style="color:#f92672">**</span>extra_fields)
+        user<span style="color:#f92672">.</span>set_password(password)
+        user<span style="color:#f92672">.</span>save()
+        <span style="color:#66d9ef">return</span> user
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_superuser</span>(self, identifier, password, <span style="color:#f92672">**</span>extra_fields):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        Create and save a SuperUser with the given identifier and password.
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        extra_fields<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#39;is_staff&#39;</span>, True)
+        extra_fields<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#39;is_superuser&#39;</span>, True)
+        extra_fields<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#39;is_active&#39;</span>, True)
+
+        <span style="color:#66d9ef">if</span> extra_fields<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;is_staff&#39;</span>) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> True:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(_(<span style="color:#e6db74">&#39;Superuser must have is_staff=True.&#39;</span>))
+        <span style="color:#66d9ef">if</span> extra_fields<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;is_superuser&#39;</span>) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> True:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(_(<span style="color:#e6db74">&#39;Superuser must have is_superuser=True.&#39;</span>))
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>create_user(identifier, password, <span style="color:#f92672">**</span>extra_fields)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app/models.py</span>
+<span style="color:#75715e"># ----------------</span>
+
+<span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> AbstractBaseUser
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+
+<span style="color:#f92672">from</span> .managers <span style="color:#f92672">import</span> CustomUserManager
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BloggerUser</span>(AbstractBaseUser):
+    identifier <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">40</span>, unique<span style="color:#f92672">=</span>True)
+    website <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+    is_staff <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>BooleanField(default<span style="color:#f92672">=</span>False)
+    is_active <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>BooleanField(default<span style="color:#f92672">=</span>True)
+
+    USERNAME_FIELD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;identifier&#39;</span>
+
+    objects <span style="color:#f92672">=</span> CustomUserManager()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># settings.py</span>
+<span style="color:#75715e"># ----------------</span>
+
+AUTH_USER_MODEL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;app.BloggerUser&#39;</span>
+</code></pre></div><h2 id="resources-">Resources :</h2>
+<ul>
+<li><a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html">https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html</a></li>
+<li><a href="https://medium.com/agatha-codes/options-objects-customizing-the-django-user-model-6d42b3e971a4">https://medium.com/agatha-codes/options-objects-customizing-the-django-user-model-6d42b3e971a4</a></li>
+<li><a href="https://testdriven.io/blog/django-custom-user-model/">https://testdriven.io/blog/django-custom-user-model/</a></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

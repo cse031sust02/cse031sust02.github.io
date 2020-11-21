@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Introduction to Websocket | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/intro-to-websocket/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Introduction to Websocket</h1>
+    <time datetime="2017-08-09T11:27:15&#43;06:00">August 09, 2017</time>
+  </header>
+  <h2 id="intro">Intro</h2>
+<p>WebSocket is a protocol (like HTTP) which defines how two parties can communicate. It is a technique for two-way communication over one (TCP) socket.</p>
+<p>A very good intro is written in this <a href="http://blog.teamtreehouse.com/an-introduction-to-websockets">post</a></p>
+<h3 id="how-it-works">How It Works</h3>
+<p>WebSockets provide a <strong>persistent connection</strong> between a <strong>client</strong> and <strong>server</strong>.</p>
+<p>Once a WebSocket connection is established the connection stays open until the client or server decides to close this connection. With this open connection, the client or server can send messages to each other at any given time.</p>
+<h3 id="why-use-websocket">Why Use Websocket?</h3>
+<p>WebSockets let us talk to the server without using AJAX requests. It provides great solution for real-time, event-driven web applications. We can use WebSocket whenever we need a truly low latency, near realtime connection between the client and the server. Such as Multiplayer online games, Chat applications, Live Updates.</p>
+<p>Another use case for WebSocket is developing WebRTC-based applications.</p>
+<p>Websockets can replace long-polling (keeping an HTTP connection open until the server has some data to push down to the client).</p>
+<h2 id="client--server">Client &amp; Server</h2>
+<p>WebSocket is designed to be implemented in web browsers and web servers, but it can be used by any client or server application.</p>
+<h3 id="servers">Servers</h3>
+<p>We can build a WebSocket server using any server-side programming language that is capable of <a href="https://en.wikipedia.org/wiki/Berkeley_sockets">Berkeley sockets</a>, such as PHP, Python or Node.js.</p>
+<p><strong>Popular Libraries :</strong></p>
+<ul>
+<li>Node.js : <a href="http://socket.io/">socket.io</a>,  <a href="https://github.com/websockets/ws">ws</a></li>
+<li>PHP : <a href="http://socketo.me">Ratchet</a>, <a href="https://github.com/ghedipunk/PHP-Websockets">PHP WebSockets</a></li>
+</ul>
+<blockquote>
+<p>Node.js is recommended for implementing websockets, as it will let you use same technology(JavaScript) on both client and server.</p>
+</blockquote>
+<h3 id="clients">Clients</h3>
+<p>WebSocket is also a new feature in browsers. It is one of the coolest new features of HTML5 and is currently supported in most modern browsers.</p>
+
+</article>
+
+
+
+</body>
+
+</html>

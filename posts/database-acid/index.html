@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Database &amp; ACID properties | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/database-acid/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Database &amp; ACID properties</h1>
+    <time datetime="2017-04-11T11:13:09&#43;06:00">April 11, 2017</time>
+  </header>
+  <h2 id="what-is-database-">What is Database? :</h2>
+<p>A database is a collection of data that is stored in an organized manner.</p>
+<blockquote>
+<p>the term &ldquo;database&rdquo; is often used casually to refer to both a database and the DBMS used to manipulate it.</p>
+</blockquote>
+<h3 id="database-models-">Database Models :</h3>
+<p>A database model refers to the logical structure, representation or layout of a database and how the data will be stored, managed and processed within it.</p>
+<p>There are many kinds of data models. Such as Relational model, Network model, Entity-attribute-value model, Object-oriented database model and many more..</p>
+<p>DBMS popularity broken down by database model : <a href="http://db-engines.com/en/ranking">http://db-engines.com/en/ranking</a></p>
+<h3 id="dbms--rdbms-">DBMS &amp; RDBMS :</h3>
+<p>DBMS stands for Database Management System. It is the software application to store and manage the data.</p>
+<p>RDBMS stands for Relational Database Management System. It is based on the relational model. The relational model has relationship between tables using primary keys, foreign keys and indexes.</p>
+<p>Example : MySQL, PostgreSQL, MongoDB, Microsoft SQL Server, Oracle etc.</p>
+<blockquote>
+<p>You can say that a RDBMS is an in an extension of a DBMS. The key difference is that RDBMS applications store data in a tabular form, while DBMS applications store data as files. Does that mean there are no tables in a DBMS? There can be, but there will be no “relation” between the tables, like in a RDBMS.</p>
+</blockquote>
+<blockquote>
+<p>src - <a href="https://blog.udemy.com/differences-between-dbms-and-rdbms/">https://blog.udemy.com/differences-between-dbms-and-rdbms/</a></p>
+</blockquote>
+<p>Most software products in the market today are both DBMS and RDBMS compliant.</p>
+<hr>
+<h2 id="what-is-acid-">What is ACID? :</h2>
+<p>ACID is a set of properties of database transactions (a single logical operation on the data is called a transaction).</p>
+<p><strong>Atomicity</strong> :  If one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.</p>
+<p><strong>Consistency</strong> : Any data written to the database must be valid according to all defined rules.</p>
+<p><strong>Isolation</strong> : One transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait until the other is finished.</p>
+<p><strong>Durability</strong> : Once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk).</p>
+<p><img src="https://s3-us-west-1.amazonaws.com/morpheus-staging/system/spud_media/332/original/acidoverwiew.png?1422558433" alt="Foo"></p>
+<p><strong>Image Source :</strong> <a href="https://www.morpheusdata.com/blog/2015-01-29-when-do-you-need-acid-compliance-">morpheusdata</a></p>
+<h3 id="acid-compliants-">ACID compliants :</h3>
+<p>Oracle is ACID compliant.</p>
+<p>PostgreSQL is <a href="https://www.postgresql.org/about">ACID compliant</a></p>
+<p>MySQL is not an ACID compliant database server by design, but if you use the InnoDB storage engine for your tables, you will be able to perform transaction-safe operations on your database.</p>
+<p>-<em>Source</em> : <a href="http://stackoverflow.com/questions/4264849/how-to-implement-the-acid-model-for-a-database">Stackoverflow</a></p>
+
+</article>
+
+
+
+</body>
+
+</html>

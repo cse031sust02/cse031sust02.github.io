@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Database Normalization | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/database-normalization/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Database Normalization</h1>
+    <time datetime="2018-01-30T11:50:23&#43;06:00">January 30, 2018</time>
+  </header>
+  <h2 id="intro">Intro</h2>
+<p>Database normalization is the process of organizing a relational database to reduce data redundancy (duplicate data) and improve data integrity. The concept of Normalization was introduced by <a href="https://en.wikipedia.org/wiki/Edgar_F._Codd">Edgar F. Codd</a>.</p>
+<p>Normalization is part of a successful database design. It makes a Relation or Table free from insert/update/delete anomalies and saves space by removing duplicate data.</p>
+<h2 id="normal-forms-">Normal Forms :</h2>
+<p>Theory of Data Normalization is still being developed further. There are discussions even on 6th Normal Form. But usually we call a relational database as &ldquo;normalized&rdquo; if it meets third normal form. <a href="https://en.wikipedia.org/wiki/Database_normalization#cite_ref-Codd1970_4-0">(src)</a></p>
+<h3 id="first-normal-form">First Normal Form</h3>
+<p>Once a table is in first normal form, it is easier to search, filter, and sort information from that table.</p>
+<p>The rules for first normal form :</p>
+<ul>
+<li>End row should contain a primary key to uniquely identify that row. The primary key can be a single column or combination of multiple columns.</li>
+<li>Each column should contains atomic value (can not be subdivided). i.e., &ldquo;red, green&rdquo; is not acceptable.</li>
+<li>Each column should contains values that are same type (i.e., do not put &lsquo;address&rsquo; in &lsquo;phone&rsquo; column)</li>
+<li>There are no repeating groups of columns (i.e., do not have columns like Phone1, Phone2, and Phone3)</li>
+</ul>
+<h3 id="second-normal-form">Second Normal Form</h3>
+<p>The rules for second normal form :</p>
+<ul>
+<li>The database must meet all the requirements of the 1NF.</li>
+<li>All the non-key columns depend on the table’s primary key.</li>
+</ul>
+<h3 id="third-normal-form">Third Normal Form</h3>
+<p>The rules for third nomal form :</p>
+<ul>
+<li>The database must meet all the requirements of the 2NF.</li>
+<li>All the columns of the table are not transitively dependent on the primary key.</li>
+</ul>
+<p>This <a href="https://www.youtube.com/watch?v=UrYLYV7WSHM">video</a> is very helpful to understand all the normal forms with example.</p>
+
+</article>
+
+
+
+</body>
+
+</html>

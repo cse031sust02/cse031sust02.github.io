@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>My notes about the basics of MongoDB | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/getting-started-with-mongodb/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>My notes about the basics of MongoDB</h1>
+    <time datetime="2019-12-10T10:05:22&#43;06:00">December 10, 2019</time>
+  </header>
+  <h2 id="intro">Intro</h2>
+<p>MongoDB is a document-oriented <a href="https://www.mongodb.com/nosql-explained">NoSQL</a> database. It is one of the most powerful NoSQL systems and databases around, today.</p>
+<h2 id="key-features-">Key Features :</h2>
+<p>Here is the key features of MongoDB :</p>
+<ul>
+<li>MongoDB is free to use.</li>
+<li>MongoDB stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time</li>
+<li>The document model maps to the objects in your application code, making data easy to work with</li>
+<li>Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data</li>
+<li>MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use</li>
+</ul>
+<p>src : <a href="https://www.mongodb.com/what-is-mongodb">MongoDB Website</a></p>
+<h2 id="terminology">Terminology</h2>
+<p><img src="https://beginnersbook.com/wp-content/uploads/2017/09/RDBMS_MongoDB_Mapping.jpg" alt=""></p>
+<p>src : <a href="https://beginnersbook.com/wp-content/uploads/2017/09/RDBMS_MongoDB_Mapping.jpg">beginnersbook.com</a></p>
+<h4 id="database-">database :</h4>
+<p>A database serves as a namespace for collections. It is similar to database in RDBMS. A single MongoDB server typically has multiple databases. Collections for same application should be in one database.</p>
+<h4 id="collection-">collection :</h4>
+<p>Collections store individual records called documents. It is the equivalent of an RDBMS table.
+Collections do not enforce a schema. Documents within a collection can have different fields. Typically, all documents in a collection have a similar or related purpose.</p>
+<h4 id="document-">document :</h4>
+<p>Document is the basic unit of storage data. They are more oftenly referred to as Objects. They are analogous to JSON objects but exist in the database in <a href="https://www.mongodb.com/json-and-bson">BSON</a> format.</p>
+<p><img src="https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg" alt=""></p>
+<p>src : <a href="https://docs.mongodb.com/manual/core/document/">MongoDB Docs</a></p>
+<p>MongoDB supports a range of scalar value types such as : string, null, integer, double, and decimal, as well as document values, and array values.</p>
+<p>Example :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;_id&#34;</span>: <span style="color:#e6db74">&#34;5553a98ce4b02cf7150dee1f&#34;</span>,
+  <span style="color:#f92672">&#34;st&#34;</span>: <span style="color:#e6db74">&#34;x+50600-002700&#34;</span>, 
+  <span style="color:#f92672">&#34;position&#34;</span>: {
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;Point&#34;</span>,
+    <span style="color:#f92672">&#34;coordinates&#34;</span>: [
+      <span style="color:#ae81ff">-2.7</span>,
+      <span style="color:#ae81ff">50.6</span>
+    ]
+  },
+  <span style="color:#f92672">&#34;elevation&#34;</span>: <span style="color:#ae81ff">9999</span>,
+  <span style="color:#f92672">&#34;callLetters&#34;</span>: <span style="color:#e6db74">&#34;BUOY&#34;</span>,
+  <span style="color:#f92672">&#34;qualityControlProcess&#34;</span>: <span style="color:#e6db74">&#34;V020&#34;</span>,
+  <span style="color:#f92672">&#34;dataSource&#34;</span>: <span style="color:#e6db74">&#34;4&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;FM-13&#34;</span>,
+  <span style="color:#f92672">&#34;airTemperature&#34;</span>: {
+    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">999.9</span>,
+    <span style="color:#f92672">&#34;quality&#34;</span>: <span style="color:#e6db74">&#34;9&#34;</span>
+  },
+  <span style="color:#f92672">&#34;wind&#34;</span>: {
+    <span style="color:#f92672">&#34;direction&#34;</span>: {
+      <span style="color:#f92672">&#34;angle&#34;</span>: <span style="color:#ae81ff">999</span>,
+      <span style="color:#f92672">&#34;quality&#34;</span>: <span style="color:#e6db74">&#34;9&#34;</span>
+    },
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;9&#34;</span>,
+    <span style="color:#f92672">&#34;speed&#34;</span>: {
+      <span style="color:#f92672">&#34;rate&#34;</span>: <span style="color:#ae81ff">999.9</span>,
+      <span style="color:#f92672">&#34;quality&#34;</span>: <span style="color:#e6db74">&#34;9&#34;</span>
+    }
+  }
+}
+</code></pre></div><p>src : <a href="https://www.youtube.com/watch?time_continue=110&amp;v=KM_GMvAinG8&amp;feature=emb_title">MongoDB University Course : MongoDB Basics</a></p>
+<p><strong>_id</strong> : All documents in MongoDB must contain this _id field. This is the unique identifier for a given document within a collection. If we don&rsquo;t supply the value, MongoDB will automatically create one for us.</p>
+<h4 id="cursor-">cursor :</h4>
+<p>This is a pointer to the result set of a query. Clients can iterate through a cursor to retrieve results.</p>
+<p>I will try to add <em>primary key</em>, <em>index</em>, <em>table joins</em>,* *aggregation* and *transactions* here soon</p>
+<h2 id="core-components">Core Components</h2>
+<h4 id="mongod">mongod:</h4>
+<p>mongod is the primary <a href="https://notes.shichao.io/apue/ch13/">daemon process</a> for the MongoDB system. It handles data requests, manages data access, and performs background management operations.When we start the <code>mongod</code> process, it basically starts the MongoDB and run it in the background. mongod has several default parameters, such as storing data in /data/db and running on port 27017.</p>
+<pre><code>$ mongod  --port 27017 --dbpath /var/lib/mongodb
+
+2019-12-15T15:37:47.653+0600 I CONTROL  [initandlisten] MongoDB starting : pid=4523 port=27017 dbpath=/var/lib/mongodb 64-bit host=talha-pc
+2019-12-15T15:37:47.653+0600 I CONTROL  [initandlisten] db version v3.6.3
+...
+2019-12-15T15:37:48.281+0600 I NETWORK  [initandlisten] waiting for connections on port 27017
+</code></pre><h4 id="mongo">mongo:</h4>
+<p>mongo is an interactive JavaScript shell interface for MongoDB. It provides a powerful interface for us to test queries and operations directly with the database. The commands we run in mongo shell are actually making real database commands behind it. When we run <code>mongo</code> with no parameters, by deafult it connects to the <em>localhost</em> on port <em>27017</em>.</p>
+<pre><code>$ mongo
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.6.3
+Server has startup warnings: 
+2019-12-15T15:41:29.671+0600 I STORAGE  [initandlisten] 
+....
+</code></pre><p>Here is some basic commands with examples in mongo shell</p>
+<pre><code>&gt; show dbs
+admin             0.000GB
+config            0.000GB
+blog              0.000GB
+&gt; use blog
+switched to db blog
+&gt; show collections
+articles
+users
+tags
+comments
+&gt; db
+blog
+&gt; db.users.find()
+[{&quot;_id&quot;:ObjectId(&quot;5d4910d0aac3dee44cfb98ec&quot;),&quot;name&quot;:&quot;Talha Ibne Imam&quot;,&quot;username&quot;:&quot;talha&quot;,&quot;email&quot;:&quot;talha@demo.com&quot;,},{&quot;_id&quot;:ObjectId(&quot;5de4ea9caaeb9cb649ca6dc2&quot;),&quot;name&quot;:&quot;Ruhul Amin&quot;,&quot;username&quot;:&quot;sujon&quot;,&quot;email&quot;:&quot;sujon@demo.com&quot;,}]
+</code></pre><p><strong>Note</strong> : The find() method returns a cursor to the results. We can use several cursor methods (i.e: limit, skip) to call on the returned cursor and get our desired results. i.e.:</p>
+<pre><code>&gt; db.users.find({&quot;name&quot;:&quot;Talha&quot;}, {&quot;name&quot;:1, &quot;email&quot;:1}).limit(2)
+</code></pre><h2 id="security">Security:</h2>
+<h4 id="authentication">Authentication</h4>
+<p>Authentication is the process of verifying the identity of a client. When access control is enabled, MongoDB requires all clients to authenticate themselves in order to determine their access.</p>
+<p>MongoDB supports different client authentication mechanisms :</p>
+<ul>
+<li>SCRAM (We should alway must configure atleast SCRAM)</li>
+<li>X.509</li>
+<li>LDAP (for MongoDB Enterprise only)</li>
+<li>KERBEROS (for MongoDB Enterprise only)</li>
+</ul>
+<p>By default, MongoDB starts without any authentication. When we open the mongo shell, we will see a warning as below</p>
+<pre><code>** WARNING: Access control is not enabled for the database.
+** Read and write access to data and configuration is unrestricted.
+</code></pre><p>It is because the access control is not enabled by default. Once access control is enabled, users must authenticate themselves. Here is a very good <a href="https://medium.com/mongoaudit/how-to-enable-authentication-on-mongodb-b9e8a924efac">blog post</a> on how to enable authentication on MongoDB. For more details on it, you can visit the <a href="https://docs.mongodb.com/manual/tutorial/enable-authentication/">official doc</a></p>
+<h4 id="authorization">Authorization</h4>
+<p>MongoDB uses Role-Based Access Control(<a href="https://en.wikipedia.org/wiki/Role-based_access_control">RBAC</a>). A user is granted one or more roles that determine the user’s access to database resources and operations.</p>
+<ul>
+<li>Each user has one or more Roles</li>
+<li>Each Role has one or more Privileges</li>
+<li>A Privilege represents a specified resource and the actions permitted on the resource
+<ul>
+<li>A resource is a database, collection, set of collections, or the cluster</li>
+<li>An action specifies the operation allowed on the resource</li>
+</ul>
+</li>
+</ul>
+<p>MongoDB provides <a href="https://docs.mongodb.com/manual/reference/built-in-roles/">built-in roles</a> that provide set of privileges commonly needed in a database system. We can also create and modify <a href="https://docs.mongodb.com/manual/core/security-user-defined-roles/">user-defined roles</a> if these built-in-roles cannot provide the desired set of privileges.</p>
+<h2 id="tools">Tools</h2>
+<h5 id="binary-import-and-export-tools">Binary Import and Export Tools</h5>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongodump/">mongodump</a> : Which outputs BSON representations of MongoDB</li>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongorestore/">mongorestore</a> : Which restores BSON representation in MongoDB into MongoDB collections</li>
+</ul>
+<h5 id="data-import-and-export-tools">Data Import and Export Tools</h5>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongoexport/">mongoexport</a> : Which outputs JSON or CSV representations of MongoDB collections</li>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongoimport/">mongoimport</a> : Which takes the JSON or the CSV representations and creates a MongoDB collection from it</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.mongodb.com/">https://www.mongodb.com/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/MongoDB">https://en.wikipedia.org/wiki/MongoDB</a></li>
+</ul>
+
+</article>
+
+
+
+</body>
+
+</html>

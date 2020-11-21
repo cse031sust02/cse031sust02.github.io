@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>JSON | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/json/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>JSON</h1>
+    <time datetime="2017-04-09T18:15:22&#43;06:00">April 09, 2017</time>
+  </header>
+  <h2 id="what-is-json">What is JSON?</h2>
+<p>JSON stands for JavaScript Object Notation.</p>
+<p>Douglas Crockford originally specified the JSON format in the early 2000s. Altohugh it derives from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data.</p>
+<p>JSON filenames use the extension .json.</p>
+<p>The official internet media type for JSON is &lsquo;application/json&rsquo;</p>
+<h3 id="why-use-json">Why use JSON?</h3>
+<p>Because It is</p>
+<ul>
+<li>lightweight data-interchange format.</li>
+<li>language independent</li>
+<li>&ldquo;self-describing&rdquo; and easy to understand by both humans (to understand) and machines (to parse and generate).</li>
+</ul>
+<h3 id="areas-of-usage">Areas of Usage?</h3>
+<p>JSON is heavily used in these areas : API, NoSQL, AJAX, Package Management (Composer, NPM, Bower etc)</p>
+<h3 id="why-better-than-xml">Why better than XML?</h3>
+<p>JSON is faster and easier than XML. It is parsed very easily into a ready-to-use JavaScript object while XML is much more difficult to parse.</p>
+<hr>
+<h2 id="data-structure--rules">Data Structure &amp; Rules</h2>
+<p>The JSON syntax is a subset of the JavaScript syntax.</p>
+<h3 id="data-structures">Data Structures</h3>
+<p>JSON is defined by two basic structures.</p>
+<p><strong>1. A collection of name/value pairs.</strong></p>
+<p>Different programming languages support this data structure in different names. Like object, record, struct, dictionary, hash table, keyed list, or associative array.</p>
+<p><strong>e.g.,</strong> <code>{ &quot;name&quot;: &quot;John&quot;, &quot;age&quot;:  30, &quot;member&quot;: false, &quot;spouse&quot;: { &quot;firstName&quot;: &quot;Mary&quot;, &quot;lastName&quot;: &quot;Smith&quot;} }</code></p>
+<p><strong>2. Ordered list of values.</strong></p>
+<p>In various programming languages, it is called as array, vector, list, or sequence.
+e.g., <code>[&quot;John&quot;,&quot;Mary&quot;,&quot;Peter&quot;,&quot;Sally&quot;]</code></p>
+<h3 id="syntax-rules">Syntax Rules</h3>
+<ul>
+<li>Data is written as name/value pairs. <code>e.g., &quot;name&quot;:&quot;John&quot;</code> (note : <em>JSON names require double quotes. JavaScript object names don&rsquo;t.</em>)</li>
+<li>Data is seperated by commas. e.g., <code>&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30</code></li>
+<li>Curly braces hold objects.</li>
+</ul>
+<p><strong>e.g.,</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John&#34;</span>,
+  <span style="color:#f92672">&#34;age&#34;</span>: <span style="color:#ae81ff">30</span>,
+  <span style="color:#f92672">&#34;member&#34;</span>: <span style="color:#66d9ef">false</span>,
+  <span style="color:#f92672">&#34;spouse&#34;</span>: { <span style="color:#960050;background-color:#1e0010">//object</span>
+    <span style="color:#f92672">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;Mary&#34;</span>,
+    <span style="color:#f92672">&#34;last_name&#34;</span>: <span style="color:#e6db74">&#34;Smith&#34;</span>
+  }
+}
+</code></pre></div><ul>
+<li>Square brackets hold arrays.</li>
+</ul>
+<p><strong>e.g.,</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John&#34;</span>,
+    <span style="color:#f92672">&#34;age&#34;</span>:  <span style="color:#ae81ff">30</span>,
+    <span style="color:#f92672">&#34;member&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;phoneNumbers&#34;</span>: [ <span style="color:#960050;background-color:#1e0010">//array</span>
+        {
+            <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;home&#34;</span>,
+            <span style="color:#f92672">&#34;number&#34;</span>: <span style="color:#e6db74">&#34;123-456-7890&#34;</span>
+        },
+        {
+            <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;mobile&#34;</span>,
+            <span style="color:#f92672">&#34;number&#34;</span>: <span style="color:#e6db74">&#34;000-111-2222&#34;</span>
+        }
+    ]
+}
+</code></pre></div><h3 id="data-types">Data Types</h3>
+<p>Values must be one of the following data types.</p>
+<ul>
+<li><strong>a string</strong> : sequence of zero or more Unicode characters. e.g., <code>{ &quot;name&quot;:&quot;John&quot; }</code></li>
+<li><strong>a number</strong> : Integer, Fraction and Exponent. e.g., <code>{ &quot;age&quot;:30 }</code></li>
+<li><strong>an object (JSON object)</strong> : starts and ends with &lsquo;{&rsquo; and &lsquo;}'. a number of string value pairs can reside between. Keys must be strings, and values must be a valid JSON data type.</li>
+</ul>
+<p>e.g.,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;employee&#34;</span>:{ <span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#f92672">&#34;age&#34;</span>:<span style="color:#ae81ff">30</span>, <span style="color:#f92672">&#34;city&#34;</span>:<span style="color:#e6db74">&#34;New York&#34;</span> }
+}
+</code></pre></div><ul>
+<li><strong>an array</strong> : starts and ends with &lsquo;[&rsquo; and &lsquo;]'. a number of values can reside between.</li>
+</ul>
+<p>e.g.,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;employees&#34;</span>:[ <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#e6db74">&#34;Anna&#34;</span>, <span style="color:#e6db74">&#34;Peter&#34;</span> ]
+}
+</code></pre></div><ul>
+<li><strong>a boolean</strong> : true or false. (TRUE or FALSE is not acceptable!). e.g., <code>{ &quot;accept&quot;:true }</code></li>
+<li><strong>null</strong> : null (NULL is not acceptable). e.g., <code>{ &quot;coupon&quot;:null }</code></li>
+</ul>
+<blockquote>
+<p>note : JSON values cannot be a function, a date or undefined. (In JavaScript you can have these values)</p>
+</blockquote>
+
+</article>
+
+
+
+</body>
+
+</html>

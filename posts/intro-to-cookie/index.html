@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Introduction to Cookie | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/intro-to-cookie/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Introduction to Cookie</h1>
+    <time datetime="2017-04-11T11:11:22&#43;06:00">April 11, 2017</time>
+  </header>
+  <h2 id="what-is-a-http-cookie">What is a HTTP Cookie?</h2>
+<p>Cookies are small files that is sent from a website(server) and stored on users&rsquo;s computer by a browser.</p>
+<p>It is also called web cookie, Internet cookie, browser cookie or simply cookie.</p>
+<h3 id="usage">Usage</h3>
+<p>Cookies are mainly used for these purposes</p>
+<ul>
+<li>Session management (user logins, shopping carts)</li>
+<li>Personalization (user preferences)</li>
+<li>Tracking (analyzing user behavior)</li>
+</ul>
+<p>source : <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">MDN</a></p>
+<h3 id="how-serverclient-sends-cookie">How server/client sends cookie?</h3>
+<h4 id="server-to-browser">Server to Browser</h4>
+<p>The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.</p>
+<p>e.g.,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HTTP/1.0 <span style="color:#ae81ff">200</span> OK
+Content-type: text/html
+Set-Cookie:<span style="color:#e6db74">&#34;MyCookieName=MyValue; expires=Tue, 11-Apr-2016 09:22:03 GMT; Max-Age=3600&#34;</span>
+</code></pre></div><ul>
+<li>expires date time is in GMT.</li>
+<li>if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &lsquo;session cookies&rsquo;.</li>
+</ul>
+<p>To set cookie using <a href="http://php.net/manual/en/function.setcookie.php">php</a>,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">setcookie(&#34;mycookie&#34;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
+</code></pre></div><h4 id="browser-to-the-server">Browser to the server</h4>
+<p>The browser will send back all previously stored cookies to the server using the Cookie header.</p>
+<p>e.g.,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /my_page.html HTTP/1.1
+Host: www.example.com
+Cookie: MyCookieName<span style="color:#f92672">=</span>MyValue 
+</code></pre></div><p>For more details, please check <a href="http://www.cookiecentral.com/faq/#3.2">http://www.cookiecentral.com/faq/#3.2</a></p>
+<h2 id="secuirity">Secuirity</h2>
+<p>Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.</p>
+
+</article>
+
+
+
+</body>
+
+</html>

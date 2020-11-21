@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>HTTP প্রোটোকল  এর বেসিক কাহিনী! | cse031sust02</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/index.css">
+<link rel="stylesheet" href="https://cse031sust02.github.io/css/classes.css">
+<link rel="canonical" href="https://cse031sust02.github.io/posts/protocol-basics/">
+<link rel="alternate" type="application/rss+xml" href="" title="cse031sust02">
+
+<body>
+
+<header class="icons">
+  
+    <a href="https://cse031sust02.github.io/">cse031sust02</a>
+  
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>HTTP প্রোটোকল  এর বেসিক কাহিনী!</h1>
+    <time datetime="2017-04-10T11:31:28&#43;06:00">April 10, 2017</time>
+  </header>
+  <h2 id="tcpip">TCP/IP</h2>
+<p>TCP = Transmission Control Protocol</p>
+<p>IP = Internet Protocol</p>
+<p>TCP/IP হলো একটা Protocol Suite.</p>
+<p>TCP/IP = TCP + IP + more protocols ..</p>
+<p>WWW ( World Wide Web ) এ Browser গুলা Server এর সাথে connect করার জন্য TCP use করে।
+HTTP, HTTPS, SMTP, FTP ইত্যাদি protocol গুলা তাদের কাজের জন্য  TCP কে use করে।</p>
+<hr>
+<h2 id="http-hypertext-transfer-protocol">HTTP (HyperText Transfer Protocol)</h2>
+<p>HTTP হলো একটা request-response stateless protocol যার মাধ্যমে Client এবং Server পরস্পর Communicate করতে পারে।</p>
+<p>Client টা Server এর কাছে Request পাঠায় , Server সেইটার Response পাঠায়।</p>
+<h4 id="request-message-এর-format">Request Message এর Format</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Request Line 
+Request Header fields
+Empty Line 
+An Optional Message Body
+</code></pre></div><p><strong>e.g.,</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /index.html HTTP/1.1
+Host : www.example.com 
+</code></pre></div><ul>
+<li>GET হলো Method</li>
+<li>index.html হলো Requested File</li>
+<li>Http/1.1 হলো HTTP Version</li>
+</ul>
+<h4 id="response-message-এর-format">Response Message এর Format</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Status  Line 
+Response Header Fields 
+Empty Line 
+An Optional Message Body
+</code></pre></div><p><strong>e.g.,</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</code></pre></div><ul>
+<li>HTTP/1.1 = HTTP Version, 200 = Status Code, OK = reason message</li>
+</ul>
+<blockquote>
+<p><em>Header fields এর সম্পর্কে জানতে <a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Wikipedia</a> তে দেখুন</em></p>
+</blockquote>
+<p>সুতরাং , আমরা যখন ব্রাউজার এ <code>www.example.com/blog.php</code> লিখে এন্টার করি,  ব্রাউজার (Client) টা Server কে আসলে এরকম একটা request করে,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET  /blog.php HTTP/1.1 
+Host : www.example.com 
+</code></pre></div><p>আর Server এর response টা এরকম,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HTTP/1.0 <span style="color:#ae81ff">200</span> OK
+Date: Tue, <span style="color:#ae81ff">26</span> May <span style="color:#ae81ff">2015</span> 23:59:59 GMT
+Content-Type: text/html
+Content-Length: <span style="color:#ae81ff">1202</span> 
+
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Blog&lt;/h1&gt;
+  content goes here 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><hr>
+<h3 id="http-methodsverbs">HTTP Methods/Verbs</h3>
+<p>Resource এ কি টাইপের action করতে চাই সেটা indicate করার জন্য কিছু method আছে ।
+common method গুলা হলো  GET, POST, PUT, DELETE .</p>
+<hr>
+<h3 id="status-codes">Status Codes</h3>
+<p>Informational : 1XX &ndash; request recieve হইসে, process চলসে ।</p>
+<p>Successfull : 2XX &ndash; client এর request succssfully receive করা হইসে।</p>
+<p>Redirectional : 3XX &ndash; Client এর extra কিছু করতে হবে, mostly redirected ।</p>
+<p>Client Error : 4XX &ndash; Client কোন error করছে ।</p>
+<p>Server Error : 5XX &ndash; Server এ কোন সমস্যা আছে।</p>
+<hr>
+<h3 id="https--hypertext-transfer-protocol-secure-">HTTPS ( HyperText Transfer Protocol Secure )</h3>
+<p>HTTPS = HTTP + SSL (Secure Socket Layer)</p>
+<p>এটা HTTP এর উপরে একটা Layer (SSL/TLS Protocol) দিয়ে বানানো যেটা HTTP Communication এ কিছু secuirity যোগ করে।
+এটার মেইন উদ্দেশ্য হলো Wiretapping আর Man-in-the-middle-attack থেকে protect করা।</p>
+<p>HTTPS এ Server ও Client গুলা  HTTP এর মতই communicate করে কিন্তু communication টা একটা Secure SSL connection এর উপরে হয় যেটা request এবং response টাকে encrypt/decrypt করে।</p>
+<p>SSL টার mainly ২ টা কাজ</p>
+<ul>
+<li>এইটা verify করা যে Client টা Directly Server এর সাথেই communicate করতেছে <!-- raw HTML omitted --></li>
+<li>এইটা ensure করা যে client ও  server এর মধ্যকার কথাবার্তা শুধু client ও server ই পরতে পারতেছে</li>
+</ul>
+<p>HTTPS এ header, message সবই encrypted থাকে।</p>
+<p>কোন site কে যদি আমরা HTTPS use করে secure করতে চাই তাহলে পুরা site টাকেই HTTPS এ host করতে হবে। এমন না যে কিছু page এ শুধু  করব।</p>
+
+</article>
+
+
+
+</body>
+
+</html>
