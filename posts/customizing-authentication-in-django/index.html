@@ -52,7 +52,8 @@
     <div class="post">
   <h1>Customizing authentication in Django</h1>
   <time datetime=2020-10-21T06:05:22&#43;0600 class="post-date">Wed, Oct 21, 2020</time>
-  <h2 id="intro">Intro</h2>
+  <hr>
+<h2 id="intro">Intro</h2>
 <p>The authentication that comes with Django is good enough for most common cases. Django also allows us to customize authentication if the defaults don&rsquo;t match our requirements.</p>
 <p>There are multiple approaches we can take to customize the Django authentication system. We can <strong>extend</strong> the default User model, or <strong>substitute</strong> a completely customized model.</p>
 <hr>
@@ -234,11 +235,42 @@ AUTH_USER_MODEL <span style="color:#f92672">=</span> <span style="color:#e6db74"
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

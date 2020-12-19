@@ -52,7 +52,8 @@
     <div class="post">
   <h1>Introduction to Cookie</h1>
   <time datetime=2017-04-11T11:11:22&#43;0600 class="post-date">Tue, Apr 11, 2017</time>
-  <h2 id="what-is-a-http-cookie">What is a HTTP Cookie?</h2>
+  <hr>
+<h2 id="what-is-a-http-cookie">What is a HTTP Cookie?</h2>
 <p>Cookies are small files that is sent from a website(server) and stored on users&rsquo;s computer by a browser.</p>
 <p>It is also called web cookie, Internet cookie, browser cookie or simply cookie.</p>
 <h3 id="usage">Usage</h3>
@@ -63,7 +64,8 @@
 <li>Tracking (analyzing user behavior)</li>
 </ul>
 <p>source : <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">MDN</a></p>
-<h3 id="how-serverclient-sends-cookie">How server/client sends cookie?</h3>
+<hr>
+<h2 id="how-serverclient-sends-cookie">How server/client sends cookie?</h2>
 <h4 id="server-to-browser">Server to Browser</h4>
 <p>The server tells the client (Browser) to store a cookie using the Set-Cookie HTTP header.</p>
 <p>e.g.,</p>
@@ -75,7 +77,8 @@ Set-Cookie:<span style="color:#e6db74">&#34;MyCookieName=MyValue; expires=Tue, 1
 <li>if expire time is omitted, the cookie will expire at the end of the session (when the browser closes). These type of cookies are called &lsquo;session cookies&rsquo;.</li>
 </ul>
 <p>To set cookie using <a href="http://php.net/manual/en/function.setcookie.php">php</a>,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">setcookie(&#34;mycookie&#34;, &#39;20seconds&#39;, time()+20);  /* expire in 20 second */
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/* expire in 20 second */
+setcookie(&#34;mycookie&#34;, &#39;20seconds&#39;, time()+20);  
 </code></pre></div><h4 id="browser-to-the-server">Browser to the server</h4>
 <p>The browser will send back all previously stored cookies to the server using the Cookie header.</p>
 <p>e.g.,</p>
@@ -83,16 +86,48 @@ Set-Cookie:<span style="color:#e6db74">&#34;MyCookieName=MyValue; expires=Tue, 1
 Host: www.example.com
 Cookie: MyCookieName<span style="color:#f92672">=</span>MyValue 
 </code></pre></div><p>For more details, please check <a href="http://www.cookiecentral.com/faq/#3.2">http://www.cookiecentral.com/faq/#3.2</a></p>
+<hr>
 <h2 id="secuirity">Secuirity</h2>
 <p>Confidential or sensitive information should never be stored or transmitted in HTTP Cookies as the entire mechanism is inherently insecure.</p>
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

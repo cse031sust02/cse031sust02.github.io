@@ -52,8 +52,10 @@
     <div class="post">
   <h1>Send notifications using Firebase</h1>
   <time datetime=2018-01-23T11:21:11&#43;0600 class="post-date">Tue, Jan 23, 2018</time>
-  <h2 id="what-is-firebase">What is Firebase?</h2>
+  <hr>
+<h2 id="what-is-firebase">What is Firebase?</h2>
 <p>Firebase is a very popular platform for developing mobile and web application. Firebase provides many services of different categories such as : analytics, authentication, app performance reports, cloud hosting etc. To view the list of all products with details, please check this <a href="https://firebase.google.com/products/">page</a>.</p>
+<hr>
 <h2 id="firebase-cloud-messaging-fcm">Firebase Cloud Messaging (FCM)</h2>
 <p>Firebase Cloud Messaging(<a href="(https://firebase.google.com/products/cloud-messaging/)">FCM</a>) (Formerly known as Google Cloud Messaging or GCM) is a cross-platform messaging solution that lets us reliably deliver and receive messages and notifications on Android, iOS and the Web at no cost.</p>
 <h3 id="key-capabilities">Key Capabilities</h3>
@@ -63,7 +65,8 @@
 <li>We can send notification messages immediately, or at a future time in the user&rsquo;s local time zone.</li>
 <li>Messages are fully integrated with Firebase Analytics in order to track user engagement and conversion.</li>
 </ul>
-<h3 id="how-does-it-work">How does it work?</h3>
+<hr>
+<h2 id="how-does-it-work">How does it work?</h2>
 <p>An FCM implementation includes two main components for sending and receiving messages or notifications</p>
 <ol>
 <li>
@@ -74,7 +77,8 @@
 </li>
 </ol>
 <p>The app server (or trusted server environment) sends message requests to the FCM servers(provided by Google), which then sends messages to client apps.</p>
-<h3 id="fcm-messages">FCM Messages</h3>
+<hr>
+<h2 id="fcm-messages">FCM Messages</h2>
 <p>FCM messages are divided into two types : Notification messages and Data messages.</p>
 <h4 id="1-notification-messages-">1) Notification messages :</h4>
 <p>Notification messages are handled by the FCM SDK automatically. They are also known as &ldquo;display messages&rdquo; as these messages are displayed on the user’s device by FCM on behalf of the application.</p>
@@ -156,11 +160,42 @@
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

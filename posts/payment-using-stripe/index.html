@@ -52,7 +52,8 @@
     <div class="post">
   <h1>Accepting payments on your site using Stripe</h1>
   <time datetime=2017-04-10T15:27:28&#43;0600 class="post-date">Mon, Apr 10, 2017</time>
-  <h2 id="what-is-stripehttpsstripecom">What is <a href="https://stripe.com/">Stripe</a></h2>
+  <hr>
+<h2 id="what-is-stripehttpsstripecom">What is <a href="https://stripe.com/">Stripe</a>?</h2>
 <p>A popular payment processor. It accepts payments from customers around the world on web or in mobile apps.</p>
 <h3 id="payment-types">Payment types</h3>
 <p>Stripe accepts all major debit and credit cards in 100+ currencies. It also supports bank and direct debit payments, local payment wallets, Alipay and cryptocurrency (Bitcoin) etc.</p>
@@ -63,7 +64,7 @@
 <li>Securely collect payment information using tokenization</li>
 <li>Use the payment information in a charge request or save it for later</li>
 </ol>
-<h3 id="step-1-securely-collect-payment-information-using-tokenization">Step 1. Securely collect payment information using tokenization</h3>
+<h3 id="step-1--securely-collect-payment-information-using-tokenization">Step 1 : Securely collect payment information using tokenization</h3>
 <p>Stripe provides three methods for tokenizing customer’s payment information over HTTPS
 Checkout, Stripe.js &amp; Mobile SDKs</p>
 <h4 id="1-checkouthttpsstripecomcheckout">1. <a href="https://stripe.com/checkout">Checkout</a></h4>
@@ -76,8 +77,8 @@ Checkout, Stripe.js &amp; Mobile SDKs</p>
 <p>If we want to customize the payment form for our need, then we can make use of Stripe Elements.</p>
 <h4 id="3-mobile-sdkshttpsstripecomdocsmobile">3. <a href="https://stripe.com/docs/mobile">Mobile SDKs</a></h4>
 <p>Stripe has native libraries for iOS and Android applications.</p>
-<h3 id="step-2-use-the-tokenized-payment-information">Step 2. Use the tokenized payment information</h3>
-<p>While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are,</p>
+<h3 id="step-2--use-the-tokenized-payment-information">Step 2 : Use the tokenized payment information</h3>
+<p>While a token is created on the first step, now the token is used by our server-side to make an API request to Stripe. Two common examples of when you would use a token are :</p>
 <h4 id="charging-the-customer-immediately">Charging the customer immediately</h4>
 <p>We can create a one-time charge request to charge a customer’s card.</p>
 <p>The API request will contain the token, currency, amount to charge, and any additional information we may want to pass. <a href="https://stripe.com/docs/quickstart#charge-immediately">more details..</a></p>
@@ -86,11 +87,42 @@ Checkout, Stripe.js &amp; Mobile SDKs</p>
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

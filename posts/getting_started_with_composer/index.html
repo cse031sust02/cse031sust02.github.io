@@ -52,12 +52,10 @@
     <div class="post">
   <h1>Getting Started with Composer</h1>
   <time datetime=2017-04-23T17:37:13&#43;0600 class="post-date">Sun, Apr 23, 2017</time>
-  <h2 id="what-is-composerhttpsgetcomposerorg">What is <a href="https://getcomposer.org/">Composer</a>?</h2>
+  <hr>
+<h2 id="what-is-composer">What is Composer?</h2>
 <blockquote>
-<p>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.</p>
-</blockquote>
-<blockquote>
-<p><strong>source</strong> : <a href="https://getcomposer.org/doc/00-intro.md">getcomposer.org</a></p>
+<p>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. - <a href="https://getcomposer.org/doc/00-intro.md">getcomposer.org</a></p>
 </blockquote>
 <h3 id="why-use-composer">Why Use Composer?</h3>
 <p>Suppose, we want to use a mail library for our PHP project, let&rsquo;s say <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>. We would normally download the PHPMailer library and put it on our project&rsquo;s folder. But, PHPMailer depends on some other libraries too. So we need to download those libraries too. Now, those libraries depends on other libraries and the list goes on. This is where Composer comes in, It enables us to declare the libraries our project depends on. And Composer will handle the dependency resolution automatically. So, when we install PHPMailer using Composer, it will pull in all the required libraries, dependencies and manage them all in one place.</p>
@@ -90,7 +88,8 @@
 <li>check for common problems.</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer diagnose
-</code></pre></div><h2 id="project-setup">Project Setup</h2>
+</code></pre></div><hr>
+<h2 id="project-setup">Project Setup</h2>
 <p>To start using Composer in our project, all we need is a <code>composer.json</code> file. This file describes the dependencies of our project (and may contain other metadata as well).</p>
 <p>For example, if we want to use <a href="https://packagist.org/packages/phpmailer/phpmailer">PHPMailer</a> and <a href="https://packagist.org/packages/monolog/monolog">Monolog</a>, we can create the following composer.json file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">{
@@ -115,7 +114,7 @@ $log-&gt;addWarning(&#39;Foo&#39;);
 <p>To update any single package only, the command will be : <code>composer update [package-name]</code></p>
 <hr>
 <h2 id="did-you-know">Did you know?</h2>
-<p>We have to understand few key facts while working with composer</p>
+<p>We have to understand few key facts while working with composer.</p>
 <h3 id="-composer-install-vs-composer-update"># &lsquo;composer install&rsquo; vs &lsquo;composer update&rsquo;</h3>
 <p>To get a clear idea what actually happens when we use the <code>composer install</code> &amp; <code>composer update</code> commands, please visit the <a href="https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies">official doc</a>. I am trying to write the thing in my own way.</p>
 <p>if we run <code>composer install</code> for the first time in our project,</p>
@@ -140,11 +139,42 @@ $log-&gt;addWarning(&#39;Foo&#39;);
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

@@ -52,7 +52,8 @@
     <div class="post">
   <h1>Blogging with Hugo</h1>
   <time datetime=2017-04-09T16:31:49&#43;0600 class="post-date">Sun, Apr 9, 2017</time>
-  <h2 id="install-hugo">Install Hugo</h2>
+  <hr>
+<h2 id="install-hugo">Install Hugo</h2>
 <p>To install Hugo in your operating system, please visit the <a href="http://gohugo.io/overview/installing/">official guide</a>. As I am using ubuntu, installing Hugo is as simple as <code>sudo apt install hugo</code></p>
 <h2 id="getting-started">Getting Started</h2>
 <p>Hugo allows us to scaffold a website quickly and easily.</p>
@@ -129,11 +130,42 @@ blog/public$ push -u origin master
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

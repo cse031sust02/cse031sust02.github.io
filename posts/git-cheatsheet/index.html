@@ -52,7 +52,8 @@
     <div class="post">
   <h1>My Personal Git Cheat Sheet</h1>
   <time datetime=2017-04-11T11:11:48&#43;0600 class="post-date">Tue, Apr 11, 2017</time>
-  <h2 id="what-is-git">What is GIT?</h2>
+  <hr>
+<h2 id="what-is-git">What is GIT?</h2>
 <p>Git is a free and open source distributed version control system.</p>
 <p><strong>Why we use VCS (version control system)?</strong></p>
 <ul>
@@ -84,9 +85,12 @@ git config --global user.email <span style="color:#e6db74">&#34;johndoe@example.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --list
 git config --global --list
 git config --system --list
-</code></pre></div><blockquote>
-<p><strong>Extra</strong></p>
-</blockquote>
+</code></pre></div><h3 id="initialization-create-a-new-repository">Initialization (create a new repository)</h3>
+<p>To initialize git on a project, simply use <code>git init</code> command.
+( <em>a hidden folder named <code>.git</code> will be created in the project&rsquo;s root directory</em> )</p>
+<p>To get a copy of an existing Git repository, use the <code>git clone</code> command.</p>
+<hr>
+<h2 id="extra">Extra</h2>
 <blockquote>
 <ul>
 <li><a href="http://gitready.com/advanced/2009/03/23/whats-inside-your-git-directory.html">What&rsquo;s Inside .git Directory?</a></li>
@@ -94,10 +98,6 @@ git config --system --list
 <li><strong>aliases</strong> : we can also easily set up an alias for each command using git config.</li>
 </ul>
 </blockquote>
-<h3 id="initialization-create-a-new-repository">Initialization (create a new repository)</h3>
-<p>To initialize git on a project, simply use <code>git init</code> command.
-( <em>a hidden folder named <code>.git</code> will be created in the project&rsquo;s root directory</em> )</p>
-<p>To get a copy of an existing Git repository, use the <code>git clone</code> command.</p>
 <hr>
 <h2 id="lifecycle">Lifecycle</h2>
 <p><img src="https://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="Lifecycle"></p>
@@ -251,11 +251,42 @@ Date:   Thu Apr <span style="color:#ae81ff">20</span> 11:35:36 <span style="colo
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>

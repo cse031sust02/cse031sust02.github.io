@@ -52,16 +52,20 @@
     <div class="post">
   <h1>Introduction to Websocket</h1>
   <time datetime=2017-08-09T11:27:15&#43;0600 class="post-date">Wed, Aug 9, 2017</time>
-  <h2 id="intro">Intro</h2>
+  <hr>
+<h2 id="intro">Intro</h2>
 <p>WebSocket is a protocol (like HTTP) which defines how two parties can communicate. It is a technique for two-way communication over one (TCP) socket.</p>
 <p>A very good intro is written in this <a href="http://blog.teamtreehouse.com/an-introduction-to-websockets">post</a></p>
+<hr>
 <h3 id="how-it-works">How It Works</h3>
 <p>WebSockets provide a <strong>persistent connection</strong> between a <strong>client</strong> and <strong>server</strong>.</p>
 <p>Once a WebSocket connection is established the connection stays open until the client or server decides to close this connection. With this open connection, the client or server can send messages to each other at any given time.</p>
+<hr>
 <h3 id="why-use-websocket">Why Use Websocket?</h3>
 <p>WebSockets let us talk to the server without using AJAX requests. It provides great solution for real-time, event-driven web applications. We can use WebSocket whenever we need a truly low latency, near realtime connection between the client and the server. Such as Multiplayer online games, Chat applications, Live Updates.</p>
 <p>Another use case for WebSocket is developing WebRTC-based applications.</p>
 <p>Websockets can replace long-polling (keeping an HTTP connection open until the server has some data to push down to the client).</p>
+<hr>
 <h2 id="client--server">Client &amp; Server</h2>
 <p>WebSocket is designed to be implemented in web browsers and web servers, but it can be used by any client or server application.</p>
 <h3 id="servers">Servers</h3>
@@ -79,11 +83,42 @@
 
 </div>
 
-
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cse031sust02" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </main>
 
     
       
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-67303858-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     
   </body>
 </html>
