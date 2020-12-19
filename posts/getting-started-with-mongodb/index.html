@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My notes about the basics of MongoDB &middot; CSE031 SUST02</title>
+  <title>My notes on MongoDB &middot; CSE031 SUST02</title>
   <meta name="description" content="" />
 
   
@@ -50,7 +50,7 @@
 
     <main class="content container">
     <div class="post">
-  <h1>My notes about the basics of MongoDB</h1>
+  <h1>My notes on MongoDB</h1>
   <time datetime=2019-12-10T10:05:22&#43;0600 class="post-date">Tue, Dec 10, 2019</time>
   <hr>
 <h2 id="intro">Intro</h2>
@@ -64,10 +64,15 @@
 <li>Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data</li>
 <li>MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use</li>
 </ul>
-<p>src : <a href="https://www.mongodb.com/what-is-mongodb">MongoDB Website</a></p>
+<blockquote>
+<p>source: <a href="https://www.mongodb.com/what-is-mongodb">MongoDB Website</a></p>
+</blockquote>
+<hr>
 <h2 id="terminology">Terminology</h2>
 <p><img src="https://beginnersbook.com/wp-content/uploads/2017/09/RDBMS_MongoDB_Mapping.jpg" alt=""></p>
-<p>src : <a href="https://beginnersbook.com/wp-content/uploads/2017/09/RDBMS_MongoDB_Mapping.jpg">beginnersbook.com</a></p>
+<blockquote>
+<p>source: <a href="https://beginnersbook.com/wp-content/uploads/2017/09/RDBMS_MongoDB_Mapping.jpg">beginnersbook.com</a></p>
+</blockquote>
 <h4 id="database-">database :</h4>
 <p>A database serves as a namespace for collections. It is similar to database in RDBMS. A single MongoDB server typically has multiple databases. Collections for same application should be in one database.</p>
 <h4 id="collection-">collection :</h4>
@@ -76,9 +81,14 @@ Collections do not enforce a schema. Documents within a collection can have diff
 <h4 id="document-">document :</h4>
 <p>Document is the basic unit of storage data. They are more oftenly referred to as Objects. They are analogous to JSON objects but exist in the database in <a href="https://www.mongodb.com/json-and-bson">BSON</a> format.</p>
 <p><img src="https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg" alt=""></p>
-<p>src : <a href="https://docs.mongodb.com/manual/core/document/">MongoDB Docs</a></p>
+<blockquote>
+<p>source: <a href="https://docs.mongodb.com/manual/core/document/">MongoDB Docs</a></p>
+</blockquote>
 <p>MongoDB supports a range of scalar value types such as : string, null, integer, double, and decimal, as well as document values, and array values.</p>
-<p>Example :</p>
+<blockquote>
+<p>note : All documents in MongoDB must contain this <em>_id</em> field. This is the unique identifier for a given document within a collection. If we don&rsquo;t supply the value, MongoDB will automatically create one for us.</p>
+</blockquote>
+<p><strong>Example:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;_id&#34;</span>: <span style="color:#e6db74">&#34;5553a98ce4b02cf7150dee1f&#34;</span>,
   <span style="color:#f92672">&#34;st&#34;</span>: <span style="color:#e6db74">&#34;x+50600-002700&#34;</span>, 
@@ -110,11 +120,13 @@ Collections do not enforce a schema. Documents within a collection can have diff
     }
   }
 }
-</code></pre></div><p>src : <a href="https://www.youtube.com/watch?time_continue=110&amp;v=KM_GMvAinG8&amp;feature=emb_title">MongoDB University Course : MongoDB Basics</a></p>
-<p><strong>_id</strong> : All documents in MongoDB must contain this _id field. This is the unique identifier for a given document within a collection. If we don&rsquo;t supply the value, MongoDB will automatically create one for us.</p>
+</code></pre></div><blockquote>
+<p>source: <a href="https://www.youtube.com/watch?time_continue=110&amp;v=KM_GMvAinG8&amp;feature=emb_title">MongoDB University Course : MongoDB Basics</a></p>
+</blockquote>
 <h4 id="cursor-">cursor :</h4>
 <p>This is a pointer to the result set of a query. Clients can iterate through a cursor to retrieve results.</p>
 <p>I will try to add <em>primary key</em>, <em>index</em>, <em>table joins</em>,* *aggregation* and *transactions* here soon</p>
+<hr>
 <h2 id="core-components">Core Components</h2>
 <h4 id="mongod">mongod:</h4>
 <p>mongod is the primary <a href="https://notes.shichao.io/apue/ch13/">daemon process</a> for the MongoDB system. It handles data requests, manages data access, and performs background management operations.When we start the <code>mongod</code> process, it basically starts the MongoDB and run it in the background. mongod has several default parameters, such as storing data in /data/db and running on port 27017.</p>
@@ -151,7 +163,8 @@ blog
 [{&quot;_id&quot;:ObjectId(&quot;5d4910d0aac3dee44cfb98ec&quot;),&quot;name&quot;:&quot;Talha Ibne Imam&quot;,&quot;username&quot;:&quot;talha&quot;,&quot;email&quot;:&quot;talha@demo.com&quot;,},{&quot;_id&quot;:ObjectId(&quot;5de4ea9caaeb9cb649ca6dc2&quot;),&quot;name&quot;:&quot;Ruhul Amin&quot;,&quot;username&quot;:&quot;sujon&quot;,&quot;email&quot;:&quot;sujon@demo.com&quot;,}]
 </code></pre><p><strong>Note</strong> : The find() method returns a cursor to the results. We can use several cursor methods (i.e: limit, skip) to call on the returned cursor and get our desired results. i.e.:</p>
 <pre><code>&gt; db.users.find({&quot;name&quot;:&quot;Talha&quot;}, {&quot;name&quot;:1, &quot;email&quot;:1}).limit(2)
-</code></pre><h2 id="security">Security:</h2>
+</code></pre><hr>
+<h2 id="security">Security</h2>
 <h4 id="authentication">Authentication</h4>
 <p>Authentication is the process of verifying the identity of a client. When access control is enabled, MongoDB requires all clients to authenticate themselves in order to determine their access.</p>
 <p>MongoDB supports different client authentication mechanisms :</p>
@@ -178,18 +191,20 @@ blog
 </li>
 </ul>
 <p>MongoDB provides <a href="https://docs.mongodb.com/manual/reference/built-in-roles/">built-in roles</a> that provide set of privileges commonly needed in a database system. We can also create and modify <a href="https://docs.mongodb.com/manual/core/security-user-defined-roles/">user-defined roles</a> if these built-in-roles cannot provide the desired set of privileges.</p>
+<hr>
 <h2 id="tools">Tools</h2>
-<h5 id="binary-import-and-export-tools">Binary Import and Export Tools</h5>
+<h5 id="binary-importexport-">Binary Import/Export :</h5>
 <ul>
 <li><a href="https://docs.mongodb.com/manual/reference/program/mongodump/">mongodump</a> : Which outputs BSON representations of MongoDB</li>
 <li><a href="https://docs.mongodb.com/manual/reference/program/mongorestore/">mongorestore</a> : Which restores BSON representation in MongoDB into MongoDB collections</li>
 </ul>
-<h5 id="data-import-and-export-tools">Data Import and Export Tools</h5>
+<h5 id="data-importexport-">Data Import/Export :</h5>
 <ul>
 <li><a href="https://docs.mongodb.com/manual/reference/program/mongoexport/">mongoexport</a> : Which outputs JSON or CSV representations of MongoDB collections</li>
 <li><a href="https://docs.mongodb.com/manual/reference/program/mongoimport/">mongoimport</a> : Which takes the JSON or the CSV representations and creates a MongoDB collection from it</li>
 </ul>
-<h3 id="references">References</h3>
+<hr>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.mongodb.com/">https://www.mongodb.com/</a></li>
 <li><a href="https://en.wikipedia.org/wiki/MongoDB">https://en.wikipedia.org/wiki/MongoDB</a></li>
