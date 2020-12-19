@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cse031sust02</title>
+    <title>CSE031 SUST02</title>
     <link>https://cse031sust02.github.io/</link>
-    <description>Recent content on cse031sust02</description>
+    <description>Recent content on CSE031 SUST02</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Nov 2020 12:09:42 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2020 01:29:14 +0600</lastBuildDate>
     
 	<atom:link href="https://cse031sust02.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>New Theme</title>
-      <link>https://cse031sust02.github.io/posts/new-theme/</link>
-      <pubDate>Sat, 21 Nov 2020 12:09:42 +0600</pubDate>
-      
-      <guid>https://cse031sust02.github.io/posts/new-theme/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>A Journey into the Docker World</title>
